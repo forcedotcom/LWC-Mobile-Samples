@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
     private val namespace = "com.salesforce.mobile-tooling"
     private val componentNameArgPrefix = "$namespace.componentname"
     private val projectDirArgPrefix = "$namespace.projectdir"
-    private val previewUrlPrefix = "http://10.0.2.2:3333/lwc/preview/"
+    private val serverAddressArgPrefix = "$namespace.serveraddress"
+    private val serverPortArgPrefix = "$namespace.serverport"
     private val debugArgPrefix = "ShowDebugInfoToggleButton"
     private val usernameArgPrefix = "username"
 
@@ -87,20 +88,65 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Attempts at fetching the component URL from the provided custom launch arguments.
+     * Attempts at formulating the url for previewing the component based on values of
+     * Component Name, Server Address, and Server Port in app launch arguments.
      *
      * @param launchArguments an array of provided launch arguments
-     * @return a string corresponding to the value provided for the component URL in the
-     * launch arguments. If the component URL is not provided in the launch arguments this
-     * method returns an empty string.
+     * @return a string corresponding to the url for previewing the component.
      */
     private fun getComponentUrl(launchArguments: Bundle?): String {
-        val component = launchArguments?.getString(componentNameArgPrefix)
-        return if (component != null) {
-            previewUrlPrefix + component
-        } else {
-            ""
+        val compName = getComponentName(launchArguments).trim()
+        var serverAddress = getServerAddress(launchArguments).trim()
+        var serverPort = getServerPort(launchArguments).trim()
+
+        if (serverAddress.isEmpty()) {
+            serverAddress = "http://10.0.2.2"
+        } else if (!serverAddress.startsWith("http")) {
+            serverAddress = "http://$serverAddress"
         }
+
+        if (serverPort.isEmpty()) {
+            // if no custom port is provided then default to port 3333
+            serverPort = "3333"
+        }
+
+        return "$serverAddress:$serverPort/lwc/preview/$compName"
+    }
+
+    /**
+     * Attempts at fetching the component name from the provided custom launch arguments.
+     *
+     * @param launchArguments an array of provided launch arguments
+     * @return a string corresponding to the value provided for the component name in the
+     * launch arguments. If the component name is not provided in the launch arguments this
+     * method returns an empty string.
+     */
+    private fun getComponentName(launchArguments: Bundle?): String {
+        return launchArguments?.getString(componentNameArgPrefix) ?: ""
+    }
+
+    /**
+     * Attempts at fetching the server address from the provided custom launch arguments.
+     *
+     * @param launchArguments an array of provided launch arguments
+     * @return a string corresponding to the value provided for the server address in the
+     * launch arguments. If the server address is not provided in the launch arguments this
+     * method returns an empty string.
+     */
+    private fun getServerAddress(launchArguments: Bundle?): String {
+        return launchArguments?.getString(serverAddressArgPrefix) ?: ""
+    }
+
+    /**
+     * Attempts at fetching the server port from the provided custom launch arguments.
+     *
+     * @param launchArguments an array of provided launch arguments
+     * @return a string corresponding to the value provided for the server port in the
+     * launch arguments. If the server port is not provided in the launch arguments this
+     * method returns an empty string.
+     */
+    private fun getServerPort(launchArguments: Bundle?): String {
+        return launchArguments?.getString(serverPortArgPrefix) ?: ""
     }
 
     /**

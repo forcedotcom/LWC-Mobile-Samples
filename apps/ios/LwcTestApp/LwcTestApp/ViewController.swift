@@ -13,7 +13,8 @@ import WebKit
 fileprivate let NAMESPACE = "com.salesforce.mobile-tooling"
 fileprivate let COMPONENT_NAME_ARG_PREFIX = "\(NAMESPACE).componentname"
 fileprivate let PROJECT_DIR_ARG_PREFIX = "\(NAMESPACE).projectdir"
-fileprivate let PREVIEW_URL_PREFIX = "http://localhost:3333/lwc/preview/"
+fileprivate let SERVER_ADDRESS_ARG_PREFIX = "\(NAMESPACE).serveraddress"
+fileprivate let SERVER_PORT_ARG_PREFIX = "\(NAMESPACE).serverport"
 fileprivate let DEBUG_ARG = "ShowDebugInfoToggleButton"
 fileprivate let USERNAME_ARG = "username"
 
@@ -80,16 +81,64 @@ class ViewController: UIViewController, WKNavigationDelegate {
         endNavigation(withError: error);
     }
 
-    /// Attempts at fetching the component URL from the provided custom launch arguments.
+    /// Attempts at formulating the url for previewing the component based on values of
+    /// Component Name, Server Address, and Server Port in app launch arguments.
     ///
     /// - Parameter launchArguments: An array of provided launch arguments
-    /// - Returns: A string corresponding to the value provided for the component URL in the launch arguments.
-    ///   If the component URL is not provided in the launch arguments this method returns an empty string.
+    /// - Returns: A string corresponding to the url for previewing the component.
     fileprivate func getComponentUrl(_ launchArguments: [String]) -> String {
+        let compName = getComponentName(launchArguments).trimmingCharacters(in: .whitespacesAndNewlines)
+        var serverAddress = getServerAddress(launchArguments).trimmingCharacters(in: .whitespacesAndNewlines)
+        var serverPort = getServerPort(launchArguments).trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if (serverAddress.isEmpty) {
+            serverAddress = "http://localhost"
+        } else if (!serverAddress.starts(with: "http")) {
+            serverAddress = "http://\(serverAddress)"
+        }
+        
+        if (serverPort.isEmpty) {
+            // if no custom port is provided then default to port 3333
+            serverPort = "3333"
+        }
+        
+        return "\(serverAddress):\(serverPort)/lwc/preview/\(compName)"
+    }
+    
+    /// Attempts at fetching the component name from the provided custom launch arguments.
+    ///
+    /// - Parameter launchArguments: An array of provided launch arguments
+    /// - Returns: A string corresponding to the value provided for the component name in the launch arguments.
+    ///   If the component name is not provided in the launch arguments this method returns an empty string.
+    fileprivate func getComponentName(_ launchArguments: [String]) -> String {
         let match = launchArguments.first{$0.hasPrefix(COMPONENT_NAME_ARG_PREFIX)}
         guard var component = match else {return ""}
         component = component.replacingOccurrences(of: "\(COMPONENT_NAME_ARG_PREFIX)=", with: "")
-        return "\(PREVIEW_URL_PREFIX)\(component)"
+        return component
+    }
+    
+    /// Attempts at fetching the server address from the provided custom launch arguments.
+    ///
+    /// - Parameter launchArguments: An array of provided launch arguments
+    /// - Returns: A string corresponding to the value provided for the server address in the launch arguments.
+    ///   If the server address is not provided in the launch arguments this method returns an empty string.
+    fileprivate func getServerAddress(_ launchArguments: [String]) -> String {
+        let match = launchArguments.first{$0.hasPrefix(SERVER_ADDRESS_ARG_PREFIX)}
+        guard var address = match else {return ""}
+        address = address.replacingOccurrences(of: "\(SERVER_ADDRESS_ARG_PREFIX)=", with: "")
+        return address
+    }
+    
+    /// Attempts at fetching the server port from the provided custom launch arguments.
+    ///
+    /// - Parameter launchArguments: An array of provided launch arguments
+    /// - Returns: A string corresponding to the value provided for the server port in the launch arguments.
+    ///   If the server port is not provided in the launch arguments this method returns an empty string.
+    fileprivate func getServerPort(_ launchArguments: [String]) -> String {
+        let match = launchArguments.first{$0.hasPrefix(SERVER_PORT_ARG_PREFIX)}
+        guard var port = match else {return ""}
+        port = port.replacingOccurrences(of: "\(SERVER_PORT_ARG_PREFIX)=", with: "")
+        return port
     }
     
     /// Attempts at fetching the username from the provided custom launch arguments.

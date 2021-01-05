@@ -8,7 +8,8 @@
         "launch_arguments": [
           { "name": "ShowDebugInfoToggleButton", "value": "true" },
           { "name": "username", "value": "Astro" }
-        ]
+        ],
+        "preview_server_enabled": true
       }
     ],
     "android": [
@@ -20,7 +21,8 @@
         "launch_arguments": [
           { "name": "ShowDebugInfoToggleButton", "value": "true" },
           { "name": "username", "value": "Astro" }
-        ]
+        ],
+        "preview_server_enabled": true
       }
     ]
   }
