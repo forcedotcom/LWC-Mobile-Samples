@@ -17,14 +17,14 @@ After you've set up your environment, connect the `HelloWorld` sample project to
 
 
 2. Configure the `HelloWorld` project to use a scratch org. If you already have a scratch org, skip to step 3. If you don't have a scratch org:
-    1. In VS Code, press Command+Shift P.
+    1. In VS Code, press Cmd+Shift+p (macOS) or Ctrl+Shift+p (Windows).
     2. Type in `Scratch` and select `SFDX: Create a Default Scratch Org`.
     3. Follow the onscreen steps to create a scratch org. The recommended trails provide detailed information on these steps.
     4. Ensure that a success message appears in the VS Code Output window.
 
 
 3. Authorize the `HelloWorld` project to use your scratch org.
-    1. In VS Code, press Command+Shift P.
+    1. In VS Code, press Cmd+Shift+p (macOS) or Ctrl+Shift+p (Windows).
     2. Type in `Authorize` and select `SFDX: Authorize an Org`.
     3. Follow the onscreen steps to log into your Salesforce Org with your credentials. The recommended trails provide detailed information on these steps.
     4. Ensure that a success message appears in the VS Code Output window.
