@@ -1,17 +1,59 @@
-**IMPORTANT!** Before running this sample Lightning Web Component project, you must configure it to use a Salesforce scratch org. If you're not familiar with this concept, we recommend completing the following trails. These trails demonstrate how to set up your development environment and configure a Lightning Web Component project with a Salesforce scratch org:
+# Samples for Previewing Lightning Web Components on Mobile
+Welcome to the Mobile Preview samples repo. Here, you can find sample projects and apps that let you preview Lightning web components several ways:
+- In your desktop browser
+- In the mobile browser of an iOS or Android virtual device
+- In a native app running on an iOS or Android virtual device
+
+**IMPORTANT!** Before running this sample Lightning Web Component project, you must configure it to use a scratch org. If you're not familiar with this concept, we recommend completing the following trails. These trails demonstrate how to set up your development environment and configure a Lightning Web Component project with a Salesforce scratch org:
 
 - [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components?trail_id=build-lightning-web-components)
 - [Set Up Your Lightning Web Components Developer Tools](https://trailhead.salesforce.com/content/learn/projects/set-up-your-lightning-web-components-developer-tools?trail_id=build-lightning-web-components)
 
-### What's Included
-- **HelloWorld**: This sample Lightning Web Component demonstrates how to preview a component locally. It contains a basic Lightning Web Component, along with `mobile-apps.json` - a configuration file that defines how to preview this component in native mobile apps. For more information, use the `--confighelp` flag with the SFDX Preview command: `sfdx force:lightning:lwc:preview  --confighelp`
+## What's Included
 
-- **apps/ios/LwcTestApp**: A native iOS sample app that demonstrates how to preview a Lightning Web Component in iOS.
+Samples in this repo include Lightning Web Component projects and native mobile apps. The native apps are configured to recognize and display a component running on a local server. 
 
-- **apps/android/LwcTestApp**: A native Android sample app that demonstrates how to preview a Lightning Web Component in Android.
+### Lightning Web Component Projects
 
-### Using the Samples
-After you've set up your environment, connect the `HelloWorld` sample project to your Salesforce scratch org and preview your component.
+These samples define Lightning web components and demonstrate configurations for previewing them. 
+<details>
+    <summary>
+        <b>HelloWorld</b> 
+    </summary>
+This sample Lightning Web Component project demonstrates how to preview locally. It contains a basic Lightning web component, along with <code>mobile-apps.json</code> - a configuration file that defines how to preview this component in native mobile apps. 
+
+This file points to <code>configure_android_test_app.ts</code> and <code>configure_ios_test_app.ts</code> files. Together, these files demonstrate how you can 
+   
+   - Configure your apps to show up in the VSCode preview dialog boxes.
+   - Define the optional <code>get_app_bundle</code> parameter. You can implement it to compile the app or perform any other setup steps.
+
+For more information on <code>mobile-apps.json</code>, use the <code>--confighelp</code> flag with the SFDX Preview command: 
+    
+    sfdx force:lightning:lwc:preview  --confighelp
+
+</details>
+
+### Native Mobile Apps
+These samples let you preview Lightning web components in standalone native apps.
+<details>
+    <summary>
+        <b>apps/ios/LwcTestApp</b>
+    </summary>
+    
+A sample app that you can use to preview a Lightning web component in a native iOS app.
+</details>
+
+<details>
+    <summary>
+        <strong>apps/android/LwcTestApp</strong>
+    </summary>
+    
+A sample app that you can use to preview a Lightning web component in a native Android app.
+</details>
+
+## Previewing the Hello World Sample
+
+After you've set up your environment, connect the `HelloWorld` sample project to your scratch org and preview your component. You can use the following instructions as a model for previewing other Lightning web components. 
 
 1. In VS Code, open the `HelloWorld` folder.
 
@@ -40,3 +82,5 @@ After you've set up your environment, connect the `HelloWorld` sample project to
     5. Indicate whether you'd like to preview the component on your mobile browser or in the provided native LWC Test App.
 
 Your virtual device launches, and your component preview appears.
+
+For full documentation, see [Preview Lightning Web Components on Mobile](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.mobile_extensions). 
