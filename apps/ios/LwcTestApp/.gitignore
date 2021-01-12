@@ -1,0 +1,6 @@
+# Xcode
+project.xcworkspace/
+xcuserdata/
+
+# Build output data
+/build

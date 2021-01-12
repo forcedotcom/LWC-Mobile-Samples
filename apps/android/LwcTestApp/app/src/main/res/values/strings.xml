@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Lwc Test App</string>
+    <string name="toggle_debug_info">Toggle Debug Info</string>
+</resources>
