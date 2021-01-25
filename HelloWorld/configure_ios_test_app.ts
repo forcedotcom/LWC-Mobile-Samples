@@ -12,12 +12,11 @@ exports.run = function () {
     "../apps/ios/LwcTestApp/build/Debug-iphonesimulator/LwcTestApp.app"
   );
 
-  const result = childProcess
+  childProcess
     .execSync(
       `xcodebuild build CODE_SIGNING_ALLOWED=NO -project ${expectedProjectPath} -configuration Debug -sdk iphonesimulator`,
-      { stdio: ["ignore", "pipe", "ignore"] }
-    )
-    .toString();
+      { stdio: ["ignore", "pipe", "pipe"] }
+    );
 
   return expectedCompiledAppPath;
 };
