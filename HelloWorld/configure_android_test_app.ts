@@ -14,10 +14,22 @@ exports.run = function () {
 
   const androidHome = process.platform === "win32" ? "%ANDROID_HOME%" : "$ANDROID_HOME";
   const sdkmanager = path.join(androidHome, "tools", "bin", "sdkmanager");
-  const acceptLicensesCommand = process.platform === "win32"
-    ? `echo y| ${sdkmanager} \"build-tools;29.0.2\"`
-    : `yes | ${sdkmanager} \"build-tools;29.0.2\"`;
-  childProcess.execSync(acceptLicensesCommand, { stdio: ["ignore", "pipe", "pipe"] });
+
+  // Allow SDKManager to determine all licenses that have not been accepted
+  // and then accept them all by piping YES into STDIN of SDKManager.
+  let acceptAllLicensesCommand = `yes | ${sdkmanager} --licenses`;
+  if (process.platform === "win32") {
+    // On Windows things are more complicated. There seems to be an issue
+    // with the use of BufferedReader in Java and piping YES into STDIN.
+    // The workaround is to create a temporary file with a bunch of YES
+    // in it, then feed that file to SDKManager and then delete that file.
+    const yesFileCommand =
+      `CMD /Q /C "FOR /L %G IN (1,1,49) DO (echo y)>>output-yes-file.txt" & echo|set /p="y">>output-yes-file.txt`;
+    const acceptCommand = `${sdkmanager} --licenses < output-yes-file.txt`;
+    const cleanupCommand = `DEL output-yes-file.txt`;
+    acceptAllLicensesCommand = `${yesFileCommand} & ${acceptCommand} & ${cleanupCommand}`;
+  }
+  childProcess.execSync(acceptAllLicensesCommand, { stdio: ["ignore", "pipe", "pipe"] });
 
   const compileCommand =
     process.platform === "win32" ? "gradlew.bat build" : "./gradlew build";
