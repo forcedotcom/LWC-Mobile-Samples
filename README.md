@@ -29,7 +29,7 @@ This file points to <code>configure_android_test_app.ts</code> and <code>conf
 
 For more information on <code>mobile-apps.json</code>, see 
 
-- “Configuring a Native Mobile App to Host Previews” in https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.mobile_extensions_cli_commands
+- “Configuring a Native Mobile App to Host Previews” in [Preview Your Components from the Command Line](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.mobile_extensions_cli_commands)
 - [Preview in Custom Mobile Apps](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.mobile_extensions_integrate_custom_app)
 
 </details>
