@@ -27,9 +27,10 @@ This file points to <code>configure_android_test_app.ts</code> and <code>conf
    - Configure your apps to show up in the VSCode preview dialog boxes.
    - Define the optional <code>get_app_bundle</code> parameter. You can implement it to compile the app or perform any other setup steps.
 
-For more information on <code>mobile-apps.json</code>, use the <code>--confighelp</code> flag with the SFDX Preview command: 
-    
-    sfdx force:lightning:lwc:preview  --confighelp
+For more information on <code>mobile-apps.json</code>, see 
+
+- “Configuring a Native Mobile App to Host Previews” in [Preview Your Components from the Command Line](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.mobile_extensions_cli_commands)
+- [Preview in Custom Mobile Apps](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.mobile_extensions_integrate_custom_app)
 
 </details>
 
