@@ -14,7 +14,7 @@ exports.run = function () {
 
   childProcess
     .execSync(
-      `xcodebuild build CODE_SIGNING_ALLOWED=NO -project ${expectedProjectPath} -configuration Debug -sdk iphonesimulator`,
+      `xcodebuild build -project ${expectedProjectPath} -configuration Debug -sdk iphonesimulator`,
       { stdio: ["ignore", "pipe", "pipe"] }
     );
 
