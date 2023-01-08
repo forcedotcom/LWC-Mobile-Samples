@@ -1,0 +1,74 @@
+<template>
+    <div data-id="page" class="page">
+        <div data-id="content" class="section content">
+            <div data-id="canvasContainer" class="canvasContainer slds-var-p-around_small" lwc:dom="manual"></div>
+        </div>
+        <div data-id="footer" class="section footer">
+            <div class="slds-grid slds-var-p-around_small">
+                <!-- Colors -->
+                <ul class="slds-button-group-row slds-col_bump-right">
+                    <li class="slds-button-group-item button_group_item_dot">
+                        <button onclick={selectColorRed} class="slds-button dot_button">
+                            <span class="dot red"></span>
+                            <span if:false={isRedSelected} class="dot_selection_ring"></span>
+                            <span if:true={isRedSelected} class="dot_selection_ring is_selected"></span>
+                            <label></label>
+                        </button>
+                    </li>
+                    <li class="slds-button-group-item button_group_item_dot">
+                        <button onclick={selectColorGreen} class="slds-button dot_button">
+                            <span class="dot green"></span>
+                            <span if:false={isGreenSelected} class="dot_selection_ring"></span>
+                            <span if:true={isGreenSelected} class="dot_selection_ring is_selected"></span>
+                            <label></label>
+                        </button>
+                    </li>
+                    <li class="slds-button-group-item button_group_item_dot">
+                        <button onclick={selectColorWhite} class="slds-button dot_button">
+                            <span class="dot white"></span>
+                            <span if:false={isWhiteSelected} class="dot_selection_ring"></span>
+                            <span if:true={isWhiteSelected} class="dot_selection_ring is_selected"></span>
+                            <label></label>
+                        </button>
+                    </li>
+                    <li class="slds-button-group-item button_group_item_dot">
+                        <button onclick={selectColorBlack} class="slds-button dot_button">
+                            <span class="dot black"></span>
+                            <span if:false={isBlackSelected} class="dot_selection_ring"></span>
+                            <span if:true={isBlackSelected} class="dot_selection_ring is_selected"></span>
+                            <label></label>
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Thickness -->
+                <ul class="slds-button-group-row thickness_button_group">
+                    <li class="slds-button-group-item slds-grid">
+                        <button onclick={decreaseThickness} disabled={isMinimumThickness} class={decreaseThicknessClass} title="Decrease Thickness">
+                            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#dash"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Decrease Thickness</span>
+                        </button>
+                    </li>
+                    <li class="slds-button-group-item slds-grid">
+                        <span class="slds-icon_container slds-icon-utility-edit pencil_icon" title="Thickness">
+                            <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#edit"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Thickness</span>
+                        </span>
+                    </li>
+                    <li class="slds-button-group-item slds-grid">
+                        <button onclick={increaseThickness} disabled={isMaximumThickness} class={increaseThicknessClass} title="Increase Thickness">
+                            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#add"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Increase Thickness</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,69 @@
+<template>
+    <!-- No images selected screen -->
+    <div class="no-images-selected-screen slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" if:false={areImagesSelected}>
+        <span class="slds-icon_container slds-icon-utility-image" title="Image Icon">
+            <svg class="large-icon slds-icon slds-icon-text-light" aria-hidden="true">
+                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#image"></use>
+            </svg>
+            <span class="slds-assistive-text">Image Icon</span>
+        </span>
+
+        <div class="text-container slds-align_absolute-center slds-var-p-around_medium">
+            <span class="slds-text-heading_medium">
+                Add an image to this record
+            </span>
+        </div>
+
+        <!-- Insert empty character in the label to compensate on a different behavior of the component between Android and iOS -->
+        <lightning-input
+            type="file"
+            accept="image/*"
+            multiple
+            label="&zwnj;"
+            onchange={handleFilesSelected}>
+        </lightning-input>
+    </div>
+
+
+    <!-- Some images selected screen -->
+    <div class="page" if:true={areImagesSelected}>
+        <!-- Header -->
+        <div class="section header">
+            <div class="header-content slds-grid">
+                <div class="slds-var-p-around_small slds-col_bump-right" style="margin-top: auto; margin-bottom: auto;">
+                    <span>{totalSelectedImages} {imageText}</span>
+                </div>
+                <div class="slds-var-p-around_small">
+                    <!-- Insert empty character in the label to compensate on a different behavior of the component between Android and iOS -->
+                    <lightning-input
+                        type="file"
+                        accept="image/*"
+                        multiple
+                        label="&zwnj;"
+                        onchange={handleFilesSelected}>
+                    </lightning-input>
+                </div>
+            </div>
+        </div>
+        <!-- Selected Images Preview -->
+        <div class="section content">
+            <div class="slds-grid slds-wrap slds-var-p-right_small slds-var-p-bottom_small">
+                <template for:each={allImagesData} for:item="item">
+                    <div key={item.id} class="square slds-col slds-var-p-left_small slds-var-p-top_small slds-size_1-of-3">
+                        <img data-id={item.id} src={item.data} onclick={handleImageSelectedForAnnotation} />
+                    </div>
+                </template>
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="section footer">
+            <div class="footer-content slds-grid slds-var-p-around_small">
+                <button
+                    onclick={handleUploadClicked}
+                    type="button"
+                    class="slds-button slds-button_outline-brand slds-col slds-button_stretch">
+                    <label>Add to Record</label></button>
+            </div>
+        </div>
+    </div>
+</template>

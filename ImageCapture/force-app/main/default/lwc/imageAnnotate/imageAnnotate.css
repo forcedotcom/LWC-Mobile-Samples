@@ -1,0 +1,128 @@
+:host {
+  --slds-c-button-outline-brand-color-background: transparent;
+  --slds-c-button-outline-brand-color-background-active: transparent;
+  --slds-c-button-outline-brand-color-background-hover: transparent;
+  --slds-c-button-outline-brand-color-border: #32BEF1;
+  --slds-c-button-outline-brand-color-border-hover: #32BEF1;
+  --slds-c-button-stateful-color-background-selected: #32BEF1;
+  --slds-c-button-stateful-color-background-selected-active: #32BEF1;
+  --slds-c-button-stateful-color-background-selected-hover: #32BEF1;
+  --slds-c-button-stateful-color-border-selected: #32BEF1;
+  --slds-c-button-stateful-color-border-selected-hover: #32BEF1;
+  --slds-c-button-text-color: #32BEF1;
+  --slds-c-button-text-color-active: #32BEF1;
+  --slds-c-button-text-color-hover: #32BEF1;
+  --slds-c-button-radius-border: 0.75rem;
+  --slds-c-button-sizing-border: 2px;
+}
+
+button[disabled=true] {
+  color: #F4F4F4;
+}
+
+.selected-button {
+  color: #FFFFFF;
+  background-color: #32BEF1;
+}
+
+.icon-button {
+  color: #32BEF1;
+  border-color: #32BEF1;
+  border-width: var(--slds-c-button-sizing-border, 2px);
+  border-radius: var(--slds-c-button-radius-border, 0.75rem);
+}
+
+.dark-dropdown {
+  background-color: #1E1E1E;
+  border-width: 0;
+  border-radius: var(--slds-c-button-radius-border, 0.75rem);
+  margin-bottom: 8px;
+}
+
+.dark-dropdown > ul > li {
+  padding-right: 2rem;
+}
+
+.dark-dropdown > ul > li > a:hover, .dark-dropdown > ul > li > a:focus {
+  background-color: transparent;
+}
+
+.white-dropdown-item {
+  color: #FFFFFF;
+  display: inline-flex;
+}
+
+.white-dropdown-item > svg {
+  --slds-c-icon-color-foreground: #FFFFFF;
+}
+
+.red-dropdown-item {
+  color: #FF3B30;
+  display: inline-flex;
+}
+
+.red-dropdown-item > svg {
+  --slds-c-icon-color-foreground: #FF3B30;
+}
+
+.selected-dropdown-item {
+  opacity: 50%;
+}
+
+.remove-dropdown-item {
+  border-top: 1px #9FAAB580 solid;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+a.disabled {
+  pointer-events: none;
+  color: #ccc;
+}
+
+.transparent-entire-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.all-height {
+  height: 100%;
+}
+
+.all-width {
+  width: 100%;
+}
+
+.page {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  background-color: black;
+}
+
+.page .section.content {
+  display: flex;
+  flex-flow: column;
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.page .section.footer {
+  flex: 0 1 auto;
+  background-color: #444444;
+}
