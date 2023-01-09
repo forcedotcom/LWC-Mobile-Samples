@@ -56,7 +56,7 @@ export default class ImagePainter extends LightningElement {
     startY = 0;
     pointerX = 0;
     pointerY = 0;
-    freeDrawPath = []; // TODO - maybe remove and draw right on the imgCanvas
+    freeDrawPath = [];
 
     connectedCallback() {
         this.createNewCanvasObjects();
@@ -193,7 +193,6 @@ export default class ImagePainter extends LightningElement {
                 break;
             }
             case Shapes.Oval: {
-                // TODO: duplicate logic from handlePointerMove
                 this.imgContext.save();
                 this.imgContext.beginPath();
         
