@@ -1,5 +1,7 @@
 # Set Up the Upload and Annotate Images Lightning Web Component (LWC)
 
+Let your mobile workers add images to their work orders or service appointments. The mobile workers can then crop or draw on the image to emphasize certain areas. For example, the mobile worker can add an image of a part that must be fixed and draw an arrow to emphasize the broken area. You can set the size of the images in your configuration.
+
 ## Before You Begin
 We recommend taking the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components) Trailhead to learn how to:
 * Set up your Salesforce DX environment
@@ -7,8 +9,6 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
 * Authorize your org
 
 ## Set Up the LWC
-
-Let your mobile workers add images to their work orders or service appointments. The mobile workers can then crop or draw on the image to emphasize certain areas. For example, the mobile worker can add an image of a part that must be fixed and draw an arrow to emphasize the broken area. You can set the size of the images in your configuration.
 
 1. Download the source code.
 2. Configure the LWC:
