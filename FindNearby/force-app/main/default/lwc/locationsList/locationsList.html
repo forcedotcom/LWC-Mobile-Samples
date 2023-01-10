@@ -1,0 +1,73 @@
+<template>
+    <template if:true={showPopover}>
+        <div class="popover-mask" onclick={handlePopoverMaskClick}></div>
+    </template>
+    <div class="main-container">
+        <div class="popover-container">
+            <div class={popoverClass}>
+                <div class="action-item" onclick={handleViewClick}>
+                    <lightning-icon class="action-icon" size="x-small" icon-name="utility:record_alt"></lightning-icon>
+                    <p>Open Record</p>
+                </div>
+                <div class="action-item" onclick={handleDirectionsClick}>
+                    <lightning-icon class="action-icon" size="x-small" icon-name="utility:location"></lightning-icon>
+                    <p>Get Directions</p>
+                </div>
+            </div>
+        </div>
+        <div class="lgc-bg">
+            <ul class="header slds-has-dividers_bottom-space">
+                <div class="grabber">
+                    <svg width="375" height="8" viewBox="0 0 375 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="375" height="8" fill="white"/>
+                        <rect x="171.5" y="4" width="32" height="4" rx="2" fill="#BEBEC0"/>
+                    </svg>
+                </div>
+                <li class="slds-item">
+                    <div class="tile-container">
+                        <lightning-tile class="title-tile">
+                            <p>{filteredMarkers.length} {titleObjectText}</p>
+                        </lightning-tile>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list slds-has-dividers_bottom-space">
+                <template if:false={filteredMarkers.length}>
+                    <div class="empty-state">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_2770_17898)">
+                                <path d="M80 40.5C80 62.5914 62.0914 80.5 40 80.5C17.9086 80.5 0 62.5914 0 40.5C0 18.4086 17.9086 0.5 40 0.5C62.0914 0.5 80 18.4086 80 40.5Z" fill="#EEEEEE"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M39.9999 25.731C33.5384 25.731 28.3076 30.9617 28.3076 37.4848C28.3076 45.6079 36.6768 53.054 39.2615 55.0233C39.6922 55.3925 40.3076 55.3925 40.7999 55.0233C43.3845 52.9925 51.6922 45.6079 51.6922 37.4848C51.6922 30.9617 46.4615 25.731 39.9999 25.731ZM40 42.3462C37.2923 42.3462 35.0769 40.1308 35.0769 37.4231C35.0769 34.7154 37.2923 32.5 40 32.5C42.7077 32.5 44.9231 34.7154 44.9231 37.4231C44.9231 40.1308 42.7077 42.3462 40 42.3462Z" fill="white"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_2770_17898">
+                                    <rect width="80" height="80" fill="white"/>
+                                </clipPath>
+                            </defs>
+                        </svg>
+                        <p class="empty-state-text">No results in this area.<br>Try changing the filter options.</p>
+                    </div>
+                </template>
+                <template if:true={filteredMarkers.length} for:each={filteredMarkers} for:item="marker" for:index="index">
+                    <li key={marker.value.id} data-item={marker} data-index={index} class="slds-item" onclick={handleItemClick}>
+                        <div class="tile-container">
+                            <div class="icon-and-text">
+                                <c-object-icon icon-url={marker.value.iconUrl} color={marker.value.color}></c-object-icon>
+                                <lightning-tile label={marker.value.title}>
+                                    <p class="tile-subtitle slds-truncate">{marker.value.distance} • {marker.value.secondFieldValue}</p>
+                                </lightning-tile>
+                            </div>
+                            <div class="actions-button">
+                                <button
+                                    class="slds-m-left_x-small slds-button_stretch"
+                                    onclick={handleActionsButtonClick}>
+                                    •••
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </div>
+</template>

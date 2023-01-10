@@ -1,0 +1,69 @@
+<template>
+    <div class="main-container">
+        <div class="locator" onclick={handleLocatorClick}>
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.6921 20.834C13.0455 21.1874 13.6207 21.1892 13.9759 20.834C14.048 20.7619 14.1021 20.6825 14.1472 20.6014L14.2121 20.4319L21.2462 1.973L21.3039 1.81793C21.3905 1.51139 21.3111 1.16879 21.0713 0.928973C20.8297 0.68735 20.4871 0.611617 20.1824 0.696365L20.0273 0.754067L1.52692 7.8044L1.44037 7.83685C1.42955 7.84046 1.41873 7.84407 1.40791 7.85128C1.32136 7.89455 1.23842 7.95226 1.16629 8.02438C0.811071 8.3796 0.81107 8.95301 1.16629 9.30823C1.2258 9.36773 1.29071 9.41822 1.36103 9.45609L1.49266 9.5192L8.99018 13.0065L12.4901 20.5238L12.537 20.6248C12.5766 20.7006 12.6289 20.7709 12.6921 20.834Z" fill="#0D7FA8"/>
+            </svg>                  
+        </div>
+        <lightning-map
+            map-markers={markersWithResource}
+            onmarkerselect={onMarkerSelect}
+            selected-marker-value={selectedMarkerValue}
+            options={mapOptions}
+            list-view={listView}
+            center={center}
+            zoom-level={zoom}>
+        </lightning-map>
+        <template if:true={showCard}>
+            <div class="cards">
+                <div class="card-top-arrow"></div>
+                <div class="card-header">
+                    <div class="card-title">
+                        <c-object-icon icon-url={currentMarkerIconUrl} color={currentMarker.value.color}></c-object-icon>
+                        <p class="title-text">{currentMarkerTitle}</p>
+                    </div>
+                    <button class="x" onclick={handleCloseCardClick}>
+                        <lightning-icon alternative-text="Close" icon-name="utility:close" size="x-small" class="x-icon"></lightning-icon>
+                    </button>
+                </div>
+                <div class="card-main">
+                    <div class="card-details">
+                        <div class="card-details-text">
+                            <p class="card-secondary-title">{currentMarkerSecondFieldName}</p>
+                            {currentMarkerSecondFieldValue}
+                        </div>
+                        <div class="card-details-text">
+                            <p class="card-secondary-title">Distance</p>
+                            {currentMarkerDistance}
+                        </div>
+                    </div>
+                    <div class="card-buttons-container">
+                        <button
+                            class="slds-m-left_x-small slds-button_stretch card-primary-button"
+                            onclick={handleRedirectClick}>
+                            Open Record
+                        </button>
+                        <button
+                            class="slds-m-left_x-small slds-button_stretch card-primary-button"
+                            onclick={handleRouteClick}>
+                            Get Directions
+                        </button>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button
+                        onclick={handleBackCardClick}
+                        class="card-footer-arrow">
+                        <lightning-icon size="x-small" class="arrow-icon" icon-name="utility:chevronleft" alternative-text="Left" title="Left"></lightning-icon>
+                    </button>
+                    {currentMarkerIndexUi} of {filteredMarkers.length}
+                    <button
+                        onclick={handleNextCardClick}
+                        class="card-footer-arrow">
+                        <lightning-icon size="x-small" class="arrow-icon" icon-name="utility:chevronright" alternative-text="Right" title="Right"></lightning-icon>
+                    </button>
+                </div>
+            </div>
+        </template>
+    </div>
+  </template>

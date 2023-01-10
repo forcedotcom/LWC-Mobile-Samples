@@ -1,0 +1,10 @@
+<template>
+    <template if:true={iconUrl}>
+        <img src={iconUrl} class="icon" style={iconStyle}>                                    
+    </template>
+    <template if:false={iconUrl}>
+        <div class="lightning-icon-container">
+            <lightning-icon icon-name="standard:address" size="small"></lightning-icon>                                    
+        </div>
+    </template>
+</template>
