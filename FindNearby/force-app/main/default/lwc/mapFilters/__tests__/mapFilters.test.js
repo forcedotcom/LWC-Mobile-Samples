@@ -30,8 +30,8 @@ describe('c-map-filters', () => {
                 label: 'Service Appointment',
                 latField: 'Latitude',
                 longField: 'Longitude',
-                majorField: 'AppointmentNumber',
-                secondField: 'Subject',
+                titleField: 'AppointmentNumber',
+                detailField: 'Subject',
                 fields: [
                     { value: 'a', label: 'A', type: 'STRING' },
                     { value: 'b', label: 'B', type: 'BOOLEAN' },
@@ -43,8 +43,8 @@ describe('c-map-filters', () => {
                 label: 'Asset',
                 latField: 'Latitude',
                 longField: 'Longitude',
-                majorField: 'Name',
-                secondField: 'Quantity'
+                titleField: 'Name',
+                detailField: 'Quantity'
             }
         ];
         element.currentObjectFilter = { value: 'ServiceAppointment', label: 'Service Appointment', plural: '', iconUrl: '', color: '' };

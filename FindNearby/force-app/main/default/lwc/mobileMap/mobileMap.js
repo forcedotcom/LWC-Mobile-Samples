@@ -102,12 +102,12 @@ export default class MobileMaps extends LightningElement {
         return this.currentMarker?.value?.title;
     }
 
-    get currentMarkerSecondFieldName() {
-        return this.currentMarker?.value?.secondFieldName;
+    get currentMarkerDetailFieldName() {
+        return this.currentMarker?.value?.detailFieldName;
     }
 
-    get currentMarkerSecondFieldValue() {
-        return this.currentMarker?.value?.secondFieldValue;
+    get currentMarkerDetailFieldValue() {
+        return this.currentMarker?.value?.detailFieldValue;
     }
 
     get currentMarkerIndexUi() {

@@ -4,15 +4,15 @@ export const config = {
             value: 'ServiceAppointment',
             latField: 'Latitude',
             longField: 'Longitude',
-            majorField: 'AppointmentNumber',
-            secondField: 'Subject'
+            titleField: 'AppointmentNumber',
+            detailField: 'Subject'
         },
         {
             value: 'Asset',
             latField: 'Latitude',
             longField: 'Longitude',
-            majorField: 'Name',
-            secondField: 'Quantity'
+            titleField: 'Name',
+            detailField: 'Quantity'
         }
     ],
     distanceUnit: 'km' // Preferred distance unit: km or mi

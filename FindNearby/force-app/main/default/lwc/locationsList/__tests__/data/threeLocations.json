@@ -4,7 +4,7 @@
         "value": {
             "id": "1234",
             "title": "marker1",
-            "secondFieldValue": "field2-1",
+            "detailFieldValue": "field2-1",
             "distance": "15 km"
         }
     },
@@ -13,7 +13,7 @@
         "value": {
             "id": "5678",
             "title": "marker2",
-            "secondFieldValue": "field2-2",
+            "detailFieldValue": "field2-2",
             "distance": "25 km"
         }
     },
@@ -22,7 +22,7 @@
         "value": {
             "id": "9123",
             "title": "marker3",
-            "secondFieldValue": "field2-3",
+            "detailFieldValue": "field2-3",
             "distance": "35 km"
         }
     }

@@ -31,8 +31,8 @@ public with sharing class MobileMapLayersServiceTest {
             tempList.put('Id', sr.Id);
             tempList.put('Latitude', String.valueOf(sr.LastKnownLatitude));
             tempList.put('Longitude', String.valueOf(sr.LastKnownLongitude));
-            tempList.put('MajorField', sr.Name);
-            tempList.put('SecondField', sr.RelatedRecordId);
+            tempList.put('TitleField', sr.Name);
+            tempList.put('DetailField', sr.RelatedRecordId);
             locations.add(tempList);
 
             List<Map<String, String>> result = MobileMapLayersService.getObjectLocations(

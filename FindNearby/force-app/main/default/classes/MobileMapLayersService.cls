@@ -19,7 +19,7 @@ public with sharing class MobileMapLayersService {
     }
 
     @AuraEnabled(cacheable=false)
-    public static List<Map<String, String>> getObjectLocations(String value, String latField, String longField, String majorField, String secondField) {
+    public static List<Map<String, String>> getObjectLocations(String value, String latField, String longField, String titleField, String detailField) {
         try {
             List<Map<String, String>> locations = new List<Map<String, String>>();
 
@@ -27,11 +27,11 @@ public with sharing class MobileMapLayersService {
             if (!isSafeObject(value) ||
                 !isSafeField(value, latField.toLowerCase()) ||
                 !isSafeField(value, longField.toLowerCase()) ||
-                !isSafeField(value, majorField.toLowerCase()) ||
-                !isSafeField(value, secondField.toLowerCase()))
+                !isSafeField(value, titleField.toLowerCase()) ||
+                !isSafeField(value, detailField.toLowerCase()))
                 return locations;
 
-            List<String> params = new List<String>{ latField, longField, majorField, secondField, value };
+            List<String> params = new List<String>{ latField, longField, titleField, detailField, value };
             List<sObject> records = Database.Query(String.format('SELECT {0}, {1}, {2}, {3} FROM {4} WHERE {0} != null and {1} != null', params));
             Map<String, String> tempList;
             for (sObject rec : records) {
@@ -39,8 +39,8 @@ public with sharing class MobileMapLayersService {
                 tempList.put('Id', rec.Id);
                 tempList.put('Latitude', String.valueOf(rec.get(latField)));
                 tempList.put('Longitude', String.valueOf(rec.get(longField)));
-                tempList.put('MajorField', String.valueOf(rec.get(majorField)));
-                tempList.put('SecondField', String.valueOf(rec.get(secondField)));
+                tempList.put('TitleField', String.valueOf(rec.get(titleField)));
+                tempList.put('DetailField', String.valueOf(rec.get(detailField)));
                 locations.add(tempList);
             }
             return locations;

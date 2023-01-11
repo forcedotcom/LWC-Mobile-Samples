@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "mobile-map-layers",
+  "name": "FindNearby",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com/",
   "sourceApiVersion": "55.0"

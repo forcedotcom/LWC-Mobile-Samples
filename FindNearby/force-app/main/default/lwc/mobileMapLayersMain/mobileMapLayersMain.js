@@ -74,7 +74,7 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
 
     async addAllObjectsLocations(obj) {
         try {
-            let secondaryFieldLabel = obj.fields?.find(f => f.value === obj.secondField.toLowerCase())?.label;
+            let detailFieldLabel = obj.fields?.find(f => f.value === obj.detailField.toLowerCase())?.label;
             const records = await getObjectLocations(obj);
             records?.forEach((rec) => {
                 this.createMarker(
@@ -84,9 +84,9 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
                     rec.Longitude,
                     obj.iconUrl,
                     obj.color,
-                    rec.MajorField,
-                    secondaryFieldLabel,
-                    rec.SecondField
+                    rec.TitleField,
+                    detailFieldLabel,
+                    rec.DetailField
                 );
             });
         } catch(error) {
@@ -96,7 +96,7 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
 
     // Markers
     
-    createMarker(type, id, latitude, longitude, iconUrl, color, title, secondFieldName, secondFieldValue) {
+    createMarker(type, id, latitude, longitude, iconUrl, color, title, detailFieldName, detailFieldValue) {
         const navUrl = `com.salesforce.fieldservice://v1/sObject/${id}/details`;
         const routeUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}&travelmode=driving`;
         const distance = this.getDistanceFromEng(latitude, longitude);
@@ -104,7 +104,7 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
         const marker = {
             location: { Latitude: latitude, Longitude: longitude },
             mapIcon: this.getMarkerSVG(color),
-            value: { type, id, iconUrl, color, title, secondFieldName, secondFieldValue, navUrl, routeUrl, distance }
+            value: { type, id, iconUrl, color, title, detailFieldName, detailFieldValue, navUrl, routeUrl, distance }
         };
         this.addToMarkers(marker);
     }
