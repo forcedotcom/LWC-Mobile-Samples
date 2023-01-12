@@ -1,5 +1,4 @@
 node_modules
-.markdownlint.json
 **/.sfdx/**
 **/LwcTestApp/app/build/**
 **/LwcTestApp/Assets.xcassets/**
