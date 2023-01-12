@@ -1,0 +1,75 @@
+<template>
+    <template if:true={showAssignmentMethodToggle}>
+        <div>
+            <c-mobile-appointment-booking-resource-assignment
+            current-assignment-method={currentAssignmentMethod}
+            user-name={userName}
+            selecteddate={selectedDate}
+            is-excluded={isExcluded}
+            >
+    
+            </c-mobile-appointment-booking-resource-assignment>
+        </div>
+    </template>
+    <div class="calendarView" data-id="calendar">
+        <c-aa-rebooking-calendar class="calendarInfo"
+            ondateselection = {onDateSelected}
+            onweekchangeevent = {onWeekChangeEvent}
+            selecteddate = {selectedDate} 
+            maxvaliddate = {maxValidCalendarDate}
+            nonavailabledates = {nonAvailableDateArray} 
+            appointment-date = {SchedStartTime} >
+        </c-aa-rebooking-calendar>
+    </div>
+    
+    <c-mobile-appointment-booking-slots-container 
+        page-title={allAppointmentsTitle}
+        showexactarrivaltime = {showExactArrivalTime} 
+        shownoofdaysbeforeafterweek = {noOfDaysBeforeAfterWeek}
+        selecteddate = {selectedDate}
+        maxvaliddate = {maxValidCalendarDate}
+        onslotselection = {onSlotSelection}
+        oncustomeventcalled = {onCustomEventCalled}
+        timeslotobject = {timeSlotObject}
+        >
+    </c-mobile-appointment-booking-slots-container >
+
+    
+    <template if:true ={show_confirmBtnLayout}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open modal">
+            <div class="" style="width:100%">
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    
+                    <lightning-layout horizontal-align="left" class="modal-title-container">
+                        <lightning-layout-item alignment-bump="left" >
+                            <div class="acceptNewAptTitle">{LABELS.Appointment_ReBooking_new_appointment_msg}</div> 
+                        </lightning-layout-item>
+                        <lightning-layout-item alignment-bump="left" >
+                            <div class="slds-current-color acceptNewAptClose">
+                                <lightning-button-icon variant="bare" class="slds-size_medium" icon-name="utility:close"  
+                                        title="Cancel" onclick={handleConfirmBtnClose} >
+                                </lightning-button-icon>
+                            </div>
+                        </lightning-layout-item >
+                    </lightning-layout>
+    
+                    <div class="divInfo">
+                        <div class="head-line-work-type-name">{worktypename}</div>
+                        <div class="headlineDate">{newAppointmentDate}</div>
+                        <div class="secondary-info">{appointmentNumber}</div>
+                        <div class="secondary-info">{assignToName} </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button title={LABELS.Appointment_ReBooking_accept_new_appointment_button} 
+                            onclick={handleConfirm} class="slds-button slds-button_brand confirmBtn">
+                            {LABELS.Appointment_ReBooking_accept_new_appointment_button}
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

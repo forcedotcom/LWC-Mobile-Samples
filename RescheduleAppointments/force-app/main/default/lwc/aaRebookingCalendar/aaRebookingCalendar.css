@@ -1,0 +1,167 @@
+.selectedDay {
+    border-radius: 50%;
+    color: #FFFF;
+    height: 32px;
+    width: 32px;
+    background-color: #0D7FA8 !important;
+}
+.unselectedDay {
+    color: rgb(43, 40, 38);
+    height: 32px;
+    width: 32px;
+}
+.blockDate {
+    color: rgb(201, 199, 197);
+    height: 32px;
+    width: 32px;
+}
+.currentDay {
+    color: rgba(1,1,1,1);
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    border: 1px solid rgba(1,1,1,1) !important;
+
+}
+.currentDayBlocked {
+    color: rgb(201, 199, 197);
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    border: 1px solid rgba(159, 170, 181, 0.5) !important;
+    background-color: #EEEEEE !important;
+
+}
+.btn {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    background-color: inherit;
+    padding: 0px;
+    margin-top: 6px;
+    height: 32px;
+    width: 32px;
+}
+.monthButton{
+    height: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.38px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    --slds-c-button-text-color: #0D7FA8;
+}
+.full-calendar-month-button{
+    height: 21px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    margin: 16px;
+}
+tr {
+    text-align: center;
+}
+td {
+    text-align: center;
+    box-sizing: initial;
+    color: rgb(0, 112, 210);
+    height: 44px;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: -0.38px;
+}
+th {
+    text-align: center;
+    box-sizing: initial;
+    color: rgb(112, 110, 107);
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: -0.08px;
+    line-height: 18px;
+    width: 44px;
+}
+.table{
+    font-size: medium;
+    vertical-align: middle;
+} 
+*:focus {
+    outline: none;
+}
+.rightButton{ 
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+    color: rgb(106, 106, 106);
+}
+.leftButton{
+    margin-left: 0px;
+    margin-right: 38px;
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+    color: rgb(106, 106, 106);
+}
+.slds-popover{
+    z-index: 9000;
+}
+.modal {
+    width: 99%;
+    height: 100%;
+}
+.breakLine {
+    margin: 0;
+    margin: 16px 0;
+}
+.full-calendar-close-btn{
+    --lwc-colorTextIconDefault: #0D7FA8;
+}
+.select-a-date-title{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+}
+.modal-footer{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+    height: 80px;
+    border-radius: 0px;
+    flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;
+    border-top: 1px solid rgba(159, 170, 181, 0.5);
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    z-index: 100;
+    padding-bottom: 24px;
+}
+.confirmBtn {
+    width: 100%;
+    left: 50%;
+    -ms-transform: translate(-50%,0%);
+    transform: translate(-50%,0%);
+    height: 50px;
+    font-size: 16px;
+    border-radius: 12px;
+    background-color: #0D7FA8;
+    font-weight: 600;
+}
+.dialogContainer{
+    padding-bottom: 0;
+}
+@media screen and (orientation:landscape) { 
+    .slds-modal__container{
+        height: 130vh !important;
+    } 
+}

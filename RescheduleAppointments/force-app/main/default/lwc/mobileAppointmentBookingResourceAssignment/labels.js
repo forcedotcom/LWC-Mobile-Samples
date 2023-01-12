@@ -1,0 +1,13 @@
+import Appointment_ReBooking_cant_select_Mobile_Worker_excluded from '@salesforce/label/c.Appointment_ReBooking_cant_select_Mobile_Worker_excluded';
+import Appointment_ReBooking_Mobile_Worker_radio_title from '@salesforce/label/c.Appointment_ReBooking_Mobile_Worker_radio_title';
+import Appointment_ReBooking_Mobile_Worker_radio_assignToMe_lable from '@salesforce/label/c.Appointment_ReBooking_Mobile_Worker_radio_assignToMe_lable';
+import Appointment_ReBooking_Mobile_Worker_radio_assignToAnyAvailable_lable from '@salesforce/label/c.Appointment_ReBooking_Mobile_Worker_radio_assignToAnyAvailable_lable';
+
+const customLabels = {
+    Appointment_ReBooking_cant_select_Mobile_Worker_excluded,
+    Appointment_ReBooking_Mobile_Worker_radio_title,
+    Appointment_ReBooking_Mobile_Worker_radio_assignToMe_lable,
+    Appointment_ReBooking_Mobile_Worker_radio_assignToAnyAvailable_lable
+}
+
+export default customLabels;

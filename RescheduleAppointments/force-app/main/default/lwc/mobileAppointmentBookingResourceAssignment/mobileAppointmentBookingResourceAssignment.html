@@ -1,0 +1,22 @@
+<template>
+    <div class="container">
+        <div class="title">{resourceAssignmentTitle}</div>
+        <div class="separator"></div>
+        <template if:true={showExcludedMsg}>
+            <div class="mobile-worker-content">{excludedMsg}</div>
+        </template>
+        <template if:false={showExcludedMsg}>
+            <div>
+                <lightning-radio-group name="resourceAssignment"
+                          label=""
+                          options={options}
+                          value={value}
+                          type="radio"
+                          onchange={handleAssignmentMethodChange}
+                          >
+                </lightning-radio-group>
+            </div>
+        </template>
+    </div>
+    
+</template>

@@ -1,0 +1,30 @@
+/*host {
+   --slds-c-form-element--lable-font-size: var(30px); 
+}*/
+.container{
+    background-color: white;
+    margin: 10px 0;
+    padding: 13px 16px;
+}
+.title{
+    
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 600;
+    color: rgb(0,0,0);
+    margin-bottom: 13px;
+}
+
+.mobile-worker-content{
+    padding-top: 16px;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.separator{
+    height: 1px;
+    background-color: rgba(159, 170, 181, 0.5);
+    margin: 0 -16px;
+}
+
+
