@@ -1,0 +1,29 @@
+{
+    "name": "lwc-mobile-samples",
+    "private": true,
+    "version": "0.0.1",
+    "description": "LWC Mobile Samples",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/forcedotcom/LWC-Mobile-Samples"
+    },
+    "license": "CC0",
+    "scripts": {
+        "format": "prettier --check '**/*.{js,ts,json}'",
+        "format:fix": "prettier --write '**/*.{js,ts,json}'"
+    },
+    "devDependencies": {
+        "husky": "^8.0.2",
+        "lint-staged": "^13.1.0",
+        "prettier": "^2.8.2"
+    },
+    "dependencies": {},
+    "engines": {
+        "node": ">=16.13.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn lint-staged"
+        }
+    }
+}
