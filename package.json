@@ -10,7 +10,8 @@
     "license": "CC0",
     "scripts": {
         "format": "prettier --check '**/*.{js,ts,json}'",
-        "format:fix": "prettier --write '**/*.{js,ts,json}'"
+        "format:fix": "prettier --write '**/*.{js,ts,json}'",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "husky": "^8.0.2",
