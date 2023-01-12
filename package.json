@@ -1,0 +1,32 @@
+{
+    "name": "lwc-mobile-samples",
+    "private": true,
+    "version": "0.0.1",
+    "description": "LWC Mobile Samples",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/forcedotcom/LWC-Mobile-Samples"
+    },
+    "license": "MIT",
+    "scripts": {
+        "format": "prettier --check '**/*.{js,ts,json,md}'",
+        "format:fix": "prettier --write '**/*.{js,ts,json,md}'",
+        "lint:md": "markdownlint '**/*.md'",
+        "lint:mdfix": "markdownlint --fix '**/*.md'"
+    },
+    "devDependencies": {
+        "husky": "^8.0.2",
+        "lint-staged": "^13.1.0",
+        "markdownlint-cli": "^0.33.0",
+        "prettier": "^2.8.2"
+    },
+    "dependencies": {},
+    "engines": {
+        "node": ">=16.13.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn lint-staged"
+        }
+    }
+}

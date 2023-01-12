@@ -1,0 +1,13 @@
+{
+    "default": true,
+    "ignore_front_matter": true,
+    "whitespace": false,
+    "line-length": false,
+    "single-h1": false,
+    "no-emphasis-as-header": false,
+    "first-line-h1": false,
+    "no-duplicate-heading": false,
+    "no-bare-urls": false,
+    "ol-prefix" : false,
+    "no-inline-html": false
+}

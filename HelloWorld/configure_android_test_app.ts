@@ -15,10 +15,12 @@ exports.run = function () {
   const compileCommand =
     process.platform === "win32" ? "gradlew.bat build" : "./gradlew build";
 
-  childProcess
-    .execSync(`pushd ${expectedProjectPath} && ${compileCommand} && popd`, {
+  childProcess.execSync(
+    `pushd ${expectedProjectPath} && ${compileCommand} && popd`,
+    {
       stdio: ["ignore", "pipe", "pipe"]
-    });
+    }
+  );
 
   return expectedCompiledAppPath;
 };
