@@ -1,12 +1,12 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api } from "lwc";
 
 export default class ObjectIcon extends LightningElement {
-    @api iconUrl;
-    @api color;
+  @api iconUrl;
+  @api color;
 
-    connectedCallback() {}
+  connectedCallback() {}
 
-    get iconStyle() {
-        return `background-color: ${this.color}`;
-    }
+  get iconStyle() {
+    return `background-color: ${this.color}`;
+  }
 }

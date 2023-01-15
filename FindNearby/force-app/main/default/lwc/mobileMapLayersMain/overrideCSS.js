@@ -1,5 +1,4 @@
-export default
-`body {
+export default `body {
     overflow: hidden;
 }
 
