@@ -25,10 +25,10 @@ public with sharing class MobileMapLayersService {
 
             // verify object and fields are valid and accessible
             if (!isSafeObject(value) ||
-                !isSafeField(value, latField.toLowerCase()) ||
-                !isSafeField(value, longField.toLowerCase()) ||
-                !isSafeField(value, titleField.toLowerCase()) ||
-                !isSafeField(value, detailField.toLowerCase()))
+                !isSafeField(value, latField) ||
+                !isSafeField(value, longField) ||
+                !isSafeField(value, titleField) ||
+                !isSafeField(value, detailField))
                 return locations;
 
             List<String> params = new List<String>{ latField, longField, titleField, detailField, value };
@@ -115,7 +115,7 @@ public with sharing class MobileMapLayersService {
 
             // verify object and fields are valid and accessible
             if (!isSafeObject(currentObjectFilter) ||
-                !isSafeField(currentObjectFilter, fieldName.toLowerCase()))
+                !isSafeField(currentObjectFilter, fieldName))
                 return results;
 
             // sanitize input: cast and escape quotes
@@ -162,8 +162,9 @@ public with sharing class MobileMapLayersService {
         return myObj.getDescribe().isAccessible();
     }
 
-    private static boolean isSafeField(String objName, String fieldName){
-        if (isSafeObject(objName)) {
+    private static boolean isSafeField(String objName, String fieldName){ 
+        if (isSafeObject(objName) && fieldName != null) {
+            fieldName = fieldName.toLowerCase();
             SObjectType myObj = Schema.getGlobalDescribe().get(objName);
             SObjectField myField = myObj.getDescribe().fields.getMap().get(fieldName);
             return myField.getDescribe().isAccessible();
