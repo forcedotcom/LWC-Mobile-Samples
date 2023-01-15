@@ -12,11 +12,10 @@ exports.run = function () {
     "../apps/ios/LwcTestApp/build/Debug-iphonesimulator/LwcTestApp.app"
   );
 
-  childProcess
-    .execSync(
-      `xcodebuild build -project ${expectedProjectPath} -configuration Debug -sdk iphonesimulator`,
-      { stdio: ["ignore", "pipe", "pipe"] }
-    );
+  childProcess.execSync(
+    `xcodebuild build -project ${expectedProjectPath} -configuration Debug -sdk iphonesimulator`,
+    { stdio: ["ignore", "pipe", "pipe"] }
+  );
 
   return expectedCompiledAppPath;
 };
