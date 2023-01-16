@@ -56,7 +56,7 @@ export default class ImageCapture extends LightningElement {
   }
 
   get shouldShowToast() {
-    return this.toastType == null ? false : true;
+    return this.toastType != null;
   }
 
   hideToast() {
