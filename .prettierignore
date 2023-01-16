@@ -1,0 +1,4 @@
+node_modules
+**/.sfdx/**
+**/LwcTestApp/app/build/**
+**/LwcTestApp/Assets.xcassets/**
