@@ -1,5 +1,4 @@
-export default
-`
+export default `
 .slds-form-element__control .slds-radio, .slds-form-element__control .slds-checkbox {
     margin-top: 17px;
     margin-bottom: 17px;
