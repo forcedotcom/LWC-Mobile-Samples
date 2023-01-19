@@ -18,7 +18,6 @@ import Appointment_ReBooking_WeekDayLong_Thursday from "@salesforce/label/c.Appo
 import Appointment_ReBooking_WeekDayLong_Friday from "@salesforce/label/c.Appointment_ReBooking_WeekDayLong_Friday";
 import Appointment_ReBooking_WeekDayLong_Saturday from "@salesforce/label/c.Appointment_ReBooking_WeekDayLong_Saturday";
 import Appointment_ReBooking_WeekDayLong_Sunday from "@salesforce/label/c.Appointment_ReBooking_WeekDayLong_Sunday";
-//import Appointment_ReBooking_today_text from '@salesforce/label/c.Appointment_ReBooking_today_text';
 
 const customLabels = {
   Appointment_ReBooking_MonthName_January,

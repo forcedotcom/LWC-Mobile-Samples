@@ -77,65 +77,6 @@ public without sharing class AppointmentController {
     }
 
     @AuraEnabled()
-    public static String getServiceAppointmentByFieldsList(String serviceAppointmentId, String serviceAppointmnetFields){
-        List<sObject> queryresult = new List<SObject>();
-        String result= '';
-        try{
-
-            System.debug('serviceAppointmnetFields:::' + serviceAppointmnetFields);
-            List<String> fieldsJson = (List<String>)JSON.deserialize(serviceAppointmnetFields, List<String>.class);
-            
-            String fields = createAppointmentQueryFields(fieldsJson);
-            String soqlquery = 'SELECT '+ fields + ' FROM ' + 'ServiceAppointment' + ' WHERE ID =:' + serviceAppointmentId;
-            //check alphanumeric + _ 
-            queryresult = Database.query(soqlquery);
-            result = JSON.serialize(queryresult);
-            System.debug('Get SA Result'+ queryresult);
-            
-            //return queryresult[0];
-
-        } catch(Exception e){
-            System.debug('Error getServiceAppointmentByFieldsList'+ e);
-        }
-
-        return result;
-        
-
-    }
-
-    private static String createAppointmentQueryFields(List<String> serviceAppointmnetFields){
-        List<String> defaultFields = new List<String>{
-            'Id',
-            'Contact.FirstName', 
-            'Contact.LastName', 
-            'Contact.Phone', 
-            'Status', 
-            'Address', 
-            'WorkType.Name', 
-            'Subject',
-            'EarliestStartTime',
-            'ArrivalWindowStartTime',
-            'ArrivalWindowEndTime',
-            'SchedStartTime',
-            'SchedEndTime',
-            'DueDate',
-            'Description',
-            'ServiceNote',
-            'WorkTypeId',
-            'AppointmentNumber'
-        };
-
-        Set<String> allFields = new Set<String>(defaultFields);      
-        allFields.addAll(serviceAppointmnetFields);
-        List<String> fieldsList = new List<String>();
-        fieldsList.addAll(allFields);
-
-        String fieldsStr = String.join( fieldsList, ', ' ); 
-
-        return  fieldsStr;
-    }
-
-    @AuraEnabled()
     public static Map<String, Object> getSlots(
         String serviceAppointmentId,
         Id operatingHoursId,
@@ -186,7 +127,6 @@ public without sharing class AppointmentController {
                 List<String> timeSlotRange = new List<String>();
     
                 for(integer i=0; i<timeSlots.size(); i++) {
-                    System.debug('Time slots are : '+timeSlots[i].Interval.Start+'#'+ timeSlots[i].Interval.Finish);
                     timeSlotRange.add(timeSlots[i].Interval.Start+'#'+ timeSlots[i].Interval.Finish+'#'+(timeSlots[i].Grade).longValue());
                 }
                 slotsList.put('timeSlotList', timeSlotRange);     
@@ -196,7 +136,6 @@ public without sharing class AppointmentController {
             }
             return slotsList;
         } catch (Exception e) {
-            System.debug(e.getMessage());
             slotsList.put('error', ''+e.getMessage());
             return slotsList;
         }
@@ -218,17 +157,6 @@ public without sharing class AppointmentController {
             if(currentAssignmentMethod == 'assignToMe'){
                 assignCurrentUserAsRequiredResource(userId, serviceAppointmentId);
             }
-            /*else if(currentAssignmentMethod == 'assignToAnyAvailable' && cleanupRequired == true){
-                //Cleanup previous required resource prefernces modifications created to enable assign to me
-                String workOrderId = [SELECT Id, ParentRecordId from ServiceAppointment WHERE Id =: serviceAppointmentId][0]?.ParentRecordId;
-                if(workOrderId != null){
-                    deleteExistingRequiredResources(workOrderId);
-                }
-                
-            }
-            else{
-                System.Debug('Error in getSlotsByAssignmentMethod::: Unfamiliar assignment method'  );
-            }*/
 
              return getSlots(serviceAppointmentId, operatingHoursId, schedulingPolicyId, arrivalWindowFlag, localetimezone);
         
@@ -249,12 +177,9 @@ public without sharing class AppointmentController {
                     assignCurrentUserAsRequiredResource(userId, serviceAppointmentId);
                 }
                 
-
-                System.debug('Service appointment is  : '+serviceAppointmentId);
                 FSL.ScheduleResult myResult = new FSL.ScheduleResult();
 
                 myResult = FSL.ScheduleService.schedule(schedulingPolicyId , serviceAppointmentId);
-                System.debug('FSL api result is : '+ myResult);
 
                 updateStatusArray.put('success',   '' + myResult);
                 
@@ -267,8 +192,6 @@ public without sharing class AppointmentController {
 
     @AuraEnabled()
     public static Map<String, String> updateSASlot(String serviceAppointmentId, DateTime arrivalWindowStartTime, DateTime arrivalWindowEndTime) {
-         // CALL to instrumentation api
-         // InstrumentationHelperController.initOperation(InstrumentationHelperController.FEATURE_NAME, InstrumentationHelperController.SUB_FEATURE_NAME_SSS, InstrumentationHelperController.SUB_FEATURE_NAME_SSS, 'SSS - updateSASlot()');
 
         Map<String, String> updateStatusArray = new Map<String, String>();
 
@@ -292,8 +215,6 @@ public without sharing class AppointmentController {
 
     @AuraEnabled()
     public static Map<String, String> updateServiceAppointmentStatus(String serviceAppointmentId, String statusId) {
-        // CALL to instrumentation api
-        // InstrumentationHelperController.initOperation(InstrumentationHelperController.FEATURE_NAME, InstrumentationHelperController.SUB_FEATURE_NAME_SSS, InstrumentationHelperController.SUB_FEATURE_NAME_SSS, 'SSS - updateServiceAppointmentStatus()');
 
         Map<String, String> updateStatusArray = new Map<String, String>();
 
@@ -330,7 +251,6 @@ public without sharing class AppointmentController {
                     sa.ArrivalWindowStartTime = arrivalStartDate;
                     
                     update sa;
-                    system.debug('Service appointment updated');
                     newSaArray.put('success', 'service appointment updated' );
                     
                 }
@@ -342,7 +262,6 @@ public without sharing class AppointmentController {
             }
 
         } catch (Exception e) {
-            System.debug(e.getMessage());
             newSaArray.put('error', ''+e.getMessage());
             return newSaArray;
         }
@@ -355,7 +274,6 @@ public without sharing class AppointmentController {
             List<ResourcePreference> requiredResourcePreferenceList = [SELECT Id, PreferenceType, RelatedRecordId, ServiceResourceId FROM ResourcePreference WHERE RelatedRecordId =: workOrderId  AND PreferenceType =: 'Required'];
             if(!requiredResourcePreferenceList.isEmpty()){
                 delete requiredResourcePreferenceList;
-                System.debug('deleted all existing required resources for work order:::' + workOrderId); 
             }
             
 
@@ -370,7 +288,6 @@ public without sharing class AppointmentController {
             List<ResourcePreference> resourcePreferenceList = [SELECT Id, PreferenceType, RelatedRecordId, ServiceResourceId FROM ResourcePreference WHERE RelatedRecordId =: workOrderId  AND ServiceResourceId =: serviceResourceId];
             if(!resourcePreferenceList.isEmpty()){
                 delete resourcePreferenceList;
-                System.debug('deleted existing resource preferences for service resource:::' + serviceResourceId); 
             }
             
 
@@ -392,8 +309,7 @@ public without sharing class AppointmentController {
                         ServiceResourceId = serviceResourceId
                         );
                 insert techReq;
-                        
-                System.debug('Added new required resource::: ' );
+
             }
             else if(existingResourcePreference[0].PreferenceType != 'Required'){
                 existingResourcePreference[0].PreferenceType= 'Required';
@@ -421,12 +337,10 @@ public without sharing class AppointmentController {
                 List<ResourcePreference> resourcePreferenceList = [SELECT Id, PreferenceType, RelatedRecordId, ServiceResourceId FROM ResourcePreference WHERE RelatedRecordId =: workOrderId AND PreferenceType =: 'Required'];
 
                 if(resourcePreferenceList != null && resourcePreferenceList.size() == 1){
-                    System.debug('Assigned ' + serviceResourceId + 'as required resource in ::: ' + workOrderId);
                     resultArray.put('success', serviceResourceId);
                     
                 }
                 else{
-                    System.debug('Could not assign ' + serviceResourceId + 'as required resource in::: ' + workOrderId);
                     resultArray.put('error', serviceResourceId);
                 }
                                                 
@@ -483,7 +397,7 @@ public without sharing class AppointmentController {
         String dummySA,
         String dummyWO
         ){
-        //Todo return error
+
         Map<String,String> results = new MAP<String,String>();
         //DateTime dueDate = startPermitDate + selectedHorizonValue;
 
@@ -539,10 +453,8 @@ public without sharing class AppointmentController {
                     //Clone resource preference list
                     String workOrderId = [SELECT Id, ParentRecordId from ServiceAppointment WHERE Id =: originalSAId][0]?.ParentRecordId;
 
-                    System.debug('cloning resource refernce :::' + workOrderId + newWOId); 
                     cloneResourcePreference(workOrderId, newWOId);
 
-                    System.debug('Returning cloned results:::' + sa.Id + newWOId);
                     results.put('dummyServiceAppointmentId', sa.Id);
                     results.put('dummyWorkOrderId', newWOId);
                     
@@ -552,7 +464,6 @@ public without sharing class AppointmentController {
             return results;
             
         }catch (Exception e) {
-            System.debug('Error in clone work order:::' + e.getMessage() + e.getLineNumber());
             results.put('error', 'Error in clone work order:::' + e.getMessage() + e.getLineNumber());
             return results;
         }   
@@ -582,7 +493,6 @@ public without sharing class AppointmentController {
             if(workOrder != null){
                 delete workOrder;
 
-                System.debug('Deleted ClonedWorkOrder::: ' + workOrder.Id);
                 return workOrder.Id;
             }
             else{
@@ -682,7 +592,6 @@ public without sharing class AppointmentController {
                     
                     results.put('said', sa.Id);
 
-                    System.debug('updated earliest start time for existing dummySa :::' + sa.Id);
                 }
                 else{
                     results.put('error', 'Could not find dummySa');
@@ -752,18 +661,13 @@ public without sharing class AppointmentController {
         Map<String, DateTime> detailArray = new Map<String, DateTime>();
         // Source Timezone 
         TimeZone tz = Timezone.getTimeZone(sourceTimezone);
-        System.debug('Display name: ' + tz.getDisplayName());
-        System.debug('ID: ' + tz.getID());
-        
+     
         Integer offset = tz.getOffset(date1);
-        System.debug('Offset: ' + offset/ (1000 * 60));
 
         Integer offset2 = tz.getOffset(date2);
-        System.debug('Offset: ' + offset2/ (1000 * 60));
         
         // target Timezone.
         TimeZone targetTZ = Timezone.getTimeZone(targetTimezone);
-        System.debug('Display name: ' + targetTZ.getDisplayName());
         
         // Date 1
         integer offsetTotargetTZ = targetTZ.getOffset(date1);

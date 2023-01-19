@@ -229,12 +229,6 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
       }
     }
 
-    // // SORT THE ARRAY
-    // timeSlotNewArray.sort(function(a, b) {
-    //     var c = new Date(a.date);
-    //     var d = new Date(b.date);
-    //     return c-d;
-    // });
     return timeSlotNewArray;
   }
 
@@ -278,7 +272,6 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     for (let i = 0; i < dateWiseSlotArray.length; i++) {
       var date = new Date(dateWiseSlotArray[i].date);
       if (this.lastDayOfTheWeek >= date && this.firstDayOfTheWeek <= date) {
-        //console.log("Dates are in range : "+date);
         newSortedArray.push(dateWiseSlotArray[i]);
       } else {
       }
@@ -289,17 +282,14 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
 
   addNonAvailableSlotsToList(newSortedArray) {
     this.nonAvailableDateArray = [];
-    //console.log("addNonAvailableSlotsToList called for : ");
     var loopDate = new Date(this.firstDayOfTheWeek);
     var currDate = this.getDateWithoutTime(Date.parse(new Date()));
 
     while (loopDate <= this.lastDayOfTheWeek) {
-      //console.log("Each date between for loop is : "+loopDate);
       var newDate = new Date(loopDate);
       var isIntheList = this.isInArray(newSortedArray, newDate);
 
       if (!isIntheList) {
-        //console.log("Each date between for loop is :  Adding non available date : "+newDate);
         let arr = [];
         arr["date"] = newDate;
         arr["title"] = this.formatTitle(newDate);
@@ -326,9 +316,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     this.nonAvailableDateArray = Array.from(
       new Set(this.nonAvailableDateArray)
     );
-    // for(let j=0; j< this.nonAvailableDateArray.length; j++) {
-    //     //console.log("Size of the array non available dates : "+this.nonAvailableDateArray[j]);
-    // }
+
     return newSortedArray;
   }
 
@@ -336,7 +324,6 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     for (var i = 0; i < array.length; i++) {
       var dateT = new Date(array[i].date).setHours(0, 0, 0, 0);
       if (value.getTime() == new Date(dateT).getTime()) {
-        //console.log("Compare the value : " + value.getTime() + "  another value : "+(new Date(dateT).getTime()));
         return true;
       }
     }
@@ -478,7 +465,6 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
         var offset = elementToShowLocation.top - 145; //gets the difference between user view and element view minus the calendar height
         if (!this.isWeekUpdated) {
           elementToShow.classList.add("headerBold");
-          //window.scrollBy({top: offset, behavior: 'smooth'});
         }
         this.previousElement = elementToShow;
       } catch (e) {

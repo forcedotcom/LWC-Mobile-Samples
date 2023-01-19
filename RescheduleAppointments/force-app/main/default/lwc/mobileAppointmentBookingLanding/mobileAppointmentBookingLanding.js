@@ -640,6 +640,9 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
           " Minvalid Calendar date : " +
           this.minValidCalendarDate
       );
+      if (loopdate < this.minValidCalendarDate) {
+        loopdate = this.minValidCalendarDate;
+      }
       if (loopdate >= this.minValidCalendarDate) {
         console.log("Run appointment query for  date " + loopdate);
 
