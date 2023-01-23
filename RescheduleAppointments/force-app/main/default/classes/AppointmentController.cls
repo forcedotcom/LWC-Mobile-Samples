@@ -84,7 +84,6 @@ public without sharing class AppointmentController {
         Boolean arrivalWindowFlag,
         String localetimezone
         ) {
-       
     
         Map<String, Object> slotsList = new Map<String, Object>();
         
@@ -121,7 +120,6 @@ public without sharing class AppointmentController {
                 timeZone,
                 arrivalWindowFlag
                 );
-
 
                 slotsList.put('list', timeSlots);
                 List<String> timeSlotRange = new List<String>();
@@ -276,7 +274,6 @@ public without sharing class AppointmentController {
                 delete requiredResourcePreferenceList;
             }
             
-
         } catch (Exception e) {
             throw new AuraHandledException('Error in deleteExistingRequiredResources:::' + e.getMessage());
         }
@@ -288,8 +285,7 @@ public without sharing class AppointmentController {
             List<ResourcePreference> resourcePreferenceList = [SELECT Id, PreferenceType, RelatedRecordId, ServiceResourceId FROM ResourcePreference WHERE RelatedRecordId =: workOrderId  AND ServiceResourceId =: serviceResourceId];
             if(!resourcePreferenceList.isEmpty()){
                 delete resourcePreferenceList;
-            }
-            
+            }            
 
         } catch (Exception e) {
             throw new AuraHandledException('Error in deleteExistingRequiredResources:::' + e.getMessage());
@@ -309,12 +305,13 @@ public without sharing class AppointmentController {
                         ServiceResourceId = serviceResourceId
                         );
                 insert techReq;
-
             }
+            
             else if(existingResourcePreference[0].PreferenceType != 'Required'){
                 existingResourcePreference[0].PreferenceType= 'Required';
                 update existingResourcePreference;
             }
+
         } catch (Exception e) {
             throw new AuraHandledException('Error in  addNewRequiredResource resource ' + serviceResourceId + ' : ' + e.getMessage());
         }
@@ -337,8 +334,7 @@ public without sharing class AppointmentController {
                 List<ResourcePreference> resourcePreferenceList = [SELECT Id, PreferenceType, RelatedRecordId, ServiceResourceId FROM ResourcePreference WHERE RelatedRecordId =: workOrderId AND PreferenceType =: 'Required'];
 
                 if(resourcePreferenceList != null && resourcePreferenceList.size() == 1){
-                    resultArray.put('success', serviceResourceId);
-                    
+                    resultArray.put('success', serviceResourceId);                   
                 }
                 else{
                     resultArray.put('error', serviceResourceId);
@@ -348,12 +344,10 @@ public without sharing class AppointmentController {
                 resultArray.put('error', serviceResourceId);
             }
 
-
             return resultArray;
 
         } catch (Exception e) {
-            throw new AuraHandledException('Error in assignCurrentUserAsRequiredResource:::' + e.getMessage());
-            
+            throw new AuraHandledException('Error in assignCurrentUserAsRequiredResource:::' + e.getMessage());         
         }        
     }
 
@@ -380,7 +374,6 @@ public without sharing class AppointmentController {
             }else{
                 results.put('error', false);
             }
-
            
         } catch (Exception e) {
              throw new AuraHandledException('Error in isUserExcludedResource:::' + e.getMessage() + ', ' + e.getLineNumber());
@@ -399,7 +392,6 @@ public without sharing class AppointmentController {
         ){
 
         Map<String,String> results = new MAP<String,String>();
-        //DateTime dueDate = startPermitDate + selectedHorizonValue;
 
         try {
             ServiceAppointment originalSa = [SELECT Id,
@@ -417,7 +409,6 @@ public without sharing class AppointmentController {
                                                 WHERE ID =: originalSaId
                                                 ][0];
 
-           //DateTime dueDate = startPermitDate + selectedHorizonValue; 
            DateTime dueDate = originalSa.DueDate;   
             if(dummySA != null){
                
@@ -456,8 +447,7 @@ public without sharing class AppointmentController {
                     cloneResourcePreference(workOrderId, newWOId);
 
                     results.put('dummyServiceAppointmentId', sa.Id);
-                    results.put('dummyWorkOrderId', newWOId);
-                    
+                    results.put('dummyWorkOrderId', newWOId);                    
                 }
             }
 
@@ -561,8 +551,7 @@ public without sharing class AppointmentController {
                     delete wo;
                     result.put('success', 'Sa: ' + sa.id + ' WO: ' + woid);
                 }
-                             
-                
+                                             
             }
             
             return result;
@@ -571,7 +560,6 @@ public without sharing class AppointmentController {
             return result;
         }
     }
-
     
     @AuraEnabled
     public static Map<String, String> updateDummySa(String dummySA, DateTime startPermitDate, DateTime dueDate, String serviceTerritoryId){
@@ -588,14 +576,12 @@ public without sharing class AppointmentController {
                     }
 
                     update sa;
-
-                    
+                   
                     results.put('said', sa.Id);
 
                 }
                 else{
                     results.put('error', 'Could not find dummySa');
-
                 }
 
                 return results;
@@ -606,8 +592,7 @@ public without sharing class AppointmentController {
             return results;
         }
     }
-
-    
+   
     @AuraEnabled
     public static string createNewDummyWorkOrder(String serviceTerritoryId, String workTypeId, String originalWOId){
         try {    
@@ -617,7 +602,6 @@ public without sharing class AppointmentController {
                 newWO.WorkTypeId = workTypeId;
             }
             
-
             Address originalAddress = [SELECT Address from WorkOrder WHERE Id =: originalWOId][0]?.Address;
             
             if(String.IsEmpty(ServiceTerritoryId) && originalAddress != null){
@@ -710,8 +694,7 @@ public without sharing class AppointmentController {
             } catch (Exception e) {
                 serviceAppointmentInfo.put('error', ''+ e);
             }
-            return serviceAppointmentInfo;
-        
+            return serviceAppointmentInfo;        
     }
 
     @AuraEnabled(cacheable=true)
@@ -727,6 +710,4 @@ public without sharing class AppointmentController {
        Id operatingHoursId  = [SELECT Id, Name FROM OperatingHours WHERE Name =: operatingHoursName LIMIT 1].Id;
         return operatingHoursId;
     }
-
-
 }

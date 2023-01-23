@@ -91,7 +91,6 @@ export default class AaRebookingCalendar extends LightningElement {
   set nonavailabledates(value) {
     if (value) {
       this.nonAvalableDates = value;
-      //console.log("non available dates updated : "+this.nonAvalableDates.length);
       this.setBlockDatesInWeekView(this.currentSelectedDate);
     }
   }
@@ -307,7 +306,6 @@ export default class AaRebookingCalendar extends LightningElement {
       monthArr["monthTitle"] = this.getYearMonthTitle(calendarSelectedDate);
       monthArr["weeks"] = noofWeeks;
       this.noOfMonths.push(monthArr);
-      //this.getCurrentDate();
     }
   }
 
@@ -403,7 +401,6 @@ export default class AaRebookingCalendar extends LightningElement {
               }
             }
             if (isValidDate) {
-              //this.handleDateSelectionEvent(selectedDate, false);
               this.previousSelectedDateByUser = this.selectedDateByUser; //Used for clicking on 'X' button
               this.selectedDateByUser = selectedDate;
             }
@@ -584,17 +581,6 @@ export default class AaRebookingCalendar extends LightningElement {
     }
   }
 
-  renderedCallback() {
-    // SWIPE LEFT AND RIGHT  // COMMENTED AFTER IMPLEMENTING THE BUTTONS
-    /*
-        var element = this.template.querySelector('[data-id="layoutId"]') ;
-        if(element) {
-            element.addEventListener('touchstart', evt => this.handleTouchStart(evt), false); 
-            element.addEventListener('touchmove', evt => this.handleTouchMove(evt), false);
-        }
-        */
-    //this.template.querySelector('[data-id="layoutId"]').addEventListener('touchend', evt => this.handleTouchStop(evt), false);
-  }
   xDown = null;
   yDown = null;
 
@@ -603,13 +589,6 @@ export default class AaRebookingCalendar extends LightningElement {
     this.yDown = evt.touches[0].clientY;
     console.log("Touch : Start : " + this.xDown);
   }
-
-  // handleTouchStop(evt) {
-
-  //     this.xDown = evt.touches[0].clientX;
-  //     this.yDown = evt.touches[0].clientY;
-  //     console.log("Touch : End : "+this.xDown);
-  // };
 
   handleTouchMove(evt) {
     if (!this.xDown || !this.yDown) {
@@ -622,18 +601,15 @@ export default class AaRebookingCalendar extends LightningElement {
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
       /*most significant*/
-      //console.log("Swipe : X value is : "+xDiff);
       if (xDiff > 0) {
         /* left swipe */
-        //this.handlePreviousButtonClick();
         console.log("Swipe : left");
-        //alert("Swipe left");
+
         if (!this.isRightSwipeDisable) {
           this.handleNextButtonClick();
         }
       } else {
         /* right swipe */
-        //this.handleNextButtonClick();
         console.log("Swipe : right");
         if (!this.isLeftSwipeDisable) {
           this.handlePreviousButtonClick();
@@ -650,14 +626,4 @@ export default class AaRebookingCalendar extends LightningElement {
     this.xDown = null;
     this.yDown = null;
   }
-
-  /* maxvaliddate = new Date("Fri Sep 24 2027 19:14:17 GMT+0300");
-
-    selecteddate = new Date();
-
-    onslotselection = ()=> {
-        console.log('selected')
-    }
-    //oncustomeventcalled = {onCustomEventCalled}
-    timeslotobject = {}*/
 }

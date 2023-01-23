@@ -188,7 +188,6 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
     this._currentAssignmentMethod = value;
 
     if (this.userName) {
-      //if we already got the name from apex
       this.setAssigNameByAssignMethod();
     }
   }
@@ -395,7 +394,6 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
 
   setAssigNameByAssignMethod() {
     if (this._currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
-      //"Assigned to You (userName)"
       this.assignToName =
         this.LABELS.Appointment_ReBooking_assigned_to_you.replace(
           "{0}",

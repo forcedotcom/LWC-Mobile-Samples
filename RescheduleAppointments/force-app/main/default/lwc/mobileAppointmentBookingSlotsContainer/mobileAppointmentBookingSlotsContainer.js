@@ -306,7 +306,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
       var newDate = loopDate.setDate(loopDate.getDate() + 1);
       loopDate = new Date(newDate);
     }
-    // SORT THE ARRAY
+
     newSortedArray.sort(function (a, b) {
       var c = new Date(a.date);
       var d = new Date(b.date);
@@ -359,7 +359,6 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   }
 
   getTimeFromDate(date) {
-    //var tempDate = new Date((date.replace(/ /g,"T") + '.000Z')); //turn slots to local time zone
     var tempDate = new Date(date.replace(/ /g, "T"));
     var hours = tempDate.getHours();
     var minutes = tempDate.getMinutes();

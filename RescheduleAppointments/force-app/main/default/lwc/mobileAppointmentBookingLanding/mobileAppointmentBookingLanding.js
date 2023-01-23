@@ -871,8 +871,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
                     console.log(
                       "Service appointment Scheduled : " + JSON.stringify(data)
                     );
-                    //this.handleButtonClickEvent('rescheduleSAsuccess');
-                    //this.executeRescheduleAppointmentQuery();
+
                     this.handleShowToast(
                       "success",
                       this.LABELS
@@ -933,8 +932,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
       this.allowScrolling();
       console.log("Invalid date time ");
     }
-
-    //this.cleanupClonedAppointments();
   };
 
   isValidDate(d) {

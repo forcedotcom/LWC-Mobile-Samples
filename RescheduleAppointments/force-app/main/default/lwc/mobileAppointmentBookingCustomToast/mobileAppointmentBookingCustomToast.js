@@ -20,7 +20,7 @@ export default class MobileAppointmentBookingCustomToast extends LightningElemen
         this.toastClass = ERROR_CLASS;
       }
     }
-    //this.showToast = true;
+
     setTimeout(() => {
       this.handleCloseToastEvent();
     }, 5000);
