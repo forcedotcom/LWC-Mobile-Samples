@@ -52,10 +52,6 @@
         </lightning-layout>
         <hr class="breakLine">
         <lightning-layout class="tableLayout">
-            <!-- <lightning-layout-item class="leftRightButtons">
-                <lightning-button-icon variant="bare" icon-name="utility:chevronleft" id="previousBtnId" title="previous" onclick={handleClick} size="large" class="leftRightButtons" disabled= {isLeftSwipeDisable} ></lightning-button-icon>
-            </lightning-layout-item> -->
-
             <lightning-layout-item data-id="layoutId">
                 <span>
                     <div class="slds-card__body">
@@ -76,46 +72,35 @@
                                                 <template if:false={day.selected}>
                                                     <template if:false={day.currentDay}>
                                                         <template if:false={day.blocked}>
-                                                            <button class="btn unselectedDay">
-                                                                {day.date}
-                                                            </button>
+                                                            <button class="btn unselectedDay" label={day.date}>{day.date}</button>
                                                         </template>
                                                     </template>
                                                 </template>
 
                                                 <template if:true={day.blocked}>
                                                     <template if:false={day.currentDay}>
-                                                            <button class="btn blockDate">
-                                                                {day.date}
-                                                            </button>
+                                                            <button class="btn blockDate" label={day.date}>{day.date}</button>
                                                     </template>
                                                 </template>
                                                 
                                                 <template if:true={day.selected}>
                                                     <template if:false={day.blocked}>
-                                                    <button class="btn selectedDay">
-                                                        {day.date}
-                                                    </button>
+                                                    <button class="btn selectedDay" label={day.date}>{day.date}</button>
                                                     </template>
                                                 </template>
 
                                                 <template if:true={day.currentDay}>
                                                     <template if:false={day.selected}>
                                                         <template if:false={day.blocked}>
-                                                            <button class="btn currentDay">
-                                                                {day.date}
-                                                            </button>
+                                                            <button class="btn currentDay" label={day.date}>{day.date}</button>
                                                         </template>
                                                     </template>
                                                 </template>
                                                 <template if:true={day.currentDay}>
                                                     <template if:true={day.blocked}>
-                                                        <button class="btn currentDayBlocked">
-                                                            {day.date}
-                                                        </button>
+                                                        <button class="btn currentDayBlocked" label={day.date}>{day.date}</button>
                                                     </template>
                                                 </template>
-
                                             </td>
                                         </template>
                                     </tr>
@@ -126,9 +111,6 @@
                 </span>
             </lightning-layout-item >
             
-            <!-- <lightning-layout-item class="leftRightButtons"> 
-                <lightning-button-icon variant="bare" icon-name="utility:chevronright" id="nextBtnId" title="next" onclick={handleClick} size="large" class="leftRightButtons" disabled= {isRightSwipeDisable}></lightning-button-icon>
-            </lightning-layout-item> -->
         </lightning-layout>
         <hr class="breakLine">
     </template>
@@ -145,7 +127,7 @@
                             <lightning-layout-item alignment-bump="left" >
                                 <div class="slds-current-color full-calendar-close-btn">
                                     <lightning-button-icon variant="bare" class="slds-size_medium" icon-name="utility:close"  
-                                            title="Cancel" onclick={handleClick} >
+                                            title="Cancel" onclick={handleClick} aria-label="Cancel">
                                     </lightning-button-icon>
                                 </div>
                             </lightning-layout-item >
@@ -156,7 +138,7 @@
                         <lightning-layout horizontal-align="right" key={month}>
                             <lightning-layout-item alignment-bump="right" >
                                 <span>
-                                    <div title={month.monthTitle} onclick={handleClick} class="full-calendar-month-button">
+                                    <div title={month.monthTitle} onclick={handleClick} class="full-calendar-month-button" aria-label={month.monthTitle}>
                                         {month.monthTitle}
                                     </div>
                                 </span>
@@ -178,18 +160,14 @@
                                                 <template for:each={week} for:item="day">
                                                     <td key={day.date} id={day.date} data-id={day.value} title="monthViewDateId" onclick={handleClick} >
                                                         <template if:false={day.isValidDate}>
-                                                            <button id={day.date} class="btn blockDate">
-                                                                {day.date}
-                                                            </button>
+                                                            <button id={day.date} class="btn blockDate" label={day.date}>{day.date}</button>
                                                         </template>
 
                                                         <template if:true={day.isValidDate}>
                                                             <template if:false={day.selected}>
                                                             <template if:false={day.currentDay}>
                                                                 <template if:false={day.blocked}>
-                                                                    <button class="btn unselectedDay">
-                                                                        {day.date}
-                                                                    </button>
+                                                                    <button class="btn unselectedDay" label={day.date}>{day.date}</button>
                                                                 </template>
                                                             </template>
                                                         </template>
@@ -197,33 +175,25 @@
                                                         <template if:true={day.blocked}>
                                                             <template if:false={day.currentDay}>
                                                                 <template if:false={day.selected}>
-                                                                    <button class="btn blockDate">
-                                                                        {day.date}
-                                                                    </button>
+                                                                    <button class="btn blockDate" label={day.date}>{day.date}</button>
                                                                 </template>
                                                             </template>
                                                         </template>
                                                         
                                                         <template if:true={day.selected}>
-                                                            <button class="btn selectedDay">
-                                                                {day.date}
-                                                            </button>
+                                                            <button class="btn selectedDay" label={day.date}>{day.date}</button>
                                                         </template>
         
                                                         <template if:true={day.currentDay}>
                                                             <template if:false={day.selected}>
                                                                 <template if:false={day.blocked}>
-                                                                    <button class="btn currentDay">
-                                                                        {day.date}
-                                                                    </button>
+                                                                    <button class="btn currentDay" label={day.date}>{day.date}</button>
                                                                 </template>
                                                             </template>
                                                         </template>
                                                         <template if:true={day.currentDay}>
                                                             <template if:true={day.blocked}>
-                                                                <button class="btn currentDayBlocked">
-                                                                    {day.date}
-                                                                </button>
+                                                                <button class="btn currentDayBlocked" label={day.date}>{day.date}</button>
                                                             </template>
                                                         </template>
                                                         </template>
@@ -235,11 +205,10 @@
                                 </table>
                             </div>
                         </span>
-                        <!--<hr key={month}>-->
                     </template>
                     <div class="modal-footer">
                         <button title="OK"
-                            onclick={handleClick} class="slds-button slds-button_brand confirmBtn">
+                            onclick={handleClick} class="slds-button slds-button_brand confirmBtn" label={LABELS.Appointment_ReBooking_OK}>
                             {LABELS.Appointment_ReBooking_OK}
                         </button>
                     </div>

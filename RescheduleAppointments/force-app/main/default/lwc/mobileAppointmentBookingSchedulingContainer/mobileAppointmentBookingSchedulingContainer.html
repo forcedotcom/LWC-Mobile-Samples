@@ -12,14 +12,14 @@
         </div>
     </template>
     <div class="calendarView" data-id="calendar">
-        <c-aa-rebooking-calendar class="calendarInfo"
+        <c-mobile-appointment-booking-calendar class="calendarInfo"
             ondateselection = {onDateSelected}
             onweekchangeevent = {onWeekChangeEvent}
             selecteddate = {selectedDate} 
             maxvaliddate = {maxValidCalendarDate}
             nonavailabledates = {nonAvailableDateArray} 
             appointment-date = {SchedStartTime} >
-        </c-aa-rebooking-calendar>
+        </c-mobile-appointment-booking-calendar>
     </div>
     
     <c-mobile-appointment-booking-slots-container 
@@ -47,7 +47,7 @@
                         <lightning-layout-item alignment-bump="left" >
                             <div class="slds-current-color acceptNewAptClose">
                                 <lightning-button-icon variant="bare" class="slds-size_medium" icon-name="utility:close"  
-                                        title="Cancel" onclick={handleConfirmBtnClose} >
+                                        title="Cancel" aria-label="Cancel" onclick={handleConfirmBtnClose} >
                                 </lightning-button-icon>
                             </div>
                         </lightning-layout-item >
@@ -62,7 +62,7 @@
 
                     <div class="modal-footer">
                         <button title={LABELS.Appointment_ReBooking_accept_new_appointment_button} 
-                            onclick={handleConfirm} class="slds-button slds-button_brand confirmBtn">
+                            onclick={handleConfirm} class="slds-button slds-button_brand confirmBtn" label={LABELS.Appointment_ReBooking_accept_new_appointment_button}>
                             {LABELS.Appointment_ReBooking_accept_new_appointment_button}
                         </button>
                     </div>

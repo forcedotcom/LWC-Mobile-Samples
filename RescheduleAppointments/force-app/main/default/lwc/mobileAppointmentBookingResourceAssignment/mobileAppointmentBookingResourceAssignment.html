@@ -8,7 +8,7 @@
         <template if:false={showExcludedMsg}>
             <div>
                 <lightning-radio-group name="resourceAssignment"
-                          label=""
+                          aria-label={resourceAssignmentTitle}
                           options={options}
                           value={value}
                           type="radio"

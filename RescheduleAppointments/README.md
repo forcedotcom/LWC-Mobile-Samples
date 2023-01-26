@@ -47,7 +47,7 @@ Let your mobile workers reschedule appointments for customers directly from the 
     1. Classes folder
     2. Custom lables folder
     3. From the lwc folder:
-        1. aaRebookingCalendar
+        1. MobileAppointmentBookingCalendar
         2. MobileAppointmentBookingUtils
         3. MobileAppointmentBookingcompactAppointmentInfo
         4. MobileAppointmentBookingcustomToast

@@ -1,7 +1,7 @@
 import { LightningElement, api, track } from "lwc";
 import customLabels from "./labels";
 
-export default class AaRebookingCalendar extends LightningElement {
+export default class MobileAppointmentBookingRebookingCalendar extends LightningElement {
   LABELS = customLabels;
   months = [
     this.LABELS.Appointment_ReBooking_MonthName_January,
