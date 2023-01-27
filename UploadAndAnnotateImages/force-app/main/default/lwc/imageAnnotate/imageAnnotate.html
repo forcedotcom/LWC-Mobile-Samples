@@ -1,0 +1,141 @@
+<template>
+    <!-- This div is for closing the dropdown menu of "More Options" when we click outside of it. -->
+    <!-- The z-index of the dropdown menu is 7000, set any z-index between 1-6999 to close the dropdown menu on click. -->
+    <div if:true={showMoreActions} onclick={toggleMoreActions} style="z-index: 1000;" class="transparent-entire-page"></div>
+
+    <div class="page">
+        <div data-id="content" class="section content">
+            <img data-id="imagePreview" src={imageData} class="slds-var-p-around_small" if:true={isShowingImage} />
+
+            <div class="slds-grid slds-grid_vertical all-height" if:false={isShowingImage}>
+                <c-image-painter
+                    if:true={isDrawing}
+                    data-id="editorComponent"
+                    image-data={imageData}
+                    content-height={contentHeight}
+                    selected-shape={selectedShape}
+                    onedit={handleImageEdited}
+                    class="all-height"></c-image-painter>
+                <c-image-cropper
+                    if:true={isCropping}
+                    data-id="editorComponent"
+                    image-data={imageData}
+                    content-height={contentHeight}
+                    onloading={showLoading}
+                    onready={hideLoading}
+                    onedit={handleImageEdited}
+                    class="all-height"></c-image-cropper>
+            </div>
+        </div>
+
+        <div data-id="footer" class="section footer">
+            <div>
+
+                <div class="slds-grid all-width">
+                    <div class="slds-var-p-around_small slds-col_bump-right">
+                        <ul class="slds-button-group-row">
+                            <li class="slds-button-group-item">
+                                <button onclick={cropClicked} class={cropperClass} aria-live="assertive" aria-pressed={isCropping} title="Crop">
+                                    <span class="slds-text-not-selected"><label>Crop</label></span>
+                                    <span class="slds-text-selected">
+                                        <svg class="slds-button__icon slds-button__icon_small slds-button__icon_left" aria-hidden="true">
+                                            <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#check"></use>
+                                        </svg>
+                                        Crop
+                                    </span>
+                                    <span class="slds-text-selected-focus">
+                                        <svg class="slds-button__icon slds-button__icon_small slds-button__icon_left" aria-hidden="true">
+                                            <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#check"></use>
+                                        </svg>
+                                        Crop
+                                    </span>
+                                </button>
+                            </li>
+                            <li class="slds-button-group-item">
+                                <button onclick={freeDrawClicked} class={freeDrawClass} aria-live="assertive" aria-pressed={isFreeDrawing} title="Draw">
+                                    <span class="slds-text-not-selected"><label>Draw</label></span>
+                                    <span class="slds-text-selected">
+                                        <svg class="slds-button__icon slds-button__icon_small slds-button__icon_left" aria-hidden="true">
+                                            <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#check"></use>
+                                        </svg>
+                                        Draw
+                                    </span>
+                                    <span class="slds-text-selected-focus">
+                                        <svg class="slds-button__icon slds-button__icon_small slds-button__icon_left" aria-hidden="true">
+                                            <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#check"></use>
+                                        </svg>
+                                        Draw
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+    
+    
+                    <div class="slds-var-p-around_small">
+                        <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open slds-button_last">
+                            <button onclick={toggleMoreActions} class="icon-button slds-button slds-button_icon slds-button_icon-border" aria-haspopup="true" aria-expanded={showMoreActions} title="More Actions">
+                                <svg class="slds-button__icon" aria-hidden="true">
+                                    <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#threedots"></use>
+                                </svg>
+                                <span class="slds-assistive-text">More Actions</span>
+                            </button>
+
+                            <div if:true={showMoreActions} class="dark-dropdown slds-dropdown slds-dropdown_bottom slds-dropdown_right slds-dropdown_actions">
+                                <ul role="menu" aria-label="More Actions">
+                                    <li class="slds-dropdown__item" role="presentation">
+                                        <a onclick={drawSquareClicked} class={drawSquareClass} role="menuitem" tabindex="0">
+                                            <svg class="slds-icon slds-icon_x-small slds-var-m-right_small" aria-hidden="true">
+                                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#stop"></use>
+                                            </svg>
+                                            <span class="slds-truncate" title="Add Square">Add Square</span>
+                                        </a>
+                                    </li>
+                                    <li class="slds-dropdown__item" role="presentation">
+                                        <a onclick={drawCircleClicked} class={drawCircleClass} role="menuitem" tabindex="0">
+                                            <svg class="slds-icon slds-icon_x-small slds-var-m-right_small" aria-hidden="true">
+                                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#record"></use>
+                                            </svg>
+                                            <span class="slds-truncate" title="Add Circle">Add Circle</span>
+                                        </a>
+                                    </li>
+                                    <li class="slds-dropdown__item" role="presentation">
+                                        <a onclick={drawLineClicked} class={drawLineClass} role="menuitem" tabindex="0">
+                                            <svg class="slds-icon slds-icon_x-small slds-var-m-right_small" aria-hidden="true">
+                                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#dash"></use>
+                                            </svg>
+                                            <span class="slds-truncate" title="Add Line">Add Line</span>
+                                        </a>
+                                    </li>
+                                    <li class="remove-dropdown-item slds-dropdown__item" role="presentation">
+                                        <a onclick={handleDeleteClicked} class="red-dropdown-item" role="menuitem" tabindex="0">
+                                            <svg class="slds-icon slds-icon_x-small slds-var-m-right_small" aria-hidden="true">
+                                                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#delete"></use>
+                                            </svg>
+                                            <span class="slds-truncate" title="Remove">Remove</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slds-grid slds-grid_align-spread">
+                <div class="slds-col slds-var-p-around_small">
+                    <lightning-button variant="base" label="Cancel" onclick={handleCancelClicked}></lightning-button>
+                </div>
+                <div class="slds-col slds-var-p-around_small">
+                    <lightning-button variant="base" disabled={imageWasNeverEdited} label="Reset" onclick={handleResetClicked}></lightning-button>
+                </div>
+                <div class="slds-col slds-var-p-around_small">
+                    <lightning-button variant="base" disabled={imageWasNeverEdited} label="Save" onclick={handleSaveClicked}></lightning-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <c-loading-spinner if:true={isLoading} loading-message="Loading..."></c-loading-spinner>
+</template>

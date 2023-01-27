@@ -1,0 +1,14 @@
+.toast-message-container {
+    top: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+.toast-message {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.toast-message h2 {
+    margin-right: 1.25rem;
+}

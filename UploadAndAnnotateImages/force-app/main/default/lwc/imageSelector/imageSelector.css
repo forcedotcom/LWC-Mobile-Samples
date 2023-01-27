@@ -1,0 +1,68 @@
+lightning-input {
+    /* The lightning-input has a label above it that takes 32px of white space in iOS, */
+    /* and 24px in Android, so compensate 28px which is the average */
+    margin-top: -28px;
+}
+
+.no-images-selected-screen {
+    height: 100%;
+    margin-top: -5rem;
+}
+
+.text-container {
+    margin: 0;
+}
+
+.text-container span {
+    text-align: center;
+    padding: 0 2rem 0 2rem;
+}
+
+.square {
+    aspect-ratio : 1 / 1;
+    overflow: hidden;
+}
+
+.square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.large-icon {
+    width: 6rem;
+    height: 6rem;
+}
+
+.header-content {
+    border-bottom: gray 1px solid;
+    width: 100%;
+}
+
+.footer-content {
+    border-top: gray 1px solid;
+    width: 100%;
+}
+
+.page {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+  
+.page .section.header {
+    flex: 0 1 auto;
+}
+
+.page .section.content {
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.page .section.footer {
+    flex: 0 1 auto;
+}

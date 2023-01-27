@@ -1,0 +1,17 @@
+<template>
+    <div data-id="page" class="page">
+        <div data-id="content" class="section content">
+            <div data-id="imageContainer" lwc:dom="manual"></div>
+        </div>
+        <div data-id="footer" class="section footer">
+            <div class="footer-content slds-var-p-around_small">
+                <button onclick={rotateClicked} class="slds-button slds-button_stretch rotate-button">
+                    <svg class="slds-button__icon slds-button__icon_left" aria-hidden="true">
+                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#rotate"></use>
+                    </svg>
+                    <label>Rotate</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</template>
