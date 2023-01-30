@@ -47,7 +47,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
 
   maxValidCalendarDate;
   minValidCalendarDate;
-  nonAvalableDates = [];
+  _nonAvailableDates = [];
 
   currentMonthYearLabel;
   alternativeTextForMonthBtn;
@@ -63,34 +63,34 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
     this.isWeekView = !value;
   }
 
-  @api get selecteddate() {
+  @api get selectedDate() {
     return this.currentSelectedDate;
   }
 
-  set selecteddate(value) {
+  set selectedDate(value) {
     if (value) {
       this.currentSelectedDate = value;
     }
   }
 
-  @api get maxvaliddate() {
+  @api get maxValidDate() {
     return this.maxValidCalendarDate;
   }
 
-  set maxvaliddate(value) {
+  set maxValidDate(value) {
     if (value) {
       this.maxValidCalendarDate = new Date(value);
       this.maxValidCalendarDate.setHours(0, 0, 0, 0);
     }
   }
 
-  @api get nonavailabledates() {
-    return this.nonAvalableDates;
+  @api get nonAvailableDates() {
+    return this._nonAvailableDates;
   }
 
-  set nonavailabledates(value) {
+  set nonAvailableDates(value) {
     if (value) {
-      this.nonAvalableDates = value;
+      this._nonAvailableDates = value;
       this.setBlockDatesInWeekView(this.currentSelectedDate);
     }
   }
@@ -475,7 +475,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
 
         var loopDate = this.noofWeeks[week][day].value.setHours(0, 0, 0, 0);
         // BLOCK UN AVAILABLE DATES IN WEEK VIEW
-        if (this.isInArray(this.nonAvalableDates, loopDate)) {
+        if (this.isInArray(this.nonAvailableDates, loopDate)) {
           //console.log("Block date is : "+loopDate);
           this.noofWeeks[week][day].blocked = true;
           this.noofWeeks[week][day].selected = false;

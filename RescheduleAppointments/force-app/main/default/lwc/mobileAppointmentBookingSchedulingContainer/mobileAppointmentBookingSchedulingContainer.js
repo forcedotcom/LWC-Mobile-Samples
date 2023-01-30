@@ -27,7 +27,8 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   ServiceResourceId;
   ServiceResourceRole;
   ServiceResourceName;
-  serviceAppointmentObject;
+  _serviceAppointmentObject;
+  _serviceResourceObj;
   @api timeSlotObject;
   @track selectedDate;
   @track isSlots = true;
@@ -36,14 +37,14 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   headlineTime;
   selectedSlotStart;
   selectedSlotEnd;
-  showDataSpinner = false;
+  _showDataSpinner = false;
   inFlowMode = false;
   newAppointmentDate;
   maxValidCalendarDate;
   minValidCalendarDate;
   @api nonAvailableDateArray = [];
   @api noOfDaysBeforeAfterWeek;
-  @api showExactArrivalTime;
+  _showExactArrivalTime;
   @api worktypeDisplayname;
   _currentAssignmentMethod;
   assignToName;
@@ -60,13 +61,13 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   timeSlotObjectFilteredByGrades;
   @api userId;
 
-  @api get serviceappointmentobject() {
-    return this.serviceAppointmentObject;
+  @api get serviceAppointmentObject() {
+    return this._serviceAppointmentObject;
   }
-  set serviceappointmentobject(value) {
+  set serviceAppointmentObject(value) {
     this.selectedDate = new Date();
     if (value) {
-      this.serviceAppointmentObject = value;
+      this._serviceAppointmentObject = value;
       this.customerFirstName = value.CustomerFirstName;
       this.customerLastName = value.CustomerLastName;
       this.CustomerPhone = value.CustomerPhone;
@@ -84,10 +85,10 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
     this.getHeadlineDate();
   }
 
-  @api get serviceresourceobj() {
-    return this.serviceAppointmentObject;
+  @api get serviceResourceObj() {
+    return this._serviceResourceObj;
   }
-  set serviceresourceobj(value) {
+  set serviceResourceObj(value) {
     if (value) {
       this.ServiceResourceId = value.ServiceResourceId;
       this.serviceResourceRole = value.ServiceResourceRole;
@@ -104,10 +105,10 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
     }
   }
 
-  @api get schedulepolicy() {
+  @api get schedulePolicy() {
     return this.schedulePolicyId;
   }
-  set schedulepolicy(value) {
+  set schedulePolicy(value) {
     if (value) {
       this.schedulePolicyId = value;
     }
@@ -124,37 +125,37 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
     }
   }
 
-  @api get showdataspinner() {
-    return this.showDataSpinner;
+  @api get showDataSpinner() {
+    return this._showDataSpinner;
   }
-  set showdataspinner(value) {
-    this.showDataSpinner = value;
+  set showDataSpinner(value) {
+    this._showDataSpinner = value;
   }
 
-  @api get maxvaliddate() {
+  @api get maxValidDate() {
     return this.maxValidCalendarDate;
   }
 
-  set maxvaliddate(value) {
+  set maxValidDate(value) {
     if (value) {
       this.maxValidCalendarDate = value;
     }
   }
 
-  @api get shownoofdaysbeforeafterweek() {
+  @api get showNoOfDaysBeforeAfterWeek() {
     return this.noOfDaysBeforeAfterWeek;
   }
-  set shownoofdaysbeforeafterweek(value) {
+  set showNoOfDaysBeforeAfterWeek(value) {
     if (value) {
       this.noOfDaysBeforeAfterWeek = value;
     }
   }
 
-  @api get showexactarrivaltime() {
-    return this.showExactArrivalTime;
+  @api get showExactArrivalTime() {
+    return this._showExactArrivalTime;
   }
-  set showexactarrivaltime(value) {
-    this.showExactArrivalTime = value;
+  set showExactArrivalTime(value) {
+    this._showExactArrivalTime = value;
   }
 
   @api get inflowmode() {

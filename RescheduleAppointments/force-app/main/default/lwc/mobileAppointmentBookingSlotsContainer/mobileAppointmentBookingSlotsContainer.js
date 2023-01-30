@@ -17,13 +17,13 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   @api formattedTimeSlotArrayTemp = [];
   @api formattedRecommendedSlotsArray = [];
   @api timeSlotArrayByDate = [];
-  @api selectedDate;
-  @api showExactArrivalTime;
+  _selectedDate;
+  _showExactArrivalTime;
   @api maxValidCalendarDate;
   pageTitle;
   timeSlotTitle;
   nonAvailableDateArray = [];
-  @api noOfDaysBeforeAfterWeek = 2;
+  _noOfDaysBeforeAfterWeek = 2;
   firstDayOfTheWeek;
   lastDayOfTheWeek;
   firstSlotDate;
@@ -54,27 +54,27 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     this.LABELS.Appointment_ReBooking_WeekDayLong_Saturday
   ];
 
-  @api get selecteddate() {
-    return this.selectedDate;
+  @api get selectedDate() {
+    return this._selectedDate;
   }
-  set selecteddate(value) {
+  set selectedDate(value) {
     if (value) {
-      this.selectedDate = this.getDateWithoutTime(Date.parse(value));
-      console.log("Selected Date in timeSlot : " + this.selectedDate);
-      this.firstDayOfTheWeek = this.getFirstDayOfWeek(this.selectedDate, 0);
-      this.lastDayOfTheWeek = this.getLastDayOfWeek(this.selectedDate, 0);
+      this._selectedDate = this.getDateWithoutTime(Date.parse(value));
+      console.log("Selected Date in timeSlot : " + this._selectedDate);
+      this.firstDayOfTheWeek = this.getFirstDayOfWeek(this._selectedDate, 0);
+      this.lastDayOfTheWeek = this.getLastDayOfWeek(this._selectedDate, 0);
 
       this.handleTimeSlotTitle();
-      this.handleDateSelectEvent(this.selectedDate);
-      this.afterDateSelection(this.selectedDate);
-      this.executeScroll(this.formatTitle(this.selectedDate));
+      this.handleDateSelectEvent(this._selectedDate);
+      this.afterDateSelection(this._selectedDate);
+      this.executeScroll(this.formatTitle(this._selectedDate));
     }
   }
 
-  @api get timeslotobject() {
+  @api get timeSlotObject() {
     return this.currentTimeSlotsObj;
   }
-  set timeslotobject(value) {
+  set timeSlotObject(value) {
     let updatedData;
     if (value) {
       this.lockScrolling();
@@ -89,11 +89,11 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     }
   }
 
-  @api get showexactarrivaltime() {
-    return this.showExactArrivalTime;
+  @api get showExactArrivalTime() {
+    return this._showExactArrivalTime;
   }
-  set showexactarrivaltime(value) {
-    this.showExactArrivalTime = value;
+  set showExactArrivalTime(value) {
+    this._showExactArrivalTime = value;
   }
   isWeekUpdated = false;
 
@@ -111,20 +111,20 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     this.handleTimeSlotUpdateEvent(slotsData);
   }
 
-  @api get shownoofdaysbeforeafterweek() {
-    return this.noOfDaysBeforeAfterWeek;
+  @api get showNoOfDaysBeforeAfterWeek() {
+    return this._noOfDaysBeforeAfterWeek;
   }
-  set shownoofdaysbeforeafterweek(value) {
+  set showNoOfDaysBeforeAfterWeek(value) {
     if (value) {
-      this.noOfDaysBeforeAfterWeek = value;
+      this._noOfDaysBeforeAfterWeek = value;
     }
   }
 
-  @api get maxvaliddate() {
+  @api get maxValidDate() {
     return this.maxValidCalendarDate;
   }
 
-  set maxvaliddate(value) {
+  set maxValidDate(value) {
     if (value) {
       console.log("Max valid date is : " + value);
       this.maxValidCalendarDate = value;
@@ -428,7 +428,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     d.setDate(diff);
     console.log("First day of week is : " + d.getDate());
     var newDate = new Date(
-      d.setDate(d.getDate() - this.noOfDaysBeforeAfterWeek)
+      d.setDate(d.getDate() - this.showNoOfDaysBeforeAfterWeek)
     ).setHours(0, 0, 0, 0);
     return newDate;
   }
@@ -440,7 +440,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     var diff = d.getDate() - day + (start > day ? start - 1 : 6 + start);
     d.setDate(diff);
     var newDate = new Date(
-      d.setDate(d.getDate() + this.noOfDaysBeforeAfterWeek)
+      d.setDate(d.getDate() + this.showNoOfDaysBeforeAfterWeek)
     ).setHours(0, 0, 0, 0);
     return newDate;
   }
