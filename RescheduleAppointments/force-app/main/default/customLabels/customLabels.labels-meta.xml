@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- *********************  Utility Contants ************************  -->
+     <!-- ********   MONTHS NAMES ********** -->
+     <labels>
+        <fullName>Appointment_ReBooking_MonthName_January</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>January</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_February</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>February</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_March</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>March</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_April</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>April</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_May</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>May</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_June</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>June</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_July</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>July</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_August</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>August</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_September</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>September</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_October</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>October</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_November</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>November</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_MonthName_December</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>December</value>
+    </labels>
+    <!-- ********   MONTH NAME  END ********** -->
+
+
+
+
+    <!-- ********   WEEKDAY NAMES ********** -->
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayShort_Mon</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>MON</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayShort_Tue</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>TUE</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayShort_Wed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>WED</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayShort_Thu</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>THU</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayShort_Fri</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>FRI</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayShort_Saturday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>SAT</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayShort_Sunday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>SUN</value>
+    </labels>
+
+
+
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayLong_Monday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Monday</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayLong_Tuesday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Tuesday</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayLong_Wednesday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Wednesday</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayLong_Thursday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Thursday</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayLong_Friday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Friday</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayLong_Saturday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Saturday</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_WeekDayLong_Sunday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Sunday</value>
+    </labels>
+    <!-- ********   WEEKDAY NAMES ENDS ********** -->
+
+    
+    <labels>
+        <fullName>Reschedule_Appointment_page_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Reschedule Appointment landing page title</shortDescription>
+         <value>Reschedule Appoinyment</value>
+    </labels>
+    <labels>
+        <fullName>Reschedule_Appointment_current_appointment_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Reschedule Appoinyment compact info title</shortDescription>
+         <value>Current Appointment</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_new_appointment_msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>New Appointment - title</shortDescription>
+        <value>Reschedule Appointment?</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_accept_new_appointment_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Accept new Appointment - button text</shortDescription>
+        <value>Reschedule</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_toastMessage_appointment_reschedule</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Toast message when appointment gets rescheduled</shortDescription>
+        <value>Appointment was rescheduled.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_same_appointment_selected_warning</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Reschedule appointment - Same slot selected warning</shortDescription>
+        <value>Slot already booked. Please select another slot.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Toast message reschedule appointment fails to get update</shortDescription>
+        <value>We couldn’t reschedule the appointment. Try again later.</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentAssistance_confirmation_failure_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>confirmation page failure message when booking fails</shortDescription>
+        <value>It’s not you, it’s us. Please start over.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_no_available_appointments_msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>No available appointment - title</shortDescription>
+        <value>No available appointments</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_today_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Show today text followed by date in time slot header</shortDescription>
+        <value>Today</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_your_appt_was_canceled_msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Cancel appointment - toast message</shortDescription>
+        <value>Appointment was canceled.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_toastMessage_cancel_appointment_fail_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Toast message cancel appointment fails to get update</shortDescription>
+        <value>We couldn’t cancel the appointment. Try again later.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_toastMessage_appointment_confirmed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Toast message when appointment gets confirmed</shortDescription>
+        <value>Appointment was confirmed.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_toastMessage_confirm_appointment_fail_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Toast message confirm appointment fails to get update</shortDescription>
+        <value>We couldn’t confirm the appointment. Try again later.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_selected_appointment_msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>New Appointment - title</shortDescription>
+        <value>SELECTED APPOINTMENT</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentAssistance_next_button_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>button text</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_select_an_available_appointment_time</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Reschedule appointment message</shortDescription>
+        <value>Select an available appointment time</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_select_new_date_to_reschedule</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Reschedule appointment message</shortDescription>
+        <value>Reschedule your appointment</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_current_appointment_msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Current Appointment - title</shortDescription>
+        <value>CURRENT APPOINTMENT</value>
+    </labels>
+    <labels>
+        <fullName>AppointmentAssistance_confirmation_service_requested</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>confirmation page section title</shortDescription>
+        <value>SERVICE TYPE</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_assigned_to_you</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Assigned to You ({userName})</shortDescription>
+        <value>Assigned to You ({0})</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_assigned_to_any_available_worker</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Assigned to any available worker</shortDescription>
+        <value>Assigned to any available worker</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_all_available_appointments</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Title for all available slots</shortDescription>
+        <value>All Available Appointments</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_recommended_appointments</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Title for recommended slots</shortDescription>
+        <value>Recommended Appointments</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_cant_select_Mobile_Worker_excluded</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Title for assign to mobile worker radio resource is excluded</shortDescription>
+        <value>You can’t select a mobile worker for this appointment. Ask your admin for help.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_Mobile_Worker_radio_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Title for assign to mobile worker radio</shortDescription>
+        <value>Mobile Worker</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_Mobile_Worker_radio_assignToMe_lable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Label mobile worker radio assign to me option with tech name</shortDescription>
+        <value>You</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_Mobile_Worker_radio_assignToAnyAvailable_lable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Label mobile worker radio assign to any available technitian</shortDescription>
+        <value>Any available worker</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_Select_a_Date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Title for full page calendar</shortDescription>
+        <value>Select a Date</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_OK</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Label for show results button on full page calendar</shortDescription>
+        <value>OK</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_empty_state_select_any_available_worker</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>If no appointments available and the MW can select any available worker</shortDescription>
+        <value>Select Any available worker or change the date and try again. If you can’t find any appointments, contact your admin for help.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_empty_state_change_the_dates</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>If no appointments available and the MW can't select any available worker</shortDescription>
+        <value>Change the date and try again. If you can’t find any appointments, contact your admin for help.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_view_more_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Label for view more appointments button</shortDescription>
+        <value>View More</value>
+    </labels>
+    
+    
+</CustomLabels>

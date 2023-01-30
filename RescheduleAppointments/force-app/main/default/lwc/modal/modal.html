@@ -1,0 +1,21 @@
+<template>
+    <template if:true={modalIsOpen}>
+        <div class="modal-background">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <slot name="header"></slot>
+                    <lightning-button-icon 
+                        icon-name="utility:close"
+                        variant="bare"
+                        alternative-text="Close Modal"
+                        class="slds-m-left_xx-small"
+                        title="Close Modal"
+                        onclick={closeModal}>
+                    </lightning-button-icon>
+                </div>
+                <div class="modal-content"></div>       
+                <slot name="content"></slot>
+            </div>
+        </div> 
+    </template>       
+</template>

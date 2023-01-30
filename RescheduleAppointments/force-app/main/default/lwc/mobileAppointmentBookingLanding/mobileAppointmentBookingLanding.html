@@ -1,0 +1,51 @@
+<template>
+    <template if:true={showToast}>
+        <c-mobile-appointment-booking-custom-toast variant={toastVariant} title={toastTitle} message={toastMessage} onclosetoast ={HandleCloseToast}></c-mobile-appointment-booking-custom-toast> 
+    </template>
+
+    <div class="landing-container">
+        <div class="landing-section">
+            <c-mobile-appointment-booking-compact-appointment-info
+                service-appointment-object={currentAppointmentData}
+                show-default-fields={useDefaultFields}
+                show-modal={showModal}
+                onclosemodal={closeModal}
+                onopenmodal={openModal}>
+            </c-mobile-appointment-booking-compact-appointment-info>
+        </div>       
+        <div class="landing-section">
+            <c-mobile-appointment-booking-scheduling-container
+                show-exact-arrival-time = {showExactArrivalTime} 
+                service-appointment-object = {currentAppointmentData}
+                oneventname = {onButtonClick}
+                show-no-of-days-before-after-week = {noOfDaysBeforeAfterWeek}
+                service-resource-obj = {serviceResourceObject}
+                time-slot-object = {timeSlotDateWise}
+                ondateselection = {onDateSelected}
+                ongetslotexecuted = {handleGetSlotQueryForSelectedDate}
+                selected-date = {selectedDate}
+                max-valid-date = {maxValidCalendarDate}
+                schedule-policy = {schedulingPolicyId}
+                onserviceappointmentupdate = {onServiceAppointmentUpdate}
+                show-data-spinner = {showSpinnerInChildClass} 
+                page-title = ""
+                worktype-displayname=""
+                recommended-score={recommendedScore}
+                current-assignment-method={currentAssignmentMethod}
+                user-id={userId}
+                show-assignment-method-toggle={showAssignmentMethodToggle}
+                is-excluded={isExcluded}
+                >
+            </c-mobile-appointment-booking-scheduling-container>
+        </div>
+        <!-- SPINNER -->
+        <template if:true={showDataSpinner}>
+            <div class="slds-is-relative">
+                <lightning-spinner alternativetext="Loading" variant="brand" size="large">
+                </lightning-spinner>
+            </div>
+        </template>
+            
+         <!-- SPINNER -->
+    </div>  
+</template>
