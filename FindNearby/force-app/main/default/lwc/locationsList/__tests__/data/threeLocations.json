@@ -1,29 +1,29 @@
 [
-  {
-    "location": { "Latitude": 10, "Longitude": 10 },
-    "value": {
-      "id": "1234",
-      "title": "marker1",
-      "detailFieldValue": "field2-1",
-      "distance": "15 km"
+    {
+        "location": { "Latitude": 10, "Longitude": 10 },
+        "value": {
+            "id": "1234",
+            "title": "marker1",
+            "detailFieldValue": "field2-1",
+            "distance": "15 km"
+        }
+    },
+    {
+        "location": { "Latitude": 20, "Longitude": 20 },
+        "value": {
+            "id": "5678",
+            "title": "marker2",
+            "detailFieldValue": "field2-2",
+            "distance": "25 km"
+        }
+    },
+    {
+        "location": { "Latitude": 10, "Longitude": 10 },
+        "value": {
+            "id": "9123",
+            "title": "marker3",
+            "detailFieldValue": "field2-3",
+            "distance": "35 km"
+        }
     }
-  },
-  {
-    "location": { "Latitude": 20, "Longitude": 20 },
-    "value": {
-      "id": "5678",
-      "title": "marker2",
-      "detailFieldValue": "field2-2",
-      "distance": "25 km"
-    }
-  },
-  {
-    "location": { "Latitude": 10, "Longitude": 10 },
-    "value": {
-      "id": "9123",
-      "title": "marker3",
-      "detailFieldValue": "field2-3",
-      "distance": "35 km"
-    }
-  }
 ]

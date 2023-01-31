@@ -1,4 +1,4 @@
-import { LightningElement, api } from "lwc";
+import { LightningElement, api } from 'lwc';
 
 export default class MapFilters extends LightningElement {
   @api mapObjects;
@@ -7,17 +7,15 @@ export default class MapFilters extends LightningElement {
   @api currentFieldFilter;
   @api setCurrentObjectFilter;
   @api setCurrentFieldFilter;
-  selectedFieldFilter = { label: "", value: "", type: "", input: "" };
+  selectedFieldFilter = { label: '', value: '', type: '', input: '' };
 
   connectedCallback() {
     this.selectedFieldFilter = this.currentFieldFilter.field;
   }
 
   renderedCallback() {
-    const fieldContainer = this.template.querySelector(
-      ".field-combo-container"
-    );
-    const comboCover = this.template.querySelector(".field-combo-cover");
+    const fieldContainer = this.template.querySelector('.field-combo-container');
+    const comboCover = this.template.querySelector('.field-combo-cover');
     comboCover.style.height = `${fieldContainer.clientHeight}px`;
     comboCover.style.width = `${fieldContainer.clientWidth}px`;
   }
@@ -25,18 +23,18 @@ export default class MapFilters extends LightningElement {
   // Getters
 
   get filteredObjectText() {
-    return this.currentObjectFilter?.label || "None";
+    return this.currentObjectFilter?.label || 'None';
   }
 
   get filteredFieldText() {
     const currentField = this.currentFieldFilter.field.label;
-    return !currentField ? "None" : currentField;
+    return !currentField ? 'None' : currentField;
   }
 
   get filterFieldButtonClass() {
-    let buttonClasses = "button filter-button";
+    let buttonClasses = 'button filter-button';
     return `${buttonClasses} ${
-      this.currentFieldFilter.isActive ? "active-button" : "inactive-button"
+      this.currentFieldFilter.isActive ? 'active-button' : 'inactive-button'
     }`;
   }
 
@@ -55,12 +53,12 @@ export default class MapFilters extends LightningElement {
   }
 
   get inputType() {
-    if (this.selectedFieldFilter?.type === "DATETIME") return "DATE";
+    if (this.selectedFieldFilter?.type === 'DATETIME') return 'DATE';
     return this.selectedFieldFilter?.type;
   }
 
   get isFieldTypeBoolean() {
-    return this.selectedFieldFilter.type === "BOOLEAN";
+    return this.selectedFieldFilter.type === 'BOOLEAN';
   }
 
   get showResultsDisabled() {
@@ -81,10 +79,8 @@ export default class MapFilters extends LightningElement {
       e.preventDefault();
       e.stopPropagation();
       this.clearFieldFilter();
-      this.setCurrentObjectFilter(
-        this.objRadioOptions.find((o) => o.value === e.target.value)
-      );
-      this.closeSheet("object-filter-bottom-sheet");
+      this.setCurrentObjectFilter(this.objRadioOptions.find((o) => o.value === e.target.value));
+      this.closeSheet('object-filter-bottom-sheet');
     } catch (error) {
       this.handleError(error);
     }
@@ -95,10 +91,10 @@ export default class MapFilters extends LightningElement {
       e.preventDefault();
       e.stopPropagation();
       this.selectedFieldFilter = {
-        ...this.fieldRadioOptions.find((o) => o.value === e.target.value)
+        ...this.fieldRadioOptions.find((o) => o.value === e.target.value),
       };
-      this.selectedFieldFilter.input = this.isFieldTypeBoolean ? false : "";
-      this.closeSheet("fields-list-bottom-sheet");
+      this.selectedFieldFilter.input = this.isFieldTypeBoolean ? false : '';
+      this.closeSheet('fields-list-bottom-sheet');
     } catch (error) {
       this.handleError(error);
     }
@@ -116,73 +112,70 @@ export default class MapFilters extends LightningElement {
   // Buttons Handlers
 
   handleTopFiltersObjClick = () => {
-    this.openSheet("object-filter-bottom-sheet");
-    this.closeSheet("field-filter-bottom-sheet");
-    this.closeSheet("fields-list-bottom-sheet");
+    this.openSheet('object-filter-bottom-sheet');
+    this.closeSheet('field-filter-bottom-sheet');
+    this.closeSheet('fields-list-bottom-sheet');
   };
 
   handleTopFiltersFieldClick = () => {
     this.selectedFieldFilter = this.currentFieldFilter.field;
-    this.openSheet("field-filter-bottom-sheet");
-    this.closeSheet("object-filter-bottom-sheet");
+    this.openSheet('field-filter-bottom-sheet');
+    this.closeSheet('object-filter-bottom-sheet');
   };
 
   handleFieldComboClick = () => {
-    this.openSheet("fields-list-bottom-sheet");
+    this.openSheet('fields-list-bottom-sheet');
   };
 
   handleCloseObjFiltersClick = () => {
-    this.closeSheet("object-filter-bottom-sheet");
+    this.closeSheet('object-filter-bottom-sheet');
   };
 
   handleCloseFieldFiltersClick = () => {
-    this.closeSheet("field-filter-bottom-sheet");
+    this.closeSheet('field-filter-bottom-sheet');
   };
 
   handleCloseFieldsListClick = () => {
-    this.closeSheet("fields-list-bottom-sheet");
+    this.closeSheet('fields-list-bottom-sheet');
   };
 
   handleShowResultsClick = () => {
-    if (this.isFieldTypeBoolean)
-      this.selectedFieldFilter.input = !!this.selectedFieldFilter.input;
+    if (this.isFieldTypeBoolean) this.selectedFieldFilter.input = !!this.selectedFieldFilter.input;
     this.setCurrentFieldFilter(true, this.selectedFieldFilter);
-    this.closeSheet("field-filter-bottom-sheet");
+    this.closeSheet('field-filter-bottom-sheet');
   };
 
   handleClearClick = () => {
     this.clearFieldFilter();
-    this.closeSheet("field-filter-bottom-sheet");
-    this.closeSheet("fields-list-bottom-sheet");
+    this.closeSheet('field-filter-bottom-sheet');
+    this.closeSheet('fields-list-bottom-sheet');
   };
 
   // Helpers
 
   clearFieldFilter() {
     this.setCurrentFieldFilter(false, {
-      label: "",
-      value: "",
-      type: "",
-      input: ""
+      label: '',
+      value: '',
+      type: '',
+      input: '',
     });
   }
 
   openSheet(sheet) {
     const sheetClasses = this.template.querySelector(`.${sheet}`).classList;
-    sheetClasses.add("pt-page-moveToTop");
-    sheetClasses.add("shadow");
-    sheetClasses.remove("pt-page-moveFromTop");
+    sheetClasses.add('pt-page-moveToTop');
+    sheetClasses.add('shadow');
+    sheetClasses.remove('pt-page-moveFromTop');
   }
 
   closeSheet(sheet) {
     const sheetClasses = this.template.querySelector(`.${sheet}`).classList;
-    if (Array.from(sheetClasses).includes("pt-page-moveToTop")) {
-      sheetClasses.add("pt-page-moveFromTop");
-      sheetClasses.remove("pt-page-moveToTop");
+    if (Array.from(sheetClasses).includes('pt-page-moveToTop')) {
+      sheetClasses.add('pt-page-moveFromTop');
+      sheetClasses.remove('pt-page-moveToTop');
     }
-    sheetClasses.remove("shadow");
-    this.template
-      .querySelectorAll(".sheet-content")
-      .forEach((s) => (s.scrollTop = 0));
+    sheetClasses.remove('shadow');
+    this.template.querySelectorAll('.sheet-content').forEach((s) => (s.scrollTop = 0));
   }
 }

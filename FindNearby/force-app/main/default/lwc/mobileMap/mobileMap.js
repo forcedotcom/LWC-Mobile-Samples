@@ -1,4 +1,4 @@
-import { LightningElement, api, track } from "lwc";
+import { LightningElement, api, track } from 'lwc';
 
 export default class MobileMaps extends LightningElement {
   // Markers
@@ -21,10 +21,10 @@ export default class MobileMaps extends LightningElement {
 
   // Map options
   zoom = 15;
-  listView = "";
+  listView = '';
   mapOptions = {
     disableDefaultUI: true,
-    zoomControl: false
+    zoomControl: false,
   };
 
   renderedCallback() {
@@ -36,14 +36,10 @@ export default class MobileMaps extends LightningElement {
   }
 
   isMarkersListEqual() {
-    const markers = this.markersWithResource.filter(
-      (m) => m.value !== undefined
-    );
+    const markers = this.markersWithResource.filter((m) => m.value !== undefined);
     return (
       this.filteredMarkers.length === markers.length &&
-      this.filteredMarkers.every(
-        (m, ind) => m.value.id === markers[ind].value.id
-      )
+      this.filteredMarkers.every((m, ind) => m.value.id === markers[ind].value.id)
     );
   }
 
@@ -51,9 +47,9 @@ export default class MobileMaps extends LightningElement {
     this.resourceMarker = {
       location: {
         Latitude: lat.substring(0, 10),
-        Longitude: lng.substring(0, 10)
+        Longitude: lng.substring(0, 10),
       },
-      mapIcon: this.getResourceMarkerSVG()
+      mapIcon: this.getResourceMarkerSVG(),
     };
   }
 
@@ -153,6 +149,6 @@ export default class MobileMaps extends LightningElement {
                     </filter>
                 </defs>
             </svg>`;
-    return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(icon);
+    return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(icon);
   }
 }

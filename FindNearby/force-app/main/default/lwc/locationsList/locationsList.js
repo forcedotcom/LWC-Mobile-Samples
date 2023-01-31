@@ -1,4 +1,4 @@
-import { LightningElement, api } from "lwc";
+import { LightningElement, api } from 'lwc';
 
 export default class LocationsList extends LightningElement {
   @api filteredMarkers;
@@ -19,10 +19,10 @@ export default class LocationsList extends LightningElement {
   renderedCallback() {
     if (!this.init) {
       this.init = true;
-      this.mainTemplate = this.template.querySelector(".main-container");
-      this.headerElement = this.template.querySelector(".header");
-      this.listElement = this.template.querySelector(".list");
-      this.listElement.style.paddingBottom = this.isIOS ? "34px" : "0";
+      this.mainTemplate = this.template.querySelector('.main-container');
+      this.headerElement = this.template.querySelector('.header');
+      this.listElement = this.template.querySelector('.list');
+      this.listElement.style.paddingBottom = this.isIOS ? '34px' : '0';
       this.detectDrag();
     }
   }
@@ -48,12 +48,9 @@ export default class LocationsList extends LightningElement {
     try {
       e.stopPropagation();
       const el = e.currentTarget;
-      const markerInd = parseInt(el.closest("li")?.dataset?.index);
-      this.template.querySelector(".popover-container").style.bottom = `${
-        el.offsetParent?.offsetHeight -
-        el.offsetTop -
-        el.offsetHeight +
-        this.listElement.scrollTop
+      const markerInd = parseInt(el.closest('li')?.dataset?.index);
+      this.template.querySelector('.popover-container').style.bottom = `${
+        el.offsetParent?.offsetHeight - el.offsetTop - el.offsetHeight + this.listElement.scrollTop
       }px`;
       if (!this.showPopover || markerInd === this.actionButtonIndexClicked)
         this.showPopover = !this.showPopover;
@@ -80,22 +77,20 @@ export default class LocationsList extends LightningElement {
   // Getters
 
   get popoverClass() {
-    return this.showPopover ? "popover-shown" : "popover-hidden";
+    return this.showPopover ? 'popover-shown' : 'popover-hidden';
   }
 
   get titleObjectText() {
-    if (!this.currentObject.label) return "Locations";
-    return this.filteredMarkers.length === 1
-      ? this.currentObject.label
-      : this.currentObject.plural;
+    if (!this.currentObject.label) return 'Locations';
+    return this.filteredMarkers.length === 1 ? this.currentObject.label : this.currentObject.plural;
   }
 
   get isIOS() {
     const isIpad =
-      navigator.userAgent.includes("Macintosh") &&
+      navigator.userAgent.includes('Macintosh') &&
       navigator.maxTouchPoints &&
       navigator.maxTouchPoints > 1;
-    const isIphone = navigator.platform.includes("iPhone");
+    const isIphone = navigator.platform.includes('iPhone');
     return isIpad || isIphone;
   }
 
@@ -133,14 +128,14 @@ export default class LocationsList extends LightningElement {
       pos4 = 0;
 
     const dragTouchStart = (e) => {
-      this.listElement.style.height = "fit-content";
+      this.listElement.style.height = 'fit-content';
       this.showPopover = false;
       e = e || window.event;
       e.preventDefault();
       pos3 = e.touches[0].clientX;
       pos4 = e.touches[0].clientY;
-      this.headerElement.addEventListener("touchend", dragEnd);
-      this.headerElement.addEventListener("touchmove", dragMove);
+      this.headerElement.addEventListener('touchend', dragEnd);
+      this.headerElement.addEventListener('touchmove', dragMove);
     };
 
     const dragMove = (e) => {
@@ -156,10 +151,10 @@ export default class LocationsList extends LightningElement {
     const dragEnd = () => {
       if (pos2 > 0) this.openLocationsList();
       else this.closeLocationsList();
-      this.headerElement.removeEventListener("touchend", dragEnd);
-      this.headerElement.removeEventListener("touchmove", dragMove);
+      this.headerElement.removeEventListener('touchend', dragEnd);
+      this.headerElement.removeEventListener('touchmove', dragMove);
     };
 
-    this.headerElement.addEventListener("touchstart", dragTouchStart);
+    this.headerElement.addEventListener('touchstart', dragTouchStart);
   };
 }
