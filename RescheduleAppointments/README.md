@@ -1,5 +1,7 @@
 # Set Up the Reschedule Appointments Lightning Web Component (LWC)
 
+Let your mobile workers reschedule appointments for customers directly from the mobile app, without contacting customer services.
+
 ## Before You Begin
 We recommend taking the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components) to learn how to:
 + Set up your Salesforce DX environment
@@ -7,7 +9,6 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
 + Authorize your org
 
 ## Set Up the LWC
-Let your mobile workers reschedule appointments for customers directly from the mobile app, without contacting customer services.
 
 1. Download the source code.
 2. Enable the permission sets:
@@ -32,10 +33,8 @@ Let your mobile workers reschedule appointments for customers directly from the 
 
         Tip: To control if the service appointment can be assigned only to the mobile worker in the app, make sure that your scheduling policy includes the __Field Service - Required Resources__ work rule.
          * `recommendedScore` is set to 80, meaning that service appointments with a score above 80 appear in the list of results. You can modify this grade as needed.
-    4. Fill in your `OperatingHoursId` and `SchedulingPolicyId`.
+    4. Fill in the names of your `OperatingHours` and `SchedulingPolicy`.
     
-        Tip: To find these IDs, go to the Operating Hours and Scheduling Policy objects in the Object Manager and copy the ID from the URL.
-
     5. You can also fill in these optional settings according to your Appointment Booking preferences:
         * `schedulingHorizonUnit`: Enter `Days`, `Weeks`, or `Months`
         * `schedulingHorizonValue`: Enter the number of `Days`, `Weeks`, or `Months`
@@ -45,7 +44,7 @@ Let your mobile workers reschedule appointments for customers directly from the 
         
  4. Authorize your org and deploy the code to your org. [See Quick Start: Lightning Web Components.](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components) The files must be deployed in this order:
     1. Classes folder
-    2. Custom lables folder
+    2. Custom labels folder
     3. From the lwc folder:
         1. MobileAppointmentBookingCalendar
         2. MobileAppointmentBookingUtils
@@ -68,4 +67,6 @@ Let your mobile workers reschedule appointments for customers directly from the 
     2. For Lightning Web Component, select 
         __c:MobileAppointmentBookingSettingsContainer.__
 
+__See Also__
 
+Known Issue:  [Reschedule Appointments LWC requires refreshing the Field Service mobile app](https://trailblazer.salesforce.com/issues_view?id=a1p4V000002d8lmQAA)
