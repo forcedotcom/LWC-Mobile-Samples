@@ -740,7 +740,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         console.log("Loop date is less than minimum valid date");
 
         var tempDate = loopdate.setDate(
-          loopdate.getDate() + this.maxDayToGetAppointmentSlots
+          loopdate.getDate() + this.maxDaysToGetAppointmentSlots
         );
         loopdate = new Date(tempDate);
         if (loopdate <= lastDateOfWeek) {
@@ -752,7 +752,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     } else {
       // If the date are already cache, take the slot from it and run the query for next date;
       var tempDate = loopdate.setDate(
-        loopdate.getDate() + this.maxDayToGetAppointmentSlots
+        loopdate.getDate() + this.maxDaysToGetAppointmentSlots
       );
       loopdate = new Date(tempDate);
 
