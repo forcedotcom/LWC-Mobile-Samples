@@ -1,43 +1,58 @@
 <template>
-      <div class="slots-container">   
-        <div class="page-title">{LABELS.Appointment_ReBooking_recommended_appointments}</div>
-        <div class="separator"></div>
-        <template for:each={formattedRecommendedSlotsArray} for:item="timeSlotArr">
-            <div class="header" key={timeSlotArr.title} data-id={timeSlotArr.title} onscroll={onScroll}>
-                {timeSlotArr.title}
-            </div>
-            
-            <template for:each={timeSlotArr.timeArray} for:item="timeArray">
-                <button key={timeArray} class="slds-button slds-button_neutral timeslotButton" 
-                    title={timeArray.fullValue} label={timeArray.label} slot="actions" onclick={handleTimeSlotClickEvent} >
-                    {timeArray.label}
-                </button>
-              </template>
-        </template>
-        <div class="section"></div>
-        <div class="page-title">{LABELS.Appointment_ReBooking_all_available_appointments}</div>
-        <div class="separator"></div>
-        <template for:each={formattedTimeSlotArray} for:item="timeSlotNewArray">    
-            <template if:true={timeSlotNewArray.timeArray}>
-                <div class="header" key={timeSlotNewArray} data-id={timeSlotNewArray.title} onscroll={onScroll}>
-                    {timeSlotNewArray.title}
+    <template lwc:if={displayNoSlotsMsg}>
+        <div class="empty-slots-container">
+            <lightning-icon 
+                icon-name="action:info"
+                size="large"
+                variant="error"
+                class="grey-action-icon"
+                > 
+            </lightning-icon>
+            <div class="empty-slos-title">{LABELS.Appointment_ReBooking_no_available_appointments_msg}</div>
+            <div class="empty-slos-body">{noSlotsBody}</div>
+        </div>
+    </template>
+    <template lwc:else>
+        <div class="slots-container">   
+            <div class="page-title">{LABELS.Appointment_ReBooking_recommended_appointments}</div>
+            <div class="separator"></div>
+            <template for:each={formattedRecommendedSlotsArray} for:item="timeSlotArr">
+                <div class="header" key={timeSlotArr.title} data-id={timeSlotArr.title} onscroll={onScroll}>
+                    {timeSlotArr.title}
                 </div>
                 
-                <template for:each={timeSlotNewArray.timeArray} for:item="timeArray">
+                <template for:each={timeSlotArr.timeArray} for:item="timeArray">
                     <button key={timeArray} class="slds-button slds-button_neutral timeslotButton" 
-                        title={timeArray.fullValue} label={timeArray.label} slot="actions" onclick={handleTimeSlotClickEvent}>
+                        title={timeArray.fullValue} label={timeArray.label} slot="actions" onclick={handleTimeSlotClickEvent} >
                         {timeArray.label}
                     </button>
                   </template>
-            </template>                                   
+            </template>
+            <div class="section"></div>
+            <div class="page-title">{LABELS.Appointment_ReBooking_all_available_appointments}</div>
+            <div class="separator"></div>
+            <template for:each={formattedTimeSlotArray} for:item="timeSlotNewArray">    
+                <template if:true={timeSlotNewArray.timeArray}>
+                    <div class="header" key={timeSlotNewArray} data-id={timeSlotNewArray.title} onscroll={onScroll}>
+                        {timeSlotNewArray.title}
+                    </div>
+                    
+                    <template for:each={timeSlotNewArray.timeArray} for:item="timeArray">
+                        <button key={timeArray} class="slds-button slds-button_neutral timeslotButton" 
+                            title={timeArray.fullValue} label={timeArray.label} slot="actions" onclick={handleTimeSlotClickEvent}>
+                            {timeArray.label}
+                        </button>
+                      </template>
+                </template>                                   
+            </template>
+        <!-- SPINNER -->
+        <template if:true = {showDataSpinner}>
+            <div class="slds-is-relative">
+                <lightning-spinner alternativetext="Loading" variant="brand" size="large">
+                </lightning-spinner>
+            </div>
         </template>
-    <!-- SPINNER -->
-    <template if:true = {showDataSpinner}>
-        <div class="slds-is-relative">
-            <lightning-spinner alternativetext="Loading" variant="brand" size="large">
-            </lightning-spinner>
-        </div>
+         <!-- SPINNER -->  
+        </div> 
     </template>
-     <!-- SPINNER -->  
-    </div>       
 </template>
