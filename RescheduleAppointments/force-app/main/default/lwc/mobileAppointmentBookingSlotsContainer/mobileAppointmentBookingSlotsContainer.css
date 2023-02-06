@@ -70,3 +70,28 @@
     height: 10px;
     margin: 16px -16px 0 -16px;
 }
+.grey-action-icon{
+    margin-bottom: 16px;
+    --sds-c-icon-color-background: #EEEEEE;
+}
+
+.empty-slots-container{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px;
+    margin-top: 10px;
+}
+
+.empty-slos-title{
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+}
+.empty-slos-body{
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 16px;
+    text-align: center;
+} 

@@ -51,6 +51,7 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   @api userName;
   @api showAssignmentMethodToggle;
   @api isExcluded;
+  @api showMobileWorkerChoice;
 
   show_confirmBtnLayout = false;
   _recommendedScore;
