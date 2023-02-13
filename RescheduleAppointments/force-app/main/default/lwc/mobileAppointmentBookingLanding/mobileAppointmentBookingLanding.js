@@ -216,6 +216,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   @api enableAssignToMe;
   @api enableAssignToEveryAvailable;
   @api isExcluded;
+  showMobileWorkerChoice = false;
 
   serviceTerritoryTimeZone;
   currentSAstatus;
@@ -291,6 +292,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         this.currentAssignmentMethod = assignmentMethod.ASSIGN_TO_ME;
         this.isCleanupRequired = true;
       }
+      this.showMobileWorkerChoice = true;
     } else if (!this.enableAssignToMe) {
       this.currentAssignmentMethod = assignmentMethod.ASSIGN_TO_ANY_AVIALABLE;
       this.isCleanupRequired = false;

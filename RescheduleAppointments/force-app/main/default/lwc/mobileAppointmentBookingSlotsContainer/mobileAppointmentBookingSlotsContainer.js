@@ -28,6 +28,9 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   lastDayOfTheWeek;
   firstSlotDate;
   @api hideNonAvailableAppointments;
+  displayNoSlotsMsg;
+  _showMobileWorkerChoice;
+  noSlotsBody;
 
   MONTHNAME = [
     this.LABELS.Appointment_ReBooking_MonthName_January,
@@ -86,6 +89,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     } else {
       this.formattedTimeSlotArray = [];
       this.formattedRecommendedSlotsArray = [];
+      this.displayNoSlotsMsg = true;
     }
   }
 
@@ -140,6 +144,20 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     this._pageTitle = value;
   }
 
+  @api get showMobileWorkerChoice() {
+    return this._showMobileWorkerChoice;
+  }
+  set showMobileWorkerChoice(value) {
+    this._showMobileWorkerChoice = value;
+    if (this._showMobileWorkerChoice) {
+      this.noSlotsBody =
+        this.LABELS.Appointment_ReBooking_empty_state_select_any_available_worker;
+    } else {
+      this.noSlotsBody =
+        this.LABELS.Appointment_ReBooking_empty_state_change_the_dates;
+    }
+  }
+
   constructor() {
     super();
 
@@ -148,6 +166,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
       slotsForAllMobileWorkers: {},
       currentAssignmentMethodRef: "slotsForCurrentMobileWorker"
     };
+    this.displayNoSlotsMsg = true;
   }
 
   handleTimeSlotTitle() {
@@ -262,6 +281,11 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     this.formattedRecommendedSlotsArray = this.filterRecommededSlots(
       this.formattedTimeSlotArray
     );
+    if (this.formattedTimeSlotArray && this.formattedTimeSlotArray.length > 0) {
+      this.displayNoSlotsMsg = false;
+    } else {
+      this.displayNoSlotsMsg = true;
+    }
     this.allowScrolling();
     this.callCustomEvent("updateNonAvailableDates", this.nonAvailableDateArray);
   }
@@ -477,6 +501,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     let slotsData;
     this.formattedTimeSlotArray = [];
     this.formattedRecommendedSlotsArray = [];
+    this.displayNoSlotsMsg = true;
 
     if (updatedAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
       this.slotsData.currentAssignmentMethodRef = "slotsForCurrentMobileWorker";

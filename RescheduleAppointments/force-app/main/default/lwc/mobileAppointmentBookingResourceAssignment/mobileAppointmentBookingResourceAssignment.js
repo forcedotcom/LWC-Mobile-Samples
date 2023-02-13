@@ -8,6 +8,7 @@ export default class MobileAppointmentBookingResourceAssignment extends Lightnin
   @api userName = "";
   @api selecteddate;
   @api isExcluded;
+  @api showMobileWorkerChoice;
   @api excludedMsg =
     this.LABELS.Appointment_ReBooking_cant_select_Mobile_Worker_excluded;
   resourceAssignmentTitle =

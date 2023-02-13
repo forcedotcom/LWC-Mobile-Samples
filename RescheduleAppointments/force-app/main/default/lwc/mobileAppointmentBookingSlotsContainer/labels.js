@@ -22,6 +22,8 @@ import Appointment_ReBooking_WeekDayLong_Sunday from "@salesforce/label/c.Appoin
 import Appointment_ReBooking_today_text from "@salesforce/label/c.Appointment_ReBooking_today_text";
 import Appointment_ReBooking_all_available_appointments from "@salesforce/label/c.Appointment_ReBooking_all_available_appointments";
 import Appointment_ReBooking_recommended_appointments from "@salesforce/label/c.Appointment_ReBooking_recommended_appointments";
+import Appointment_ReBooking_empty_state_select_any_available_worker from "@salesforce/label/c.Appointment_ReBooking_empty_state_select_any_available_worker";
+import Appointment_ReBooking_empty_state_change_the_dates from "@salesforce/label/c.Appointment_ReBooking_empty_state_change_the_dates";
 
 const customLabels = {
   Appointment_ReBooking_no_available_appointments_msg,
@@ -48,7 +50,10 @@ const customLabels = {
   Appointment_ReBooking_WeekDayLong_Saturday,
   Appointment_ReBooking_WeekDayLong_Sunday,
   Appointment_ReBooking_all_available_appointments,
-  Appointment_ReBooking_recommended_appointments
+  Appointment_ReBooking_recommended_appointments,
+  Appointment_ReBooking_recommended_appointments,
+  Appointment_ReBooking_empty_state_select_any_available_worker,
+  Appointment_ReBooking_empty_state_change_the_dates
 };
 
 export default customLabels;
