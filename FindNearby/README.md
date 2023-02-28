@@ -9,9 +9,11 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
 * Authorize your org
 
 ## Set Up the LWC
-1. Download the source code.
+1. Get the source code:
+    1. From [LWC-Mobile-Samples](https://github.com/forcedotcom/LWC-Mobile-Samples), click **Code**.
+    2. Clone the code or download the zip file.
 2. Configure the LWC:  
-    1. Open the project in Visual Studio Code.  
+    1. Open the FindNearby folder in Visual Studio Code.  
     2. Under `force-app/main/default/lwc/mobileMapLayersMain`, open the `config.js` file.    
     3. Review the predefined code blocks in the mapObjects array. Each code block represents an object that can be displayed on the map. The map shows one type of object at a time, and you can switch between types. By default, the object type you see when you launch the LWC is the first code block of the mapObjects array. According to the default configuration of the LWC, the displayed object is Service Appointment.
 
