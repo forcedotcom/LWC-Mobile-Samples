@@ -16,7 +16,7 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
    1. From [LWC-Mobile-Samples](https://github.com/forcedotcom/LWC-Mobile-Samples), click **Code**.
    2. Clone the code or download the zip file.
 2. Configure the LWC:
-   1. Open the UploadAndAnnotateImages folder in Visual Studio Code.
+   1. Open the `UploadAndAnnotateImages` folder in Visual Studio Code.
    2. Under `force-app/main/default/lwc/image-capture/`, open the `imageCapture.js` file.
    3. In the `compressionOptions` dictionary, you can disable compression using the `compressionEnabled` parameter. If compression is enabled, you can control additional compression values.
       1. `resizeMode`: Determines how the image will be resized:
