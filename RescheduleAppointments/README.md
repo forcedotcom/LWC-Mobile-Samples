@@ -10,7 +10,9 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
 
 ## Set Up the LWC
 
-1. Download the source code.
+1. Get the source code.
+    1. From LWC-Mobile-Samples, click Code.
+    2. Clone the code or download the zip file.
 2. Enable the permission sets:
     1. From Setup, in the Quick Find box, enter `Users`, and then select __Users__.
     2. Select the required user.
@@ -25,7 +27,7 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
     Tip: Make sure that the Dispatched status is not considered a pinned status. From Field Service Settings, go to Scheduling and deselect the Dispatched status from the list of statuses that are considered as pinned, or unmovable, for scheduling.
 
 3. Configure the LWC:
-    1. Open the project in Visual Studio Code. 
+    1. Open the RescheduleAppointments folder in Visual Studio Code. 
     2. Under
        `force-app/main/default/lwc/mobileAppointmentBookingSettingsContainer`, open the `MobileAppointmentBookingSettingsContainer.js` file.
     3. You can modify these settings:
