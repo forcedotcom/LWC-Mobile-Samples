@@ -15,7 +15,7 @@
     font-size: 16px;
     border-radius: 12px;
     border-color: #0D7FA8;
-    font-weight: 600;
+    font-weight: 500;
     color: #0D7FA8;
     line-height: 22px;
     display: flex;
@@ -23,6 +23,17 @@
     text-align: center;
     margin: 8px 0;
 }
+
+.timeslotButton:active{
+    opacity: 25%;
+}
+.timeslotButton:hover{
+    opacity: 25%;
+}
+.timeslotButton:focus{
+    opacity: 25%;
+}
+
 .time-slot-btn-wrapper{
     box-sizing: border-box;
     display: flex;
@@ -50,7 +61,7 @@
 }
 .page-title{
     color: rgb(0, 0, 0);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: -0.38px;
     margin-top: 10px;
@@ -70,6 +81,11 @@
     height: 10px;
     margin: 16px -16px 0 -16px;
 }
+
+.active-slot{
+    opacity: 25%;
+}
+
 .grey-action-icon{
     margin-bottom: 16px;
     --sds-c-icon-color-background: #EEEEEE;
@@ -94,4 +110,4 @@
     line-height: 22px;
     margin-top: 16px;
     text-align: center;
-} 
+}

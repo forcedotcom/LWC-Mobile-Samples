@@ -1,13 +1,13 @@
 .container{
     background-color: white;
     margin: 10px 0;
-    padding: 13px 16px;
+    padding: 13px 16px 0 16px;
 }
 .title{
     
     font-size: 18px;
     line-height: 21px;
-    font-weight: 600;
+    font-weight: 500;
     color: rgb(0,0,0);
     margin-bottom: 13px;
 }

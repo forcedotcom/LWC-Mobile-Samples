@@ -4,21 +4,21 @@
 }
 .title{
     font-size: 18px;
-    line-height: 18px;
-    margin-bottom: 16px;
-    color: rgba(68, 68, 68, 1);
-    font-style: normal;
-    font-weight: 600;
     line-height: 21px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(159, 170, 181, 0.5);
-    padding-bottom: 16px;
+    font-weight: 500;
+    color: rgb(0,0,0);
+    margin-bottom: 13px;
+}
+
+.separator{
+    height: 1px;
+    background-color: rgba(159, 170, 181, 0.5);
+    margin: 0 -16px 16px -16px;
 }
 
 .info{
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 22px;
     color: rgba(68, 68, 68, 1);
     border: 1px solid rgba(159, 170, 181, 0.5);
     border-radius: 12px;
@@ -28,7 +28,7 @@
 .info-emph{
     font-size: 16px;
     line-height: 22px;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 4px;
     color: rgba(0, 0, 0, 1);
 }
@@ -41,7 +41,7 @@
     color: rgba(0, 0, 0, 1);
 }
 
-.appointment-number{
+.secondary-title{
     font-size: 16px;
     line-height: 22px;
     font-weight: 400;

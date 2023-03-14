@@ -51,7 +51,6 @@ const customLabels = {
   Appointment_ReBooking_WeekDayLong_Sunday,
   Appointment_ReBooking_all_available_appointments,
   Appointment_ReBooking_recommended_appointments,
-  Appointment_ReBooking_recommended_appointments,
   Appointment_ReBooking_empty_state_select_any_available_worker,
   Appointment_ReBooking_empty_state_change_the_dates
 };

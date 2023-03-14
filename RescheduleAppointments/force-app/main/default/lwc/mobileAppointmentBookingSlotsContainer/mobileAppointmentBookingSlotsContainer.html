@@ -6,10 +6,17 @@
                 size="large"
                 variant="error"
                 class="grey-action-icon"
-                > 
-            </lightning-icon>
-            <div class="empty-slos-title">{LABELS.Appointment_ReBooking_no_available_appointments_msg}</div>
-            <div class="empty-slos-body">{noSlotsBody}</div>
+                > </lightning-icon>
+                <div class="empty-slos-title">{LABELS.Appointment_ReBooking_no_available_appointments_msg}</div>
+                <template lwc:if={showMobileWorkerChoice}>
+                    <div class="empty-slos-body">
+                        <lightning-formatted-rich-text value={LABELS.Appointment_ReBooking_empty_state_select_any_available_worker}></lightning-formatted-rich-text>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <div class="empty-slos-body">{LABELS.Appointment_ReBooking_empty_state_change_the_dates}</div>
+                </template>
+                
         </div>
     </template>
     <template lwc:else>
@@ -23,7 +30,7 @@
                 
                 <template for:each={timeSlotArr.timeArray} for:item="timeArray">
                     <button key={timeArray} class="slds-button slds-button_neutral timeslotButton" 
-                        title={timeArray.fullValue} label={timeArray.label} slot="actions" onclick={handleTimeSlotClickEvent} >
+                        title={timeArray.fullValue} label={timeArray.label} slot="actions" onclick={handleTimeSlotClickEvent}>
                         {timeArray.label}
                     </button>
                   </template>
@@ -53,6 +60,6 @@
             </div>
         </template>
          <!-- SPINNER -->  
-        </div> 
-    </template>
+        </div>  
+    </template>         
 </template>

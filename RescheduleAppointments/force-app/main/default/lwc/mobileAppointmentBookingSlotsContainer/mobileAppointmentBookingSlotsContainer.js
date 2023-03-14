@@ -28,6 +28,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   lastDayOfTheWeek;
   firstSlotDate;
   @api hideNonAvailableAppointments;
+  _previousSelectedSlot;
   displayNoSlotsMsg;
   _showMobileWorkerChoice;
   noSlotsBody;
@@ -79,17 +80,19 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   }
   set timeSlotObject(value) {
     let updatedData;
-    if (value) {
+    if (!value) {
+      this.formattedTimeSlotArray = [];
+      this.formattedRecommendedSlotsArray = [];
+      this.displayNoSlotsMsg = true;
+    } else {
       this.lockScrolling();
-      this.updateSlotData(value);
+      if (value.length > 0) {
+        this.updateSlotData(value);
+      }
       updatedData = Object.values(
         this.slotsData[this.slotsData.currentAssignmentMethodRef]
       );
       this.handleTimeSlotUpdateEvent(updatedData);
-    } else {
-      this.formattedTimeSlotArray = [];
-      this.formattedRecommendedSlotsArray = [];
-      this.displayNoSlotsMsg = true;
     }
   }
 
@@ -130,7 +133,6 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
 
   set maxValidDate(value) {
     if (value) {
-      console.log("Max valid date is : " + value);
       this.maxValidCalendarDate = value;
     }
   }
@@ -149,13 +151,6 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   }
   set showMobileWorkerChoice(value) {
     this._showMobileWorkerChoice = value;
-    if (this._showMobileWorkerChoice) {
-      this.noSlotsBody =
-        this.LABELS.Appointment_ReBooking_empty_state_select_any_available_worker;
-    } else {
-      this.noSlotsBody =
-        this.LABELS.Appointment_ReBooking_empty_state_change_the_dates;
-    }
   }
 
   constructor() {
@@ -340,7 +335,6 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     this.nonAvailableDateArray = Array.from(
       new Set(this.nonAvailableDateArray)
     );
-
     return newSortedArray;
   }
 
@@ -487,7 +481,10 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
         var elementToShowLocation = elementToShow.getBoundingClientRect(); //gets the current user view
         var offset = elementToShowLocation.top - 145; //gets the difference between user view and element view minus the calendar height
         if (!this.isWeekUpdated) {
-          elementToShow.classList.add("headerBold");
+          elementToShow.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
         }
         this.previousElement = elementToShow;
       } catch (e) {

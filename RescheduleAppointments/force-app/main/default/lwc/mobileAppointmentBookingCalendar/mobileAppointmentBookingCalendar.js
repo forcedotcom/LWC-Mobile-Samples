@@ -1,7 +1,7 @@
 import { LightningElement, api, track } from "lwc";
 import customLabels from "./labels";
 
-export default class MobileAppointmentBookingRebookingCalendar extends LightningElement {
+export default class AaRebookingCalendar extends LightningElement {
   LABELS = customLabels;
   months = [
     this.LABELS.Appointment_ReBooking_MonthName_January,
@@ -196,6 +196,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
         tempDate.setDate(firstdayOfWeek.getDate() + i);
         firstArr["date"] = tempDate.getDate();
         firstArr["value"] = tempDate;
+        firstArr["id"] = "d" + tempDate.getDate();
         tempRow.push(firstArr);
       }
       this.noofWeeks.push(tempRow);
@@ -223,12 +224,19 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
 
   showMonthView(currDate, maxValidDate) {
     var currdate = new Date();
-    var monthDiff = this.getMonthDiff(currdate, this.maxValidCalendarDate);
+    var monthDiff = this.getMonthDiff(currdate, this.maxValidDate);
     this.noOfMonths = [];
     var calendarSelectedDate;
     for (let a = 0; a < monthDiff + 1; a++) {
-      var newCurrMonth = new Date();
-      newCurrMonth = new Date(newCurrMonth.setMonth(currDate.getMonth() + a));
+      let newDate = new Date();
+      let currMonth = newDate.getMonth();
+      //Fix Bug: When the next month is with less days than the previous,
+      //for example, when the date is 29th January, this would make the date February the 29th which doesn't exist,
+      //JavaScript will try to find the closest valid date which is first of March.
+      //So we set the day to the first day of the month.
+      newDate.setDate(1);
+      let nextMonth = newDate.setMonth(currMonth + a);
+      let newCurrMonth = new Date(nextMonth);
       calendarSelectedDate = newCurrMonth;
       const firstDay = new Date(
         newCurrMonth.getFullYear(),
@@ -476,7 +484,6 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
         var loopDate = this.noofWeeks[week][day].value.setHours(0, 0, 0, 0);
         // BLOCK UN AVAILABLE DATES IN WEEK VIEW
         if (this.isInArray(this.nonAvailableDates, loopDate)) {
-          //console.log("Block date is : "+loopDate);
           this.noofWeeks[week][day].blocked = true;
           this.noofWeeks[week][day].selected = false;
         }
@@ -560,7 +567,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
     var dNow = new Date();
     this.isLeftSwipeDisable = false;
     if (firstDayOfTheWeek < dNow) {
-      // DIsable the left swipe
+      // Disable the left swipe
       this.isLeftSwipeDisable = true;
     }
   }
@@ -568,7 +575,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
   validateRightSwipeAction(lastWeekDay) {
     this.isRightSwipeDisable = false;
     if (lastWeekDay > this.maxValidCalendarDate) {
-      // DIsable the left swipe
+      // Disable the left swipe
       this.isRightSwipeDisable = true;
     }
   }
@@ -576,7 +583,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
   validateIfSelectedDateIsInRange(selectedDate) {
     var currentDate = new Date();
     if (selectedDate < currentDate) {
-      // DIsable the left swipe
+      // Disable the left swipe
       this.currentSelectedDate = currentDate;
     }
   }
@@ -590,27 +597,27 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
     console.log("Touch : Start : " + this.xDown);
   }
 
-  handleTouchMove(evt) {
+  handleToucEnd(evt) {
+    //Scroll to the following selected date ;
+    //update selected date;
     if (!this.xDown || !this.yDown) {
       return;
     }
-    var xUp = evt.touches[0].clientX;
-    var yUp = evt.touches[0].clientY;
+    var xUp = evt.changedTouches[0].clientX;
+    var yUp = evt.changedTouches[0].clientY;
     var xDiff = this.xDown - xUp;
     var yDiff = this.yDown - yUp;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
       /*most significant*/
+
       if (xDiff > 0) {
         /* left swipe */
-        console.log("Swipe : left");
-
         if (!this.isRightSwipeDisable) {
           this.handleNextButtonClick();
         }
       } else {
-        /* right swipe */
-        console.log("Swipe : right");
+        /* right swipe*/
         if (!this.isLeftSwipeDisable) {
           this.handlePreviousButtonClick();
         }
@@ -625,5 +632,22 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
     /* reset values */
     this.xDown = null;
     this.yDown = null;
+  }
+
+  previousElement;
+  executeScroll(selectedDate) {
+    var elementToShow = this.template.querySelector(
+      "[id^=d" + selectedDate.getDate() + "]"
+    );
+    if (elementToShow) {
+      try {
+        elementToShow.scrollIntoView({
+          behavior: "smooth",
+          inline: "end"
+        });
+      } catch (e) {
+        console.log("Error is : " + e);
+      }
+    }
   }
 }
