@@ -43,7 +43,6 @@ export default class MobileAppointmentBookingSettingsContainer extends Lightning
   ];
 
   connectedCallback() {
-    //this.showExactArrivalTime = true;
     const myStyle = document.createElement("style");
     myStyle.innerHTML = overrideCSS;
     document.head.appendChild(myStyle);
