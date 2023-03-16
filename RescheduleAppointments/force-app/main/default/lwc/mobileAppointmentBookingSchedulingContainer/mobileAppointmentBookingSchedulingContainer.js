@@ -54,7 +54,7 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   @api minValidDate;
 
   show_confirmBtnLayout = false;
-  _recommendedScore;
+  @api recommendedScore;
   @api allAppointmentsTitle =
     this.LABELS.Appointment_ReBooking_all_available_appointments;
   @api recommendedAppointmentsTitle =
@@ -173,14 +173,6 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
     this.WorkTypeName = value;
   }
 
-  @api
-  get recommendedScore() {
-    return this._recommendedScore;
-  }
-
-  set recommendedScore(value) {
-    this._recommendedScore = value;
-  }
   @api
   get currentAssignmentMethod() {
     return this._currentAssignmentMethod;

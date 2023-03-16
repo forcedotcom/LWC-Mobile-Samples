@@ -32,6 +32,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   displayNoSlotsMsg;
   _showMobileWorkerChoice;
   noSlotsBody;
+  @api recommendedScore;
 
   MONTHNAME = [
     this.LABELS.Appointment_ReBooking_MonthName_January,
@@ -234,7 +235,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
             timeDateArray["fullValue"] = timeSlotArray[k].dateTime;
             timeDateArray["grade"] = timeSlotArray[k].grade;
             timeDateArray["isRecomended"] =
-              timeSlotArray[k].grade > 80 ? true : false;
+              timeSlotArray[k].grade > this.recommendedScore ? true : false;
             tempArray.push(timeDateArray);
           }
         }

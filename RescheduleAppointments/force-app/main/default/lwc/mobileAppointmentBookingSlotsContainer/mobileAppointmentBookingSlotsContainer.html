@@ -20,21 +20,23 @@
         </div>
     </template>
     <template lwc:else>
-        <div class="slots-container">   
-            <div class="page-title">{LABELS.Appointment_ReBooking_recommended_appointments}</div>
-            <div class="separator"></div>
-            <template for:each={formattedRecommendedSlotsArray} for:item="timeSlotArr">
-                <div class="header" key={timeSlotArr.title} data-id={timeSlotArr.title} onscroll={onScroll}>
-                    {timeSlotArr.title}
-                </div>
-                
-                <template for:each={timeSlotArr.timeArray} for:item="timeArray">
-                    <button key={timeArray} class="slds-button slds-button_neutral timeslotButton" 
-                        title={timeArray.fullValue} label={timeArray.label} slot="actions" onclick={handleTimeSlotClickEvent}>
-                        {timeArray.label}
-                    </button>
-                  </template>
-            </template>
+        <div class="slots-container">
+            <template lwc:if={formattedRecommendedSlotsArray.length}>    
+                <div class="page-title">{LABELS.Appointment_ReBooking_recommended_appointments}</div>
+                <div class="separator"></div>
+                <template for:each={formattedRecommendedSlotsArray} for:item="timeSlotArr">
+                    <div class="header" key={timeSlotArr.title} data-id={timeSlotArr.title} onscroll={onScroll}>
+                        {timeSlotArr.title}
+                    </div>
+                    
+                    <template for:each={timeSlotArr.timeArray} for:item="timeArray">
+                        <button key={timeArray} class="slds-button slds-button_neutral timeslotButton" 
+                            title={timeArray.fullValue} label={timeArray.label} slot="actions" onclick={handleTimeSlotClickEvent}>
+                            {timeArray.label}
+                        </button>
+                    </template>
+                </template>
+            </template>  
             <div class="section"></div>
             <div class="page-title">{LABELS.Appointment_ReBooking_all_available_appointments}</div>
             <div class="separator"></div>
