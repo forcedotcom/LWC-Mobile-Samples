@@ -48,7 +48,6 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   _currentAssignmentMethod;
   @api assignToName;
   @api userName;
-  @api showAssignmentMethodToggle;
   @api isExcluded;
   @api showMobileWorkerChoice;
   @api minValidDate;

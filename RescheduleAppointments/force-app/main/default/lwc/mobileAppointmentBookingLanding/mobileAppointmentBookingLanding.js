@@ -192,10 +192,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     this.getUserNameForAssignTo();
   }
 
-  @api get showAssignmentMethodToggle() {
-    return this.enableAssignToMe && this.enableAssignToEveryAvailable;
-  }
-
   set schedulingHorizonUnit(value) {
     this.selectedHorizonUnit = value;
   }

@@ -1,17 +1,13 @@
 <template>
-    <template if:true={showAssignmentMethodToggle}>
-        <div>
-            <c-mobile-appointment-booking-resource-assignment
-            current-assignment-method={currentAssignmentMethod}
-            user-name={userName}
-            selecteddate={selectedDate}
-            is-excluded={isExcluded}
-            show-mobile-worker-choice={showMobileWorkerChoice}
-            >
-    
-            </c-mobile-appointment-booking-resource-assignment>
-        </div>
-    </template>
+    <div>
+        <c-mobile-appointment-booking-resource-assignment
+        current-assignment-method={currentAssignmentMethod}
+        user-name={userName}
+        selecteddate={selectedDate}
+        is-excluded={isExcluded}
+        show-mobile-worker-choice={showMobileWorkerChoice}>
+        </c-mobile-appointment-booking-resource-assignment>
+    </div>
     <div class="calendarView" data-id="calendar">
         <c-mobile-appointment-booking-calendar class="calendarInfo"
             ondateselection = {onDateSelected}
