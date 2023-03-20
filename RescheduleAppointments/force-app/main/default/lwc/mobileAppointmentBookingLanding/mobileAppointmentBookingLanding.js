@@ -1163,12 +1163,23 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   updateCompactInfoObj(workTypeName, startDate, endDate, appointmentNumber) {
-    let compactInfo = {
-      workTypeName,
-      startDate,
-      endDate,
-      appointmentNumber
-    };
+    let compactInfo = {};
+
+    if (this.showExactArrivalTime) {
+      compactInfo = {
+        workTypeName,
+        startDate,
+        endDate: null,
+        appointmentNumber
+      };
+    } else {
+      compactInfo = {
+        workTypeName,
+        startDate,
+        endDate,
+        appointmentNumber
+      };
+    }
 
     this.compactInfoObj = JSON.parse(JSON.stringify(compactInfo));
   }
