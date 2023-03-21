@@ -53,8 +53,8 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
         3. MobileAppointmentBookingCompactAppointmentInfo
         4. MobileAppointmentBookingRescheduleAppointment
         5. MobileAppointmentBookingResourceAssignment
-        6. MobileAppointmentBookingSlotscontainer
-        7. MobileAppointmentBookingSchedulingconatiner
+        6. MobileAppointmentBookingSlotsContainer
+        7. MobileAppointmentBookingSchedulingContainer
         8. MobileAppointmentBookingLanding
         9. MobileAppointmentBookingSettingsContainer
 
