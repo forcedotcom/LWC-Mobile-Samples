@@ -50,13 +50,13 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
     3. From the lwc folder:
         1. MobileAppointmentBookingCalendar
         2. MobileAppointmentBookingUtils
-        3. MobileAppointmentBookingcompactAppointmentInfo
-        4. MobileAppointmentBookingcustomToast
-        5. MobileAppointmentBookingresourceAssignment
-        6. MobileAppointmentBookingslotscontainer
-        7. MobileAppointmentBookingschedulingconatiner
-        8. MobileAppointmentBookinglanding
-        9. MobileAppointmentBookingsettingsContainer
+        3. MobileAppointmentBookingCompactAppointmentInfo
+        4. MobileAppointmentBookingRescheduleAppointment
+        5. MobileAppointmentBookingResourceAssignment
+        6. MobileAppointmentBookingSlotscontainer
+        7. MobileAppointmentBookingSchedulingconatiner
+        8. MobileAppointmentBookingLanding
+        9. MobileAppointmentBookingSettingsContainer
 
 5. Grant access to the LWC’s users.
     1. From Setup, in the Quick Find box, enter `Users`, and then select __Profiles__.
