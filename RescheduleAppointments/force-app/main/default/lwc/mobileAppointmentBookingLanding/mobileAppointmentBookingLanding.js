@@ -1,6 +1,5 @@
 import { LightningElement, api, track } from "lwc";
 import getServiceAppointment from "@salesforce/apex/AppointmentController.getServiceAppointment";
-import updateAppointmentStatus from "@salesforce/apex/AppointmentController.updateServiceAppointmentStatus";
 import getSlotsByAssignmentMethod from "@salesforce/apex/AppointmentController.getSlotsByAssignmentMethod";
 import getSchedulingPolicyId from "@salesforce/apex/AppointmentController.getSchedulingPolicyId";
 import getOperatingHoursId from "@salesforce/apex/AppointmentController.getOperatingHoursId";
@@ -12,7 +11,8 @@ import deleteClonedAppointmentData from "@salesforce/apex/AppointmentController.
 import isUserExcludedResource from "@salesforce/apex/AppointmentController.isUserExcludedResource";
 import convertTimeToOtherTimeZone from "@salesforce/apex/AppointmentController.convertTimeToOtherTimeZone";
 import customLabels from "./labels";
-import { formatAppointmentDateandHourRange } from "c/mobileAppointmentBookingUtils";
+import { convertDateUTCtoLocal } from "c/mobileAppointmentBookingUtils";
+import getUserName from "@salesforce/apex/AppointmentController.getUserName";
 
 const assignmentMethod = {
   ASSIGN_TO_ME: "assignToMe",
@@ -26,14 +26,12 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   previousServiceAppointmentId;
   @track currentAppointmentData;
   @api appointmentFields;
-  @api useDefaultFields;
   @api schedulingHorizonValue;
   @api schedulingPolicyId;
   @api showExactArrivalTime;
   @api maxDaysToGetAppointmentSlots;
   selectedHorizonUnit;
   @api operatingHoursId;
-  _showModal = 0;
   @track selectedDate;
   @api recommendedScore;
   @api userId;
@@ -74,6 +72,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   @api nonAvailableDateArray = [];
   @api noOfDaysBeforeAfterWeek = 2;
   @api worktypeDisplayname;
+  @track compactInfoObj = {};
 
   show_confirmBtnLayout = false;
 
@@ -81,7 +80,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     return this.serviceAppointmentObject;
   }
   set serviceappointmentobject(value) {
-    this.selectedDate = new Date();
     if (value) {
       this.serviceAppointmentObject = value;
       this.customerFirstName = value.CustomerFirstName;
@@ -185,25 +183,13 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   @api
-  get showModal() {
-    return this._showModal;
-  }
-
-  set showModal(value) {
-    this._showModal = value;
-  }
-
-  @api
   get currentAssignmentMethod() {
     return this._currentAssignmentMethod;
   }
 
   set currentAssignmentMethod(value) {
     this._currentAssignmentMethod = value;
-  }
-
-  @api get showAssignmentMethodToggle() {
-    return this.enableAssignToMe && this.enableAssignToEveryAvailable;
+    this.getUserNameForAssignTo();
   }
 
   set schedulingHorizonUnit(value) {
@@ -228,15 +214,10 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   dateArrayForQueryAllMobilesWorkerSlots = [];
   @track timeSlotDateWise;
   timeSlotWiseTemp = [];
-  selectedSlotStringForToast = "";
 
-  //Toast
-  @track showToast = false;
-  toastVariant = "success";
-  toastTitle = "";
-  toastMessage = "";
   @api schedulingPolicy;
   @api operatingHours;
+  @api assignToName;
 
   ARRIVAL_TIME_TEXT = "Exact Appointment Times";
   ARRIVAL_WINDOW_TEXT = "Arrival Windows";
@@ -251,8 +232,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
   constructor() {
     super();
-    this.template.addEventListener("closemodal", this.closeModal);
-    this.template.addEventListener("openmodal", this.openModal);
     this.template.addEventListener(
       "onassignmentmethodchanged",
       this.handleCurrentAssignmentMethodChange
@@ -276,7 +255,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
           ", previous: " +
           this._previousServiceAppointmentId
       );
-
       this.dataLoaded = false;
       this.prepareInitialDataAndAssignmentData();
     }
@@ -292,13 +270,16 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         this.currentAssignmentMethod = assignmentMethod.ASSIGN_TO_ME;
         this.isCleanupRequired = true;
       }
+
       this.showMobileWorkerChoice = true;
     } else if (!this.enableAssignToMe) {
       this.currentAssignmentMethod = assignmentMethod.ASSIGN_TO_ANY_AVIALABLE;
       this.isCleanupRequired = false;
+      this.showMobileWorkerChoice = false;
     } else {
       this.currentAssignmentMethod = assignmentMethod.ASSIGN_TO_ME;
       this.isCleanupRequired = false;
+      this.showMobileWorkerChoice = false;
     }
   }
 
@@ -316,6 +297,17 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
           this.error = data.error;
           console.log("Error in getInitData::: " + JSON.stringify(data.error));
         } else {
+          this.currentAppointmentData = JSON.parse(JSON.stringify(data));
+          this.updateCompactInfoObj(
+            this.currentAppointmentData.WorkTypeName,
+            convertDateUTCtoLocal(
+              this.currentAppointmentData.ArrivalWindowStartTime
+            ),
+            convertDateUTCtoLocal(
+              this.currentAppointmentData.ArrivalWindowEndTime
+            ),
+            this.currentAppointmentData.AppointmentNumber
+          );
           this.handleDataOnServiceAppointmentRecieved(data);
         }
       })
@@ -327,32 +319,30 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   handleDataOnServiceAppointmentRecieved(data) {
-    let firstDateOfWeek;
-    this.currentAppointmentData = JSON.parse(JSON.stringify(data));
     this.error = undefined;
     this.serviceTerritoryTimeZone = data.ServiceTerritoryTimeZone;
     this.currentSAstatus = data.ServiceAppointmentStatus;
 
     if (data.ArrivalWindowEndTime && data.ArrivalWindowEndTime !== "null") {
-      this.OriginalArrivalEndDate = this.convertDateUTCtoLocal(
+      this.OriginalArrivalEndDate = convertDateUTCtoLocal(
         data.ArrivalWindowEndTime
       );
     }
     if (data.ArrivalWindowStartTime && data.ArrivalWindowStartTime !== "null") {
-      this.OriginalArrivalStartDate = this.convertDateUTCtoLocal(
+      this.OriginalArrivalStartDate = convertDateUTCtoLocal(
         data.ArrivalWindowStartTime
       );
     }
 
-    this.OriginalEarliestStartDate = this.convertDateUTCtoLocal(
+    this.OriginalEarliestStartDate = convertDateUTCtoLocal(
       data.EarliestStartTime
     );
     this.checkServiceAppointmentStatus(this.currentSAstatus);
-    this.serviceAppointmentDueDate = this.convertDateUTCtoLocal(data.DueDate);
+    this.serviceAppointmentDueDate = convertDateUTCtoLocal(data.DueDate);
     this.maxValidCalendarDate = this.calculateMaxValidHorizonDate();
 
     if (data.EarliestStartTime) {
-      this.minValidCalendarDate = this.convertDateUTCtoLocal(
+      this.minValidCalendarDate = convertDateUTCtoLocal(
         data.EarliestStartTime.toString()
       );
     } else {
@@ -375,16 +365,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
     console.log("createSAObject::: " + JSON.stringify(appointmentFields));
     return appointmentFields;
-  }
-
-  openModal(event) {
-    event.preventDefault();
-    this.showModal = 1;
-  }
-
-  closeModal(event) {
-    event.preventDefault();
-    this.showModal = 0;
   }
 
   onCustomEventCalled(event) {
@@ -623,6 +603,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
     var loopdate = new Date(firstDateOfWeek);
     loopdate = new Date(this.getDateWithoutTime(loopdate));
+
     console.log("Date in the Array is : " + loopdate);
     console.log(
       "this.dateArrayForQuery.indexOf(loopdate) + : " +
@@ -645,6 +626,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
       if (loopdate < this.minValidCalendarDate) {
         loopdate = this.minValidCalendarDate;
       }
+
       if (loopdate >= this.minValidCalendarDate) {
         console.log("Run appointment query for  date " + loopdate);
 
@@ -772,7 +754,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   onServiceAppointmentUpdate = (event) => {
-    this.lockScrolling();
     let selectedSlotStart = event.detail.selectedSlotStart;
     let selectedSlotEnd = event.detail.selectedSlotEnd;
 
@@ -795,7 +776,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
           this.UpdateServiceAppointmentFunction(event);
         })
         .catch((error) => {
-          this.allowScrolling();
           console.log("error is : " + error);
         });
     } else {
@@ -806,11 +786,8 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   UpdateServiceAppointmentFunction = (event) => {
     let selectedSlotStart = event.detail.selectedSlotStart;
     let selectedSlotEnd = event.detail.selectedSlotEnd;
-    this.selectedSlotStringForToast = formatAppointmentDateandHourRange(
-      selectedSlotStart,
-      selectedSlotEnd
-    );
     let ArrivalWindowStartTime = event.detail.ArrivalWindowStartTime;
+
     if (
       this.isValidDate(selectedSlotStart) &&
       this.isValidDate(selectedSlotEnd)
@@ -820,7 +797,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
       }
       if (
         selectedSlotStart.getTime() !==
-        this.convertDateUTCtoLocal(ArrivalWindowStartTime).getTime()
+        convertDateUTCtoLocal(ArrivalWindowStartTime).getTime()
       ) {
         this.showSpinnerInChildClass = true;
         console.log("this.selectedSlotStart=" + selectedSlotStart);
@@ -832,20 +809,11 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         })
           .then((data) => {
             if (data.error) {
-              this.allowScrolling();
-              this.showSpinnerInChildClass = false;
-              this.handleShowToast(
-                "warning",
-                this.LABELS
-                  .Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message,
-                ""
-              );
-              console.log(
-                this.LABELS
-                  .Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message +
-                  "  " +
-                  data.error
-              );
+              this.template
+                .querySelector(
+                  "c-mobile-appointment-booking-scheduling-container"
+                )
+                .handleSchedulingResponse(false);
             } else {
               // If the transaction Success, run the FSL schedule service
               scheduleSA({
@@ -855,135 +823,77 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
                 currentAssignmentMethod: this.currentAssignmentMethod
               })
                 .then((data) => {
-                  this.allowScrolling();
                   if (data.error) {
-                    this.showSpinnerInChildClass = false;
-                    this.handleShowToast(
-                      "warning",
-                      this.LABELS
-                        .Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message,
-                      ""
-                    );
                     console.log(
                       "Error while executing FSL API : " +
                         "  " +
                         JSON.stringify(data.error)
                     );
+                    this.template
+                      .querySelector(
+                        "c-mobile-appointment-booking-scheduling-container"
+                      )
+                      .handleSchedulingResponse(false);
                   } else {
                     console.log(
                       "Service appointment Scheduled : " + JSON.stringify(data)
                     );
-
-                    this.handleShowToast(
-                      "success",
-                      this.LABELS
-                        .Appointment_ReBooking_toastMessage_appointment_reschedule,
-                      this.selectedSlotStringForToast
-                    );
                     this.isAppointmentConfirmed = true;
-                    console.log("Appointment reschedule sucessfully");
-
                     // Update Data After successfull booking
-                    this.getInitData();
+                    this.updateCompactInfoAfterReschedule(
+                      selectedSlotStart,
+                      selectedSlotEnd
+                    );
+                    this.template
+                      .querySelector(
+                        "c-mobile-appointment-booking-scheduling-container"
+                      )
+                      .handleSchedulingResponse(true);
                   }
                 })
                 .catch((error) => {
                   this.revertSA();
-                  this.allowScrolling();
-                  this.showSpinnerInChildClass = false;
-                  this.handleShowToast(
-                    "warning",
-                    this.LABELS
-                      .Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message,
-                    ""
-                  );
                   console.log(
                     "Error while executing FSL API : " +
                       "  " +
                       JSON.stringify(error)
                   );
+                  this.template
+                    .querySelector(
+                      "c-mobile-appointment-booking-scheduling-container"
+                    )
+                    .handleSchedulingResponse(false);
                 });
             }
           })
           .catch((error) => {
-            this.allowScrolling();
-            this.showSpinnerInChildClass = false;
-            this.handleShowToast(
-              "warning",
-              this.LABELS
-                .Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message,
-              ""
-            );
             console.log(
               this.LABELS
                 .Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message +
                 "  " +
                 error
             );
+            this.template
+              .querySelector(
+                "c-mobile-appointment-booking-scheduling-container"
+              )
+              .handleSchedulingResponse(false);
           });
       } else {
-        this.allowScrolling();
-        this.showSpinnerInChildClass = false;
-        this.handleShowToast(
-          "warning",
-          this.LABELS.Appointment_ReBooking_same_appointment_selected_warning,
-          ""
-        );
+        this.template
+          .querySelector("c-mobile-appointment-booking-scheduling-container")
+          .handleSchedulingResponse(false);
       }
     } else {
-      this.allowScrolling();
       console.log("Invalid date time ");
+      this.template
+        .querySelector("c-mobile-appointment-booking-scheduling-container")
+        .handleSchedulingResponse(false);
     }
   };
 
   isValidDate(d) {
     return d instanceof Date && !isNaN(d);
-  }
-
-  executeRescheduleAppointmentQuery() {
-    this.showSpinnerInChildClass = true;
-    updateAppointmentStatus({
-      serviceAppointmentId: this.serviceAppointmentId,
-      statusId: this.rescheduleStatusId
-    })
-      .then((data) => {
-        this.allowScrolling();
-        if (data.success) {
-          this.handleShowToast(
-            "success",
-            this.LABELS
-              .Appointment_ReBooking_toastMessage_appointment_reschedule,
-            this.selectedSlotStringForToast
-          );
-          this.isAppointmentConfirmed = true;
-        } else if (data.urlExpired) {
-          console.log("invalidURL #9:");
-          this.show_InvalidURLpage();
-        } else {
-          if (data.error) {
-            this.handleShowToast(
-              "warning",
-              this.LABELS
-                .Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message,
-              ""
-            );
-            console.log(
-              this.LABELS
-                .Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message +
-                "  " +
-                data.error
-            );
-          }
-        }
-        this.showSpinnerInChildClass = false;
-      })
-      .catch((e) => {
-        console.log("ExecuteRescheduleAppointmentQuery" + JSON.stringify(e));
-      });
-  }
-
-  HandleCloseToast() {
-    this.showToast = false;
   }
 
   onWeekChangeEvent(event) {
@@ -1026,25 +936,14 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     }
   }
 
-  handleBackButton() {
-    this.handleButtonClickEvent("showConfirmScreen");
-  }
-  // pass date to main/parent class
-  handleButtonClickEvent(buttonEvent) {
-    const customEvent = new CustomEvent("eventname", {
-      detail: { buttonName: buttonEvent }
-    });
-    this.dispatchEvent(customEvent);
-  }
-
   getHeadlineDate() {
     const dateOptions = { weekday: "long", month: "long", day: "numeric" };
     if (this.ArrivalWindowStartTime == "null" || this.showExactArrivalTime) {
-      var startDate = this.convertDateUTCtoLocal(this.SchedStartTime);
-      var endDate = this.convertDateUTCtoLocal(this.SchedEndTime);
+      var startDate = convertDateUTCtoLocal(this.SchedStartTime);
+      var endDate = convertDateUTCtoLocal(this.SchedEndTime);
     } else {
-      var startDate = this.convertDateUTCtoLocal(this.ArrivalWindowStartTime);
-      var endDate = this.convertDateUTCtoLocal(this.ArrivalWindowEndTime);
+      var startDate = this.ArrivalWindowStartTime;
+      var endDate = convertDateUTCtoLocal(this.ArrivalWindowEndTime);
     }
     if (startDate && endDate) {
       var dateLong = startDate.toLocaleDateString(undefined, dateOptions);
@@ -1057,14 +956,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
       }
       this.headlineDate = dateLong;
       this.headlineTime = time;
-    }
-  }
-
-  convertDateUTCtoLocal(date) {
-    if (date && date !== "null") {
-      return new Date(date.replace(/ /g, "T") + ".000Z");
-    } else {
-      return "";
     }
   }
 
@@ -1113,49 +1004,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     this.show_confirmBtnLayout = false;
     // allow scrolling
     document.body.style.overflow = "auto";
-  }
-
-  onButtonClick(event) {
-    this.buttonClickName = event.detail.buttonName;
-    switch (this.buttonClickName) {
-      case "rescheduleEvent": {
-        this.showRescheduleScreen(true);
-        break;
-      }
-      case "confirmEvent": {
-        this.executeConfirmAppointmentQuery();
-        break;
-      }
-      case "showConfirmScreen": {
-        this.dateArrayForQuery = [];
-        this.dateArrayForQueryAllMobilesWorkerSlots = [];
-        this.dateArrayForQueryCurrentMobileWorkwerSlots = [];
-        this.showConfirmScreen(true);
-        break;
-      }
-      case "cancelAppointmentEvent": {
-        this.executeCancelAppointmentQuery();
-        break;
-      }
-      case "rescheduleSAsuccess": {
-        this.executeRescheduleAppointmentQuery();
-        console.log("Appointment reschedule sucessfully");
-        window.location.reload();
-        break;
-      }
-      case "showPageExpired": {
-        this.show_InvalidURLpage();
-        break;
-      }
-      case "onMonthViewSelected": {
-        this.dateArrayForQuery = [];
-        this.dateArrayForQueryAllMobilesWorkerSlots = [];
-        this.dateArrayForQueryCurrentMobileWorkwerSlots = [];
-        break;
-      }
-      default: {
-      }
-    }
   }
 
   handleCurrentAssignmentMethodChange = (event) => {
@@ -1229,19 +1077,8 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
       .finally(() => {
         this.calcAssignmentMethod();
         this.getInitData();
+        this.selectedDate = new Date();
       });
-  }
-
-  handleShowToast(toastVariant, toastTitle, toastMessage) {
-    this.showToast = true;
-    this.toastVariant = toastVariant;
-    this.toastTitle = toastTitle;
-    this.toastMessage = toastMessage;
-    //scroll top when toast is shown
-    let container = this.template.querySelector(".landing-container");
-    if (container) {
-      container.scrollIntoView();
-    }
   }
 
   allowScrolling() {
@@ -1281,5 +1118,68 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         "operatingHours is undefined, getOperatingHoursId not called"
       );
     }
+  }
+
+  getUserNameForAssignTo() {
+    getUserName({ userId: this.userId })
+      .then((data) => {
+        if (data.error) {
+          console.log("error in getUserName: " + JSON.stringify(data.error));
+        } else {
+          this.userName = data;
+          this.error = undefined;
+          console.log("UserName from getUserName :" + data);
+          this.setAssigNameByAssignMethod();
+        }
+      })
+      .catch((error) => {
+        console.log("error in getUserName: " + JSON.stringify(error));
+      });
+  }
+
+  setAssigNameByAssignMethod() {
+    if (this._currentAssignmentMethod) {
+      if (this._currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+        this.assignToName =
+          this.LABELS.Appointment_ReBooking_assigned_to_you.replace(
+            "{0}",
+            this.userName
+          );
+      } else {
+        this.assignToName =
+          this.LABELS.Appointment_ReBooking_assigned_to_any_available_worker;
+      }
+    }
+  }
+
+  updateCompactInfoAfterReschedule(selectedSlotStart, selectedSlotEnd) {
+    this.updateCompactInfoObj(
+      this.currentAppointmentData.WorkTypeName,
+      selectedSlotStart,
+      selectedSlotEnd,
+      this.currentAppointmentData.AppointmentNumber
+    );
+  }
+
+  updateCompactInfoObj(workTypeName, startDate, endDate, appointmentNumber) {
+    let compactInfo = {};
+
+    if (this.showExactArrivalTime) {
+      compactInfo = {
+        workTypeName,
+        startDate,
+        endDate: null,
+        appointmentNumber
+      };
+    } else {
+      compactInfo = {
+        workTypeName,
+        startDate,
+        endDate,
+        appointmentNumber
+      };
+    }
+
+    this.compactInfoObj = JSON.parse(JSON.stringify(compactInfo));
   }
 }

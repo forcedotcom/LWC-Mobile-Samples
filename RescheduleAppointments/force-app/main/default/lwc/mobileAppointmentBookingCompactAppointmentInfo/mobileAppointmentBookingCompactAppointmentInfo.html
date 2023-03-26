@@ -1,18 +1,11 @@
 <template>
     <div class="container">
         <div class="title">{LABELS.Reschedule_Appointment_current_appointment_title}</div>
-        <template if:false={showDefaultFields}>
-            <template for:each={serviceAppointmentObjectFieldsList} for:item="fieldInfo">
-            
-                <div key={fieldInfo.name}>{fieldInfo.value}</div>
-            </template>
-        </template>
-        <template if:true={showDefaultFields}>
-            <div class="info">
-                <div class="info-emph">{appointmentWorkType}</div>
-                <div class="info-date">{appointmentDateTime}</div>
-                <div class="appointment-number">{appointmentNumber}</div>
-            </div>
-        </template>    
+        <div class="separator"></div>
+        <div class="info">
+            <div class="info-emph">{workTypeName}</div>
+            <div class="info-date">{appointmentDateTime}</div>
+            <div class="secondary-title">{appointmentNumber}</div>
+        </div>
     </div>   
 </template>

@@ -26,35 +26,24 @@ const DAYNAME = [
 ];
 
 const formatAppointmentDateandHourRange = (startDate, endDate) => {
-  let start = new Date(startDate);
-  let end = new Date(endDate);
-  let formatedStr =
-    DAYNAME[start.getDay()] +
-    "," +
-    "  " +
-    MONTHNAME[start.getMonth()] +
-    " " +
-    start.getDate() +
-    ", " +
-    getFormattedTime(start) +
-    " - ";
-
-  if (start.getDate() == end.getDate()) {
-    //Assumes same day
-    formatedStr = formatedStr + getFormattedTime(end);
-  } else {
-    //If more than one day
-    formatedStr =
-      formatedStr +
-      DAYNAME[end.getDay()] +
-      "," +
-      "  " +
-      MONTHNAME[end.getMonth()] +
-      " " +
-      end.getDate() +
-      ", " +
-      getFormattedTime(end);
+  let formatedStr = "";
+  if (startDate && endDate) {
+    let start = new Date(startDate);
+    let end = new Date(endDate);
+    formatedStr = formatDateWithTime(startDate);
+    if (start.getDate() == end.getDate()) {
+      //Assumes same day
+      if (!(start.getTime() === end.getTime())) {
+        formatedStr = formatedStr + " - " + getFormattedTime(end);
+      }
+    } else {
+      //If more than one day
+      formatedStr = formatedStr + +" - " + formatDateWithTime(end);
+    }
+  } else if (startDate) {
+    formatedStr = formatDateWithTime(startDate);
   }
+
   return formatedStr;
 };
 
@@ -71,10 +60,42 @@ const getFormattedTime = (date) => {
 
 const convertDateUTCtoLocal = (date) => {
   if (date && date !== "null") {
-    return new Date(date.replace(/ /g, "T") + ".000Z");
+    let utcDate = new Date(date);
+    utcDate.setMinutes(utcDate.getMinutes() - utcDate.getTimezoneOffset());
+    return utcDate;
   } else {
     return "";
   }
 };
 
-export { formatAppointmentDateandHourRange, convertDateUTCtoLocal };
+const formatDateWithTime = (date) => {
+  let d = new Date(date);
+  let formatedStr =
+    DAYNAME[d.getDay()] +
+    "," +
+    "  " +
+    MONTHNAME[d.getMonth()] +
+    " " +
+    d.getDate() +
+    ", " +
+    getFormattedTime(d);
+
+  return formatedStr;
+};
+
+const getDateWithoutTime = (date) => {
+  var d;
+  if (typeof val === "string") {
+    d = new Date(date.replace(/-/g, "/")); // replace method is use to support time in safari
+  } else {
+    d = new Date(date);
+  }
+  d.setHours(0, 0, 0, 0);
+  return d;
+};
+
+export {
+  formatAppointmentDateandHourRange,
+  convertDateUTCtoLocal,
+  getDateWithoutTime
+};

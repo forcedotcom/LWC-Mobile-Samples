@@ -468,7 +468,7 @@
         <protected>true</protected>
         <categories>AppointmentAssistant</categories>
         <shortDescription>If no appointments available and the MW can select any available worker</shortDescription>
-        <value>Select Any available worker or change the date and try again. If you can’t find any appointments, contact your admin for help.</value>
+        <value>Change the worker or date and try again. If you still can’t find any appointments, contact your admin for help.</value>
     </labels>
     <labels>
         <fullName>Appointment_ReBooking_empty_state_change_the_dates</fullName>
@@ -486,6 +486,29 @@
         <shortDescription>Label for view more appointments button</shortDescription>
         <value>View More</value>
     </labels>
-    
+    <labels>
+        <fullName>Appointment_ReBooking_bottom_sheet_success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Reschedule Appointment Bottom sheet success</shortDescription>
+        <value>The appointment was rescheduled.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_bottom_sheet_failure_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Title for Reschedule Appointment Bottom sheet failure</shortDescription>
+        <value>We couldn’t reschedule the appointment.</value>
+    </labels>
+    <labels>
+        <fullName>Appointment_ReBooking_bottom_sheet_failure_body</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>AppointmentAssistant</categories>
+        <shortDescription>Content Reschedule Appointment Bottom sheet failure</shortDescription>
+        <value>Select a different time slot, or try again later.</value>
+    </labels>
     
 </CustomLabels>

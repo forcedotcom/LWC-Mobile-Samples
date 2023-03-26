@@ -61,7 +61,7 @@ p{
     font-size: 16px;
     border-radius: 12px;
     background-color: #0D7FA8;
-    font-weight: 600;
+    font-weight: 500;
 }
 .calendarView {
     position: -webkit-sticky;
@@ -83,6 +83,7 @@ p{
 .acceptNewAptClose{
     --lwc-colorTextIconDefault: #0D7FA8;
     margin-top: 2px;
+    --sds-c-icon-color-foreground-default: #0D7FA8;
 }
 .modal {
     position: fixed;
@@ -152,7 +153,7 @@ svg[class*="slds-button__icon_left"]{
     padding: 16px;
 }
 .head-line-work-type-name{
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
     line-height: 21px;
     color: #000000;
@@ -160,4 +161,38 @@ svg[class*="slds-button__icon_left"]{
     order: 0;
     flex-grow: 0;
     margin-bottom: 8px;
+}
+
+.info{
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(68, 68, 68, 1);
+    border: 1px solid rgba(159, 170, 181, 0.5);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px;
+}
+
+.info-emph{
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.info-date{
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.appointment-number{
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    margin-bottom: 4px;
+    color: #444444;
 }

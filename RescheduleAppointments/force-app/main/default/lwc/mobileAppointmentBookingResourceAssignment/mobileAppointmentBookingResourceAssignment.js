@@ -21,7 +21,9 @@ export default class MobileAppointmentBookingResourceAssignment extends Lightnin
   get options() {
     return [
       {
-        label: `${this.LABELS.Appointment_ReBooking_Mobile_Worker_radio_assignToMe_lable} (${this.userName})`,
+        label: `${
+          this.LABELS.Appointment_ReBooking_Mobile_Worker_radio_assignToMe_lable
+        } (${this.userName || " "})`,
         value: "ASSIGN_TO_ME"
       },
       {

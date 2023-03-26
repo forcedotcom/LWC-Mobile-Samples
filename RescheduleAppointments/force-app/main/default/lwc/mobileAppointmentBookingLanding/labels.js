@@ -11,6 +11,8 @@ import Appointment_ReBooking_selected_appointment_msg from "@salesforce/label/c.
 import Appointment_ReBooking_toastMessage_appointment_reschedule from "@salesforce/label/c.Appointment_ReBooking_toastMessage_appointment_reschedule";
 import AppointmentAssistance_confirmation_failure_message from "@salesforce/label/c.AppointmentAssistance_confirmation_failure_message";
 import Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message from "@salesforce/label/c.Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message";
+import Appointment_ReBooking_assigned_to_you from "@salesforce/label/c.Appointment_ReBooking_assigned_to_you";
+import Appointment_ReBooking_assigned_to_any_available_worker from "@salesforce/label/c.Appointment_ReBooking_assigned_to_any_available_worker";
 
 const customLabels = {
   Appointment_ReBooking_select_new_date_to_reschedule,
@@ -25,7 +27,9 @@ const customLabels = {
   Reschedule_Appointment_page_title,
   Appointment_ReBooking_toastMessage_appointment_reschedule,
   AppointmentAssistance_confirmation_failure_message,
-  Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message
+  Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message,
+  Appointment_ReBooking_assigned_to_you,
+  Appointment_ReBooking_assigned_to_any_available_worker
 };
 
 export default customLabels;

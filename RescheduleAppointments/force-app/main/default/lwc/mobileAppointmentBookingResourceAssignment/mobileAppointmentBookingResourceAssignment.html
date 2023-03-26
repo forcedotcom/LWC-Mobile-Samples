@@ -7,8 +7,9 @@
                 <div class="mobile-worker-content">{excludedMsg}</div>
             </template>
             <template lwc:else>
-                <div>
-                    <lightning-radio-group name="resourceAssignment"
+                <div class="resource-assignment-container">
+                    <lightning-radio-group 
+                        name="resourceAssignment"
                         aria-label={resourceAssignmentTitle}
                         options={options}
                         value={value}
@@ -18,5 +19,5 @@
                 </div>
             </template> 
         </div>
-    </template> 
+    </template>   
 </template>

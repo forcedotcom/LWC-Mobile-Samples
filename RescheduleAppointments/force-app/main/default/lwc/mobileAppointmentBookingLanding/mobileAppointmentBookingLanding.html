@@ -1,16 +1,9 @@
 <template>
-    <template if:true={showToast}>
-        <c-mobile-appointment-booking-custom-toast variant={toastVariant} title={toastTitle} message={toastMessage} onclosetoast ={HandleCloseToast}></c-mobile-appointment-booking-custom-toast> 
-    </template>
-
     <div class="landing-container">
         <div class="landing-section">
             <c-mobile-appointment-booking-compact-appointment-info
-                service-appointment-object={currentAppointmentData}
-                show-default-fields={useDefaultFields}
-                show-modal={showModal}
-                onclosemodal={closeModal}
-                onopenmodal={openModal}>
+                assign-to-name={assignToName}
+                compact-info-obj={compactInfoObj}>
             </c-mobile-appointment-booking-compact-appointment-info>
         </div>       
         <div class="landing-section">
@@ -33,10 +26,10 @@
                 recommended-score={recommendedScore}
                 current-assignment-method={currentAssignmentMethod}
                 user-id={userId}
-                show-assignment-method-toggle={showAssignmentMethodToggle}
                 is-excluded={isExcluded}
+                user-name={userName}
+                assign-to-name={assignToName}
                 show-mobile-worker-choice={showMobileWorkerChoice}>
-                >
             </c-mobile-appointment-booking-scheduling-container>
         </div>
         <!-- SPINNER -->
@@ -45,8 +38,7 @@
                 <lightning-spinner alternativetext="Loading" variant="brand" size="large">
                 </lightning-spinner>
             </div>
-        </template>
-            
+        </template>            
          <!-- SPINNER -->
     </div>  
 </template>

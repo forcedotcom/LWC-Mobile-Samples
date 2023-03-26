@@ -9,136 +9,52 @@ export default class MobileAppointmentBookingCompactAppointmentInfo extends Ligh
   LABELS = customLabels;
   serviceAppointmentObjectFieldsList;
   _serviceAppointmentObject;
-  @api showDefaultFields;
-  @api showCustomFields;
-  @api showModal;
+
+  @api assignToName;
+  workTypeName = "";
+  appointmentNumber = "";
+  endDate;
+  startDate;
+  appointmentDateTime = "";
+  _compactInfoObj;
 
   connectedCallback() {
     this.showCustomFields = false;
   }
 
-  @api
-  get appointmentNumber() {
-    return (
-      this.serviceAppointmentObject &&
-      this.serviceAppointmentObject["AppointmentNumber"]
-    );
+  @api get compactInfoObj() {
+    return this._compactInfoObj;
+  }
+  set compactInfoObj(value) {
+    if (value) {
+      this._compactInfoObj = value;
+      this.workTypeName = value.workTypeName && value.workTypeName;
+      this.appointmentNumber =
+        value.appointmentNumber && value.appointmentNumber;
+      this.createAppointmrntDateTimeDisplayInfo(value.startDate, value.endDate);
+    }
   }
 
-  @api
-  get appointmentDateTime() {
-    let dateTimeStr;
-
+  createAppointmrntDateTimeDisplayInfo(startDate, endDate) {
     if (
-      this.serviceAppointmentObject &&
-      this.isNotNullOrUndefined(
-        this.serviceAppointmentObject["ArrivalWindowStartTime"]
-      ) &&
-      this.isNotNullOrUndefined(
-        this.serviceAppointmentObject["ArrivalWindowEndTime"]
-      )
+      this.isNotNullOrUndefined(startDate) &&
+      this.isNotNullOrUndefined(endDate)
     ) {
-      let startDate = convertDateUTCtoLocal(
-        this.serviceAppointmentObject["ArrivalWindowStartTime"]
+      this.appointmentDateTime = formatAppointmentDateandHourRange(
+        startDate,
+        endDate
       );
-      let endDate = convertDateUTCtoLocal(
-        this.serviceAppointmentObject["ArrivalWindowEndTime"]
+    } else if (this.isNotNullOrUndefined(startDate)) {
+      this.appointmentDateTime = formatAppointmentDateandHourRange(
+        startDate,
+        null
       );
-
-      dateTimeStr = formatAppointmentDateandHourRange(startDate, endDate);
-    } else if (
-      this.serviceAppointmentObject &&
-      this.isNotNullOrUndefined(
-        this.serviceAppointmentObject["SchedStartTime"]
-      ) &&
-      this.isNotNullOrUndefined(this.serviceAppointmentObject["SchedEndTime"])
-    ) {
-      let startDate = convertDateUTCtoLocal(
-        this.serviceAppointmentObject["SchedStartTime"]
-      );
-      let endDate = convertDateUTCtoLocal(
-        this.serviceAppointmentObject["SchedEndTime"]
-      );
-
-      dateTimeStr = formatAppointmentDateandHourRange(startDate, endDate);
     } else {
-      dateTimeStr = "";
+      this.appointmentDateTime = "";
     }
-    return dateTimeStr;
   }
 
   isNotNullOrUndefined(value) {
     return value && value != "null";
-  }
-
-  @api
-  get appointmentWorkType() {
-    return (
-      this.serviceAppointmentObject &&
-      this.serviceAppointmentObject["WorkTypeName"]
-    );
-  }
-
-  @api
-  get appointmentArrivalStart() {
-    return (
-      this.serviceAppointmentObject &&
-      this.serviceAppointmentObject["ArrivalWindowStartTime"]
-    );
-  }
-
-  @api
-  get appointmentArrivalEnd() {
-    return (
-      this.serviceAppointmentObject &&
-      this.serviceAppointmentObject["ArrivalWindowEndTime"]
-    );
-  }
-
-  @api
-  get appointmentSchedStart() {
-    return (
-      this.serviceAppointmentObject &&
-      this.serviceAppointmentObject["SchedStartTime"]
-    );
-  }
-
-  @api
-  get appointmentSchedEnd() {
-    return (
-      this.serviceAppointmentObject &&
-      this.serviceAppointmentObject["SchedEndTime"]
-    );
-  }
-
-  @api
-  get serviceAppointmentObject() {
-    return this._serviceAppointmentObject;
-  }
-
-  set serviceAppointmentObject(value) {
-    let updatedValue = value ? Object.values(value) : [];
-
-    if (
-      updatedValue &&
-      updatedValue.length > 0 &&
-      JSON.stringify(this.serviceAppointmentObjectFieldsList) !==
-        JSON.stringify(updatedValue)
-    ) {
-      this.serviceAppointmentObjectFieldsList = updatedValue;
-      this._serviceAppointmentObject = value;
-    }
-  }
-
-  openModal(event) {
-    event.preventDefault();
-
-    console.log("dispatching open modal::: " + this.showModal);
-    this.dispatchEvent(
-      new CustomEvent("openmodal", {
-        composed: true,
-        bubbles: true
-      })
-    );
   }
 }

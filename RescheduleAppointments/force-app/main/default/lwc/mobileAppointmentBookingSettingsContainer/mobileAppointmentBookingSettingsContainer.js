@@ -15,8 +15,8 @@ export default class MobileAppointmentBookingSettingsContainer extends Lightning
   recommendedScore = 80;
   _serviceAppointmentId;
 
-  @api operatingHours = "Israel OH";
-  @api schedulingPolicy = "forAA";
+  @api operatingHours = "";
+  @api schedulingPolicy = "";
 
   @api schedulingHorizonUnit = "Months";
   @api schedulingHorizonValue = "3";
@@ -33,7 +33,6 @@ export default class MobileAppointmentBookingSettingsContainer extends Lightning
     return this._serviceAppointmentId;
   }
 
-  useDefaultFields = true;
   currentAppointmentDefaultFieldNames = [
     ID_FIELD,
     WORK_TYPE_FIELD,
