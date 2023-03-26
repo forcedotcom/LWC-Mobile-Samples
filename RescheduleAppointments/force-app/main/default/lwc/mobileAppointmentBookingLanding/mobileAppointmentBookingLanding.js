@@ -319,7 +319,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   handleDataOnServiceAppointmentRecieved(data) {
-    //this.selectedDate = new Date();
     this.error = undefined;
     this.serviceTerritoryTimeZone = data.ServiceTerritoryTimeZone;
     this.currentSAstatus = data.ServiceAppointmentStatus;

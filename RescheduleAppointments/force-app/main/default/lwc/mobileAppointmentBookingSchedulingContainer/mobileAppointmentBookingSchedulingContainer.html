@@ -1,11 +1,11 @@
 <template>
     <div>
         <c-mobile-appointment-booking-resource-assignment
-        current-assignment-method={currentAssignmentMethod}
-        user-name={userName}
-        selecteddate={selectedDate}
-        is-excluded={isExcluded}
-        show-mobile-worker-choice={showMobileWorkerChoice}>
+            current-assignment-method={currentAssignmentMethod}
+            user-name={userName}
+            selecteddate={selectedDate}
+            is-excluded={isExcluded}
+            show-mobile-worker-choice={showMobileWorkerChoice}>
         </c-mobile-appointment-booking-resource-assignment>
     </div>
     <div class="calendarView" data-id="calendar">
@@ -15,7 +15,7 @@
             selected-date = {selectedDate} 
             max-valid-date = {maxValidCalendarDate}
             non-available-dates = {nonAvailableDateArray} 
-            appointment-date = {SchedStartTime} >
+            appointment-date = {SchedStartTime}>
         </c-mobile-appointment-booking-calendar>
     </div>
     
@@ -32,7 +32,6 @@
         recommended-score={recommendedScore}>
     </c-mobile-appointment-booking-slots-container >
 
-    
     <template if:true ={show_confirmBtnLayout}>
        <c-mobile-appointment-booking-reschedule-appointment
             work-type-name={worktypename}
@@ -40,9 +39,8 @@
             appointment-number={appointmentNumber}
             assign-to-name={assignToName}
             onrescheduleconfirmed={handleConfirm}
-            onrescheduleclosewindow={handleConfirmBtnClose}
-            >
+            onrescheduleclosewindow={handleConfirmBtnClose}>
        </c-mobile-appointment-booking-reschedule-appointment>
-
     </template>
+
 </template>

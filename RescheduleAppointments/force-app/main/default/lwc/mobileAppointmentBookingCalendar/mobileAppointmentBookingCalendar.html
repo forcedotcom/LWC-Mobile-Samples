@@ -11,10 +11,10 @@
                         icon-name="utility:down"
                         class="monthButton"
                         icon-position = "right"
-                        onclick={handleMonthViewButton}
-                    ></lightning-button>
+                        onclick={handleMonthViewButton}>
+                    </lightning-button>
                 </span>
-            </lightning-layout-item >
+            </lightning-layout-item>
 
             <lightning-layout-item>
                 <span>
@@ -27,10 +27,10 @@
                         onclick={handleClick}
                         size="large"
                         class="leftButton"
-                        disabled= {isLeftSwipeDisable}
-                    ></lightning-button-icon>
+                        disabled= {isLeftSwipeDisable}>
+                    </lightning-button-icon>
                 </span>
-            </lightning-layout-item >
+            </lightning-layout-item>
 
             <lightning-layout-item>
                 <span>
@@ -43,10 +43,10 @@
                         onclick={handleClick}
                         size="large"
                         class="rightButton"
-                        disabled={isRightSwipeDisable}
-                    ></lightning-button-icon>
+                        disabled={isRightSwipeDisable}>
+                    </lightning-button-icon>
                 </span>
-            </lightning-layout-item >
+            </lightning-layout-item>
 
         </lightning-layout>
         <hr class="breakLine">
@@ -88,9 +88,9 @@
                                                 
                                                 <template if:true={day.selected}>
                                                     <template if:false={day.blocked}>
-                                                    <button class="btn selectedDay" label={day.date}>
-                                                        {day.date}
-                                                    </button>
+                                                        <button class="btn selectedDay" label={day.date}>
+                                                            {day.date}
+                                                        </button>
                                                     </template>
                                                 </template>
 
@@ -110,7 +110,6 @@
                                                         </button>
                                                     </template>
                                                 </template>
-
                                             </td>
                                         </template>
                                     </tr>
@@ -138,7 +137,7 @@
                                     <div class="full-calendar-close-btn">
                                         <lightning-icon class="changeIconcolor" icon-name="utility:close"  
                                             size="x-small" title="Cancel" onclick={handleClick}  aria-label="Cancel">
-                                    </lightning-icon>
+                                        </lightning-icon>
                                     </div>
                                 </lightning-layout-item >
                             </lightning-layout> 

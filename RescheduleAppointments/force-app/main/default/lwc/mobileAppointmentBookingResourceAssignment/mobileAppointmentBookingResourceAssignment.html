@@ -8,13 +8,14 @@
             </template>
             <template lwc:else>
                 <div class="resource-assignment-container">
-                    <lightning-radio-group name="resourceAssignment"
+                    <lightning-radio-group 
+                        name="resourceAssignment"
                         aria-label={resourceAssignmentTitle}
                         options={options}
                         value={value}
                         type="radio"
                         onchange={handleAssignmentMethodChange}>
-                </lightning-radio-group>
+                    </lightning-radio-group>
                 </div>
             </template> 
         </div>
