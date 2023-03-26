@@ -186,17 +186,17 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
     console.log("First day of the week is : " + firstdayOfWeek);
     this.boolShowPopover = false;
     this.noOfMonths = [];
-    var firstArr = [];
-    var tempRow = [];
+    let firstArr = [];
+    let tempRow = [];
     this.noofWeeks = [];
     for (let j = 0; j < this.noOfRowsToDisplay; j++) {
       for (let i = 0; i < this.weekDaysArray.length; i++) {
         firstArr = [];
         let tempDate = new Date(firstdayOfWeek);
         tempDate.setDate(firstdayOfWeek.getDate() + i);
-        firstArr["date"] = tempDate.getDate();
-        firstArr["value"] = tempDate;
-        firstArr["id"] = "d" + tempDate.getDate();
+        firstArr.date = tempDate.getDate();
+        firstArr.value = tempDate;
+        firstArr.id = "d" + tempDate.getDate();
         tempRow.push(firstArr);
       }
       this.noofWeeks.push(tempRow);
@@ -222,11 +222,11 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
    * @param {Current Date}
    */
 
-  showMonthView(currDate, maxValidDate) {
+  showMonthView(currDate) {
     var currdate = new Date();
     var monthDiff = this.getMonthDiff(currdate, this.maxValidDate);
     this.noOfMonths = [];
-    var calendarSelectedDate;
+    let calendarSelectedDate;
     for (let a = 0; a < monthDiff + 1; a++) {
       let newDate = new Date();
       let currMonth = newDate.getMonth();
@@ -247,58 +247,58 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
         newCurrMonth.getMonth()
       );
       let date = 1;
-      var noofWeeks = [];
+      let noofWeeks = [];
 
       for (let j = 0; j < 6; j++) {
-        var arr = [];
-        var days = [];
-        var hasWeeksDate = false;
+        let arr = [];
+        let days = [];
+        let hasWeeksDate = false;
         for (let i = 0; i < this.weekDaysArray.length; i++) {
           arr = [];
           if (j === 0 && i < firstDay) {
-            arr["date"] = "";
-            arr["value"] = "";
+            arr.date = "";
+            arr.value = "";
             days.push(arr);
           } else if (getNoOfDays >= date) {
-            var dateValue = new Date(calendarSelectedDate);
+            let dateValue = new Date(calendarSelectedDate);
             dateValue = new Date(dateValue.setDate(date));
 
             if (dateValue < currDate) {
-              arr["date"] = date;
-              arr["value"] = dateValue;
+              arr.date = date;
+              arr.value = dateValue;
               hasWeeksDate = true;
             } else if (
               new Date(dateValue.setHours(0, 0, 0, 0)) >
               this.maxValidCalendarDate
             ) {
-              arr["date"] = date;
-              arr["value"] = dateValue;
+              arr.date = date;
+              arr.value = dateValue;
               hasWeeksDate = true;
               //break;
             } else {
-              arr["date"] = date;
-              arr["value"] = dateValue;
-              arr["isValidDate"] = true;
+              arr.date = date;
+              arr.value = dateValue;
+              arr.isValidDate = true;
               hasWeeksDate = true;
             }
 
             let currentDay = new Date(dateValue.setHours(0, 0, 0, 0)).getTime();
             let today = new Date(currdate.setHours(0, 0, 0, 0)).getTime();
-            if (currentDay == today) {
+            if (currentDay === today) {
               arr.currentDay = true;
             }
             if (this.selectedDateByUser) {
               let selectedDate = new Date(
                 this.selectedDateByUser.setHours(0, 0, 0, 0)
               ).getTime();
-              if (currentDay == selectedDate) {
+              if (currentDay === selectedDate) {
                 arr.selected = true;
               }
             } else if (!this.selectedDateByUser) {
               //first state when the user hasn't select date yet - show the appt date as selcted
               if (
                 this._appointmentDate &&
-                currentDay == this._appointmentDate.setHours(0, 0, 0, 0)
+                currentDay === this._appointmentDate.setHours(0, 0, 0, 0)
               ) {
                 arr.selected = true;
               }
@@ -309,18 +309,17 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
         }
         if (hasWeeksDate) noofWeeks.push(days);
       }
-      var monthArr = [];
-      monthArr["monthNo"] = calendarSelectedDate.getMonth();
-      monthArr["monthTitle"] = this.getYearMonthTitle(calendarSelectedDate);
-      monthArr["weeks"] = noofWeeks;
+      let monthArr = [];
+      monthArr.monthNo = calendarSelectedDate.getMonth();
+      monthArr.monthTitle = this.getYearMonthTitle(calendarSelectedDate);
+      monthArr.weeks = noofWeeks;
       this.noOfMonths.push(monthArr);
     }
   }
 
   getMonthDiff(d1, d2) {
     try {
-      var months;
-      months = (d2.getFullYear() - d1.getFullYear()) * 12;
+      let months = (d2.getFullYear() - d1.getFullYear()) * 12;
       months -= d1.getMonth();
       months += d2.getMonth();
       return months <= 0 ? 0 : months;
@@ -360,14 +359,14 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
       default: {
         if (event.currentTarget.title === "weekViewDateId") {
           let selectedDate = new Date(event.currentTarget.dataset.id);
-          var days = selectedDate.getDate();
+          let days = selectedDate.getDate();
           this.handleDateSelectionEvent(selectedDate, true);
 
           if (event) days = selectedDate.getDate();
           for (let week = 0; week < this.noofWeeks.length; week++) {
             for (let day = 0; day < this.noofWeeks[week].length; day++) {
               this.noofWeeks[week][day].selected = false;
-              if (this.noofWeeks[week][day].date == days) {
+              if (this.noofWeeks[week][day].date === days) {
                 this.noofWeeks[week][day].selected = true;
                 this.selectedDateByUser = new Date(
                   event.currentTarget.dataset.id
@@ -383,7 +382,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
           ) {
             let selectedDate = new Date(event.currentTarget.dataset.id);
 
-            var isValidDate = false;
+            let isValidDate = false;
             for (let month = 0; month < this.noOfMonths.length; month++) {
               for (
                 let week = 0;
@@ -397,7 +396,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
                 ) {
                   this.noOfMonths[month].weeks[week][day].selected = false;
                   if (
-                    this.noOfMonths[month].weeks[week][day].value ==
+                    this.noOfMonths[month].weeks[week][day].value ===
                     event.currentTarget.dataset.id
                   ) {
                     if (this.noOfMonths[month].weeks[week][day].isValidDate) {
@@ -430,9 +429,9 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
     for (let week = 0; week < this.noofWeeks.length; week++) {
       for (let day = 0; day < this.noofWeeks[week].length; day++) {
         if (
-          this.noofWeeks[week][day].date == currentDate.getDate() &&
-          this.currentSelectedDate.getMonth() == currentDate.getMonth() &&
-          this.currentSelectedDate.getFullYear() == currentDate.getFullYear()
+          this.noofWeeks[week][day].date === currentDate.getDate() &&
+          this.currentSelectedDate.getMonth() === currentDate.getMonth() &&
+          this.currentSelectedDate.getFullYear() === currentDate.getFullYear()
         )
           this.noofWeeks[week][day].currentDay = true;
       }
@@ -448,7 +447,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
 
         if (
           this.selectedDateByUser &&
-          this.noofWeeks[week][day].value.setHours(0, 0, 0, 0) ==
+          this.noofWeeks[week][day].value.setHours(0, 0, 0, 0) ===
             this.selectedDateByUser.setHours(0, 0, 0, 0)
         ) {
           // SHOW SELECTED DATE IN WEEK VIEW
@@ -457,7 +456,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
           //first state when the user hasn't select date yet - show the appt date as selcted
           if (
             this._appointmentDate &&
-            this.noofWeeks[week][day].value.setHours(0, 0, 0, 0) ==
+            this.noofWeeks[week][day].value.setHours(0, 0, 0, 0) ===
               this._appointmentDate.setHours(0, 0, 0, 0)
           ) {
             this.noofWeeks[week][day].selected = true;
@@ -466,7 +465,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
 
         // SHOW CURRENT DATE IN WEEK VIEW
         if (
-          this.noofWeeks[week][day].value.setHours(0, 0, 0, 0) == currentDate
+          this.noofWeeks[week][day].value.setHours(0, 0, 0, 0) === currentDate
         ) {
           this.noofWeeks[week][day].currentDay = true;
         }
@@ -481,7 +480,7 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
       for (let day = 0; day < this.noofWeeks[week].length; day++) {
         this.noofWeeks[week][day].blocked = false;
 
-        var loopDate = this.noofWeeks[week][day].value.setHours(0, 0, 0, 0);
+        let loopDate = this.noofWeeks[week][day].value.setHours(0, 0, 0, 0);
         // BLOCK UN AVAILABLE DATES IN WEEK VIEW
         if (this.isInArray(this.nonAvailableDates, loopDate)) {
           this.noofWeeks[week][day].blocked = true;
@@ -492,8 +491,8 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
   }
 
   isInArray(array, value) {
-    for (var i = 0; i < array.length; i++) {
-      if (value == array[i].getTime()) {
+    for (let i = 0; i < array.length; i++) {
+      if (value === array[i].getTime()) {
         return true;
       }
     }
@@ -603,10 +602,10 @@ export default class MobileAppointmentBookingRebookingCalendar extends Lightning
     if (!this.xDown || !this.yDown) {
       return;
     }
-    var xUp = evt.changedTouches[0].clientX;
-    var yUp = evt.changedTouches[0].clientY;
-    var xDiff = this.xDown - xUp;
-    var yDiff = this.yDown - yUp;
+    let xUp = evt.changedTouches[0].clientX;
+    let yUp = evt.changedTouches[0].clientY;
+    let xDiff = this.xDown - xUp;
+    let yDiff = this.yDown - yUp;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
       /*most significant*/

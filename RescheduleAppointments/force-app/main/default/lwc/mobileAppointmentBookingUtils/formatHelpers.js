@@ -25,28 +25,6 @@ const DAYNAME = [
   customLabels.Appointment_ReBooking_WeekDayLong_Saturday
 ];
 
-const formatAppointmentDateandHourRange = (startDate, endDate) => {
-  let formatedStr = "";
-  if (startDate && endDate) {
-    let start = new Date(startDate);
-    let end = new Date(endDate);
-    formatedStr = formatDateWithTime(startDate);
-    if (start.getDate() == end.getDate()) {
-      //Assumes same day
-      if (!(start.getTime() === end.getTime())) {
-        formatedStr = formatedStr + " - " + getFormattedTime(end);
-      }
-    } else {
-      //If more than one day
-      formatedStr = formatedStr + +" - " + formatDateWithTime(end);
-    }
-  } else if (startDate) {
-    formatedStr = formatDateWithTime(startDate);
-  }
-
-  return formatedStr;
-};
-
 const getFormattedTime = (date) => {
   var hours = date.getHours();
   var minutes = date.getMinutes();
@@ -56,16 +34,6 @@ const getFormattedTime = (date) => {
   hours = hours < 10 ? "0" + hours : hours;
   minutes = minutes < 10 ? "0" + minutes : minutes;
   return hours + ":" + minutes + " " + ampm;
-};
-
-const convertDateUTCtoLocal = (date) => {
-  if (date && date !== "null") {
-    let utcDate = new Date(date);
-    utcDate.setMinutes(utcDate.getMinutes() - utcDate.getTimezoneOffset());
-    return utcDate;
-  } else {
-    return "";
-  }
 };
 
 const formatDateWithTime = (date) => {
@@ -81,6 +49,37 @@ const formatDateWithTime = (date) => {
     getFormattedTime(d);
 
   return formatedStr;
+};
+
+const formatAppointmentDateandHourRange = (startDate, endDate) => {
+  let formatedStr = "";
+  if (startDate && endDate) {
+    let start = new Date(startDate);
+    let end = new Date(endDate);
+    formatedStr = formatDateWithTime(startDate);
+    if (start.getDate() === end.getDate()) {
+      //Assumes same day
+      if (!(start.getTime() === end.getTime())) {
+        formatedStr = formatedStr + " - " + getFormattedTime(end);
+      }
+    } else {
+      //If more than one day
+      formatedStr = formatedStr + +" - " + formatDateWithTime(end);
+    }
+  } else if (startDate) {
+    formatedStr = formatDateWithTime(startDate);
+  }
+
+  return formatedStr;
+};
+
+const convertDateUTCtoLocal = (date) => {
+  if (date && date !== "null") {
+    let utcDate = new Date(date);
+    utcDate.setMinutes(utcDate.getMinutes() - utcDate.getTimezoneOffset());
+    return utcDate;
+  }
+  return "";
 };
 
 const getDateWithoutTime = (date) => {

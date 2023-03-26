@@ -56,7 +56,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   ServiceResourceName;
   serviceAppointmentObject;
   @api timeSlotObject;
-  @track selectedDate;
   @track isSlots = true;
   @track showCalenderInFullScreen = false;
   headlineDate;
@@ -248,7 +247,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   renderedCallback() {
-    if (this._previousServiceAppointmentId != this.serviceAppointmentId) {
+    if (this._previousServiceAppointmentId !== this.serviceAppointmentId) {
       console.log(
         "getting new Service appointment:" +
           this.serviceAppointmentId +
@@ -367,10 +366,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     return appointmentFields;
   }
 
-  onCustomEventCalled(event) {
-    console.log("customEvent handled from lp");
-  }
-
   checkServiceAppointmentStatus(currentSAStatus) {
     console.log(
       "checkServiceAppointmentStatus => Current: " +
@@ -414,8 +409,8 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
   calculateMaxValidHorizonDate() {
     if (this.schedulingHorizonValue && this.selectedHorizonUnit) {
-      var currentDate = new Date();
-      var targetDate;
+      let currentDate = new Date();
+      let targetDate;
       let schedulingHorizonValueToNumber = parseInt(
         this.schedulingHorizonValue
       );
@@ -444,12 +439,12 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
       console.log("Scheduling horizon unit : new date is  : " + targetDate);
 
-      if (this.serviceAppointmentDueDate < targetDate)
+      if (this.serviceAppointmentDueDate < targetDate) {
         return this.serviceAppointmentDueDate;
-      else return targetDate;
-    } else {
-      return this.serviceAppointmentDueDate;
+      }
+      return targetDate;
     }
+    return this.serviceAppointmentDueDate;
   }
 
   getDateWithoutTime(date) {
@@ -475,7 +470,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     var diff = d.getDate() - day + (start > day ? start - 7 : start);
     d.setDate(diff);
     console.log("First day of week is : " + d.getDate());
-    var newDate = new Date(
+    let newDate = new Date(
       d.setDate(d.getDate() - this.noOfDaysBeforeAfterWeek)
     ).setHours(0, 0, 0, 0);
     return newDate;
@@ -487,7 +482,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     var day = d.getDay();
     var diff = d.getDate() - day + (start > day ? start - 1 : 6 + start);
     d.setDate(diff);
-    var newDate = new Date(
+    let newDate = new Date(
       d.setDate(d.getDate() + this.noOfDaysBeforeAfterWeek)
     ).setHours(0, 0, 0, 0);
     return newDate;
@@ -496,14 +491,14 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   isInArray(value) {
     let currentDateArray = [];
 
-    if (this.currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+    if (this.currentAssignmentMethod === assignmentMethod.ASSIGN_TO_ME) {
       currentDateArray = this.dateArrayForQueryCurrentMobileWorkwerSlots;
     } else {
       currentDateArray = this.dateArrayForQueryAllMobilesWorkerSlots;
     }
 
-    for (var i = 0; i < currentDateArray.length; i++) {
-      if (value.getTime() == currentDateArray[i].getTime()) {
+    for (let i = 0; i < currentDateArray.length; i++) {
+      if (value.getTime() === currentDateArray[i].getTime()) {
         return true;
       }
     }
@@ -530,7 +525,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   getLastSlotFromTheArray(slotArray) {
     var lastdate;
     if (slotArray.length > 0) {
-      var timeSlot = slotArray[slotArray.length - 1].split("#");
+      let timeSlot = slotArray[slotArray.length - 1].split("#");
       lastdate = this.getDateWithoutTime(
         Date.parse(timeSlot[0].replace(/-/g, "/"))
       );
@@ -543,16 +538,16 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     var currentDate = start;
     let currentDateArray = [];
 
-    if (this.currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+    if (this.currentAssignmentMethod === assignmentMethod.ASSIGN_TO_ME) {
       currentDateArray = this.dateArrayForQueryCurrentMobileWorkwerSlots;
     } else {
       currentDateArray = this.dateArrayForQueryAllMobilesWorkerSlots;
     }
 
     while (currentDate <= end) {
-      var addingDate = new Date(currentDate);
+      let addingDate = new Date(currentDate);
       currentDateArray.push(addingDate);
-      var tempDate = currentDate.setDate(currentDate.getDate() + 1);
+      let tempDate = currentDate.setDate(currentDate.getDate() + 1);
       currentDate = new Date(tempDate);
     }
 
@@ -560,7 +555,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   removeDatesFromCashArray() {
-    if (this.currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+    if (this.currentAssignmentMethod === assignmentMethod.ASSIGN_TO_ME) {
       this.dateArrayForQueryCurrentMobileWorkwerSlots = [];
     } else {
       this.dateArrayForQueryAllMobilesWorkerSlots = [];
@@ -568,13 +563,14 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   showAlertWithError(errorMessage) {
+    // eslint-disable-next-line no-alert
     alert(errorMessage);
   }
 
   handleGetSlotQueryForSelectedDate(event) {
     event.stopPropagation();
     event.preventDefault();
-    var firstDateOfWeek = this.getFirstDayOfWeek(event.detail.selectedDate);
+    let firstDateOfWeek = this.getFirstDayOfWeek(event.detail.selectedDate);
     if (this.dataLoaded) {
       this.lockScrolling();
       console.log("handleGetSlotQueryForSelectedDate", firstDateOfWeek);
@@ -585,12 +581,12 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   handleGetSlotQueryForSelectedDateRange(selectedDate) {
     this.lockScrolling();
     console.log("handleGetSlotQueryForSelectedDateRange", selectedDate);
-    var firstDateOfWeek = selectedDate;
+    let firstDateOfWeek = selectedDate;
     if (firstDateOfWeek <= new Date()) {
       firstDateOfWeek = new Date();
     }
     console.log("handleGetSlotQueryForSelectedDateRange", selectedDate);
-    var lastDateOfWeek = this.getLastDayOfWeek(firstDateOfWeek, 0);
+    let lastDateOfWeek = this.getLastDayOfWeek(firstDateOfWeek, 0);
     if (lastDateOfWeek > this.maxValidCalendarDate) {
       lastDateOfWeek = this.maxValidCalendarDate;
     }
@@ -601,7 +597,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         lastDateOfWeek
     );
 
-    var loopdate = new Date(firstDateOfWeek);
+    let loopdate = new Date(firstDateOfWeek);
     loopdate = new Date(this.getDateWithoutTime(loopdate));
 
     console.log("Date in the Array is : " + loopdate);
@@ -683,7 +679,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
                       this.timeSlotWiseTemp = data.timeSlotList;
                       this.timeSlotDateWise = this.timeSlotWiseTemp;
 
-                      var tempDate = loopdate.setDate(
+                      let tempDate = loopdate.setDate(
                         loopdate.getDate() + this.maxDaysToGetAppointmentSlots
                       );
                       loopdate = new Date(tempDate);
@@ -715,7 +711,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
           .catch((error) => {
             // delete SA/WO incase transaction fails
             this.deleteDummySa(saData.dummyServiceAppointmentId);
-            console.log("Errror while creating dummy SA  :", +error);
+            console.log("Error while creating dummy SA :", error);
             this.timeSlotDateWise = [];
             this.allowScrolling();
           });
@@ -723,7 +719,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         // IF THE DATE IS BEFORE ARRIVAL WINDOW START DATE
         console.log("Loop date is less than minimum valid date");
 
-        var tempDate = loopdate.setDate(
+        let tempDate = loopdate.setDate(
           loopdate.getDate() + this.maxDaysToGetAppointmentSlots
         );
         loopdate = new Date(tempDate);
@@ -735,7 +731,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
       }
     } else {
       // If the date are already cache, take the slot from it and run the query for next date;
-      var tempDate = loopdate.setDate(
+      let tempDate = loopdate.setDate(
         loopdate.getDate() + this.maxDaysToGetAppointmentSlots
       );
       loopdate = new Date(tempDate);
@@ -899,15 +895,15 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   onWeekChangeEvent(event) {
     this.selectedDate = event.detail.date;
     console.log("On week change called");
-    const returnValue = this.template
+    this.template
       .querySelector("c-mobile-appointment-booking-slots-container")
       .onWeekUpdated(this.selectedDate);
     this.runApexQueryToChangeEarlistStartDate(this.selectedDate);
   }
 
   onSlotSelection(event) {
-    e.stopPropagation();
-    e.preventDefault();
+    event.stopPropagation();
+    event.preventDefault();
     this.selectedSlotStart = event.detail.startDate;
     this.selectedSlotEnd = event.detail.endDate;
     this.setNewAppointmentSelectedText(
@@ -917,7 +913,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   onCustomEventCalled(event) {
-    e.preventDefault();
+    event.preventDefault();
     switch (event.detail.name) {
       case "trigergetslotapi": {
         this.runApexQueryToChangeEarlistStartDate(event.detail.value);
@@ -932,22 +928,25 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         break;
       }
       default: {
+        // ignore
       }
     }
   }
 
   getHeadlineDate() {
     const dateOptions = { weekday: "long", month: "long", day: "numeric" };
-    if (this.ArrivalWindowStartTime == "null" || this.showExactArrivalTime) {
-      var startDate = convertDateUTCtoLocal(this.SchedStartTime);
-      var endDate = convertDateUTCtoLocal(this.SchedEndTime);
+    let startDate;
+    let endDate;
+    if (this.ArrivalWindowStartTime === "null" || this.showExactArrivalTime) {
+      startDate = convertDateUTCtoLocal(this.SchedStartTime);
+      endDate = convertDateUTCtoLocal(this.SchedEndTime);
     } else {
-      var startDate = this.ArrivalWindowStartTime;
-      var endDate = convertDateUTCtoLocal(this.ArrivalWindowEndTime);
+      startDate = this.ArrivalWindowStartTime;
+      endDate = convertDateUTCtoLocal(this.ArrivalWindowEndTime);
     }
     if (startDate && endDate) {
-      var dateLong = startDate.toLocaleDateString(undefined, dateOptions);
-      var time =
+      let dateLong = startDate.toLocaleDateString(undefined, dateOptions);
+      let time =
         this.getFormattedTimeFromDate(startDate) +
         " - " +
         this.getFormattedTimeFromDate(endDate);
@@ -1139,7 +1138,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
   setAssigNameByAssignMethod() {
     if (this._currentAssignmentMethod) {
-      if (this._currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+      if (this._currentAssignmentMethod === assignmentMethod.ASSIGN_TO_ME) {
         this.assignToName =
           this.LABELS.Appointment_ReBooking_assigned_to_you.replace(
             "{0}",

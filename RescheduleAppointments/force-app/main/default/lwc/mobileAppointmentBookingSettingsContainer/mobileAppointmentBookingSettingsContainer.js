@@ -1,4 +1,4 @@
-import { LightningElement, api, wire } from "lwc";
+import { LightningElement, api } from "lwc";
 import ID_FIELD from "@salesforce/schema/ServiceAppointment.Id";
 import WORK_TYPE_FIELD from "@salesforce/schema/ServiceAppointment.WorkTypeId";
 import SCHED_END_FIELD from "@salesforce/schema/ServiceAppointment.SchedEndTime";

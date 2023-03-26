@@ -1,9 +1,6 @@
-import { LightningElement, api, track } from "lwc";
+import { LightningElement, api } from "lwc";
 import customLabels from "./labels";
-import {
-  formatAppointmentDateandHourRange,
-  convertDateUTCtoLocal
-} from "c/mobileAppointmentBookingUtils";
+import { formatAppointmentDateandHourRange } from "c/mobileAppointmentBookingUtils";
 
 export default class MobileAppointmentBookingCompactAppointmentInfo extends LightningElement {
   LABELS = customLabels;
@@ -55,6 +52,6 @@ export default class MobileAppointmentBookingCompactAppointmentInfo extends Ligh
   }
 
   isNotNullOrUndefined(value) {
-    return value && value != "null";
+    return value && value !== "null";
   }
 }
