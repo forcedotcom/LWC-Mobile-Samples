@@ -3,10 +3,6 @@ import { LightningElement, api, track } from "lwc";
 import convertTimeToOtherTimeZone from "@salesforce/apex/AppointmentController.convertTimeToOtherTimeZone";
 import customLabels from "./labels";
 
-const assignmentMethod = {
-  ASSIGN_TO_ME: "assignToMe",
-  ASSIGN_TO_ANY_AVIALABLE: "assignToAnyAvailable"
-};
 export default class MobileAppointmentBookingSchedulingContainer extends LightningElement {
   guestToken;
   schedulePolicyId;
@@ -184,10 +180,10 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   onDateSelected(event) {
     this.selectedDate = event.detail.date;
     console.log("Selected date in main class : " + this.selectedDate);
-    var staticElement = this.template.querySelector('[data-id="calendar"]');
-    var top = staticElement.getBoundingClientRect().top;
+    let staticElement = this.template.querySelector('[data-id="calendar"]');
+    let top = staticElement.getBoundingClientRect().top;
     console.log("The element is : " + top);
-    const returnValue = this.template
+    this.template
       .querySelector("c-mobile-appointment-booking-slots-container")
       .onPositionUpdated(top);
   }
@@ -195,7 +191,7 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   onWeekChangeEvent(event) {
     this.selectedDate = event.detail.date;
     console.log("On week change called");
-    const returnValue = this.template
+    this.template
       .querySelector("c-mobile-appointment-booking-slots-container")
       .onWeekUpdated(this.selectedDate);
     this.runApexQueryToChangeEarlistStartDate(this.selectedDate);
@@ -246,22 +242,25 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
         break;
       }
       default: {
+        // ignore
       }
     }
   }
 
   getHeadlineDate() {
     const dateOptions = { weekday: "long", month: "long", day: "numeric" };
-    if (this.ArrivalWindowStartTime == "null" || this.showExactArrivalTime) {
-      var startDate = this.convertDateUTCtoLocal(this.SchedStartTime);
-      var endDate = this.convertDateUTCtoLocal(this.SchedEndTime);
+    let startDate;
+    let endDate;
+    if (this.ArrivalWindowStartTime === "null" || this.showExactArrivalTime) {
+      startDate = this.convertDateUTCtoLocal(this.SchedStartTime);
+      endDate = this.convertDateUTCtoLocal(this.SchedEndTime);
     } else {
-      var startDate = this.convertDateUTCtoLocal(this.ArrivalWindowStartTime);
-      var endDate = this.convertDateUTCtoLocal(this.ArrivalWindowEndTime);
+      startDate = this.convertDateUTCtoLocal(this.ArrivalWindowStartTime);
+      endDate = this.convertDateUTCtoLocal(this.ArrivalWindowEndTime);
     }
     if (startDate && endDate) {
-      var dateLong = startDate.toLocaleDateString(undefined, dateOptions);
-      var time =
+      let dateLong = startDate.toLocaleDateString(undefined, dateOptions);
+      let time =
         this.getFormattedTimeFromDate(startDate) +
         " - " +
         this.getFormattedTimeFromDate(endDate);
@@ -276,9 +275,8 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   convertDateUTCtoLocal(date) {
     if (date && date !== "null") {
       return new Date(date.replace(/ /g, "T") + ".000Z");
-    } else {
-      return "";
     }
+    return "";
   }
 
   getFormattedTimeFromDate(date) {
