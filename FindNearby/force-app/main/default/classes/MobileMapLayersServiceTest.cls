@@ -7,7 +7,9 @@ public with sharing class MobileMapLayersServiceTest {
             RelatedRecordId = System.UserInfo.getUserId(),
             Name = 'Resource Name',
             LastKnownLatitude = 10.000000000000000,
-            LastKnownLongitude = 10.000000000000000
+            LastKnownLongitude = 10.000000000000000,
+            ResourceType = 'T',
+            IsActive = true
         );
         insert sr;
     }
@@ -18,32 +20,6 @@ public with sharing class MobileMapLayersServiceTest {
             List<Decimal> location = MobileMapLayersService.getAssignedResourceLocation();
             Assert.areEqual(10, location[0]);
             Assert.areEqual(10, location[0]);
-        } catch (Exception e) {
-            Assert.fail('An exception was thrown: ' + e.getMessage());
-        }
-    }
-
-    @isTest
-    static void getObjectLocationsTest() {
-        try {
-            List<Map<String, String>> locations = new List<Map<String, String>>();
-            Map<String, String> tempList = new Map<String, String>();
-            tempList.put('Id', sr.Id);
-            tempList.put('Latitude', String.valueOf(sr.LastKnownLatitude));
-            tempList.put('Longitude', String.valueOf(sr.LastKnownLongitude));
-            tempList.put('TitleField', sr.Name);
-            tempList.put('DetailField', sr.RelatedRecordId);
-            locations.add(tempList);
-
-            List<Map<String, String>> result = MobileMapLayersService.getObjectLocations(
-                'ServiceResource',
-                'LastKnownLatitude',
-                'LastKnownLongitude',
-                'Name',
-                'RelatedRecordId'
-            );
-
-            Assert.areEqual(locations, result);
         } catch (Exception e) {
             Assert.fail('An exception was thrown: ' + e.getMessage());
         }
@@ -66,8 +42,8 @@ public with sharing class MobileMapLayersServiceTest {
     static void retrieveObjInfoTest() {
         try {
             Map<String, String> result = MobileMapLayersService.retrieveObjInfo('Account');
-            Assert.areEqual(result.get('Label'), 'Account');
-            Assert.areEqual(result.get('Plural'), 'Accounts');
+            Assert.areEqual(result.get('label'), 'Account');
+            Assert.areEqual(result.get('plural'), 'Accounts');
         } catch (Exception e) {
             Assert.fail('An exception was thrown: ' + e.getMessage());
         }
@@ -82,7 +58,7 @@ public with sharing class MobileMapLayersServiceTest {
             currentFieldFilter.put('input', 'Resource Name');
             List<sObject> result = MobileMapLayersService.executeFilterQuery('ServiceResource', currentFieldFilter);
 
-            Assert.areEqual(result[0].Id, sr.Id);
+            Assert.areEqual(result[0].id, sr.Id);
         } catch (Exception e) {
             Assert.fail('An exception was thrown: ' + e.getMessage());
         }

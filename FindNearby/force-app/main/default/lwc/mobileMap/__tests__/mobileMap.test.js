@@ -12,15 +12,15 @@ describe('c-mobile-map', () => {
     element.filteredMarkers = [
       {
         location: { Latitude: 10, Longitude: 10 },
-        value: { title: 'marker title1' },
+        value: { titleFieldValue: 'marker title1' },
       },
       {
         location: { Latitude: 20, Longitude: 20 },
-        value: { title: 'marker title2' },
+        value: { titleFieldValue: 'marker title2' },
       },
       {
         location: { Latitude: 30, Longitude: 30 },
-        value: { title: 'marker title3' },
+        value: { titleFieldValue: 'marker title3' },
       },
     ];
     element.currentMarker = element.filteredMarkers[0];

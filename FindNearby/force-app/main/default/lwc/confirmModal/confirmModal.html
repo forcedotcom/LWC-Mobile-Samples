@@ -1,0 +1,14 @@
+<template>
+    <div class="confirm-modal-container">
+        <lightning-modal-header class="confirm-modal-header" label={header}></lightning-modal-header>
+        <lightning-modal-body class="confirm-modal-body">{content}</lightning-modal-body>
+        <lightning-modal-footer class="confirm-modal-footer">
+            <button onclick={handleCancel} class="cancel-button">
+                <label>{cancelButtonText}</label>
+            </button>
+            <button onclick={handleOk} class="ok-button">
+                <label>{okButtonText}</label>
+            </button>
+        </lightning-modal-footer>
+    </div>
+</template>

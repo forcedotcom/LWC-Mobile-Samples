@@ -102,15 +102,31 @@ export default class MobileMaps extends LightningElement {
   }
 
   get currentMarkerTitle() {
-    return this.currentMarker?.value?.title;
+    return this.currentMarker?.value?.titleFieldValue;
   }
 
-  get currentMarkerDetailFieldName() {
-    return this.currentMarker?.value?.detailFieldName;
+  get currentMarkerFirstDetailFieldName() {
+    return this.currentMarker?.value?.firstDetailFieldLabel;
   }
 
-  get currentMarkerDetailFieldValue() {
-    return this.currentMarker?.value?.detailFieldValue;
+  get currentMarkerFirstDetailFieldValue() {
+    return this.currentMarker?.value?.firstDetailFieldValue;
+  }
+
+  get currentMarkerSecondDetailFieldName() {
+    return this.currentMarker?.value?.secondDetailFieldLabel;
+  }
+
+  get currentMarkerSecondDetailFieldValue() {
+    return this.currentMarker?.value?.secondDetailFieldValue;
+  }
+
+  get currentMarkerThirdDetailFieldName() {
+    return this.currentMarker?.value?.thirdDetailFieldLabel;
+  }
+
+  get currentMarkerThirdDetailFieldValue() {
+    return this.currentMarker?.value?.thirdDetailFieldValue;
   }
 
   get currentMarkerIndexUi() {

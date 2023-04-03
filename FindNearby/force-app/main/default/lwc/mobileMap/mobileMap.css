@@ -110,9 +110,19 @@ lightning-map {
 
 .card-details {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     font-size: 14px;
+}
+
+.card-details-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.first-row {
+    margin-bottom: 12px;
 }
 
 .card-details-text {
@@ -124,6 +134,13 @@ lightning-map {
 .card-secondary-title {
     color: #444444;
     font-size: 14px;
+}
+
+.card-secondary-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .card-buttons-container {

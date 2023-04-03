@@ -18,6 +18,7 @@ describe('c-locations-list', () => {
       iconUrl: '',
       color: '',
     };
+    element.isIos = () => true;
     element.setCurrentMarker = jest.fn();
     element.redirectToMarkerDetails = jest.fn();
     element.routeToMarkerLocation = jest.fn();

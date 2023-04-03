@@ -4,7 +4,9 @@
         "value": {
             "id": "1234",
             "title": "marker1",
-            "detailFieldValue": "field2-1",
+            "firstDetailFieldValue": "field2-1",
+            "secondDetailFieldValue": "field3-1",
+            "thirdDetailFieldValue": "field4-1",
             "distance": "15 km"
         }
     },
@@ -13,7 +15,9 @@
         "value": {
             "id": "5678",
             "title": "marker2",
-            "detailFieldValue": "field2-2",
+            "firstDetailFieldValue": "field2-2",
+            "secondDetailFieldValue": "field3-2",
+            "thirdDetailFieldValue": "field4-2",
             "distance": "25 km"
         }
     },
@@ -22,7 +26,9 @@
         "value": {
             "id": "9123",
             "title": "marker3",
-            "detailFieldValue": "field2-3",
+            "firstDetailFieldValue": "field2-3",
+            "secondDetailFieldValue": "field3-3",
+            "thirdDetailFieldValue": "field4-3",
             "distance": "35 km"
         }
     }

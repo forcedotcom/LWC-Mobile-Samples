@@ -19,37 +19,6 @@ public with sharing class MobileMapLayersService {
     }
 
     @AuraEnabled(cacheable=false)
-    public static List<Map<String, String>> getObjectLocations(String value, String latField, String longField, String titleField, String detailField) {
-        try {
-            List<Map<String, String>> locations = new List<Map<String, String>>();
-
-            // verify object and fields are valid and accessible
-            if (!isSafeObject(value) ||
-                !isSafeField(value, latField) ||
-                !isSafeField(value, longField) ||
-                !isSafeField(value, titleField) ||
-                !isSafeField(value, detailField))
-                return locations;
-
-            List<String> params = new List<String>{ latField, longField, titleField, detailField, value };
-            List<sObject> records = Database.Query(String.format('SELECT {0}, {1}, {2}, {3} FROM {4} WHERE {0} != null and {1} != null', params));
-            Map<String, String> tempList;
-            for (sObject rec : records) {
-                tempList = new Map<String, String>();
-                tempList.put('Id', rec.Id);
-                tempList.put('Latitude', String.valueOf(rec.get(latField)));
-                tempList.put('Longitude', String.valueOf(rec.get(longField)));
-                tempList.put('TitleField', String.valueOf(rec.get(titleField)));
-                tempList.put('DetailField', String.valueOf(rec.get(detailField)));
-                locations.add(tempList);
-            }
-            return locations;
-        } catch (Exception e) {
-            throw new HandledException(e.getMessage());
-        }
-    }
-
-    @AuraEnabled(cacheable=false)
     public static List<Map<String, String>> retrieveAllObjFields(String value) {
         SObjectType objType = Schema.getGlobalDescribe().get(value);
         Map<String, Schema.SObjectField> fields = objType.getDescribe().fields.getMap();
@@ -76,8 +45,8 @@ public with sharing class MobileMapLayersService {
         Map<String, String> info = new Map<String, String>();
         SObjectType objType = Schema.getGlobalDescribe().get(value);
         Schema.DescribeSObjectResult objDescribe = objType.getDescribe();
-        info.put('Label', objDescribe.getLabel());
-        info.put('Plural', objDescribe.getLabelPlural());
+        info.put('label', objDescribe.getLabel());
+        info.put('plural', objDescribe.getLabelPlural());
         
         // get object's icon
     	List<Schema.DescribeTabSetResult> tabSetDesc = Schema.describeTabs();
@@ -91,17 +60,41 @@ public with sharing class MobileMapLayersService {
                 icons = tr.getIcons();
                 for (DescribeIconResult icon : icons) {
                     if (icon.getTheme() == 'theme4' || icon.getTheme() == 'custom') {
-                        info.put('IconUrl', icon.getUrl());
+                        info.put('iconUrl', icon.getUrl());
                         break;
                     }
                 }
                 colorDesc = tr.getColors();
-                info.put('Color', '#' + colorDesc[0].getColor());
+                info.put('color', '#' + colorDesc[0].getColor());
                 break;
             }
         }
         
         return info;
+    }
+
+    @AuraEnabled(cacheable=false)
+    public static List<Map<String, String>> getAllPicklistOptions(String obj, String field) {
+        try {
+            SObjectType objType = Schema.getGlobalDescribe().get(obj);
+            Map<String, Schema.SObjectField> fields = objType.getDescribe().fields.getMap();
+            Schema.DescribeFieldResult dfr = fields.get(field).getDescribe();
+
+            List<Map<String, String>> picklistOptions = new List<Map<String, String>>();
+            Map<String, String> temp = new Map<String, String>();
+
+            List<Schema.PicklistEntry> picklistVals = dfr.getPicklistValues();
+            for( Schema.PicklistEntry picklistVal : picklistVals){
+                temp = new Map<String, String>();
+                temp.put('value', picklistVal.getValue());
+                temp.put('label', picklistVal.getLabel());
+                picklistOptions.add(temp);
+            }
+
+            return picklistOptions;
+        } catch (Exception e) {
+            throw new HandledException(e.getMessage());
+        }
     }
 
     @AuraEnabled(cacheable=false)
@@ -115,7 +108,7 @@ public with sharing class MobileMapLayersService {
 
             // verify object and fields are valid and accessible
             if (!isSafeObject(currentObjectFilter) ||
-                !isSafeField(currentObjectFilter, fieldName))
+                !isSafeField(currentObjectFilter, fieldName.toLowerCase()))
                 return results;
 
             // sanitize input: cast and escape quotes
@@ -162,9 +155,8 @@ public with sharing class MobileMapLayersService {
         return myObj.getDescribe().isAccessible();
     }
 
-    private static boolean isSafeField(String objName, String fieldName){ 
-        if (isSafeObject(objName) && fieldName != null) {
-            fieldName = fieldName.toLowerCase();
+    private static boolean isSafeField(String objName, String fieldName){
+        if (isSafeObject(objName)) {
             SObjectType myObj = Schema.getGlobalDescribe().get(objName);
             SObjectField myField = myObj.getDescribe().fields.getMap().get(fieldName);
             return myField.getDescribe().isAccessible();
