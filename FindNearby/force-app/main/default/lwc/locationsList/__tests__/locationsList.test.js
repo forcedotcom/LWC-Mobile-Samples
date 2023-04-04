@@ -201,7 +201,7 @@ describe('c-locations-list', () => {
   it('sets paddingBottom correctly when using iOS devices', async () => {
     element.filteredMarkers = oneLocation;
 
-    navigatorGetter = jest.spyOn(window, 'navigator', 'get');
+    const navigatorGetter = jest.spyOn(window, 'navigator', 'get');
     navigatorGetter.mockReturnValue({
       userAgent: 'Macintosh',
       maxTouchPoints: 2,
