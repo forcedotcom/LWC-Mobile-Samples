@@ -15,6 +15,7 @@ export default class LocationsList extends LightningElement {
 
   showPopover = false;
   actionButtonIndexClicked;
+  IOS_MARGIN = '34px';
 
   init = false;
   renderedCallback() {
@@ -22,7 +23,8 @@ export default class LocationsList extends LightningElement {
     this.mainTemplate = this.template.querySelector('.main-container');
     this.headerElement = this.template.querySelector('.header');
     this.listElement = this.template.querySelector('.list');
-    if (this.listElement) this.listElement.style.paddingBottom = this.isIos() ? '34px' : '0';
+    if (this.listElement)
+      this.listElement.style.paddingBottom = this.isIos() ? this.IOS_MARGIN : '0';
     if (!this.init && this.headerElement) {
       this.detectDrag();
       this.init = true;
