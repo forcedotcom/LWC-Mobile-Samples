@@ -1,0 +1,111 @@
+<template>
+  <section
+    role="dialog"
+    tabindex="0"
+    aria-modal="true"
+    aria-labelledby="prompt-heading-id"
+    aria-describedby="prompt-message-wrapper"
+    class="slds-modal slds-fade-in-open slds-modal_prompt"
+  >
+    <div class="slds-modal__container" style="margin: 0; padding: 0">
+      <!-- Title -->
+      <div
+        class="slds-modal__header slds-var-p-bottom_x-small"
+        style="
+          background-color: #242424;
+          color: white;
+          border-bottom: 1px solid #444444;
+        "
+      >
+        <h1 class="slds-text-heading_medium" id="prompt-heading-id">
+          Edit File Info
+        </h1>
+        <span
+          onclick={handleClose}
+          class="close-button slds-icon_container slds-icon-utility-close slds-current-color"
+          title="Close"
+        >
+          <svg class="slds-icon" aria-hidden="true">
+            <use
+              xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#close"
+            ></use>
+          </svg>
+          <span class="slds-assistive-text">Close</span>
+        </span>
+      </div>
+      <!-- Body -->
+      <div
+        class="slds-modal__content"
+        style="
+          background-color: #242424;
+          color: white;
+          border-bottom: 1px solid #444444;
+          padding-left: 0.75rem;
+          padding-right: 0.75rem;
+        "
+        id="prompt-message-wrapper"
+      >
+        <!-- File Name -->
+        <div class="slds-var-p-vertical_small">
+          <!-- 
+                        Don't allow more than 250 characters because we later add file extension (".jpeg" for 
+                        example). The maximum filename length allowed for ContentDocument is 255 characters.
+                    -->
+          <c-dark-input
+            data-id="filename-input"
+            label="File Name"
+            max-characters="250"
+            onchange={handleFilenameChange}
+            required
+          >
+          </c-dark-input>
+        </div>
+
+        <!-- "+ Description" Button -->
+        <button
+          if:false={showDescriptionInput}
+          onclick={expandDescription}
+          class="slds-button slds-var-p-bottom_small"
+        >
+          <svg
+            class="slds-button__icon slds-button__icon_left"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#add"
+            ></use>
+          </svg>
+          <label>Description</label>
+        </button>
+
+        <!-- Description -->
+        <div if:true={showDescriptionInput} class="slds-var-p-bottom_small">
+          <c-dark-input
+            data-id="description-input"
+            label="Description"
+            max-characters="1000"
+            rows="4"
+            multiline
+            onchange={handleDescriptionChange}
+          >
+          </c-dark-input>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div
+        class="slds-modal__footer"
+        style="background-color: #242424; color: white"
+      >
+        <button
+          disabled={disableSaveButton}
+          onclick={handleSave}
+          class="save-button slds-button slds-button_stretch slds-button_brand"
+        >
+          <label>Save</label>
+        </button>
+      </div>
+    </div>
+  </section>
+  <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>

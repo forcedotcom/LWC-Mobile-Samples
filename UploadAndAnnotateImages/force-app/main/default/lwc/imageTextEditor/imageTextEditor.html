@@ -1,0 +1,29 @@
+<template>
+  <div data-id="resizeable-box" class={resizeableBoxClass}>
+    <div class="corners">
+      <div data-id="top-left" class="corner top-left">
+        <span class="touch-circle-background"></span>
+        <span class="touch-circle"></span>
+      </div>
+      <div data-id="top-right" class="corner top-right">
+        <span class="touch-circle-background"></span>
+        <span class="touch-circle"></span>
+      </div>
+      <div data-id="bottom-left" class="corner bottom-left">
+        <span class="touch-circle-background"></span>
+        <span class="touch-circle"></span>
+      </div>
+      <div data-id="bottom-right" class="corner bottom-right">
+        <span class="touch-circle-background"></span>
+        <span class="touch-circle"></span>
+      </div>
+    </div>
+    <label style="display: none">Text</label>
+    <textarea
+      data-id="main-text-area"
+      oninput={resizeFontOnInputChange}
+      onpointerdown={handleTextAreaPointerDown}
+    >
+    </textarea>
+  </div>
+</template>

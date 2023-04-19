@@ -6,12 +6,15 @@ export default class ImageAnnotate extends LightningElement {
   @api
   imageInfo;
 
+  contentHeight;
+  pageWidth;
+
   isLoading = false;
   showMoreActions = false;
-  contentHeight;
 
   originalImageData;
   editedImageData;
+  editedImageInfo = {};
   imageWasEverEdited = false;
   get imageWasNeverEdited() {
     return !this.imageWasEverEdited;
@@ -21,12 +24,13 @@ export default class ImageAnnotate extends LightningElement {
   imageWasRecentlyEdited = false;
 
   Modes = Object.freeze({
+    Init: Symbol("Init"),
     View: Symbol("View"),
     Crop: Symbol("Crop"),
     Draw: Symbol("Draw")
   });
 
-  currentMode = this.Modes.View;
+  currentMode = this.Modes.Init;
 
   get isShowingImage() {
     return this.currentMode === this.Modes.View;
@@ -39,10 +43,15 @@ export default class ImageAnnotate extends LightningElement {
   get isDrawing() {
     return this.currentMode === this.Modes.Draw;
   }
+
   selectedShape;
 
   get isFreeDrawing() {
     return this.isDrawing && this.selectedShape === Shapes.Free;
+  }
+
+  get isTextSelected() {
+    return this.isDrawing && this.selectedShape === Shapes.Text;
   }
 
   // Get the latest image data available, i.e - if the image was edited already,
@@ -54,8 +63,12 @@ export default class ImageAnnotate extends LightningElement {
     return this.imageInfo.data;
   }
 
+  get imageInfoEditor() {
+    return this.template.querySelector('[data-id="image-info-editor"]');
+  }
+
   get editorComponent() {
-    return this.template.querySelector('[data-id="editorComponent"]');
+    return this.template.querySelector('[data-id="editor-component"]');
   }
 
   get cropperClass() {
@@ -64,6 +77,10 @@ export default class ImageAnnotate extends LightningElement {
 
   get freeDrawClass() {
     return this.getClassesForSelectableButton(this.isFreeDrawing);
+  }
+
+  get textClass() {
+    return this.getClassesForSelectableButton(this.isTextSelected);
   }
 
   get drawSquareClass() {
@@ -96,6 +113,23 @@ export default class ImageAnnotate extends LightningElement {
 
   connectedCallback() {
     this.originalImageData = this.imageData;
+    this.editedImageInfo = this.imageInfo.editedImageInfo;
+  }
+
+  rendered = false;
+  renderedCallback() {
+    if (this.rendered) {
+      return;
+    }
+    this.rendered = true;
+
+    this.readContentHeight();
+    this.pageWidth = window.innerWidth;
+    this.currentMode = this.Modes.View;
+  }
+
+  handleImageInfoEditorRendered() {
+    this.imageInfoEditor.style.maxWidth = this.pageWidth + "px";
   }
 
   showLoading() {
@@ -111,11 +145,19 @@ export default class ImageAnnotate extends LightningElement {
   }
 
   readContentHeight() {
-    const content = this.template.querySelector('[data-id="content"]');
-    this.contentHeight = content.offsetHeight;
+    // const content = this.template.querySelector('[data-id="content"]');
+    // this.contentHeight = content.offsetHeight;
+    const footer = this.template.querySelector('[data-id="footer"]');
+    this.contentHeight = window.innerHeight - footer.offsetHeight;
   }
 
   askEditorComponentToSave() {
+    // If the current mode is view, there's no editor component to ask
+    if (this.currentMode === this.Modes.View) {
+      this.imageWasRecentlyEdited = false;
+      return;
+    }
+
     if (!this.imageWasRecentlyEdited) {
       log("Image was not edited in the current mode, nothing to save...");
       return;
@@ -144,14 +186,26 @@ export default class ImageAnnotate extends LightningElement {
     this.readContentHeight();
     this.askEditorComponentToSave();
 
-    // If we are already on free drawing, switch back to view mode
+    // Toggle free draw
     if (this.isFreeDrawing) {
       this.currentMode = this.Modes.View;
-      return;
+    } else {
+      this.currentMode = this.Modes.Draw;
+      this.selectedShape = Shapes.Free;
     }
+  }
 
-    this.selectedShape = Shapes.Free;
-    this.currentMode = this.Modes.Draw;
+  textClicked() {
+    this.readContentHeight();
+    this.askEditorComponentToSave();
+
+    // Toggle text
+    if (this.isTextSelected) {
+      this.currentMode = this.Modes.View;
+    } else {
+      this.currentMode = this.Modes.Draw;
+      this.selectedShape = Shapes.Text;
+    }
   }
 
   drawLineClicked() {
@@ -191,7 +245,10 @@ export default class ImageAnnotate extends LightningElement {
 
     this.dispatchEvent(
       new CustomEvent("save", {
-        detail: this.imageData
+        detail: {
+          imageData: this.imageData,
+          editedImageInfo: this.editedImageInfo
+        }
       })
     );
   }
@@ -214,17 +271,21 @@ export default class ImageAnnotate extends LightningElement {
     }
   }
 
-  askEditorComponentToReset() {
+  performReset() {
+    // Reset state parameters
+    this.editedImageData = null;
+    this.editedImageInfo = this.imageInfo.editedImageInfo;
+    this.imageWasEverEdited = false;
+
+    // If the current mode is view, there's no editor component to reset so we are done
     if (this.currentMode === this.Modes.View) {
       return;
     }
 
+    // Reset editor component
     log("Asking child component to reset...");
     this.editorComponent.reset(this.originalImageData);
     log("Done resetting!");
-
-    this.editedImageData = null;
-    this.imageWasEverEdited = false;
   }
 
   async handleResetClicked() {
@@ -236,7 +297,7 @@ export default class ImageAnnotate extends LightningElement {
     });
 
     if (result) {
-      this.askEditorComponentToReset();
+      this.performReset();
     }
   }
 
@@ -257,5 +318,10 @@ export default class ImageAnnotate extends LightningElement {
         })
       );
     }
+  }
+
+  handleInfoEdited(event) {
+    this.editedImageInfo = event.detail;
+    this.handleImageEdited();
   }
 }

@@ -1,0 +1,23 @@
+.save-button {
+  background-color: #1b96ff;
+  border-radius: 12px;
+  border: 0;
+}
+
+.save-button:disabled {
+  background-color: #444444;
+  color: #939393;
+}
+
+.close-button {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  color: #1b96ff;
+}
+
+.close-button > svg {
+  width: 1rem;
+  height: 1rem;
+  display: block;
+}

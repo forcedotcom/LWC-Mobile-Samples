@@ -1,0 +1,48 @@
+<template>
+  <ul class="slds-button-group-row">
+    <li class="slds-button-group-item button-group-item-dot">
+      <button onclick={selectColorRed} class="slds-button dot-button">
+        <span class="dot red"></span>
+        <span if:false={isRedSelected} class="dot-selection-ring"></span>
+        <span
+          if:true={isRedSelected}
+          class="dot-selection-ring is-selected"
+        ></span>
+        <label style="display: none">Red</label>
+      </button>
+    </li>
+    <li class="slds-button-group-item button-group-item-dot">
+      <button onclick={selectColorGreen} class="slds-button dot-button">
+        <span class="dot green"></span>
+        <span if:false={isGreenSelected} class="dot-selection-ring"></span>
+        <span
+          if:true={isGreenSelected}
+          class="dot-selection-ring is-selected"
+        ></span>
+        <label style="display: none">Green</label>
+      </button>
+    </li>
+    <li class="slds-button-group-item button-group-item-dot">
+      <button onclick={selectColorWhite} class="slds-button dot-button">
+        <span class="dot white"></span>
+        <span if:false={isWhiteSelected} class="dot-selection-ring"></span>
+        <span
+          if:true={isWhiteSelected}
+          class="dot-selection-ring is-selected"
+        ></span>
+        <label style="display: none">White</label>
+      </button>
+    </li>
+    <li class="slds-button-group-item button-group-item-dot">
+      <button onclick={selectColorBlack} class="slds-button dot-button">
+        <span class="dot black"></span>
+        <span if:false={isBlackSelected} class="dot-selection-ring"></span>
+        <span
+          if:true={isBlackSelected}
+          class="dot-selection-ring is-selected"
+        ></span>
+        <label style="display: none">Black</label>
+      </button>
+    </li>
+  </ul>
+</template>

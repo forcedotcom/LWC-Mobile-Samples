@@ -1,16 +1,17 @@
 /* eslint-disable no-await-in-loop */
 import { LightningElement, api, track } from "lwc";
-import { createRecord } from "lightning/uiRecordApi";
+import {
+  createRecord,
+  unstable_createContentDocumentAndVersion
+} from "lightning/uiRecordApi";
 import { processImage } from "lightning/mediaUtils";
-import getContentDocumentId from "@salesforce/apex/ImageCaptureController.getContentDocumentId";
-import getContentVersionId from "@salesforce/apex/ImageCaptureController.getContentVersionId";
-import createContentDocumentLink from "@salesforce/apex/ImageCaptureController.createContentDocumentLink";
 import {
   log,
+  debug,
   IMAGE_EXT,
   isNullOrEmpty,
-  waitMillis,
-  ToastTypes
+  ToastTypes,
+  dataURLtoFile
 } from "c/utilsImageCapture";
 
 export default class ImageCapture extends LightningElement {
@@ -56,7 +57,7 @@ export default class ImageCapture extends LightningElement {
   }
 
   get shouldShowToast() {
-    return this.toastType != null;
+    return this.toastType == null ? false : true;
   }
 
   hideToast() {
@@ -83,7 +84,7 @@ export default class ImageCapture extends LightningElement {
   }
 
   connectedCallback() {
-    log(`Working on ${this.objectApiName} with Id '${this.recordId}'`);
+    debug(`Working on ${this.objectApiName} with Id '${this.recordId}'`);
   }
 
   async handleImagesSelected(event) {
@@ -97,33 +98,38 @@ export default class ImageCapture extends LightningElement {
     );
 
     this.isReading = true;
+    this.hideToast();
 
-    for (let i = 0; i < numFiles; i++) {
-      let file = files[i];
+    try {
+      for (let i = 0; i < numFiles; i++) {
+        let file = files[i];
 
-      let blob;
-      if (compressionEnabled) {
-        // Compress the image when reading it, so we work with smaller files in memory
-        blob = await processImage(file, this.compressionOptions);
-      } else {
-        blob = file;
+        let blob;
+        if (compressionEnabled) {
+          // Compress the image when reading it, so we work with smaller files in memory
+          blob = await processImage(file, this.compressionOptions);
+        } else {
+          blob = file;
+        }
+
+        let data = await this.readFile(blob);
+        let metadata = await this.readMetadata(file);
+
+        this.allImagesData.push({
+          id: this.nextId++,
+          data: data,
+          description: "",
+          editedImageInfo: {},
+          metadata: metadata
+        });
       }
-
-      let data = await this.readFile(blob);
-      let metadata = await this.readMetadata(file);
-
-      this.allImagesData.push({
-        id: this.nextId++,
-        data: data,
-        metadata: metadata
-      });
+    } finally {
+      this.isReading = false;
     }
-
-    this.isReading = false;
   }
 
-  // Read image data from a file selected in a browser
-  // This is standard JavaScript, not unique to LWC
+  // Read image data from a file selected in a browser.
+  // This is standard JavaScript, not unique to LWC.
   readFile(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -161,14 +167,14 @@ export default class ImageCapture extends LightningElement {
         edited: false
       };
 
-      log(`Metadata for '${fullFileName}': ${JSON.stringify(metadata)}`);
+      debug(`Metadata for '${fullFileName}': ${JSON.stringify(metadata)}`);
       resolve(metadata);
     });
   }
 
   handleAnnotateImage(event) {
     const selectedIndex = parseInt(event.detail, 10);
-    log(`Annotating image #${selectedIndex}`);
+    debug(`Annotating image #${selectedIndex}`);
 
     for (const item of this.allImagesData) {
       if (item.id === selectedIndex) {
@@ -179,20 +185,16 @@ export default class ImageCapture extends LightningElement {
   }
 
   handleSaveAnnotatedImage(event) {
-    log("Saving annotated image!");
-    const annotatedImageData = event.detail;
-    for (const item of this.allImagesData) {
-      if (item.id === this.selectedImageInfo.id) {
-        item.data = annotatedImageData;
-        item.metadata.edited = true;
-        break;
-      }
-    }
+    debug("Saving annotated image!");
+    const savedData = event.detail;
+    this.selectedImageInfo.data = savedData.imageData;
+    this.selectedImageInfo.editedImageInfo = savedData.editedImageInfo;
+    this.selectedImageInfo.metadata.edited = true;
     this.selectedImageInfo = null;
   }
 
   handleImageDiscarded() {
-    log("Discarded annotated image!");
+    debug("Discarded annotated image!");
     this.selectedImageInfo = null;
   }
 
@@ -203,9 +205,9 @@ export default class ImageCapture extends LightningElement {
   }
 
   deleteImageById(id) {
-    var index = 0;
-    log(`Deleteing image #${id}`);
+    debug(`Deleteing image #${id}`);
 
+    let index = 0;
     for (const item of this.allImagesData) {
       if (item.id === id) {
         this.allImagesData.splice(index, 1);
@@ -216,14 +218,19 @@ export default class ImageCapture extends LightningElement {
   }
 
   async handleUploadRequested() {
-    this.toastType = null;
+    this.hideToast();
     this.isUploading = true;
 
     try {
-      // Upload
       await this.uploadAllPhotos();
     } catch (e) {
-      log("Failed to upload photos: " + JSON.stringify(e));
+      if (e.message) {
+        log(`Failed to upload photos: ${e.message}`);
+        debug(`Stacktrace:\n${e.stack}`);
+      } else {
+        log(`Failed to upload photos: ${JSON.stringify(e)}`);
+        console.dir(e);
+      }
 
       // Display the error toast message
       if (
@@ -260,7 +267,13 @@ export default class ImageCapture extends LightningElement {
 
     for (const item of allImagesCopy) {
       const fullFileName = this.getFullFileName(item);
-      await this.uploadData(fullFileName, item.id, item.data, this.recordId);
+      const description = item.editedImageInfo.description || item.description;
+      await this.uploadData(
+        fullFileName,
+        description,
+        item.data,
+        this.recordId
+      );
 
       this.numSuccessfullyUploadedPhotos++;
 
@@ -271,129 +284,49 @@ export default class ImageCapture extends LightningElement {
 
   getFullFileName(item) {
     const ext = item.metadata.edited ? IMAGE_EXT : item.metadata.ext;
-    var fullFileName = item.metadata.fileName;
+    var fullFileName = item.editedImageInfo.fileName || item.metadata.fileName;
     if (!isNullOrEmpty(ext)) {
       fullFileName += `.${ext}`;
     }
+
+    // Replace whitespaces with underscores
+    fullFileName = fullFileName.replaceAll(" ", "_");
+
     return fullFileName;
   }
 
-  // Use LDS createRecord function to upload file to a ContentVersion object.
-  // ContentVersion is the standard representation of an uploaded file in Salesforce.
-  async uploadData(fileName, fileId, data, recordId) {
-    const now = Date.now();
-    const uniqueCvId = `${now}_${fileId}_${recordId}`;
+  // Use LDS createContentDocumentAndVersion function to upload file to a ContentVersion object.
+  // This method creates drafts for ContentDocument and ContentVersion objects.
+  async uploadData(fileName, description, fileData, recordId) {
+    log(`Uploading '${fileName}'...`);
+    let fileObject = dataURLtoFile(fileData, fileName);
+    const contentDocumentAndVersion =
+      await unstable_createContentDocumentAndVersion({
+        title: fileName,
+        description: description,
+        fileData: fileObject
+      });
 
-    log(`Uploading '${fileName}' with uniqueCvId '${uniqueCvId}'...`);
-    const contentVersion = await createRecord({
-      apiName: "ContentVersion",
-      fields: {
-        Title: fileName,
-        PathOnClient: fileName,
-        VersionData: data.split(",")[1], // extract base64 part of data
-        Origin: "H",
-        ReasonForChange: uniqueCvId
-      }
-    });
+    const contentDocumentId = contentDocumentAndVersion.contentDocument.id;
 
     // Create a ContentDocumentLink (CDL) to associate the uploaded file
     // to the Files Related List of a record, like a Work Order.
-    await this.getIdsAndCreateCdl(contentVersion, recordId, uniqueCvId);
-  }
-
-  async getIdsAndCreateCdl(contentVersion, recordId, uniqueCvId) {
-    // First, get the Id of the created ContentVersion
-    var contentVersionId = await this.getContentVersionId(
-      contentVersion,
-      uniqueCvId
-    );
-
-    // Now, get the Id of the ContentDocument associated with the ContentVersion object
-    var contentDocumentId = await this.getContentDocumentId(contentVersionId);
-
     await this.createCdl(recordId, contentDocumentId);
   }
 
-  async getContentVersionId(contentVersion, uniqueCvId) {
-    var contentVersionId = contentVersion.id;
-
-    // If we got a draft (which is expected on the Field Service app),
-    // wait for the draft to be uploaded to the server
-    if ("drafts" in contentVersion) {
-      contentVersionId = await this.waitForDraftToUpload(uniqueCvId);
-    }
-
-    if (isNullOrEmpty(contentVersionId)) {
-      throw new Error("Failed to retrieve ContentVersion ID!");
-    }
-
-    log(`File uploaded, got ContentVersion Id: ${contentVersionId}`);
-    return contentVersionId;
-  }
-
-  async waitForDraftToUpload(uniqueCvId) {
-    var contentVersionId = "";
-    const MAX_RETRIES = 30;
-    const SEC_TO_WAIT = 1;
-    log(
-      `Querying the org up to ${MAX_RETRIES} times with ${SEC_TO_WAIT} sec between each call, waiting for the draft to get there...`
-    );
-
-    for (let i = 0; i < MAX_RETRIES; i++) {
-      let receivedId = "";
-      await getContentVersionId({ uniqueCvId: uniqueCvId })
-        .then((res) => {
-          if (res != null && res.length > 0) {
-            receivedId = res[0].Id;
-          }
-        })
-        .catch((e) => {
-          log(`(waitForDraftToUpload) Promise Rejected: ${JSON.stringify(e)}`);
-        });
-
-      if (!isNullOrEmpty(receivedId)) {
-        contentVersionId = receivedId;
-        break;
-      }
-
-      await waitMillis(SEC_TO_WAIT * 1000);
-    }
-
-    return contentVersionId;
-  }
-
-  async getContentDocumentId(contentVersionId) {
-    var contentDocumentId = "";
-
-    await getContentDocumentId({ contentVersionId: contentVersionId })
-      .then((res) => {
-        if (res != null && res.length > 0) {
-          contentDocumentId = res[0].ContentDocumentId;
-        }
-      })
-      .catch((e) => {
-        log(`Failed to retrieve ContentDocument ID: ${JSON.stringify(e)}`);
-      });
-
-    if (isNullOrEmpty(contentDocumentId)) {
-      throw new Error(
-        `Failed to retrieve ContentDocument ID for ContentVersion ID ${contentVersionId}!`
-      );
-    }
-
-    log(`Got ContentDocument Id: ${contentDocumentId}`);
-    return contentDocumentId;
-  }
-
   async createCdl(recordId, contentDocumentId) {
-    log("Creating a CDL...");
+    debug("Creating a CDL...");
 
-    await createContentDocumentLink({
-      contentDocumentId: contentDocumentId,
-      recordId: recordId
+    await createRecord({
+      apiName: "ContentDocumentLink",
+      fields: {
+        LinkedEntityId: recordId,
+        ContentDocumentId: contentDocumentId,
+        ShareType: "V"
+      }
     })
       .then(() => {
-        log("Successfully created a CDL!");
+        debug("Successfully created a CDL!");
       })
       .catch((e) => {
         log(`Failed to create a CDL: ${JSON.stringify(e)}`);

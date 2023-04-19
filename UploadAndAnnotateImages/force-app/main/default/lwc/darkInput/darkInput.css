@@ -1,0 +1,27 @@
+label,
+.characters-count {
+  color: #aeaeae;
+}
+
+input,
+textarea {
+  background-color: black;
+  border: 1px solid #444444;
+  border-radius: 12px;
+  color: white;
+}
+
+textarea {
+  resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #c9c9c9;
+}
+
+input:focus,
+textarea:focus {
+  background-color: #001639;
+  border: 1px solid #1b96ff;
+}

@@ -1,21 +1,27 @@
 <template>
-    <div class="slds-is-fixed toast-message-container">
-        <div class={toastMessageClass} role="alert">
-            <span class="slds-assistive-text">{typeName}</span>
-            <span class={iconContainerClass} title={typeName}>
-                <svg class="slds-icon slds-icon_small" aria-hidden="true">
-                    <use xlink:href={iconHref}></use>
-                </svg>
-            </span>
-            <h2>{message}</h2>
-            <div class="slds-notify__close">
-                <button onclick={handleCloseClicked} class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close">
-                    <svg class="slds-button__icon" aria-hidden="true">
-                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#close"></use>
-                    </svg>
-                    <span class="slds-assistive-text"><label>Close</label></span>
-                </button>
-            </div>
-        </div>
+  <div class="slds-is-fixed toast-message-container">
+    <div class={toastMessageClass} role="alert">
+      <span class="slds-assistive-text">{typeName}</span>
+      <span class={iconContainerClass} title={typeName}>
+        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+          <use xlink:href={iconHref}></use>
+        </svg>
+      </span>
+      <h2>{message}</h2>
+      <div class="slds-notify__close">
+        <button
+          onclick={handleCloseClicked}
+          class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse"
+          title="Close"
+        >
+          <svg class="slds-button__icon" aria-hidden="true">
+            <use
+              xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#close"
+            ></use>
+          </svg>
+          <span class="slds-assistive-text"><label>Close</label></span>
+        </button>
+      </div>
     </div>
+  </div>
 </template>
