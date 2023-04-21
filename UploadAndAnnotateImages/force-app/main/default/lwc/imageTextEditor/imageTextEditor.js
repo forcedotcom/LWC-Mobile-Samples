@@ -190,7 +190,7 @@ export default class ImageTextEditor extends LightningElement {
   resizeFontOnInputChange(event) {
     this.resizeFont();
 
-    if (event.inputType.startsWith("insert")) {
+    if (event.inputType?.startsWith("insert")) {
       // If the user added text, we need to re-calculate font size because the
       // previous calculation may cause it to reduce the number of lines
       this.resizeFont();

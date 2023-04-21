@@ -145,8 +145,6 @@ export default class ImageAnnotate extends LightningElement {
   }
 
   readContentHeight() {
-    // const content = this.template.querySelector('[data-id="content"]');
-    // this.contentHeight = content.offsetHeight;
     const footer = this.template.querySelector('[data-id="footer"]');
     this.contentHeight = window.innerHeight - footer.offsetHeight;
   }

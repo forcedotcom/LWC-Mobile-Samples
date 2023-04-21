@@ -4,17 +4,17 @@
   "version": "1.0.0",
   "description": "Salesforce App",
   "scripts": {
-    "lint": "eslint **/{aura,lwc}/**",
+    "lint": "eslint **/lwc/**",
     "test": "npm run test:unit",
     "test:unit": "sfdx-lwc-jest",
     "test:unit:watch": "sfdx-lwc-jest --watch",
     "test:unit:debug": "sfdx-lwc-jest --debug",
     "test:unit:coverage": "sfdx-lwc-jest --coverage",
-    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-    "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,json,md,page,trigger,xml,yaml,yml}\"",
+    "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,json,md,page,trigger,xml,yaml,yml}\"",
     "postinstall": "cd ../ && husky install ./UploadAndAnnotateImages/.husky",
     "precommit": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "cd ../ && husky install ./UploadAndAnnotateImages/.husky"
   },
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.1.2",
@@ -33,10 +33,10 @@
     "prettier-plugin-apex": "^1.10.0"
   },
   "lint-staged": {
-    "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
+    "**/*.{cls,cmp,component,css,html,json,md,page,trigger,xml,yaml,yml}": [
       "prettier --write"
     ],
-    "!(**/utilsImageCapture/cropper.esm.js)**/{aura,lwc}/**": [
+    "!(**/utilsImageCapture/cropper.esm.js)**/lwc/**": [
       "eslint"
     ]
   },
