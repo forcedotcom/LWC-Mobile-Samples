@@ -5,13 +5,13 @@ export default class MobileAppointmentBookingRescheduleAppointment extends Light
   beforeScheduling = true;
   showSpinner = false;
   scheduleSuccess = false;
-  mainTitle = this.LABELS.Appointment_ReBooking_new_appointment_msg;
+  mainTitle = this.LABELS.Reschedule_Appointment_new_appointment_msg;
   rescheduleBtnTitle =
-    this.LABELS.Appointment_ReBooking_accept_new_appointment_button;
-  successTitle = this.LABELS.Appointment_ReBooking_bottom_sheet_success;
-  failureTitle = this.LABELS.Appointment_ReBooking_bottom_sheet_failure_title;
-  failurBody = this.LABELS.Appointment_ReBooking_bottom_sheet_failure_body;
-  confirmAndCloseBtn = this.LABELS.Appointment_ReBooking_OK;
+    this.LABELS.Reschedule_Appointment_accept_new_appointment_button;
+  successTitle = this.LABELS.Reschedule_Appointment_bottom_sheet_success;
+  failureTitle = this.LABELS.Reschedule_Appointment_bottom_sheet_failure_title;
+  failurBody = this.LABELS.Reschedule_Appointment_bottom_sheet_failure_body;
+  confirmAndCloseBtn = this.LABELS.Reschedule_Appointment_OK;
   @api workTypeName;
   @api newAppointmentDate;
   @api appointmentNumber;

@@ -35,28 +35,28 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   @api recommendedScore;
 
   MONTHNAME = [
-    this.LABELS.Appointment_ReBooking_MonthName_January,
-    this.LABELS.Appointment_ReBooking_MonthName_February,
-    this.LABELS.Appointment_ReBooking_MonthName_March,
-    this.LABELS.Appointment_ReBooking_MonthName_April,
-    this.LABELS.Appointment_ReBooking_MonthName_May,
-    this.LABELS.Appointment_ReBooking_MonthName_June,
-    this.LABELS.Appointment_ReBooking_MonthName_July,
-    this.LABELS.Appointment_ReBooking_MonthName_August,
-    this.LABELS.Appointment_ReBooking_MonthName_September,
-    this.LABELS.Appointment_ReBooking_MonthName_October,
-    this.LABELS.Appointment_ReBooking_MonthName_November,
-    this.LABELS.Appointment_ReBooking_MonthName_December
+    this.LABELS.Reschedule_Appointment_MonthName_January,
+    this.LABELS.Reschedule_Appointment_MonthName_February,
+    this.LABELS.Reschedule_Appointment_MonthName_March,
+    this.LABELS.Reschedule_Appointment_MonthName_April,
+    this.LABELS.Reschedule_Appointment_MonthName_May,
+    this.LABELS.Reschedule_Appointment_MonthName_June,
+    this.LABELS.Reschedule_Appointment_MonthName_July,
+    this.LABELS.Reschedule_Appointment_MonthName_August,
+    this.LABELS.Reschedule_Appointment_MonthName_September,
+    this.LABELS.Reschedule_Appointment_MonthName_October,
+    this.LABELS.Reschedule_Appointment_MonthName_November,
+    this.LABELS.Reschedule_Appointment_MonthName_December
   ];
 
   DAYNAME = [
-    this.LABELS.Appointment_ReBooking_WeekDayLong_Sunday,
-    this.LABELS.Appointment_ReBooking_WeekDayLong_Monday,
-    this.LABELS.Appointment_ReBooking_WeekDayLong_Tuesday,
-    this.LABELS.Appointment_ReBooking_WeekDayLong_Wednesday,
-    this.LABELS.Appointment_ReBooking_WeekDayLong_Thursday,
-    this.LABELS.Appointment_ReBooking_WeekDayLong_Friday,
-    this.LABELS.Appointment_ReBooking_WeekDayLong_Saturday
+    this.LABELS.Reschedule_Appointment_WeekDayLong_Sunday,
+    this.LABELS.Reschedule_Appointment_WeekDayLong_Monday,
+    this.LABELS.Reschedule_Appointment_WeekDayLong_Tuesday,
+    this.LABELS.Reschedule_Appointment_WeekDayLong_Wednesday,
+    this.LABELS.Reschedule_Appointment_WeekDayLong_Thursday,
+    this.LABELS.Reschedule_Appointment_WeekDayLong_Friday,
+    this.LABELS.Reschedule_Appointment_WeekDayLong_Saturday
   ];
 
   @api get selectedDate() {
@@ -257,7 +257,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
       " " +
       date.getDate();
     if (date.setHours(0, 0, 0, 0) == new Date().setHours(0, 0, 0, 0)) {
-      title = title + " , " + this.LABELS.Appointment_ReBooking_today_text;
+      title = title + " , " + this.LABELS.Reschedule_Appointment_today_text;
     }
     return title;
   }

@@ -51,9 +51,9 @@ export default class MobileAppointmentBookingSchedulingContainer extends Lightni
   show_confirmBtnLayout = false;
   @api recommendedScore;
   @api allAppointmentsTitle =
-    this.LABELS.Appointment_ReBooking_all_available_appointments;
+    this.LABELS.Reschedule_Appointment_all_available_appointments;
   @api recommendedAppointmentsTitle =
-    this.LABELS.Appointment_ReBooking_recommended_appointments;
+    this.LABELS.Reschedule_Appointment_recommended_appointments;
   timeSlotObjectFilteredByGrades;
   @api userId;
 

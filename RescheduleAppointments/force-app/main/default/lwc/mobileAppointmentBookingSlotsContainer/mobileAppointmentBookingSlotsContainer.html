@@ -7,14 +7,14 @@
                 variant="error"
                 class="grey-action-icon"
                 > </lightning-icon>
-                <div class="empty-slos-title">{LABELS.Appointment_ReBooking_no_available_appointments_msg}</div>
+                <div class="empty-slos-title">{LABELS.Reschedule_Appointment_no_available_appointments_msg}</div>
                 <template lwc:if={showMobileWorkerChoice}>
                     <div class="empty-slos-body">
-                        <lightning-formatted-rich-text value={LABELS.Appointment_ReBooking_empty_state_select_any_available_worker}></lightning-formatted-rich-text>
+                        <lightning-formatted-rich-text value={LABELS.Reschedule_Appointment_empty_state_select_any_available_worker}></lightning-formatted-rich-text>
                     </div>
                 </template>
                 <template lwc:else>
-                    <div class="empty-slos-body">{LABELS.Appointment_ReBooking_empty_state_change_the_dates}</div>
+                    <div class="empty-slos-body">{LABELS.Reschedule_Appointment_empty_state_change_the_dates}</div>
                 </template>
                 
         </div>
@@ -22,7 +22,7 @@
     <template lwc:else>
         <div class="slots-container">
             <template lwc:if={formattedRecommendedSlotsArray.length}>    
-                <div class="page-title">{LABELS.Appointment_ReBooking_recommended_appointments}</div>
+                <div class="page-title">{LABELS.Reschedule_Appointment_recommended_appointments}</div>
                 <div class="separator"></div>
                 <template for:each={formattedRecommendedSlotsArray} for:item="timeSlotArr">
                     <div class="header" key={timeSlotArr.title} data-id={timeSlotArr.title} onscroll={onScroll}>
@@ -38,7 +38,7 @@
                 </template>
             </template>  
             <div class="section"></div>
-            <div class="page-title">{LABELS.Appointment_ReBooking_all_available_appointments}</div>
+            <div class="page-title">{LABELS.Reschedule_Appointment_all_available_appointments}</div>
             <div class="separator"></div>
             <template for:each={formattedTimeSlotArray} for:item="timeSlotNewArray">    
                 <template if:true={timeSlotNewArray.timeArray}>

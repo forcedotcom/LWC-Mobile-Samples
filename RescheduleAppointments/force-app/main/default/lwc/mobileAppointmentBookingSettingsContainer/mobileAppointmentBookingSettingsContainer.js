@@ -15,7 +15,7 @@ export default class MobileAppointmentBookingSettingsContainer extends Lightning
   recommendedScore = 80;
   _serviceAppointmentId;
 
-  @api operatingHours = "Israel OH";
+  @api operatingHours = "Gold Appointments Calendar";
   @api schedulingPolicy = "forAA";
 
   @api schedulingHorizonUnit = "Months";
