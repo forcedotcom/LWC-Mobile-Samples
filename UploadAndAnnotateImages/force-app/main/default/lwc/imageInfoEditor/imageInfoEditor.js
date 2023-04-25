@@ -51,7 +51,7 @@ export default class ImageInfoEditor extends LightningElement {
     if (this.editedImageInfo?.fileName) {
       return this.editedImageInfo.fileName;
     }
-    return this.imageInfo.metadata.fileName;
+    return this.imageInfo.metadata?.fileName;
   }
 
   get description() {
@@ -64,7 +64,7 @@ export default class ImageInfoEditor extends LightningElement {
   get fileNameWasEdited() {
     return (
       this.editedImageInfo?.fileName &&
-      this.editedImageInfo?.fileName !== this.imageInfo.metadata.fileName
+      this.editedImageInfo?.fileName !== this.imageInfo.metadata?.fileName
     );
   }
 

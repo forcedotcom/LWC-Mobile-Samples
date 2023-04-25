@@ -31,14 +31,14 @@ export default class ImageInfoViewer extends LightningElement {
 
   get fileName() {
     return (
-      this.imageToPreview.editedImageInfo.fileName ||
-      this.imageToPreview.metadata.fileName
+      this.imageToPreview.editedImageInfo?.fileName ||
+      this.imageToPreview.metadata?.fileName
     );
   }
 
   get description() {
     return (
-      this.imageToPreview.editedImageInfo.description ||
+      this.imageToPreview.editedImageInfo?.description ||
       this.imageToPreview.description
     );
   }
