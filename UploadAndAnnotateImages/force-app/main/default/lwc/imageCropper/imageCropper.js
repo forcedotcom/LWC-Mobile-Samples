@@ -1,17 +1,24 @@
 /* eslint-disable @lwc/lwc/no-async-operation */
+// TODO - check if I can replace the 'setTimeouts' with something else
 import { LightningElement, api } from "lwc";
-import { log, IMAGE_MIME_TYPE, Cropper } from "c/utilsImageCapture";
+import {
+  log,
+  debug,
+  IMAGE_MIME_TYPE,
+  Cropper,
+  getComputedPropertyFloat
+} from "c/utilsImageCapture";
 
 export default class ImageCropper extends LightningElement {
   @api
   imageData;
 
   @api
-  contentHeight;
+  maxComponentHeight;
 
   @api
   reset(originalImageData) {
-    log("Parent asked to reset");
+    debug("Parent asked to reset");
     this.showLoading();
 
     // Perform the reset with a little bit of delay to allow the loading spinner to appear
@@ -23,7 +30,7 @@ export default class ImageCropper extends LightningElement {
 
   @api
   save() {
-    log("Parent asked to save");
+    debug("Parent asked to save");
     return this.cropper.getCroppedCanvas().toDataURL(IMAGE_MIME_TYPE);
   }
 
@@ -63,21 +70,21 @@ export default class ImageCropper extends LightningElement {
     const contentArea = this.template.querySelector('[data-id="content"]');
     const footerArea = this.template.querySelector('[data-id="footer"]');
     this.imageContainer = this.template.querySelector(
-      '[data-id="imageContainer"]'
+      '[data-id="image-container"]'
     );
 
-    entirePage.style.maxHeight = this.contentHeight + "px";
+    entirePage.style.maxHeight = this.maxComponentHeight + "px";
 
     const contentPaddingRem = 0.75; // slds-var-p-around_small
     const contentPaddingPx = this.convertRemToPixels(contentPaddingRem);
 
     contentArea.style.padding = contentPaddingRem + "rem";
     contentArea.style.maxHeight =
-      this.contentHeight - footerArea.clientHeight + "px";
+      this.maxComponentHeight - footerArea.clientHeight + "px";
     contentArea.style.height = contentArea.style.maxHeight;
 
     this.imageContainer.style.maxHeight =
-      this.contentHeight -
+      this.maxComponentHeight -
       footerArea.clientHeight -
       2 * contentPaddingPx +
       "px";
@@ -103,7 +110,7 @@ export default class ImageCropper extends LightningElement {
 
   convertRemToPixels(rem) {
     return (
-      rem * parseFloat(getComputedStyle(document.documentElement).fontSize)
+      rem * getComputedPropertyFloat(document.documentElement, "font-size")
     );
   }
 

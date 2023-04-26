@@ -1,0 +1,67 @@
+<template>
+  <div data-id="page" class="page">
+    <div class="section content">
+      <div style="display: table; height: 100%">
+        <div data-id="main-container" class="main-container">
+          <img data-id="image" class="image" src={imageData} />
+          <div data-id="info-container" class="info-container">
+            <div data-id="info-text" class="info-text">
+              <div data-id="file-name" class="file-name">{fileName}</div>
+              <div data-id="description" class="description">{description}</div>
+            </div>
+            <div
+              if:false={showBigButton}
+              data-id="small-button-container"
+              class="small-edit-button"
+            >
+              <button
+                onclick={handleEditClicked}
+                class="edit-button slds-button slds-button_icon slds-button_icon-container"
+                title="Edit Info"
+              >
+                <svg class="slds-button__icon" aria-hidden="true">
+                  <use
+                    xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#edit"
+                  ></use>
+                </svg>
+                <span class="slds-assistive-text">
+                  <label>Edit File Info</label>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section footer">
+      <div
+        if:true={showBigButton}
+        data-id="big-button-container"
+        class="big-edit-button"
+      >
+        <button
+          onclick={handleEditClicked}
+          class="edit-button slds-button slds-button_stretch"
+        >
+          <svg
+            class="slds-button__icon slds-button__icon_left"
+            aria-hidden="true"
+          >
+            <use
+              xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#edit"
+            ></use>
+          </svg>
+          <label>Edit File Info</label>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <c-info-editor-prompt
+    if:true={showInfoEditorPrompt}
+    image-info={imageInfo}
+    edited-image-info={editedImageInfo}
+    onfinish={handleInfoEditorPromptFinish}
+  >
+  </c-info-editor-prompt>
+</template>

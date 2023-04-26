@@ -9,7 +9,7 @@ describe("c-image-cropper", () => {
     }
   });
 
-  it("displays the imageContainer div for the CropperJs library", () => {
+  it("displays the image-container div for the CropperJs library", () => {
     // Arrange
     const imageCropper = createElement("c-image-cropper", {
       is: ImageCropper
@@ -20,7 +20,7 @@ describe("c-image-cropper", () => {
 
     // Assert
     const imageContainer = imageCropper.shadowRoot.querySelector(
-      'div[data-id="imageContainer"]'
+      'div[data-id="image-container"]'
     );
     expect(imageContainer).not.toBeNull();
   });

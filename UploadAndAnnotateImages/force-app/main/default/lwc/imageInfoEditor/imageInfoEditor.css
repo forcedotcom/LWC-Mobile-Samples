@@ -1,0 +1,86 @@
+.main-container {
+  display: table-cell;
+  vertical-align: middle;
+  max-width: inherit;
+}
+
+.image {
+  display: block;
+  margin: auto;
+  padding: 0 var(--lwc-varSpacingSmall, 0.75rem);
+}
+
+.info-container {
+  display: flex;
+  flex-flow: row;
+  max-width: inherit;
+  padding: 10px 15px 10px 15px;
+  overflow-y: auto;
+}
+
+.info-text {
+  flex: 1 1 auto;
+  max-width: inherit;
+}
+
+/* @sldsValidatorIgnore */
+.file-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #aeaeae;
+}
+
+/* @sldsValidatorIgnore */
+.description {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #e5e5e5;
+}
+
+.edit-button {
+  color: #1b96ff;
+}
+
+.edit-button:focus,
+.edit-button:hover,
+.edit-button:active {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: transparent;
+}
+
+.big-edit-button {
+  font-weight: bold;
+  padding: 0 0 5px;
+}
+
+.small-edit-button {
+  flex: 0 1 auto;
+  padding-left: 10px;
+}
+
+.small-edit-button > button > svg {
+  width: var(--lwc-squareIconUtilityMedium, 1.25rem);
+  height: var(--lwc-squareIconUtilityMedium, 1.25rem);
+}
+
+.page {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.page .section.content {
+  display: flex;
+  flex-flow: column;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.page .section.footer {
+  flex: 0 1 auto;
+}

@@ -14,3 +14,5 @@
 **/aura/**/*.xml
 **/aura/**/*.app
 .sfdx
+
+**/utilsImageCapture/cropper.esm.js

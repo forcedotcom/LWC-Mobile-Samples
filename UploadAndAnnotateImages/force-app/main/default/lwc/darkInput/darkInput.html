@@ -1,0 +1,49 @@
+<template>
+  <div class="slds-form-element">
+    <!-- Input label -->
+    <label
+      data-id="label"
+      class="slds-form-element__label slds-p-bottom_xxx-small"
+      for="input"
+    >
+      <abbr if:true={required} class="slds-required" title="required">* </abbr>
+      {label}
+    </label>
+
+    <!-- The actual input -->
+    <div class="slds-form-element__control" id="input">
+      <label style="display: none">Input</label>
+      <input
+        if:false={multiline}
+        type="text"
+        data-id="input"
+        placeholder={placeholder}
+        oninput={handleInputChange}
+        onfocus={handleInputFocus}
+        onblur={handleInputBlur}
+        class="slds-input"
+      />
+      <textarea
+        if:true={multiline}
+        data-id="input"
+        rows={rows}
+        placeholder={placeholder}
+        oninput={handleInputChange}
+        onfocus={handleInputFocus}
+        onblur={handleInputBlur}
+        class="slds-textarea"
+      ></textarea>
+    </div>
+
+    <!-- Max characters counter -->
+    <div
+      if:true={displayCharactersCount}
+      data-id="characters-count"
+      class="slds-clearfix slds-p-top_xx-small"
+    >
+      <div class="slds-float_right characters-count">
+        <p>{charactersCount} / {maxCharacters}</p>
+      </div>
+    </div>
+  </div>
+</template>

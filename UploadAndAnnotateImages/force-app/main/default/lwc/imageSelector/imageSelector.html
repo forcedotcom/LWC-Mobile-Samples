@@ -1,69 +1,184 @@
 <template>
-    <!-- No images selected screen -->
-    <div class="no-images-selected-screen slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center" if:false={areImagesSelected}>
-        <span class="slds-icon_container slds-icon-utility-image" title="Image Icon">
-            <svg class="large-icon slds-icon slds-icon-text-light" aria-hidden="true">
-                <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#image"></use>
-            </svg>
-            <span class="slds-assistive-text">Image Icon</span>
-        </span>
+  <!-- No images selected screen -->
+  <div
+    if:true={noImagesSelected}
+    class="no-images-selected-screen slds-grid slds-grid_vertical slds-grid_vertical-align-center slds-grid_align-center"
+  >
+    <span
+      class="slds-icon_container slds-icon-utility-image"
+      title="Image Icon"
+    >
+      <svg class="large-icon slds-icon slds-icon-text-light" aria-hidden="true">
+        <use
+          xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#image"
+        ></use>
+      </svg>
+      <span class="slds-assistive-text">Image Icon</span>
+    </span>
 
-        <div class="text-container slds-align_absolute-center slds-var-p-around_medium">
-            <span class="slds-text-heading_medium">
-                Add an image to this record
-            </span>
+    <div
+      class="text-container slds-align_absolute-center slds-var-p-around_medium"
+    >
+      <span class="slds-text-heading_medium">
+        Add an image to this record
+      </span>
+    </div>
+
+    <!-- Insert empty character in the label to compensate on a different behavior of the component between Android and iOS -->
+    <lightning-input
+      type="file"
+      accept="image/*"
+      multiple
+      label="&zwnj;"
+      onchange={handleFilesSelected}
+    >
+    </lightning-input>
+  </div>
+
+  <!-- Some images selected screen -->
+  <div if:true={someImagesSelected} class="page">
+    <!-- Header -->
+    <div class="section header">
+      <div class="header-content slds-grid">
+        <div
+          class="slds-var-p-around_small slds-col_bump-right"
+          style="margin-top: auto; margin-bottom: auto"
+        >
+          <span>{totalSelectedImages} {imageText}</span>
         </div>
-
-        <!-- Insert empty character in the label to compensate on a different behavior of the component between Android and iOS -->
-        <lightning-input
+        <div class="slds-var-p-around_small">
+          <!-- Insert empty character in the label to compensate on a different behavior of the component between Android and iOS -->
+          <lightning-input
             type="file"
             accept="image/*"
             multiple
             label="&zwnj;"
-            onchange={handleFilesSelected}>
-        </lightning-input>
+            onchange={handleFilesSelected}
+          >
+          </lightning-input>
+        </div>
+      </div>
     </div>
-
-
-    <!-- Some images selected screen -->
-    <div class="page" if:true={areImagesSelected}>
-        <!-- Header -->
-        <div class="section header">
-            <div class="header-content slds-grid">
-                <div class="slds-var-p-around_small slds-col_bump-right" style="margin-top: auto; margin-bottom: auto;">
-                    <span>{totalSelectedImages} {imageText}</span>
-                </div>
-                <div class="slds-var-p-around_small">
-                    <!-- Insert empty character in the label to compensate on a different behavior of the component between Android and iOS -->
-                    <lightning-input
-                        type="file"
-                        accept="image/*"
-                        multiple
-                        label="&zwnj;"
-                        onchange={handleFilesSelected}>
-                    </lightning-input>
-                </div>
+    <!-- Selected Images Preview -->
+    <div data-id="images-list-container" class="section content">
+      <div
+        class="slds-grid slds-wrap slds-var-p-right_small slds-var-p-bottom_small"
+      >
+        <template for:each={allImagesData} for:item="item">
+          <div
+            key={item.id}
+            data-id={item.id}
+            onclick={handleImageSelectedForPreview}
+            class="square slds-col slds-var-p-left_small slds-var-p-top_small slds-size_1-of-3"
+          >
+            <img src={item.data} />
+            <div class="pencil-icon">
+              <span
+                class="slds-icon_container slds-icon-utility-edit"
+                title="Pencil Icon"
+              >
+                <svg class="slds-icon slds-icon_x-small" aria-hidden="true">
+                  <use
+                    xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#edit"
+                  ></use>
+                </svg>
+                <span class="slds-assistive-text">Pencil Icon</span>
+              </span>
             </div>
-        </div>
-        <!-- Selected Images Preview -->
-        <div class="section content">
-            <div class="slds-grid slds-wrap slds-var-p-right_small slds-var-p-bottom_small">
-                <template for:each={allImagesData} for:item="item">
-                    <div key={item.id} class="square slds-col slds-var-p-left_small slds-var-p-top_small slds-size_1-of-3">
-                        <img data-id={item.id} src={item.data} onclick={handleImageSelectedForAnnotation} />
-                    </div>
-                </template>
-            </div>
-        </div>
-        <!-- Footer -->
-        <div class="section footer">
-            <div class="footer-content slds-grid slds-var-p-around_small">
-                <button
-                    onclick={handleUploadClicked}
-                    type="button"
-                    class="slds-button slds-button_outline-brand slds-col slds-button_stretch">
-                    <label>Add to Record</label></button>
-            </div>
-        </div>
+          </div>
+        </template>
+      </div>
     </div>
+    <!-- Footer -->
+    <div class="section footer">
+      <div class="footer-content slds-grid slds-var-p-around_small">
+        <button
+          onclick={handleUploadClicked}
+          type="button"
+          class="slds-button slds-button_outline-brand slds-col slds-button_stretch"
+        >
+          <label>Add to Record</label>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image was selected to be previewed -->
+  <div if:true={isPreviewingImage} class="page">
+    <!-- Header -->
+    <div class="section header">
+      <div class="header-content slds-grid">
+        <div
+          class="slds-var-p-around_small slds-col_bump-right"
+          style="margin-top: auto; margin-bottom: auto"
+        >
+          <button
+            onclick={backToPreviewAllImages}
+            class="slds-button"
+            style="font-size: 1rem"
+          >
+            <svg
+              class="slds-button__icon slds-button__icon_left"
+              aria-hidden="true"
+            >
+              <use
+                xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#chevronleft"
+              ></use>
+            </svg>
+            Back to Gallery
+          </button>
+        </div>
+        <div
+          class="slds-var-p-around_small"
+          style="margin-top: auto; margin-bottom: auto"
+        >
+          <button
+            onclick={handleRemoveClicked}
+            class="slds-button slds-button_icon"
+            style="color: #0176d3"
+            title="Remove image"
+          >
+            <svg
+              class="slds-button__icon"
+              style="width: 1.25rem; height: 1.25rem"
+              aria-hidden="true"
+            >
+              <use
+                xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#delete"
+              ></use>
+            </svg>
+            <span class="slds-assistive-text">Remove image</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Preview Image -->
+    <div
+      data-id="preview-container"
+      class="section content"
+      style="background-color: #e5e5e5; justify-content: center"
+    >
+      <c-image-info-viewer
+        data-id="image-info-viewer"
+        image-to-preview={previewImage}
+        max-height={maxHeightForPreview}
+        max-width={pageWidth}
+        onrendered={handlePreviewScreenRendered}
+        style="display: table; max-height: inherit"
+      >
+      </c-image-info-viewer>
+    </div>
+    <!-- Footer -->
+    <div class="section footer">
+      <div class="footer-content slds-grid slds-var-p-around_small">
+        <button
+          onclick={handleImageSelectedForAnnotation}
+          type="button"
+          class="slds-button slds-button_outline-brand slds-col slds-button_stretch"
+        >
+          <label>Edit Image</label>
+        </button>
+      </div>
+    </div>
+  </div>
 </template>

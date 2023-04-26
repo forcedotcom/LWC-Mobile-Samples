@@ -1,0 +1,76 @@
+textarea {
+  margin: 0;
+  padding: 5px;
+  border: 1px solid #4286f4;
+  outline: 0;
+  resize: auto;
+  overflow: hidden;
+  background: transparent;
+  grid-column: 1;
+  grid-row: 1;
+  font-family: Arial;
+  line-height: 100%;
+}
+
+.resizable {
+  display: grid;
+  background: transparent;
+  touch-action: none;
+}
+
+.resizable.with-bg {
+  background: white;
+}
+
+.resizable .corners {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.resizable .corners .corner {
+  position: absolute;
+  display: grid;
+  padding: 10px;
+}
+
+.resizable .corners .corner .touch-circle {
+  grid-column: 1;
+  grid-row: 1;
+  height: 8px;
+  aspect-ratio: 1 / 1;
+  border: 3px solid #4286f4;
+  background-color: #4286f4;
+  border-radius: 50%;
+  margin: auto;
+  display: inline-block;
+}
+
+.resizable .corners .corner .touch-circle-background {
+  grid-column: 1;
+  grid-row: 1;
+  height: 10px;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  border: 2px white solid;
+  border-radius: 50%;
+}
+
+.resizable .corners .corner.top-left {
+  left: -15px;
+  top: -15px;
+}
+.resizable .corners .corner.top-right {
+  right: -15px;
+  top: -15px;
+}
+.resizable .corners .corner.bottom-left {
+  left: -15px;
+  bottom: -15px;
+}
+.resizable .corners .corner.bottom-right {
+  right: -15px;
+  bottom: -15px;
+}

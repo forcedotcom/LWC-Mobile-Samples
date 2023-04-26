@@ -1,0 +1,43 @@
+<template>
+  <div
+    data-id="main-container"
+    style="display: table-cell; vertical-align: middle; max-width: inherit"
+  >
+    <img data-id="image" style="display: block; margin: auto" src={imageData} />
+    <div
+      data-id="info-container"
+      style="padding: 10px 15px 10px 15px; overflow-y: auto"
+    >
+      <div
+        data-id="file-name"
+        style="
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          color: #444444;
+        "
+      >
+        {fileName}
+      </div>
+      <div
+        data-id="description"
+        style="
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          color: #181818;
+        "
+      >
+        {description}
+      </div>
+      <div
+        if:true={showViewMoreButton}
+        data-id="view-more"
+        onclick={handleViewMoreClicked}
+        style="font-weight: bold; color: #0176d3"
+      >
+        View {moreOrLess}
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,57 @@
+.button-group-item-dot {
+  align-items: center;
+  justify-items: center;
+  display: grid;
+}
+
+.dot-button {
+  display: grid;
+}
+
+.dot-button:focus,
+.dot-button:active {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: transparent;
+}
+
+.dot {
+  grid-column: 1;
+  grid-row: 1;
+  height: 1.5rem;
+  margin: auto;
+  aspect-ratio: 1 / 1;
+  border: 1px #9faab5 solid;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-selection-ring {
+  grid-column: 1;
+  grid-row: 1;
+  height: 2.25rem;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  border: 3px transparent solid;
+}
+
+.dot-selection-ring.is-selected {
+  border: 3px #1b96ff solid;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ea001e;
+}
+
+.green {
+  background-color: #2e844a;
+}
+
+.white {
+  background-color: #ffffff;
+}
+
+.black {
+  background-color: #000000;
+}

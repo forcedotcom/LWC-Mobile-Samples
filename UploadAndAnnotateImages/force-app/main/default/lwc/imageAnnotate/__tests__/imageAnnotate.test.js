@@ -11,7 +11,7 @@ describe("c-image-annotate", () => {
     }
   });
 
-  it("displays just the image when enters the screen", () => {
+  it("displays the image-info-editor when enters the screen", async () => {
     // Arrange
     const imageAnnotate = createElement("c-image-annotate", {
       is: ImageAnnotate
@@ -20,10 +20,13 @@ describe("c-image-annotate", () => {
 
     // Act
     document.body.appendChild(imageAnnotate);
+    await Promise.resolve();
 
     // Assert
-    const previewImage = imageAnnotate.shadowRoot.querySelector("img");
-    expect(previewImage).not.toBeNull();
+    const imageInfoEditor = imageAnnotate.shadowRoot.querySelector(
+      "c-image-info-editor"
+    );
+    expect(imageInfoEditor).not.toBeNull();
     const imageCropper =
       imageAnnotate.shadowRoot.querySelector("c-image-cropper");
     expect(imageCropper).toBeNull();
@@ -199,7 +202,9 @@ describe("c-image-annotate", () => {
       'span[title="Remove"]'
     );
     removeButton.click();
-    await Promise.resolve();
+    await Promise.resolve(); // Wait for the click
+    await Promise.resolve(); // Wait for LightningConfirm.open
+    await Promise.resolve(); // Wait for the event to be dispatched
 
     // Assert
     expect(removeHandler).toHaveBeenCalled();

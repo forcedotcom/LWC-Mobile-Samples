@@ -1,14 +1,15 @@
 .toast-message-container {
-    top: 0;
-    width: 100%;
-    padding: 10px;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 9900;
 }
 
 .toast-message {
-    border-radius: 10px;
-    width: 100%;
+  border-radius: 10px;
+  width: 100%;
 }
 
 .toast-message h2 {
-    margin-right: 1.25rem;
+  margin-right: 1.25rem;
 }

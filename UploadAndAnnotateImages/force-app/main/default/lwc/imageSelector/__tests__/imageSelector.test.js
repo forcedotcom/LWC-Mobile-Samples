@@ -24,6 +24,10 @@ describe("c-image-selector", () => {
       ".slds-icon-utility-image"
     );
     expect(imageIcon).not.toBeNull();
+    const imageInfoViewer = imageSelector.shadowRoot.querySelector(
+      "c-image-info-viewer"
+    );
+    expect(imageInfoViewer).toBeNull();
     const uploadButton = imageSelector.shadowRoot.querySelector("button");
     expect(uploadButton).toBeNull();
   });
@@ -46,11 +50,15 @@ describe("c-image-selector", () => {
       ".slds-icon-utility-image"
     );
     expect(imageIcon).toBeNull();
+    const imageInfoViewer = imageSelector.shadowRoot.querySelector(
+      "c-image-info-viewer"
+    );
+    expect(imageInfoViewer).toBeNull();
     const uploadButton = imageSelector.shadowRoot.querySelector("button");
     expect(uploadButton).not.toBeNull();
   });
 
-  it("dispatches an event when clicking on image", async () => {
+  it("previews image when clicking on it", async () => {
     // Arrange
     const imageSelector = createElement("c-image-selector", {
       is: ImageSelector
@@ -59,18 +67,59 @@ describe("c-image-selector", () => {
       { data: "data1", id: 111 },
       { data: "data2", id: 222 }
     ];
+
+    // Act
+    document.body.appendChild(imageSelector);
+    const firstImage =
+      imageSelector.shadowRoot.querySelector('div[data-id="111"]');
+    firstImage.click();
+    await Promise.resolve();
+
+    // Assert
+    const imageInfoViewer = imageSelector.shadowRoot.querySelector(
+      "c-image-info-viewer"
+    );
+    expect(imageInfoViewer).not.toBeNull();
+  });
+
+  it("dispatches an event when clicking on edit image", async () => {
+    // Arrange
+    const imageSelector = createElement("c-image-selector", {
+      is: ImageSelector
+    });
+    imageSelector.allImagesData = [
+      {
+        id: 111,
+        data: "data1",
+        description: "description1",
+        editedImageInfo: {},
+        metadata: { fileName: "file1", ext: "jpeg", edited: false }
+      },
+      {
+        id: 222,
+        data: "data2",
+        description: "description2",
+        editedImageInfo: {},
+        metadata: { fileName: "file2", ext: "jpeg", edited: false }
+      }
+    ];
     const annotateImageHandler = jest.fn();
     imageSelector.addEventListener("annotateimage", annotateImageHandler);
 
     // Act
     document.body.appendChild(imageSelector);
     const firstImage =
-      imageSelector.shadowRoot.querySelector('img[data-id="111"]');
+      imageSelector.shadowRoot.querySelector('div[data-id="111"]');
     firstImage.click();
+    await Promise.resolve();
+    const editButton = imageSelector.shadowRoot.querySelector(
+      ".slds-button_stretch"
+    );
+    editButton.click();
     await Promise.resolve();
 
     // Assert
     expect(annotateImageHandler).toHaveBeenCalled();
-    expect(annotateImageHandler.mock.calls[0][0].detail).toBe("111");
+    expect(annotateImageHandler.mock.calls[0][0].detail).toBe(111);
   });
 });

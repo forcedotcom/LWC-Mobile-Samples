@@ -45,4 +45,106 @@ describe("c-toast-message", () => {
     // Verify close event was dispatched
     expect(closeHandler).toHaveBeenCalled();
   });
+
+  it("displays the correct icon - success", () => {
+    // Arrange
+    const toastMessage = createElement("c-toast-message", {
+      is: ToastMessage
+    });
+    toastMessage.message = "this is a test";
+    toastMessage.type = ToastTypes.Success;
+
+    // Act
+    document.body.appendChild(toastMessage);
+
+    // Verify
+    const icon = toastMessage.shadowRoot.querySelector(".slds-icon > use");
+    expect(icon.attributes[1].value).toContain("symbols.svg#success");
+  });
+
+  it("displays the correct icon - error", () => {
+    // Arrange
+    const toastMessage = createElement("c-toast-message", {
+      is: ToastMessage
+    });
+    toastMessage.message = "this is a test";
+    toastMessage.type = ToastTypes.Error;
+
+    // Act
+    document.body.appendChild(toastMessage);
+
+    // Verify
+    const icon = toastMessage.shadowRoot.querySelector(".slds-icon > use");
+    expect(icon.attributes[1].value).toContain("symbols.svg#error");
+  });
+
+  it("displays the correct icon - warning", () => {
+    // Arrange
+    const toastMessage = createElement("c-toast-message", {
+      is: ToastMessage
+    });
+    toastMessage.message = "this is a test";
+    toastMessage.type = ToastTypes.Warning;
+
+    // Act
+    document.body.appendChild(toastMessage);
+
+    // Verify
+    const icon = toastMessage.shadowRoot.querySelector(".slds-icon > use");
+    expect(icon.attributes[1].value).toContain("symbols.svg#warning");
+  });
+
+  it("uses the correct theme - success", () => {
+    // Arrange
+    const toastMessage = createElement("c-toast-message", {
+      is: ToastMessage
+    });
+    toastMessage.message = "this is a test";
+    toastMessage.type = ToastTypes.Success;
+
+    // Act
+    document.body.appendChild(toastMessage);
+
+    // Verify
+    const container = toastMessage.shadowRoot.querySelector(
+      ".toast-message-container > div"
+    );
+    expect(container.classList).toContain("slds-theme_success");
+  });
+
+  it("uses the correct theme - error", () => {
+    // Arrange
+    const toastMessage = createElement("c-toast-message", {
+      is: ToastMessage
+    });
+    toastMessage.message = "this is a test";
+    toastMessage.type = ToastTypes.Error;
+
+    // Act
+    document.body.appendChild(toastMessage);
+
+    // Verify
+    const container = toastMessage.shadowRoot.querySelector(
+      ".toast-message-container > div"
+    );
+    expect(container.classList).toContain("slds-theme_error");
+  });
+
+  it("uses the correct theme - warning", () => {
+    // Arrange
+    const toastMessage = createElement("c-toast-message", {
+      is: ToastMessage
+    });
+    toastMessage.message = "this is a test";
+    toastMessage.type = ToastTypes.Warning;
+
+    // Act
+    document.body.appendChild(toastMessage);
+
+    // Verify
+    const container = toastMessage.shadowRoot.querySelector(
+      ".toast-message-container > div"
+    );
+    expect(container.classList).toContain("slds-theme_warning");
+  });
 });
