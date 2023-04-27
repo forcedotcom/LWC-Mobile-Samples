@@ -4,28 +4,28 @@ import customLabels from "./labels";
 export default class MobileAppointmentBookingRebookingCalendar extends LightningElement {
   LABELS = customLabels;
   months = [
-    this.LABELS.Appointment_ReBooking_MonthName_January,
-    this.LABELS.Appointment_ReBooking_MonthName_February,
-    this.LABELS.Appointment_ReBooking_MonthName_March,
-    this.LABELS.Appointment_ReBooking_MonthName_April,
-    this.LABELS.Appointment_ReBooking_MonthName_May,
-    this.LABELS.Appointment_ReBooking_MonthName_June,
-    this.LABELS.Appointment_ReBooking_MonthName_July,
-    this.LABELS.Appointment_ReBooking_MonthName_August,
-    this.LABELS.Appointment_ReBooking_MonthName_September,
-    this.LABELS.Appointment_ReBooking_MonthName_October,
-    this.LABELS.Appointment_ReBooking_MonthName_November,
-    this.LABELS.Appointment_ReBooking_MonthName_December
+    this.LABELS.Reschedule_Appointment_MonthName_January,
+    this.LABELS.Reschedule_Appointment_MonthName_February,
+    this.LABELS.Reschedule_Appointment_MonthName_March,
+    this.LABELS.Reschedule_Appointment_MonthName_April,
+    this.LABELS.Reschedule_Appointment_MonthName_May,
+    this.LABELS.Reschedule_Appointment_MonthName_June,
+    this.LABELS.Reschedule_Appointment_MonthName_July,
+    this.LABELS.Reschedule_Appointment_MonthName_August,
+    this.LABELS.Reschedule_Appointment_MonthName_September,
+    this.LABELS.Reschedule_Appointment_MonthName_October,
+    this.LABELS.Reschedule_Appointment_MonthName_November,
+    this.LABELS.Reschedule_Appointment_MonthName_December
   ];
 
   weekDaysArray = [
-    this.LABELS.Appointment_ReBooking_WeekDayShort_Sunday,
-    this.LABELS.Appointment_ReBooking_WeekDayShort_Mon,
-    this.LABELS.Appointment_ReBooking_WeekDayShort_Tue,
-    this.LABELS.Appointment_ReBooking_WeekDayShort_Wed,
-    this.LABELS.Appointment_ReBooking_WeekDayShort_Thu,
-    this.LABELS.Appointment_ReBooking_WeekDayShort_Fri,
-    this.LABELS.Appointment_ReBooking_WeekDayShort_Saturday
+    this.LABELS.Reschedule_Appointment_WeekDayShort_Sunday,
+    this.LABELS.Reschedule_Appointment_WeekDayShort_Mon,
+    this.LABELS.Reschedule_Appointment_WeekDayShort_Tue,
+    this.LABELS.Reschedule_Appointment_WeekDayShort_Wed,
+    this.LABELS.Reschedule_Appointment_WeekDayShort_Thu,
+    this.LABELS.Reschedule_Appointment_WeekDayShort_Fri,
+    this.LABELS.Reschedule_Appointment_WeekDayShort_Saturday
   ];
 
   //passed from props

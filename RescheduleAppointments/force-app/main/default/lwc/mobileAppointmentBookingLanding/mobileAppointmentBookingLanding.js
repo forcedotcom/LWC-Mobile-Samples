@@ -68,7 +68,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   newAppointmentDate;
   newAppointmentTime;
   maxValidCalendarDate;
-  minValidCalendarDate;
+  _minValidCalendarDate;
   @api nonAvailableDateArray = [];
   @api noOfDaysBeforeAfterWeek = 2;
   @api worktypeDisplayname;
@@ -143,6 +143,14 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     if (value) {
       this.maxValidCalendarDate = value;
     }
+  }
+
+  @api get minValidCalendarDate() {
+    return this._minValidCalendarDate;
+  }
+
+  set minValidCalendarDate(value) {
+    this._minValidCalendarDate = value;
   }
 
   @api get shownoofdaysbeforeafterweek() {
@@ -624,7 +632,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
           this.minValidCalendarDate
       );
       if (loopdate < this.minValidCalendarDate) {
-        loopdate = this.minValidCalendarDate;
+        loopdate = new Date(this.minValidCalendarDate.getTime());
       }
 
       if (loopdate >= this.minValidCalendarDate) {
@@ -675,7 +683,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
                       console.log("Error in getting slots : " + data.error);
                       this.showAlertWithError(
                         this.LABELS
-                          .AppointmentAssistance_confirmation_failure_message
+                          .Reschedule_Appointment_confirmation_failure_message
                       );
                       this.timeSlotDateWise = [];
                       this.deleteDummySa(saData.dummyServiceAppointmentId);
@@ -869,7 +877,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
           .catch((error) => {
             console.log(
               this.LABELS
-                .Appointment_ReBooking_toastMessage_reschedule_appointment_fail_message +
+                .Reschedule_Appointment_toastMessage_reschedule_appointment_fail_message +
                 "  " +
                 error
             );
@@ -1141,13 +1149,13 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
     if (this._currentAssignmentMethod) {
       if (this._currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
         this.assignToName =
-          this.LABELS.Appointment_ReBooking_assigned_to_you.replace(
+          this.LABELS.Reschedule_Appointment_assigned_to_you.replace(
             "{0}",
             this.userName
           );
       } else {
         this.assignToName =
-          this.LABELS.Appointment_ReBooking_assigned_to_any_available_worker;
+          this.LABELS.Reschedule_Appointment_assigned_to_any_available_worker;
       }
     }
   }

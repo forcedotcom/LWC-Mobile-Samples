@@ -1,28 +1,28 @@
 import customLabels from "./constantsLabels";
 
 const MONTHNAME = [
-  customLabels.Appointment_ReBooking_MonthName_January,
-  customLabels.Appointment_ReBooking_MonthName_February,
-  customLabels.Appointment_ReBooking_MonthName_March,
-  customLabels.Appointment_ReBooking_MonthName_April,
-  customLabels.Appointment_ReBooking_MonthName_May,
-  customLabels.Appointment_ReBooking_MonthName_June,
-  customLabels.Appointment_ReBooking_MonthName_July,
-  customLabels.Appointment_ReBooking_MonthName_August,
-  customLabels.Appointment_ReBooking_MonthName_September,
-  customLabels.Appointment_ReBooking_MonthName_October,
-  customLabels.Appointment_ReBooking_MonthName_November,
-  customLabels.Appointment_ReBooking_MonthName_December
+  customLabels.Reschedule_Appointment_MonthName_January,
+  customLabels.Reschedule_Appointment_MonthName_February,
+  customLabels.Reschedule_Appointment_MonthName_March,
+  customLabels.Reschedule_Appointment_MonthName_April,
+  customLabels.Reschedule_Appointment_MonthName_May,
+  customLabels.Reschedule_Appointment_MonthName_June,
+  customLabels.Reschedule_Appointment_MonthName_July,
+  customLabels.Reschedule_Appointment_MonthName_August,
+  customLabels.Reschedule_Appointment_MonthName_September,
+  customLabels.Reschedule_Appointment_MonthName_October,
+  customLabels.Reschedule_Appointment_MonthName_November,
+  customLabels.Reschedule_Appointment_MonthName_December
 ];
 
 const DAYNAME = [
-  customLabels.Appointment_ReBooking_WeekDayLong_Sunday,
-  customLabels.Appointment_ReBooking_WeekDayLong_Monday,
-  customLabels.Appointment_ReBooking_WeekDayLong_Tuesday,
-  customLabels.Appointment_ReBooking_WeekDayLong_Wednesday,
-  customLabels.Appointment_ReBooking_WeekDayLong_Thursday,
-  customLabels.Appointment_ReBooking_WeekDayLong_Friday,
-  customLabels.Appointment_ReBooking_WeekDayLong_Saturday
+  customLabels.Reschedule_Appointment_WeekDayLong_Sunday,
+  customLabels.Reschedule_Appointment_WeekDayLong_Monday,
+  customLabels.Reschedule_Appointment_WeekDayLong_Tuesday,
+  customLabels.Reschedule_Appointment_WeekDayLong_Wednesday,
+  customLabels.Reschedule_Appointment_WeekDayLong_Thursday,
+  customLabels.Reschedule_Appointment_WeekDayLong_Friday,
+  customLabels.Reschedule_Appointment_WeekDayLong_Saturday
 ];
 
 const getFormattedTime = (date) => {
