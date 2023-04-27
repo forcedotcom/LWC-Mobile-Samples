@@ -43,6 +43,26 @@ export default class ImageInfoViewer extends LightningElement {
     );
   }
 
+  get mapMarkers(){
+
+    const mapMarkers = [];
+    if(this.imageToPreview.gpsCoordinates){
+      mapMarkers.push({
+        location: {
+          Latitude:this.imageToPreview.gpsCoordinates.latitude,
+          Longitude:this.imageToPreview.gpsCoordinates.longitude
+        },
+        title: this.fileName
+      });
+
+    }
+    return mapMarkers;
+  }
+
+  get isGPSInfoAvailable(){
+    return this.imageToPreview.gpsCoordinates;
+  }
+
   showViewMoreButton = true;
   get viewMoreButtonClass() {
     return this.showViewMoreButton ? "" : "hidden";
@@ -108,11 +128,7 @@ export default class ImageInfoViewer extends LightningElement {
 
     // Then, check if there is a text overflow and we need to display the "View more" button
     const isShowingViewMoreButton = this.showViewMoreButton;
-    if (this.hasAnyTextOverflow() || this.detailedMode) {
-      this.showViewMoreButton = true;
-    } else {
-      this.showViewMoreButton = false;
-    }
+    this.showViewMoreButton = !!(this.hasAnyTextOverflow() || this.detailedMode);
 
     if (isShowingViewMoreButton !== this.showViewMoreButton) {
       // Value was changed, need to wait for render
@@ -213,6 +229,7 @@ export default class ImageInfoViewer extends LightningElement {
       this.descriptionContainer.style.textOverflow = null;
       this.descriptionContainer.style.whiteSpace = null;
       this.descriptionContainer.style.overflow = null;
+
     } else {
       this.fileNameContainer.style.textOverflow = "ellipsis";
       this.fileNameContainer.style.whiteSpace = "nowrap";
@@ -221,6 +238,7 @@ export default class ImageInfoViewer extends LightningElement {
       this.descriptionContainer.style.textOverflow = "ellipsis";
       this.descriptionContainer.style.whiteSpace = "nowrap";
       this.descriptionContainer.style.overflow = "hidden";
+
     }
   }
 }

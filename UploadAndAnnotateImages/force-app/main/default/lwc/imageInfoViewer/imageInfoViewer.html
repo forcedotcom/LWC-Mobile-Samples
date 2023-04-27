@@ -3,10 +3,15 @@
     data-id="main-container"
     style="display: table-cell; vertical-align: middle; max-width: inherit"
   >
-    <img data-id="image" style="display: block; margin: auto" src={imageData} />
+    <img
+      alt=""
+      data-id="image"
+      style="display: block; margin: auto"
+      src={imageData}
+    />
     <div
       data-id="info-container"
-      style="padding: 10px 15px 10px 15px; overflow-y: auto"
+      style="padding: 10px 15px 10px 15px; /*overflow-y: auto*/"
     >
       <div
         data-id="file-name"
@@ -29,6 +34,14 @@
         "
       >
         {description}
+      </div>
+      <div data-id="gps-coordinates" style="overflow: hidden">
+        <template if:true={isGPSInfoAvailable}>
+          <lightning-map
+            map-markers={mapMarkers}
+            zoom-level="15"
+          ></lightning-map>
+        </template>
       </div>
       <div
         if:true={showViewMoreButton}

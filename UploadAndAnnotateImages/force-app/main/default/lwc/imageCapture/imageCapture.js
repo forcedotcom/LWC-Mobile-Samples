@@ -13,6 +13,7 @@ import {
   ToastTypes,
   dataURLtoFile
 } from "c/utilsImageCapture";
+import {ExifReader} from "c/exifReader";
 
 export default class ImageCapture extends LightningElement {
   // This allows the component to be placed on a record page, or other record
@@ -27,7 +28,7 @@ export default class ImageCapture extends LightningElement {
   allImagesData = [];
 
   compressionOptions = {
-    compressionEnabled: true,
+    compressionEnabled: false, //compression will delete exif metadata
     resizeMode: "contain",
     resizeStrategy: "reduce",
     targetWidth: 2048,
@@ -57,7 +58,7 @@ export default class ImageCapture extends LightningElement {
   }
 
   get shouldShowToast() {
-    return this.toastType == null ? false : true;
+    return this.toastType != null;
   }
 
   hideToast() {
@@ -114,15 +115,23 @@ export default class ImageCapture extends LightningElement {
 
         let data = await this.readFile(blob);
         let metadata = await this.readMetadata(file);
+        let exifMetadata = await ExifReader.readMetadata(data);
+        log(JSON.stringify(exifMetadata));
+        let gpsCoordinates = await ExifReader.extractGpsInformation(exifMetadata);
 
         this.allImagesData.push({
           id: this.nextId++,
           data: data,
           description: "",
           editedImageInfo: {},
-          metadata: metadata
+          metadata: metadata,
+          efixMetadata: exifMetadata,
+          gpsCoordinates: gpsCoordinates
         });
+        log(JSON.stringify(this.allImagesData));
       }
+    }catch(err){
+      log('Error during handleImagesSelected: ' + err);
     } finally {
       this.isReading = false;
     }
@@ -284,7 +293,7 @@ export default class ImageCapture extends LightningElement {
 
   getFullFileName(item) {
     const ext = item.metadata.edited ? IMAGE_EXT : item.metadata.ext;
-    var fullFileName = item.editedImageInfo.fileName || item.metadata.fileName;
+    let fullFileName = item.editedImageInfo.fileName || item.metadata.fileName;
     if (!isNullOrEmpty(ext)) {
       fullFileName += `.${ext}`;
     }

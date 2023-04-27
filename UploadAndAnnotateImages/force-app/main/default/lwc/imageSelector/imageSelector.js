@@ -1,6 +1,6 @@
 import { LightningElement, api } from "lwc";
 import LightningConfirm from "lightning/confirm";
-import { debug, getComputedHeight } from "c/utilsImageCapture";
+import {debug, getComputedHeight} from "c/utilsImageCapture";
 
 export default class ImageSelector extends LightningElement {
   @api
@@ -47,6 +47,7 @@ export default class ImageSelector extends LightningElement {
     for (const item of this.allImagesData) {
       if (item.id === selectedId) {
         this.previewImage = item;
+        debug(JSON.stringify('this.previewImage: ' + this.previewImage));
         break;
       }
     }
