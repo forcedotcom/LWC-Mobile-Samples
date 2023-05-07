@@ -21,7 +21,7 @@ export const ToastTypes = Object.freeze({
   Warning: Symbol("Warning")
 });
 
-const DEBUG_LOGS = true; // TODO: change to false
+const DEBUG_LOGS = false;
 export const IMAGE_EXT = "jpeg";
 export const IMAGE_MIME_TYPE = "image/" + IMAGE_EXT;
 

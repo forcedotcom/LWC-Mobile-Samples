@@ -1,5 +1,4 @@
 /* eslint-disable @lwc/lwc/no-async-operation */
-// TODO - check if I can replace the 'setTimeouts' with something else
 import { LightningElement, api } from "lwc";
 import {
   log,
