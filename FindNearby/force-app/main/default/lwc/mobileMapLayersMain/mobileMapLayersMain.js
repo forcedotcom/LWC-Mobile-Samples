@@ -154,7 +154,7 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
       let records;
       let fieldsList;
       this.CONFIG.mapObjects.forEach((obj) => {
-        objData = data.uiapi.query[obj.value].edges;
+        objData = data.uiapi?.query[obj.value].edges ?? [];
         records = [];
         for (let record of objData) {
           fieldsList = Object.values(record.node).map((v) => v?.value ?? v);

@@ -1,7 +1,5 @@
 import { createElement } from 'lwc';
 import MobileMapLayersMain from 'c/mobileMapLayersMain';
-import ConfirmModal from 'c/confirmModal';
-jest.mock('c/confirmModal');
 
 jest.mock(
   '@salesforce/apex/MobileMapLayersService.getAssignedResourceLocation',

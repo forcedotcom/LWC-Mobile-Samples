@@ -6,6 +6,7 @@ Help your mobile workers figure out what records are close by. For example, mobi
 We recommend taking the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components) Trailhead to learn how to:
 * Set up your Salesforce DX environment
 * Set up Visual Studio Code
+* Make sure your org is updated to the Summer '23 version and higher
 * Authorize your org
 
 ## Set Up the LWC
