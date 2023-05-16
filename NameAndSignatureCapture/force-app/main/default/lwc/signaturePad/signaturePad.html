@@ -1,0 +1,23 @@
+<template>
+    <div class="signature_pad_flexbox">
+        <template if:true={enableNameSigning}>
+            <template if:true={nameInputLabel}>
+                <div>{nameInputLabel}</div>
+            </template>
+            <lightning-input
+                class="slds-m-bottom_small"
+                label=" "
+                variant="label-hidden"
+                type="text"
+                value={inputText}
+                onchange={drawText}>
+            </lightning-input>
+        </template>
+
+        <template if:true={padLabel}>
+            <div>{padLabel}</div>
+        </template>
+        
+        <canvas class="signature_pad_canvas"></canvas>
+    </div>
+</template>
