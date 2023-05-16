@@ -1,4 +1,5 @@
 import { LightningElement, api } from 'lwc';
+import getAllPicklistOptions from '@salesforce/apex/MobileMapLayersService.getAllPicklistOptions';
 
 export default class MapFilters extends LightningElement {
   @api mapObjects;
@@ -8,9 +9,11 @@ export default class MapFilters extends LightningElement {
   @api setCurrentObjectFilter;
   @api setCurrentFieldFilter;
   selectedFieldFilter = { label: '', value: '', type: '', input: '' };
+  picklistOptions;
 
   connectedCallback() {
     this.selectedFieldFilter = this.currentFieldFilter.field;
+    this.refreshPicklistOptions();
   }
 
   renderedCallback() {
@@ -52,6 +55,10 @@ export default class MapFilters extends LightningElement {
       .sort((f1, f2) => (f1.label < f2.label ? -1 : 1));
   }
 
+  get filterValueOptions() {
+    return this.picklistOptions;
+  }
+
   get inputType() {
     if (this.selectedFieldFilter?.type === 'DATETIME') return 'DATE';
     return this.selectedFieldFilter?.type;
@@ -59,6 +66,14 @@ export default class MapFilters extends LightningElement {
 
   get isFieldTypeBoolean() {
     return this.selectedFieldFilter.type === 'BOOLEAN';
+  }
+
+  get isFieldTypePicklist() {
+    return this.selectedFieldFilter.type === 'PICKLIST';
+  }
+
+  get isFieldTypeRegular() {
+    return !this.isFieldTypeBoolean && !this.isFieldTypePicklist;
   }
 
   get showResultsDisabled() {
@@ -94,6 +109,7 @@ export default class MapFilters extends LightningElement {
         ...this.fieldRadioOptions.find((o) => o.value === e.target.value),
       };
       this.selectedFieldFilter.input = this.isFieldTypeBoolean ? false : '';
+      this.refreshPicklistOptions();
       this.closeSheet('fields-list-bottom-sheet');
     } catch (error) {
       this.handleError(error);
@@ -152,6 +168,21 @@ export default class MapFilters extends LightningElement {
   };
 
   // Helpers
+
+  async refreshPicklistOptions() {
+    if (this.isFieldTypePicklist) {
+      const allOptions = await getAllPicklistOptions({
+        obj: this.currentObjectFilter.value,
+        field: this.selectedFieldFilter.value,
+      });
+      this.picklistOptions = [
+        { label: '', value: '' },
+        ...allOptions.sort((f1, f2) => (f1.label < f2.label ? -1 : 1)),
+      ];
+    } else {
+      this.picklistOptions = [];
+    }
+  }
 
   clearFieldFilter() {
     this.setCurrentFieldFilter(false, {

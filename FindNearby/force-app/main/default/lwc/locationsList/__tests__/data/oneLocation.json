@@ -4,7 +4,9 @@
         "value": {
             "id": "1234",
             "title": "marker1",
-            "detailFieldValue": "field2-1",
+            "firstDetailFieldValue": "field2-1",
+            "secondDetailFieldValue": "field3-1",
+            "thirdDetailFieldValue": "field4-1",
             "distance": "15 km"
         }
     }

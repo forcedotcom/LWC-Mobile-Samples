@@ -6,6 +6,7 @@ export default class LocationsList extends LightningElement {
   @api setCurrentMarker;
   @api redirectToMarkerDetails;
   @api routeToMarkerLocation;
+  @api isIos;
   @api handleError;
 
   mainTemplate;
@@ -14,16 +15,19 @@ export default class LocationsList extends LightningElement {
 
   showPopover = false;
   actionButtonIndexClicked;
+  IOS_MARGIN = '34px';
 
   init = false;
   renderedCallback() {
-    if (!this.init) {
-      this.init = true;
-      this.mainTemplate = this.template.querySelector('.main-container');
-      this.headerElement = this.template.querySelector('.header');
-      this.listElement = this.template.querySelector('.list');
-      this.listElement.style.paddingBottom = this.isIOS ? '34px' : '0';
+    this.setSpinner();
+    this.mainTemplate = this.template.querySelector('.main-container');
+    this.headerElement = this.template.querySelector('.header');
+    this.listElement = this.template.querySelector('.list');
+    if (this.listElement)
+      this.listElement.style.paddingBottom = this.isIos() ? this.IOS_MARGIN : '0';
+    if (!this.init && this.headerElement) {
       this.detectDrag();
+      this.init = true;
     }
   }
 
@@ -76,6 +80,10 @@ export default class LocationsList extends LightningElement {
 
   // Getters
 
+  get loaded() {
+    return !!this.currentObject?.label;
+  }
+
   get popoverClass() {
     return this.showPopover ? 'popover-shown' : 'popover-hidden';
   }
@@ -83,15 +91,6 @@ export default class LocationsList extends LightningElement {
   get titleObjectText() {
     if (!this.currentObject.label) return 'Locations';
     return this.filteredMarkers.length === 1 ? this.currentObject.label : this.currentObject.plural;
-  }
-
-  get isIOS() {
-    const isIpad =
-      navigator.userAgent.includes('Macintosh') &&
-      navigator.maxTouchPoints &&
-      navigator.maxTouchPoints > 1;
-    const isIphone = navigator.platform.includes('iPhone');
-    return isIpad || isIphone;
   }
 
   // List Opening & Closing
@@ -157,4 +156,15 @@ export default class LocationsList extends LightningElement {
 
     this.headerElement.addEventListener('touchstart', dragTouchStart);
   };
+
+  // Helpers
+
+  setSpinner() {
+    // set same id (if set in html, it changes dynamically)
+    const g = this.template.querySelector('.spinner-g');
+    const mask = this.template.querySelector('.spinner-mask');
+    const id = 'spinner-mask-id';
+    mask?.setAttribute('id', id);
+    g?.setAttribute('mask', `url(#${id})`);
+  }
 }

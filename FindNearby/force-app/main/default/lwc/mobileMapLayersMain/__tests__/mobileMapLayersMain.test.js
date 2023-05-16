@@ -26,28 +26,10 @@ jest.mock(
   () => {
     return {
       default: jest.fn(() => ({
-        Label: 'Work Order',
-        Plural: 'Work Orders',
-        IconUrl: '',
+        label: 'Work Order',
+        plural: 'Work Orders',
+        iconUrl: '',
       })),
-    };
-  },
-  { virtual: true }
-);
-
-jest.mock(
-  '@salesforce/apex/MobileMapLayersService.getObjectLocations',
-  () => {
-    return {
-      default: jest.fn(() => [
-        {
-          Id: '123',
-          Latitude: '1.1',
-          Longitude: '2.2',
-          TitleField: 'the name',
-          DetailField: 'detail',
-        },
-      ]),
     };
   },
   { virtual: true }

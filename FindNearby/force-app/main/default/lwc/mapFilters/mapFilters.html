@@ -90,7 +90,7 @@
             </div>
             <template if:true={selectedFieldFilter.value}>
                 <div class="field-input-container">
-                    <template if:false={isFieldTypeBoolean}>
+                    <template if:true={isFieldTypeRegular}>
                         <lightning-input
                             type={inputType}
                             label={selectedFieldFilter.label}
@@ -110,6 +110,20 @@
                                 message-toggle-inactive="">
                             </lightning-input>
                         </div>
+                    </template>
+                    <template if:true={isFieldTypePicklist}>
+                        <label class="slds-form-element__label">{selectedFieldFilter.label}</label>
+                        <select
+                            class="slds-input slds-combobox__input"
+                            onchange={onFieldInputChange}>
+                            <template for:each={filterValueOptions} for:item="option">
+                                <option
+                                    class="slds-dropdown"
+                                    key={option.value}>
+                                    {option.label}
+                                </option>
+                            </template>
+                        </select>
                     </template>
                 </div>
             </template>

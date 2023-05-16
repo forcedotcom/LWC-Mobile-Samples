@@ -158,6 +158,10 @@
     padding: 12px;
 }
 
+select {
+    height: 48px;
+}
+
 .filters-sheet-show-results, .filters-sheet-clear {
     height: 48px;
     font-size: 16px;

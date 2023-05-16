@@ -18,6 +18,7 @@ describe('c-locations-list', () => {
       iconUrl: '',
       color: '',
     };
+    element.isIos = () => true;
     element.setCurrentMarker = jest.fn();
     element.redirectToMarkerDetails = jest.fn();
     element.routeToMarkerLocation = jest.fn();
@@ -200,7 +201,7 @@ describe('c-locations-list', () => {
   it('sets paddingBottom correctly when using iOS devices', async () => {
     element.filteredMarkers = oneLocation;
 
-    navigatorGetter = jest.spyOn(window, 'navigator', 'get');
+    const navigatorGetter = jest.spyOn(window, 'navigator', 'get');
     navigatorGetter.mockReturnValue({
       userAgent: 'Macintosh',
       maxTouchPoints: 2,
