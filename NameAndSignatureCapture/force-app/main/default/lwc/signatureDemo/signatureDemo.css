@@ -1,12 +1,20 @@
 /*
- * For demo purposes, here we are defining a font as base64 string to be used by signaturePad component.
- * When using signaturePad component in your projects, you can provide your own font however you like.
- * Note that providing a font is needed only if you would like to enable name-signing on signaturePad by
- * setting its enable-name-signing="true". If you disable name-signing then you don't need to provide a font.
+ * For demo purposes, here we are defining a font as base64 string to
+ * be used by signaturePad component. When using signaturePad component
+ * in your projects, you can provide your own font however you like.
+ *
+ * Note that providing a font is needed only if you would like to
+ * enable name-signing on signaturePad by setting its
+ * enable-name-signing="true". If you disable name-signing then you
+ * don't need to provide a font.
+ *
+ * When using another font, don't forget to also update the logic in
+ * renderedCallback() of signatureDemo.js to ensure the font is loaded.
  *
  * Font Name: Great Vibes
  * Source: https://fonts.google.com/specimen/Great+Vibes
- * WOFF2 Direct Link: https://fonts.gstatic.com/s/greatvibes/v14/RWmMoKWR9v4ksMfaWd_JN9XFiaQoDmlr.woff2
+ * WOFF2 Direct Link:
+ * https://fonts.gstatic.com/s/greatvibes/v14/RWmMoKWR9v4ksMfaWd_JN9XFiaQoDmlr.woff2
  */
 @font-face {
   font-family: "Great Vibes";

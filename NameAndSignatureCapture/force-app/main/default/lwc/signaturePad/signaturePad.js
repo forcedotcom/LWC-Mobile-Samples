@@ -118,7 +118,6 @@ export default class SignaturePad extends LightningElement {
   }
 
   @api clearSignature() {
-    this.imgSrc = null;
     this.inputText = "";
     this.drawingSections = [];
     this.refreshCanvas(true);
@@ -209,19 +208,14 @@ export default class SignaturePad extends LightningElement {
     const pointX = clientX - clientRect.left;
     const pointY = clientY - clientRect.top;
 
-    if (isNewSection) {
+    if (isNewSection || this.drawingSections.length < 1) {
       // Start a new section at this point's coordinates
       this.drawingSections.push([{ x: pointX, y: pointY }]);
     } else {
-      if (this.drawingSections.length <= 0) {
-        // Start a new section at this point's coordinates
-        this.drawingSections.push([{ x: pointX, y: pointY }]);
-      } else {
-        // Add to the last section
-        const lastSectionIdx = this.drawingSections.length - 1;
-        const lastSection = this.drawingSections[lastSectionIdx];
-        lastSection.push({ x: pointX, y: pointY });
-      }
+      // Add to the last section
+      const lastSectionIdx = this.drawingSections.length - 1;
+      const lastSection = this.drawingSections[lastSectionIdx];
+      lastSection.push({ x: pointX, y: pointY });
     }
 
     this.refreshCanvas();

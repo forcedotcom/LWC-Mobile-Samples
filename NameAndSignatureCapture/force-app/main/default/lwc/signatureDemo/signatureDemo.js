@@ -6,7 +6,9 @@ export default class SignatureDemo extends LightningElement {
   renderedCallback() {
     document.fonts.forEach((font) => {
       if (font.family === "Great Vibes" && font.status === "unloaded") {
-        // ensure the font is loaded so that signature pad could use it
+        // Ensure that the font is loaded so that signature pad could use it.
+        // If you are using a different font in your project, don't forget
+        // to update the if-condition above to account for it.
         font.load();
       }
     });
