@@ -1,0 +1,71 @@
+<template>
+    <div
+        class="slds-border_top slds-border_bottom slds-border_left slds-border_right mainDiv" >
+        <!-- <div class="newAppointmentTitleLayout slds-list_horizontal">
+                <div class="previewText slds-align_absolute-center">{LABELS.FollowUpAppointments_preview_text}</div>
+            </div> -->
+
+        <div class="screenTitleLayout">
+            <div class="screenTitle1 slds-text-heading_medium slds-text-title_bold">
+                <p class="slds-truncate">{screenTitle}</p>
+            </div>
+            <div class="screenTitle2">{screenSubTitle}</div>
+        </div>
+
+        <div class="previewFieldOuterLayout">
+            <template for:each={fieldListArray} for:item="value">
+                <div key={value} class="previewFieldLayout">
+                    <lightning-input key={value} class="inputFieldPreview"
+                        type="text"
+                        label={value}
+                        value=""
+                        disabled="true"
+                        onchange={handleScreenTitleEventChange} >
+                    </lightning-input>
+                </div>
+            </template>
+        </div>
+
+        <div class="slds-border_top screenFooterDivElement">
+            <div class="leftrightDivLayout slds-float_left">
+                    <lightning-button-icon
+                        class="leftarrowbutton slds-float_left "
+                        icon-name="utility:left"
+                        size="medium"
+                        disabled={isLeftButtonDisabled}
+                        onclick={handleLeftButtonEventClick}
+                        alternative-text="Move before" >
+                    </lightning-button-icon>
+                    <lightning-button-icon
+                        class="rightarrowbutton slds-float_left rightShiftButton"
+                        icon-name="utility:right"
+                        size="medium"
+                        disabled={isRightButtonDisabled}
+                        onclick={handleRightButtonEventClick}
+                        alternative-text="Move after" >
+                    </lightning-button-icon>
+            </div>
+
+            <div class="editIcon slds-float_right slds-border_left slds-border_top slds-border_right slds-border_bottom" >
+                <!-- <lightning-icon class="slds-float_right"
+                            icon-name="utility:down"
+                            size="small"
+                            onclick={handleClick} 
+                            alternative-text="Indicates close">
+                        </lightning-icon> -->
+                <div class="slds-float_right lgc-bg">
+                    <lightning-button-menu alternative-text="More options" title="More options" onselect={handleDropDownActionSelected} class="dropdownbtn slds-float_right slds-align_absolute-center" >
+                            <lightning-menu-item value={const_duplicate} alternative-text="Duplicate" label={const_duplicate} disabled={isDuplicateButtonDisabled} ></lightning-menu-item>
+                            <lightning-menu-item value={const_delete} alternative-text="Delete" label={const_delete} ></lightning-menu-item>
+                    </lightning-button-menu>
+                </div>
+                <lightning-button
+                    label={LABELS.FollowUpAppointments_edit_button_label}
+                    title={LABELS.FollowUpAppointments_edit_button_label}
+                    onclick={handleClildEditButtonEvent}
+                    class="slds-float_right editButton slds-border_right" >
+                </lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

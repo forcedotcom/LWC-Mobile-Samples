@@ -1,0 +1,212 @@
+.mainDiv {
+  height: 500px;
+  width: 300px;
+  /* margin-top: 50px; */
+  /* margin-left: 30px; */
+  position: relative;
+  border-radius: 2%;
+}
+
+.newAppointmentTitleLayout {
+  background-color: #f3f3f3;
+}
+
+.deleteIcon {
+  padding-top: 12px;
+  margin-left: 15px;
+  width: 10px;
+  height: 10px;
+}
+
+.previewText {
+  padding-top: 5px;
+  /* margin-left: 20px; */
+  padding-bottom: 5px;
+  background-color: #f3f3f3;
+}
+
+.screenTitleLayout {
+  margin-top: 15px;
+  height: 54px;
+}
+
+.screenTitle1 {
+  padding-top: 5px;
+  margin-left: 15px;
+  color: black;
+}
+
+.screenTitle2 {
+  padding-top: 6px;
+  margin-left: 15px;
+  color: black;
+}
+
+.appointmentTitle {
+  padding-top: 10px;
+  margin-left: 15px;
+  color: black;
+}
+
+.smallDividerLayout {
+  width: 100%;
+  height: 1px;
+  background-color: #f3f3f3;
+  margin-top: 6px;
+}
+
+.smallDividerLayout2 {
+  width: 100%;
+  height: 1px;
+  background-color: #f3f3f3;
+  margin-top: 6px;
+}
+
+.previewFieldLayout {
+  margin-left: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.loadingBar1 {
+  width: 200px;
+  height: 6px;
+  background-color: #e5e5e5;
+  margin-left: 15px;
+  margin-top: 8px;
+  border-radius: 10px;
+}
+
+.loadingBar2 {
+  width: 169px;
+  height: 6px;
+  background-color: #e5e5e5;
+  margin-left: 15px;
+  margin-top: 8px;
+  border-radius: 10px;
+}
+
+.loadingBar3 {
+  width: 220px;
+  height: 6px;
+  background-color: #e5e5e5;
+  margin-left: 15px;
+  margin-top: 8px;
+  border-radius: 10px;
+}
+
+.loadingBar4 {
+  width: 100px;
+  height: 6px;
+  background-color: #0176d3;
+  margin-top: 8px;
+  border-radius: 10px;
+}
+
+.calenderTitle {
+  margin-top: 6px;
+  height: 27px;
+}
+
+.blueIconDown {
+  margin-left: 5px;
+  --sds-c-icon-color-foreground-default: #0176d3;
+  margin-top: 2px;
+}
+
+.lgc-bg {
+  margin-top: 5px;
+  margin-left: 7px;
+  margin-right: 10px;
+}
+
+.previewFieldOuterLayout {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 350px;
+}
+
+.inputFieldPreview {
+  width: 200px;
+}
+
+.dividerLayout {
+  width: 100%;
+  height: 16px;
+  background-color: #f3f3f3;
+  margin-top: 10px;
+}
+
+.screenFooterDivElement {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f3f3f3;
+}
+
+.editIcon {
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  border-radius: 2%;
+  background-color: #f3f3f3;
+  /* padding-top: 4px; */
+}
+
+.lgc-bg {
+  background-color: white;
+}
+
+.editButton {
+  /* margin-top: 15px; */
+  margin-right: 0px;
+}
+
+.leftrightDivLayout {
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.footerLayout {
+  height: 48px;
+  background-color: #f3f3f3;
+  padding-right: 60px;
+  margin-top: 50px;
+}
+
+.addStepBtn {
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.saveButton {
+  margin-top: 10px;
+}
+
+.comboBox {
+  margin-right: 15px;
+}
+
+.fieldTitle {
+  margin-top: 15px;
+}
+
+.searchInputField {
+  width: 150px;
+}
+
+.loadingBarCalender {
+  width: 26px;
+  height: 5px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+}
+
+.c-container {
+  margin-top: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+}

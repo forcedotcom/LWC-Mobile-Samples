@@ -1,0 +1,395 @@
+@Library("sfci-pipeline-sharedlib@master") _
+
+import net.sfdc.dci.v1.NotifyUtilsImpl
+import net.sfdc.dci.BuildUtils
+import net.sfdc.dci.ReleaseStampingUtils
+import groovy.json.JsonSlurperClassic
+import net.sfdc.dci.CodeCoverageUtils
+
+env.RELEASE_BRANCHES = ["MASTER"]
+env.GUS_TEAM_NAME = "SFS Mobile Hybrid Experience"
+env.CODE_COVERAGE_THRESHOLD =  75
+
+def coverage_config = [
+    tool_name              : 'clover',
+    gus_team_name          : env.GUS_TEAM_NAME,
+    module_name            : 'Field Service Appointment Assistant',
+    test_suite             : 'unit',
+    language_type          : 'javascript',
+    aggregate_team_coverage: false,
+    dev_gus_upload         : false,
+    report_location        : 'unitTestResult/test-result-codecoverage.json'
+]
+
+def releaseParameters = {
+    parameters([
+        // Environment 1
+        choice(
+                //Env
+                choices: ['GS0','Production'],
+                description: 'CHOOSE WORING ENVIORMENT',
+                name: 'Instance',
+                defaultValue: 'GS0'
+            ),
+            choice(
+                //Env
+                description: 'CREATE UNLOCKED PACKAGE',
+                choices: ['New package','Customer version'],
+                name: 'CreatePackage',
+                defaultValue: 'New package'
+            ),
+            booleanParam( defaultValue: false,
+                      description: 'CREATE SCRATCH ORG ?',
+                      name: 'Create'),
+            booleanParam( defaultValue: false,
+                      description: 'INSTALL PACKAGE ? (Create scratch org must be checked)',
+                      name: 'InstallPackage')
+    ])
+}
+
+echo 'Start CI'
+
+//
+def envDef = [
+    releaseParameters: releaseParameters,
+    emailTo: 'ratias@salesforce.com',
+    conditionalSkipCIBuild: true,
+    buildImage: '331455399823.dkr.ecr.us-east-2.amazonaws.com/sfci/grc-operation/grc-sfci-docker:ed3c28f'
+]
+
+
+executePipeline(envDef) {
+    withEnv(["HOME=${env.WORKSPACE}"]) {
+    def environment = [
+    
+    PACKAGE_VERSION : 'SubscriberPackageVersionID',
+    PACKAGE_REQUEST_ID: 'ID',
+    PACKAGE_URL: 'https://login.salesforce.com/packaging/installPackage.apexp?p0=',
+    STAGE_COUNTER: 0,
+    SCRATCH_ORG: "ORG USER NAME",
+    FSL_PACKAGE: "FSL PACKAGE PATH",
+    SCRATCH_ORG_P: "NOT SET",
+    SALESFORCE_LOGIN: "https://test.salesforce.com/",
+    CODE_COVERAGE: "Not Run",
+    BUILD_CAUSE: false,
+    PROD_TEMPLATE: "0TTB0000001CtaB",
+    GS0_TEMPLATE: "0TTB0000001pzMK"
+
+]
+
+if(params.Instance == 'Production'){
+
+    
+    withCredentials([string(credentialsId: 'INSTANCE_URL', variable: 'instanceurl'),string(credentialsId: 'APP_ID_PROD', variable: 'appId'),string(credentialsId: 'DEVHUB_USERNAME_PROD', variable: 'usernameProd'),file(credentialsId: 'JWT_CERT_KEY_G', variable: 'JWT__key_file_g')]) { 
+    try{
+    
+            stage('Stage 1- Init') {
+                echo 'Job started on Prod'
+                echo 'Stage 1 Start init stage'
+                buildInit()
+                    echo("Prepping a build on branch: ${env.BRANCH_NAME}")
+                    checkout scm
+                    //Setting google map key from secret
+                    environment.BUILD_CAUSE= currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause) != null
+                   
+                    echo 'end init fase'
+                    echo("environment.BUILD_CAUSE: ${environment.BUILD_CAUSE}")
+                    echo("params.CreatePackage: ${params.CreatePackage}")
+                    mavenInit()
+            }
+       
+            stage('Stage 2 - Sfdx-login') {
+                    echo 'Stage 2 - Start Dev Hub auth stage'  
+                        sh "sfdx force:auth:jwt:grant --instanceurl ${instanceurl} --clientid ${clientIdDev} --username ${usernameProd} --jwtkeyfile ${JWT__key_file} --setdefaultdevhubusername --setalias HubOrg"      
+                        sh 'sfdx force:org:list'
+                        echo ' end login '
+            }
+
+            stage('Stage 3 - Create version package') {
+                echo 'Stage 3 - Create package'  
+                if(params.CreatePackage != 'Customer version' &&  environment.BUILD_CAUSE){
+                    def isPr = env.BRANCH_NAME.contains("PR")
+                    echo "${isPr}"
+                    if(isPr != true){
+                        echo 'Start create version package stage'
+                        output = sh returnStdout: true, script: "sfdx force:package:version:create --package 0HoB0000000GnaIKAS --installationkeybypass --definitionfile --codecoverage --wait 400 --json --targetdevhubusername HubOrg"
+                            //Wait 1 minute for package replication (test1).
+                        sleep 60
+                        def jsonSlurper = new JsonSlurperClassic()
+                        def response = jsonSlurper.parseText(output)
+                        echo "${response}"
+                        
+                        //Set global param
+                        environment.PACKAGE_REQUEST_ID = response.result.Id
+                        environment.PACKAGE_VERSION = response.result.SubscriberPackageVersionId
+                        environment.PACKAGE_URL = environment.PACKAGE_URL+environment.PACKAGE_VERSION
+                        response = null
+
+                        echo "Version package ID:${environment.PACKAGE_VERSION}"
+                        echo "Version package request ID:${environment.PACKAGE_REQUEST_ID}"
+                        echo "Version package installation URL:${environment.PACKAGE_URL}"      
+                    }         
+                }
+                      
+            }
+
+            stage('Stage 4 - Create Scratch org'){
+                 echo 'Stage 4 - Start create scratch org stage'
+                if(params.Create && environment.BUILD_CAUSE && params.CreatePackage != 'null'){
+                    sh "sed -i 's/\"ancestorId.*//g' sfdx-project.json"
+                    sh "more sfdx-project.json"
+                    sh "more config/project-scratch-def.json"               
+                    responseS = sh returnStdout: true, script: "sfdx force:org:create --targetdevhubusername HubOrg --definitionfile config/project-scratch-def.json --setalias qaOrg --wait 100 --durationdays 30 --json"
+                    //Wait 1 minute for Scratch org request replication 
+                    sleep 60
+                    def jsonSlurper = new JsonSlurperClassic()
+                    def responseP = jsonSlurper.parseText(responseS)
+                    echo "${responseP}"
+                    environment.SCRATCH_ORG = responseP.result.username
+                    environment.STAGE_COUNTER = environment.STAGE_COUNTER + 1
+
+                    echo "Scratch org name:${environment.SCRATCH_ORG}"
+                    NotifyUtilsImpl.addCustomEmailInfo(this, [Scratch_org_user_name: environment.SCRATCH_ORG])
+                }
+            }
+
+            stage('Stage 5 - Generate Scratch org password'){
+                echo 'Stage 5 Start create scratch org password stage'
+                 if(params.Create && environment.BUILD_CAUSE && params.CreatePackage != 'null'){               
+                    responseC = sh returnStdout: true, script: "sfdx force:user:password:generate -u qaOrg --json"
+                    //Wait 1 minute for Scratch org request replication 
+                    sleep 60
+                    def jsonSlurper = new JsonSlurperClassic()
+                    def responseCp = jsonSlurper.parseText(responseC)
+                    echo "${responseCp}"
+                    environment.SCRATCH_ORG_P = responseCp.result.password
+
+                    NotifyUtilsImpl.addCustomEmailInfo(this, [scratch_org_pass: environment.SCRATCH_ORG_P])
+                 }
+            }
+
+            stage('Stage 6 - Install Package') {
+                if(params.Create && params.InstallPackage && params.CreatePackage != 'null'){
+                    echo 'Stage 6 -Start Install Package stage'
+                    sh "sfdx force:package:install --package ${environment.PACKAGE_VERSION} --targetusername qaOrg --wait 10 --noprompt"
+                }
+                
+            }
+
+            stage('Stage 8 - Push changes & Clean data') {
+                if(params.CreatePackage != 'Customer version' && environment.BUILD_CAUSE){
+                    echo 'Stage 8 Start Push changes & Clean data stage'
+                    //changing google map key string
+                    sh "sed -i 's/${googlemap}/GoogleMapKey/g' force-app/main/default/customMetadata/AppointmentAssistantPrivateSettings.GoogleMapsDistanceAPI.md-meta.xml"
+                    sh "more force-app/main/default/customMetadata/AppointmentAssistantPrivateSettings.GoogleMapsDistanceAPI.md-meta.xml"
+
+                    if(params.CreatePackage != 'Customer version' &&  environment.BUILD_CAUSE){
+                        output = sh returnStdout: true, script: "sfdx force:package:version:report -p ${environment.PACKAGE_VERSION} --json "
+                            //Wait 1 minute for package replication (test1).
+                        sleep 20
+                        def jsonSlurper = new JsonSlurperClassic()
+                        def response = jsonSlurper.parseText(output)
+                        echo "${response}"
+                        environment.CODE_COVERAGE = response.result.CodeCoverage
+                     }
+                    //Push changes to branch
+                    /*
+                    withCredentials([usernamePassword(credentialsId: 'sfci-git', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh "git config --global user.email ${USERNAME}@salesforce.com"
+                    sh "git config --global user.name ${USERNAME}"
+                    sh "git config --global push.default simple"
+                    sh "git commit -am \"Merging into branch from CI job \""
+                    sh "git push https://${USERNAME}:${PASSWORD}@git.soma.salesforce.com/FSLMobileWindowsExperience/LastMile.git HEAD:${env.branch_name}"
+                    }
+                 */
+                }
+                environment.STAGE_COUNTER = 0
+                NotifyUtilsImpl.addCustomEmailInfo(this, [Package_instaltion_url: environment.PACKAGE_URL])
+                NotifyUtilsImpl.addCustomEmailInfo(this, [Salesforce_sandnox_login: environment.SALESFORCE_LOGIN])
+                NotifyUtilsImpl.addCustomEmailInfo(this, [Code_coverage_result: environment.CODE_COVERAGE])
+            }
+       
+
+        } catch(e) {
+            currentBuild.result = "FAILED"
+            echo '[BUILD FAILED] --AFTER TEST ACTIONS--'
+            error = e
+            NotifyUtilsImpl.addCustomEmailInfo(this, [FAIL_CAUSE: error])
+            switch(environment.STAGE_COUNTER) { 
+            case 1: 
+                echo "ACTIONS [BUILD FAILED] -- DELETE SCRATCH ORG"
+                sh 'sfdx force:org:delete --targetusername qaOrg --noprompt'
+                echo "--ACTIONS PASSED--"
+                break
+            case 2: 
+                echo "ACTIONS [BUILD FAILED] -- DELETE SCRATCH ORG /DELETE VERSION PACKAGE"
+                sh 'sfdx force:org:delete --targetusername qaOrg --noprompt'
+                sh "sfdx force:package:version:delete --package ${environment.PACKAGE_VERSION} --noprompt"  
+                echo "--ACTIONS PASSED--"
+                break
+            case 3:
+                echo "ACTIONS [BUILD FAILED] -- UNINSTALL / DELETE SCRATCH ORG / DELETE VERSION PACKAGE"
+                sh "sfdx force:package:uninstall --targetusername jenkins --package ${environment.PACKAGE_VERSION}"
+                sh 'sfdx force:org:delete --targetusername jenkins --noprompt'
+                sh "sfdx force:package:version:delete --package ${environment.PACKAGE_VERSION} --noprompt" 
+                echo "--ACTIONS PASSED--"
+                break
+            default:
+                echo "--NO ROLLBACK OR DELETION WAS REQUIERD,CI MAY PASSED CHECK FAIL LOCATION" 
+                break
+            }
+        }
+    }
+}
+
+if(params.Instance == 'GS0'){
+    withCredentials([string(credentialsId: 'INSTANCE_URL', variable: 'instanceurl'),string(credentialsId: 'APP_ID_GS0', variable: 'clientIdGs0'),string(credentialsId: 'DEVHUB_USERNAME_GS0', variable: 'userNameGs0'),file(credentialsId: 'JWT_CERT_KEY_G', variable: 'JWT__key_file_g')]) { 
+    try{
+    
+            stage('Stage 1- Init') {
+                echo 'Job started on GS0'
+                echo 'stage 1 - Start init stage on GS0'
+                buildInit()
+                    echo("Prepping a build on branch: ${env.BRANCH_NAME}")
+                    checkout scm
+                    sh "sed -i 's/trialforce/${environment.GS0_TEMPLATE}/g' config/project-scratch-def.json"
+                    sh "more config/project-scratch-def.json"
+                    environment.BUILD_CAUSE= currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause) != null
+                    echo 'end init fase'
+                    echo("environment.BUILD_CAUSE: ${environment.BUILD_CAUSE}")
+                    echo("params.CreatePackage: ${params.CreatePackage}")
+            }
+       
+            stage('Stage 2 - Sfdx-login') {
+                    echo 'Stage 2 Start Dev Hub auth stage'  
+                        sh "sfdx force:auth:jwt:grant --instanceurl ${instanceurl} --clientid ${clientIdGs0} --username ${userNameGs0} --jwtkeyfile ${JWT__key_file_g} --setdefaultdevhubusername --setalias HubOrg"      
+                        sh 'sfdx force:org:list'
+                        echo ' end login '
+            }
+
+            stage('Stage 3 - Create version package') {
+                echo 'Stage 3 - Start create version package stage'
+                if(params.CreatePackage != 'Customer version' &&  environment.BUILD_CAUSE){
+                    def isPr = env.BRANCH_NAME.contains("PR")
+                    echo "${isPr}"
+                    if(isPr != true){
+                        echo 'Start create version package stage'
+                        output = sh returnStdout: true, script: "sfdx force:package:version:create --package 0HoB00000008PtFKAU --installationkeybypass --codecoverage --wait 400 --json --targetdevhubusername HubOrg"
+                            //Wait 1 minute for package replication (test1)1.
+                        sleep 60
+                        def jsonSlurper = new JsonSlurperClassic()
+                        def response = jsonSlurper.parseText(output)
+                        echo "${response}"
+                        
+                        //Set global param
+                        environment.PACKAGE_REQUEST_ID = response.result.Id
+                        environment.PACKAGE_VERSION = response.result.SubscriberPackageVersionId
+                        environment.PACKAGE_URL = environment.PACKAGE_URL+environment.PACKAGE_VERSION
+                        response = null
+
+                        echo "Version package ID:${environment.PACKAGE_VERSION}"
+                        echo "Version package request ID:${environment.PACKAGE_REQUEST_ID}"
+                        echo "Version package installation URL:${environment.PACKAGE_URL}"      
+                    }         
+                }
+                      
+            }
+
+            stage('Stage 4 - Create Scratch org'){
+                 echo 'Stage 4 Start create scratch org stage'
+                if(params.Create && environment.BUILD_CAUSE && params.CreatePackage != 'null'){
+                    echo 'Start create scratch org stage'
+                    sh "sed -i 's/\"ancestorId.*//g' sfdx-project.json"
+                    sh "more sfdx-project.json"               
+                    responseS = sh returnStdout: true, script: "sfdx force:org:create --targetdevhubusername HubOrg --definitionfile config/project-scratch-def.json --setalias qaOrg --wait 100 --durationdays 30 --json"
+                    //Wait 1 minute for Scratch org request replication 
+                    sleep 60
+                    def jsonSlurper = new JsonSlurperClassic()
+                    def responseP = jsonSlurper.parseText(responseS)
+                    echo "${responseP}"
+                    environment.SCRATCH_ORG = responseP.result.username
+                    environment.STAGE_COUNTER = environment.STAGE_COUNTER + 1
+
+                    echo "Scratch org name:${environment.SCRATCH_ORG}"
+                    NotifyUtilsImpl.addCustomEmailInfo(this, [Scratch_org_user_name: environment.SCRATCH_ORG])
+                }
+            }
+
+            stage('Stage 5 - Generate Scratch org password'){
+                echo 'Stage 5 Start create scratch org password stage'
+                 if(params.Create && environment.BUILD_CAUSE && params.CreatePackage != 'null'){               
+                    responseC = sh returnStdout: true, script: "sfdx force:user:password:generate -u qaOrg --json"
+                    //Wait 1 minute for Scratch org request replication1 
+                    sleep 60
+                    def jsonSlurper = new JsonSlurperClassic()
+                    def responseCp = jsonSlurper.parseText(responseC)
+                    echo "${responseCp}"
+                    environment.SCRATCH_ORG_P = responseCp.result.password
+
+                    NotifyUtilsImpl.addCustomEmailInfo(this, [scratch_org_pass: environment.SCRATCH_ORG_P])
+                 }
+            }
+
+            stage('Stage 6 - Install Package') {
+                if(params.Create && params.InstallPackage){
+                    echo 'Stage 6 Start Install Package stage'
+                    sh "sfdx force:package:install --package ${environment.PACKAGE_VERSION} --targetusername qaOrg --wait 10 --noprompt"
+                }
+                
+            }
+
+            stage('Stage 8 - Push changes & Clean data') {
+                echo 'Stage 8 - Push changes & Clean data'
+                if(params.CreatePackage != 'Customer version' && environment.BUILD_CAUSE){
+                    echo 'Start Push changes & Clean data stage'
+                    if(params.CreatePackage != 'Customer version' &&  environment.BUILD_CAUSE){
+                        output = sh returnStdout: true, script: "sfdx force:package:version:report -p ${environment.PACKAGE_VERSION} --json "
+                            //Wait 1 minute for package replication (test1).
+                        sleep 20
+                        def jsonSlurper = new JsonSlurperClassic()
+                        def response = jsonSlurper.parseText(output)
+                        echo "${response}"
+                        environment.CODE_COVERAGE = response.result.CodeCoverage
+                     }
+                }
+                environment.STAGE_COUNTER = 0
+                NotifyUtilsImpl.addCustomEmailInfo(this, [Package_instaltion_url: environment.PACKAGE_URL])
+                NotifyUtilsImpl.addCustomEmailInfo(this, [Salesforce_sandnox_login: environment.SALESFORCE_LOGIN])
+                NotifyUtilsImpl.addCustomEmailInfo(this, [Code_coverage_result: environment.CODE_COVERAGE])
+            }
+       
+
+        } catch(e) {
+            currentBuild.result = "FAILED"
+            echo '[BUILD FAILED] --AFTER TEST ACTIONS--'
+            NotifyUtilsImpl.addCustomEmailInfo(this, [FAIL_CAUSE: error])
+            switch(environment.STAGE_COUNTER) { 
+            case 1: 
+                echo "ACTIONS [BUILD FAILED] -- DELETE SCRATCH ORG"
+                sh 'sfdx force:org:delete --targetusername qaOrg --noprompt'
+                echo "--ACTIONS PASSED--"
+                break
+            case 2: 
+                echo "ACTIONS [BUILD FAILED] -- DELETE SCRATCH ORG /DELETE VERSION PACKAGE"
+                sh 'sfdx force:org:delete --targetusername qaOrg --noprompt'
+                sh "sfdx force:package:version:delete --package ${environment.PACKAGE_VERSION} --noprompt"  
+                echo "--ACTIONS PASSED--"
+                break
+            case 3:
+                echo "ACTIONS [BUILD FAILED] -- UNINSTALL / DELETE SCRATCH ORG / DELETE VERSION PACKAGE"
+                sh "sfdx force:package:uninstall --targetusername jenkins --package ${environment.PACKAGE_VERSION}"
+                sh 'sfdx force:org:delete --targetusername jenkins --noprompt'
+                sh "sfdx force:package:version:delete --package ${environment.PACKAGE_VERSION} --noprompt" 
+                echo "--ACTIONS PASSED--"
+                break
+            default:
+                echo "--NO ROLLBACK OR DELETION WAS REQUIERD,CI MAY PASSED CHECK FAIL LOCATION" 
+                break
+            }
+        }
+    }
+}
+    }
+
+
+}

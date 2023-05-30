@@ -1,0 +1,251 @@
+<template>
+    
+    <!-- <div class="slds-border_top slds-border_bottom slds-border_left slds-border_right mainDiv"> 
+        <c-mobile-work-flow-screen-layout></c-mobile-work-flow-screen-layout>
+
+    </div> -->
+
+    <!-- Custom toast notification  START -->
+    <c-follow-up-appointment-custom-toast-notifications>
+    </c-follow-up-appointment-custom-toast-notifications>
+    <!-- Custom toast notification  ENDS -->
+
+
+    <!-- Spinner START -->
+    <template if:false = {dataLoaded}>
+        <div class="spinnerHolder" data-id="container">
+            <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+            </lightning-spinner>        
+        </div>
+    </template>
+    <!-- Spinner ENDS -->
+
+
+    <div class="mainInfoText">
+        {LABELS.FollowUpAppointments_MobileWorkFlow_Info_text}
+    </div>
+
+    <lightning-layout horizontal-align="right">
+        <template if:true={showScreen1}>
+            <lightning-layout-item  class="layoutItem">
+                    <c-mobile-work-flow-screen-layout
+                        screenno = {SCREEN1} 
+                        screentitle = {screenTitle1}
+                        screensubtitle = {screenSubTitle1}
+                        selectedfieldlist = {selectedFieldList1}
+                        disableduplicatebutton = {disableAddStepBtn}
+                        oneditevent={editButtonEventCalledFromChild}
+                        disableleftbutton={isLeftButtonDisabled1}
+                        disablerightbutton={isRightButtonDisabled1}
+                        ondeleteevent={deleteScreenEventCalledFromChild}
+                        onduplicateevent={duplicateEventCalledFromChild}
+                        onleftbuttoneevent = {leftButtonEventCalledFromChild}
+                        onrightbuttoneevent = {rightButtonEventCalledFromChild} >
+                    </c-mobile-work-flow-screen-layout>
+            </lightning-layout-item >
+        </template>
+        <template if:true={showScreen2}>
+            <lightning-layout-item class="layoutItem">
+                    <c-mobile-work-flow-screen-layout
+                        screenno = {SCREEN2} 
+                        screentitle = {screenTitle2}
+                        screensubtitle = {screenSubTitle2}
+                        disableduplicatebutton = {disableAddStepBtn}
+                        selectedfieldlist = {selectedFieldList2}
+                        oneditevent = {editButtonEventCalledFromChild}
+                        disableleftbutton={isLeftButtonDisabled2}
+                        disablerightbutton={isRightButtonDisabled2}
+                        ondeleteevent={deleteScreenEventCalledFromChild}
+                        onduplicateevent={duplicateEventCalledFromChild}
+                        onleftbuttoneevent = {leftButtonEventCalledFromChild}
+                        onrightbuttoneevent = {rightButtonEventCalledFromChild} >
+                    </c-mobile-work-flow-screen-layout>    
+            </lightning-layout-item >
+        </template>
+        
+        <template if:true={showScreen3}>
+            <lightning-layout-item class="layoutItem">
+                <c-mobile-work-flow-screen-layout 
+                    screenno = {SCREEN3}
+                    screentitle = {screenTitle3}
+                    selectedfieldlist = {selectedFieldList3}
+                    screensubtitle = {screenSubTitle3}
+                    disableduplicatebutton = {disableAddStepBtn}
+                    oneditevent = {editButtonEventCalledFromChild}
+                    disableleftbutton={isLeftButtonDisabled3}
+                    disablerightbutton={isRightButtonDisabled3}
+                    ondeleteevent={deleteScreenEventCalledFromChild}
+                    onduplicateevent={duplicateEventCalledFromChild}
+                    onleftbuttoneevent = {leftButtonEventCalledFromChild}
+                    onrightbuttoneevent = {rightButtonEventCalledFromChild} >
+                </c-mobile-work-flow-screen-layout>
+            </lightning-layout-item >
+        </template>
+        
+
+        <lightning-layout-item class="layoutItem">
+            <template if:true={showPreviewScreen}>
+                <c-mobile-work-flow-preview-screen
+                    screensubtitle = {screenSubTitle4} >
+                </c-mobile-work-flow-preview-screen>
+            </template>
+        </lightning-layout-item >
+
+
+    </lightning-layout>
+
+
+    <div class="addStepBtn">
+        <lightning-button 
+            label={LABELS.FollowUpAppointments_add_step_button_label} 
+            title={LABELS.FollowUpAppointments_add_step_button_label}
+            icon-name="utility:add"
+            onclick={handleAddScreenEvent} 
+            class="slds-float_left"
+            disabled={disableAddStepBtn}>
+        </lightning-button>
+    </div>
+
+
+    <div class="footerLayout">
+        <!-- <lightning-button 
+            variant="brand" 
+            label="Save" 
+            title="saveAction" 
+            onclick={handleSaveEvent} 
+            class="slds-m-right_x-small slds-float_right saveButton">
+        </lightning-button> -->
+    </div>
+
+
+
+
+
+
+
+      <!-- Modal FOR FIELD SELECTION STARTS -->
+
+      <template if:true={showModal}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            alternative-text="close"
+                            variant="inverse"
+                            size="small" ></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{dialgBoxTitle}</h2>
+                </header>
+
+
+
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+                    <lightning-layout  horizontal-align="right" class="layoutMainPage">
+                        <lightning-layout-item class="layoutItem1" >
+                            <div class="comboBox">
+                                <lightning-input
+                                    class="inputFieldTitle"
+                                    type="text"
+                                    required
+                                    maxlength="100" 
+                                    label={LABELS.FollowUpAppointments_step_name_text}
+                                    value={currentScreenTitle}
+                                    onchange = {handleScreenTitleEventChange}
+                                    placeholder={LABELS.FollowUpAppointments_placeholder_step_name}>
+                                </lightning-input>
+                            </div>
+                        </lightning-layout-item>
+                        <lightning-layout-item class="layoutItem1">
+                            <div class="comboBox">
+                                <lightning-combobox name="Field" 
+                                    label={LABELS.FollowUpAppointments_Object_text}
+                                    placeholder={LABELS.FollowUpAppointments_placeHolder_select_an_option}
+                                    options={objectNameList}
+                                    required
+                                    value={selectedObject}
+                                    onchange={handleObjectNameSelected}>
+                                </lightning-combobox>
+                            </div>
+                        </lightning-layout-item >
+                    </lightning-layout>
+
+                    <!-- DualList Section  STARTS-->
+
+                    <div class="fieldText">Fields</div>
+
+                    <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left searchInputField" >
+                        <lightning-icon size="x-small" class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" icon-name="utility:search"></lightning-icon>
+                        <input type="text" id="text-input-id-1" 
+                                placeholder={LABELS.FollowUpAppointments_placeholder_search_fields} 
+                                data-name="searchfield"
+                                oninput={filter} 
+                                class="slds-input" />
+                    </div>
+
+                    <div class="dualListBox" >
+                        <lightning-dual-listbox name="Fields"
+                            label=""
+                            source-label="Available Fields"
+                            selected-label="Selected Fields"
+                            options={filteredFieldNames}
+                            value={selectedFields}
+                            up-button-label="Move before"
+                            down-button-label="Move after"
+                            add-button-label="Add field"
+                            remove-button-label="Remove field"
+                            onchange={handleChange}>
+                        </lightning-dual-listbox>
+                    </div> 
+
+                     <!-- DualList Section  ENDS-->
+
+                </div>
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">{LABELS.FollowUpAppointments_button_cancel}</button>
+                    <button class="slds-button slds-button_brand" onclick={saveDetails} disabled={isSaveButtonDisabled} title="Save">{LABELS.FollowUpAppointments_button_save}</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- MODAL FOR FIELD SELECTION ENDS HERE  -->
+
+
+
+    <!-- MODAL for delete dialog box STARTS -->
+    <template if:true={showDeleteDialogBox}>
+        <!-- Modal/Popup Box LWC starts here -->
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open modal">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Box LWC header here -->
+                <header class="slds-modal__header">
+
+                    <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">{LABELS.FollowUpAppointments_delete_step_heading}</h2>
+                </header>
+
+                <!-- Modal/Popup Box LWC body starts here -->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                    <p>{LABELS.FollowUpAppointments_delete_step_body}</p>
+                </div>
+
+                <!-- Modal/Popup Box LWC footer starts here -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={onCloseDeleteDialogBox} title="Cancel">{LABELS.FollowUpAppointments_delete_cancel_button}</button>
+                    <button class="slds-button slds-button_destructive"  onclick={handleDeleteEventDialogBox} title="OK">{LABELS.FollowUpAppointments_delete_button_title}</button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+
+
+
+</template>

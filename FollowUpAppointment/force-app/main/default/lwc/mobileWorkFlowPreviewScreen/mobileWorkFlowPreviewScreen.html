@@ -1,0 +1,119 @@
+<template>
+    <div
+        class="slds-border_top slds-border_bottom slds-border_left slds-border_right mainDiv" >
+        <!-- <div class="newAppointmentTitleLayout slds-list_horizontal">
+                <div class="previewText slds-align_absolute-center">Preview</div>
+            </div> -->
+
+        <div class="screenTitleLayout">
+            <div class="screenTitle1 slds-text-heading_medium slds-text-title_bold">
+                {screenTitle}
+            </div>
+            <div class="screenTitle2">{screenSubTitle}</div>
+        </div>
+
+        <div class="dividerLayout"></div>
+
+        <div class="appointmentTitle">{appointmentDetailTitle}</div>
+
+        <div class="smallDividerLayout"></div>
+
+        <div class="loadingBar1"></div>
+        <div class="loadingBar2"></div>
+        <div class="loadingBar3"></div>
+
+        <div class="dividerLayout"></div>
+
+        <div class="appointmentTitle">{mobileWorkerText}</div>
+        <div class="smallDividerLayout"></div>
+
+        <div class="loadingBar1"></div>
+        <div class="loadingBar2"></div>
+        <div class="loadingBar3"></div>
+
+        <div class="dividerLayout"></div>
+
+        <!-- calender view  -->
+        <div class="calenderTitle">
+            <div class="leftrightDivLayout">
+                <div class="loadingBar4 slds-float_left"></div>
+                <lightning-icon class="slds-float_left blueIconDown" icon-name="utility:down" size="x-small" >
+                </lightning-icon>
+            </div>
+            <div class="slds-float_right lgc-bg">
+                <lightning-icon class="slds-float_right" icon-name="utility:chevronright" size="x-small" >
+                </lightning-icon>
+                <lightning-icon class="slds-float_right" icon-name="utility:chevronleft" size="x-small" > </lightning-icon>
+            </div>
+        </div>
+
+        <div class="smallDividerLayout2"></div>
+
+        <div class="c-container">
+            <lightning-layout horizontal-align="spread">
+                <lightning-layout-item class="weekDayText">
+                    <div>{SUN}</div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div>{MON}</div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div>{TUE}</div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div>{WED}</div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div>{THU}</div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div>{FRI}</div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div>{SAT}</div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+
+        <div class="c-container">
+            <lightning-layout horizontal-align="spread">
+                <lightning-layout-item class="weekDayText">
+                    <div class="loadingBarCalender"></div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div class="loadingBarCalender"></div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div class="loadingBarCalender"></div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div class="loadingBarCalender"></div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div class="loadingBarCalender"></div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div class="loadingBarCalender"></div>
+                </lightning-layout-item>
+                <lightning-layout-item class="weekDayText">
+                    <div class="loadingBarCalender"></div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+
+        <!-- Footer Layout -->
+        <div class="slds-border_top screenFooterDivElement">
+            <div class="leftrightDivLayout">
+                <lightning-helptext class="slds-m-right_small slds-float_left slds-align_absolute-center"
+                    style="display: flex"
+                    icon-name="utility:info"
+                    content={LABELS.FollowUpAppointments_preview_step_help_text} >
+                </lightning-helptext>
+
+                <div>{footerTitle}</div>
+            
+            </div>
+            
+        </div>
+    </div>
+</template>

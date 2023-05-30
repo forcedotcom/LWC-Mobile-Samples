@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scheduling_Policy__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Scheduling Policy</label>
+    <referenceTo>FSL__Scheduling_Policy__c</referenceTo>
+    <relationshipLabel>FollowupAppointmentSettings</relationshipLabel>
+    <relationshipName>FollowupAppointmentSettings</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

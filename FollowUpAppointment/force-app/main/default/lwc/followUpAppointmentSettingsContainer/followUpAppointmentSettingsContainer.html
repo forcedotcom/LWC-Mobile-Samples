@@ -1,0 +1,197 @@
+<template>
+  <!-- Custom toast notification  START -->
+  <c-follow-up-appointment-custom-toast-notifications>
+  </c-follow-up-appointment-custom-toast-notifications>
+  <!-- Custom toast notification  ENDS -->
+
+    <div>
+        <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media slds-media_center">
+                    <lightning-icon class="header-icon" size="medium" icon-name="standard:event">
+                    </lightning-icon>
+                    <div class="slds-media__body">
+                        <p class="fieldservicelabel slds-page-header__name-meta">
+                            {LABELS.FollowUpAppointments_field_service_title}
+                        </p>
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="followupmaintitle slds-page-header__title slds-truncate" title="Follow-up Appointments" >
+                                        {LABELS.FollowUpAppointments_setting_page_title} 
+                                    </span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slds-var-m-top_medium">
+        <lightning-card class="lightningCardMain">
+            <!-- Spinner START -->
+            <template if:false={dataLoaded}>
+                <div class="spinnerHolder" data-id="container">
+                    <lightning-spinner alternative-text="Loading" variant="brand" size="large" >
+                    </lightning-spinner>
+                </div>
+            </template>
+            <!-- Spinner ENDS -->
+
+            <lightning-tabset>
+            <!-- Setting page view  START -->
+            <lightning-tab class="lightningTabMain" label="Settings">
+                <div class="pageTitle">
+                    {LABELS.FollowUpAppointments_setting_sub_title}
+                </div>
+                <div class="pageDescription">
+                    {LABELS.FollowUpAppointments_setting_description_text}
+                </div>
+
+                <lightning-layout horizontal-align="right">
+                    <lightning-layout-item>
+                        <div class="comboBox">
+                            <lightning-combobox
+                                name="Operating Hours"
+                                class="comboBoxBackGround"
+                                label={LABELS.FollowUpAppointments_OperatingHoursTitle}
+                                placeholder={LABELS.FollowUpAppointments_placeHolder_select_an_option}
+                                options={operatingHourList}
+                                required
+                                field-level-help="Operating hours"
+                                value={operatingHoursSelected}
+                                onchange={handleOperatingHoursChange} >
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item>
+                        <div class="comboBox">
+                            <lightning-combobox
+                                name="Scheduling Policy"
+                                class="comboBoxBackGround"
+                                label={LABELS.FollowUpAppointments_SchedulingPolicyTitle}
+                                placeholder={LABELS.FollowUpAppointments_placeHolder_select_an_option}
+                                options={objectList}
+                                required
+                                value={schedulingPolicySelected}
+                                onchange={handleSchedulingPolicyChange} >
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item>
+                        <div class="comboBox">
+                            <lightning-combobox
+                                name="Show Appointment Slots As"
+                                class="comboBoxBackGround"
+                                label={LABELS.FollowUpAppointments_ShowAppointmentSlotsTitle}
+                                placeholder={LABELS.FollowUpAppointments_placeHolder_select_an_option}
+                                options={slotDisplayOptions}
+                                required
+                                value={appointmentSlotOptionSelected}
+                                onchange={handleAppointmentSlotSelectionChange} >
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+                </lightning-layout>
+
+                <div class="horizonUnitsInputField slds-list_horizontal">
+                    <lightning-input
+                        class="horizonInputField"
+                        type="number"
+                        max="99999999999999"
+                        min="0"
+                        required
+                        value={schedulingHorizonUnits}
+                        label={LABELS.FollowUpAppointments_SchedulingHorizonUnitsTitle}
+                        onchange={onSchedulingHorizonValueChange} >
+                    </lightning-input>
+                <!-- <label class="daysText">{LABELS.FollowUpAppointments_DaysTitle}</label> -->
+                </div>
+
+                <div class="permissionText">
+                    {LABELS.FollowUpAppointments_Permissions}
+                </div>
+                <div class="permissionSubText">
+                    {LABELS.FollowUpAppointments_Permissions_subtext}
+                </div>
+
+                <!-- Assignment Permission Radio buttons -->
+                <div class="assignmentPermissionLayout">
+                    <lightning-radio-group
+                        name="radioGroup"
+                        label={LABELS.FollowUpAppointments_AssignmentPermission}
+                        options={assignmentPermissionOptions}
+                        value={technicianAssigmentSelected}
+                        required
+                        onchange={onAssignementPermissionChange}
+                        type="radio" >
+                    </lightning-radio-group>
+                </div>
+
+                <!-- <div class="mobileWorkerText" required>{LABELS.FollowUpAppointments_Allow_tech_to_create_object_title}</div> -->
+                <div class="assignmentPermissionLayout">
+                    <lightning-radio-group
+                        name="ObjectGroup2"
+                        label={LABELS.FollowUpAppointments_Allow_tech_to_create_object_title}
+                        options={serviceAppointmentOption}
+                        value={objectCreationAllowed}
+                        required
+                        onchange={onMobileUserObjectSelected}
+                        type="radio" >
+                    </lightning-radio-group>
+                    <lightning-radio-group
+                        name="ObjectGroup1"
+                        options={workOrderOption}
+                        value={objectCreationAllowed}
+                        onchange={onMobileUserObjectSelected}
+                        type="radio" >
+                    </lightning-radio-group>
+
+                    <lightning-radio-group
+                        name="ObjectGroup3"
+                        options={workOrderLineItemOption}
+                        value={objectCreationAllowed}
+                        data-id="woliradiobutton"
+                        onchange={onMobileUserObjectSelected}
+                        type="radio">
+                    </lightning-radio-group>
+                </div>
+
+                <div class="footerLayout">
+                    <lightning-button
+                        variant="brand"
+                        label={LABELS.FollowUpAppointments_setting_page_save_button_label}
+                        title="Save"
+                        disabled={disableSaveButton}
+                        onclick={handleSaveEvent}
+                        data-id="saveBtn"
+                        class="slds-m-right_x-small slds-float_right saveButton" >
+                    </lightning-button>
+
+                    <lightning-button
+                        label={LABELS.FollowUpAppointments_setting_page_cancel_button_label}
+                        title="Cancel"
+                        onclick={handleCancelEvent}
+                        data-id="cancelBtn"
+                        class="slds-m-right_x-small slds-float_right saveButton" >
+                    </lightning-button>
+                </div>
+            </lightning-tab>
+            <!-- Setting page view  ENDS -->
+
+            <!-- Mobile WorkFlow Tab set  -->
+                <lightning-tab label="Mobile Workflow" onactive={handleTabChangeEvent}>
+                    <c-mobile-work-flow-page
+                        is-parent-component-changed={reloadChildComponent}> 
+                    </c-mobile-work-flow-page>
+                </lightning-tab>
+            </lightning-tabset>
+        </lightning-card>
+    </div>
+  </div>
+</template>

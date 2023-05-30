@@ -1,0 +1,52 @@
+<template>
+    <div class="landing-container">
+        <div class="landing-section">
+            <c-mobile-appointment-booking-compact-appointment-info
+                assign-to-name={assignToName}
+                compact-info-obj={compactInfoObj}
+                contact-name={contactName}
+            ></c-mobile-appointment-booking-compact-appointment-info>
+        </div>       
+        <div class="landing-section">
+            <c-mobile-appointment-booking-scheduling-container
+                show-exact-arrival-time = {showExactArrivalTime}
+                serviceterritorytimezone = {serviceTerritoryTimeZone}
+                service-appointment-object = {currentAppointmentData}
+                new-record-number = {newRecordNumber}
+                contact-name = {contactName}
+                oneventname = {onButtonClick}
+                show-no-of-days-before-after-week = {noOfDaysBeforeAfterWeek}
+                service-resource-obj = {serviceResourceObject}
+                time-slot-object = {timeSlotDateWise}
+                ondateselection = {onDateSelected}
+                ongetslotexecuted = {handleGetSlotQueryForSelectedDate}
+                selected-date = {selectedDate}
+                max-valid-date = {maxValidCalendarDate}
+                schedule-policy = {schedulingPolicyId}
+                onserviceappointmentupdate = {onServiceAppointmentUpdate}
+                show-data-spinner = {showSpinnerInChildClass} 
+                page-title = ""
+                worktype-displayname=""
+                recommended-score={recommendedScore}
+                current-assignment-method={currentAssignmentMethod}
+                is-excluded={isExcluded}
+                user-name={userName}
+                assign-to-name={assignToName}
+                show-mobile-worker-choice={showMobileWorkerChoice}
+                onscheduleclosewindow={handleScheduleCloseWindow}
+            ></c-mobile-appointment-booking-scheduling-container>
+        </div>
+        
+        <!-- SPINNER -->
+        <template if:true = {showDataSpinner}>
+            <div class="spinner">
+                <lightning-spinner
+                    alternativetext="Loading"
+                    variant="brand"
+                    size="large"
+                ></lightning-spinner>
+            </div>
+        </template>                
+         <!-- SPINNER -->
+    </div>  
+</template>

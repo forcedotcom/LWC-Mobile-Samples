@@ -1,0 +1,41 @@
+<template>
+  <div class="slds-is-absolute" style="margin-left: 35%">
+    <div class="slds-notify_container slds-is-relative">
+      <template for:each={toastList} for:item="toast" for:index="index">
+        <div key={toast.id}>
+          <div class={toast.headerClass} role="status">
+            <span class="slds-assistive-text">{toast.headerMessage}</span>
+            <span
+              class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top"
+              title="Description of icon when needed"
+            >
+              <lightning-icon
+                icon-name={toast.iconName}
+                alternative-text="icon"
+                variant="inverse"
+                size="small"
+              >
+              </lightning-icon>
+            </span>
+            <div class="slds-notify__content">
+              <h2 class="slds-text-heading_small">{toast.message}</h2>
+            </div>
+            <div class="slds-notify__close">
+              <lightning-button-icon
+                data-index={index}
+                icon-name="utility:close"
+                size="small"
+                data-id="closeBtn"
+                variant="bare-inverse"
+                class="slds-button"
+                alternative-text="close"
+                onclick={handleClose}
+              >
+              </lightning-button-icon>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</template>
