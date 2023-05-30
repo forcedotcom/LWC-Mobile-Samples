@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <name>MobileDashboard_settings_header</name>
+        <label>Field Service</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_title</name>
+        <label>Nadzorna plošča za mobilne naprave</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_description</name>
+        <label>Konfigurirajte kartice nadzorne plošče. Za boljše delovanje omejite nadzorno ploščo na pet kartic.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_add_card_button</name>
+        <label>Dodaj kartico</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_edit_button</name>
+        <label>Uredi</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_more_options</name>
+        <label>Več možnosti</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_up</name>
+        <label>Premakni navzgor</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_dn</name>
+        <label>Premakni navzdol</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_today</name>
+        <label>danes</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_next</name>
+        <label>naslednji</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_last</name>
+        <label>pretekli</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_days</name>
+        <label>dni</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_weeks</name>
+        <label>tednov</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_months</name>
+        <label>mesecev</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_and</name>
+        <label>in</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_or</name>
+        <label>ali</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_new_card_modal_title</name>
+        <label>Nova kartica nadzorne plošče</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_edit_card_modal_title</name>
+        <label>Uredi kartico nadzorne plošče</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_tab_name</name>
+        <label>Podrobnosti</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_name_field</name>
+        <label>Ime</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_field</name>
+        <label>Logika filtra</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
+        <label>Po izbiri predmeta določite, kateri zapisi so vključeni na kartico.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_and</name>
+        <label>Izpolnjeni so vsi pogoji (IN)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_or</name>
+        <label>Izpolnjen je kateri koli pogoj (ALI)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_custom</name>
+        <label>Izpolnjen je pogoj po meri</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_and_between_logic</name>
+        <label>IN</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_or_between_logic</name>
+        <label>ALI</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_remove_condition_button</name>
+        <label>Izbriši logiko</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_add_condition_button</name>
+        <label>Dodaj logiko</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_custom_logic_field</name>
+        <label>Logika po meri</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Vnesite logiko pogojev. Za sklicevanje na vsak pogoj uporabite številke. Uporabite IN ali ALI, da določite kombinacijo pogojev. Dodajte oklepaje za združevanje delov niza. 1 IN (2 ALi 3) na primer ovrednoti, ali je prvi pogoj "true" in ali je "true" drugi ali tretji pogoj.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_name</name>
+        <label>Oblika</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_title</name>
+        <label>Postavitev kartice</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_title</name>
+        <label>Vzporedno</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Prihrani navpični prostor. Priporočeno za kratka imena polj.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
+        <label>Naloženo</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Uporabi več navpičnega prostora. Priporočeno za dolga imena polj.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
+        <label>Podatki kartice</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_add_data_button</name>
+        <label>Dodaj podatke</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_label_field</name>
+        <label>Oznaka</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_icon_field</name>
+        <label>Ikona</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field</name>
+        <label>Barva</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field_infobubble</name>
+        <label>Za najboljšo vidljivost izberite visokokontrastne barve.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_options</name>
+        <label>Možnosti:</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_field</name>
+        <label>Polje</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator</name>
+        <label>Operator</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_equals</name>
+        <label>je enako</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_not_equal</name>
+        <label>ni enako</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_than</name>
+        <label>manjše kot</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_than</name>
+        <label>večje kot</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_or_equal</name>
+        <label>manjše kot ali enako</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_or_equal</name>
+        <label>večje kot ali enako</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_contains</name>
+        <label>vsebuje</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_operator</name>
+        <label>Vrsta datuma</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_today</name>
+        <label>Danes</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_next</name>
+        <label>Naslednji ...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_last</name>
+        <label>Pretekli ...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_on</name>
+        <label>Na ...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_before</name>
+        <label>Pred ...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_after</name>
+        <label>Po ...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_value</name>
+        <label>Vrednost</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_unit</name>
+        <label>Enota</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_status</name>
+        <label>Stanje</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_info</name>
+        <label>Informacije</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_success</name>
+        <label>Uspelo</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_warning</name>
+        <label>Opozorilo</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_error</name>
+        <label>Napaka</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_new</name>
+        <label>Novo</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_in_progress</name>
+        <label>V teku</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_cannot_complete</name>
+        <label>Ni mogoče zaključiti</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_sentiment</name>
+        <label>Mnenje</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_positive</name>
+        <label>Pozitivno</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_neutral</name>
+        <label>Nevtralno</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_negative</name>
+        <label>Negativno</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_record_types</name>
+        <label>Vrste zapisov</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_case</name>
+        <label>Primer</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_lead</name>
+        <label>Možna priložnost</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_opportunity</name>
+        <label>Priložnost</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_quote</name>
+        <label>Ponudba</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_other</name>
+        <label>Drugo</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_approval</name>
+        <label>Odobritev</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_clock</name>
+        <label>Ura</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_event</name>
+        <label>Dogodek</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_favorite</name>
+        <label>Priljubljeno</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_like</name>
+        <label>Všeč mi je</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_dislike</name>
+        <label>Ni mi všeč</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_location</name>
+        <label>Lokacija</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_priority</name>
+        <label>Prioriteta</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_user</name>
+        <label>Uporabnik</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_people</name>
+        <label>Osebe</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_title</name>
+        <label>Ali želite izbrisati kartico nadzorne plošče?</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_body</name>
+        <label>S tem odstranite kartico z nadzorne plošče.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_title</name>
+        <label>Ali želite izbrisati podatke kartice?</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
+        <label>S tem odstranite podatke kartice s kartice nadzorne plošče.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_add_card</name>
+        <label>Kartice ni bilo mogoče dodati. Poskusite znova pozneje.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_save_card</name>
+        <label>Vaših sprememb ni bilo mogoče shraniti. Poskusite znova pozneje.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_delete_card</name>
+        <label>Kartice ni bilo mogoče izbrisati. Poskusite znova pozneje.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_duplicate_card</name>
+        <label>Kartice ni bilo mogoče podvojiti. Poskusite znova pozneje.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_object_field</name>
+        <label>Predmet</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_filter_title</name>
+        <label>Filter</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title</name>
+        <label>Predogled</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title_infobubble</name>
+        <label>Prikaz predogleda se lahko nekoliko razlikuje od dejanskega prikaza v mobilni napravi.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_duplicate_button</name>
+        <label>Podvoji</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_button</name>
+        <label>Izbriši</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_save_button</name>
+        <label>Shrani</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_cancel_button</name>
+        <label>Prekliči</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_select_placeholder</name>
+        <label>Izberi ...</label>
+    </customLabels>
+</Translations>

@@ -1,0 +1,29 @@
+import MobileDashboard_settings_card_edit_button from '@salesforce/label/c.MobileDashboard_settings_card_edit_button';
+import MobileDashboard_settings_duplicate_button from '@salesforce/label/c.MobileDashboard_settings_duplicate_button';
+import MobileDashboard_settings_delete_button from '@salesforce/label/c.MobileDashboard_settings_delete_button';
+import MobileDashboard_settings_card_arrow_move_up from '@salesforce/label/c.MobileDashboard_settings_card_arrow_move_up';
+import MobileDashboard_settings_card_arrow_move_dn from '@salesforce/label/c.MobileDashboard_settings_card_arrow_move_dn';
+import MobileDashboard_settings_card_arrow_more_options from '@salesforce/label/c.MobileDashboard_settings_card_arrow_more_options';
+import MobileDashboard_card_object_field from '@salesforce/label/c.MobileDashboard_card_object_field';
+import MobileDashboard_card_filter_title from '@salesforce/label/c.MobileDashboard_card_filter_title';
+import MobileDashboard_preview_title from '@salesforce/label/c.MobileDashboard_preview_title';
+import MobileDashboard_preview_title_infobubble from '@salesforce/label/c.MobileDashboard_preview_title_infobubble';
+import MobileDashboard_settings_card_display_logic_and from '@salesforce/label/c.MobileDashboard_settings_card_display_logic_and';
+import MobileDashboard_settings_card_display_logic_or from '@salesforce/label/c.MobileDashboard_settings_card_display_logic_or';
+
+const customLabels = {
+  MobileDashboard_settings_card_edit_button,
+  MobileDashboard_settings_duplicate_button,
+  MobileDashboard_settings_delete_button,
+  MobileDashboard_settings_card_arrow_move_up,
+  MobileDashboard_settings_card_arrow_move_dn,
+  MobileDashboard_settings_card_arrow_more_options,
+  MobileDashboard_card_object_field,
+  MobileDashboard_card_filter_title,
+  MobileDashboard_preview_title,
+  MobileDashboard_preview_title_infobubble,
+  MobileDashboard_settings_card_display_logic_and,
+  MobileDashboard_settings_card_display_logic_or,
+};
+
+export default customLabels;

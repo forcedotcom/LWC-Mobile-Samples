@@ -1,0 +1,49 @@
+.main-container {
+    background-color: white;
+    min-width: 95px;
+    padding: 8px;
+    border: 2px solid var(--slds-g-color-neutral-base-95, #F3F3F3);
+    border-radius: 12px;
+    display: flex;
+}
+
+.placeholder {
+    height: 24px;
+}
+
+.side {
+    flex-direction: column;
+    justify-content: center;
+    height: 66px;
+}
+
+.stack {
+    flex-direction: row;
+    align-items: center;
+}
+
+.sub-counter {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.side .sub-counter {
+    margin-bottom: 4px;
+}
+
+.stack .sub-counter {
+    margin-right: 16px;
+}
+
+.sub-label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.icon {
+    margin-right: 4px;
+}

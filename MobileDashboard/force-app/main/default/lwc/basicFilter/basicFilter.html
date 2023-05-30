@@ -1,0 +1,96 @@
+<template>
+    <div class="props-list">
+        
+        <!-- field-->
+        <lightning-combobox
+            class="field-combo"
+            name="field"
+            label={LABELS.MobileDashboard_basic_filter_field}
+            value={filterFieldValue}
+            placeholder={LABELS.MobileDashboard_settings_select_placeholder}
+            options={fieldsOptions}
+            onchange={onFilterFieldChange}
+            required>
+        </lightning-combobox>
+        
+        <!-- operator -->
+        <template if:true={showDefaultOperator}>
+            <lightning-combobox
+                class="operator-combo"
+                name="operator"
+                label={LABELS.MobileDashboard_basic_filter_operator}
+                value={filterOperatorValue}
+                placeholder={LABELS.MobileDashboard_settings_select_placeholder}
+                options={filterOperatorOptions}
+                onchange={onFilterOperatorChange}
+                required>
+            </lightning-combobox>
+        </template>
+        <template if:true={isFieldTypeDate}>
+            <lightning-combobox
+                class="operator-combo"
+                name="operator"
+                label={LABELS.MobileDashboard_basic_filter_date_operator}
+                value={filterOperatorValue}
+                placeholder={LABELS.MobileDashboard_settings_select_placeholder}
+                options={dateFilterOperatorOptions}
+                onchange={onFilterOperatorChange}
+                required>
+            </lightning-combobox>
+        </template>
+        
+        <!-- value -->
+        <template if:true={showValueField}>
+            <template if:true={isFieldTypeRegular}>
+                <lightning-input
+                    class="value-input"
+                    type={filterFieldType}
+                    label={fieldInputLabel}
+                    value={filterValue}
+                    onchange={onFilterValueChange}
+                    required>
+                </lightning-input>
+            </template>
+            <template if:true={isFieldTypeBoolean}>
+                <lightning-input
+                    class="value-input"
+                    type="checkbox"
+                    label={LABELS.MobileDashboard_basic_filter_value}
+                    checked={filterValue}
+                    onchange={onFilterValueChange}>
+                </lightning-input>
+            </template>
+            <template if:true={isFieldTypePicklist}>
+                <lightning-combobox
+                    class="value-input"
+                    name="value"
+                    label={LABELS.MobileDashboard_basic_filter_value}
+                    value={filterValue}
+                    placeholder={LABELS.MobileDashboard_settings_select_placeholder}
+                    options={filterValueOptions}
+                    onchange={onFilterValueChange}
+                    required>
+                </lightning-combobox>
+            </template>
+            <template if:true={isSpecialOperator}>
+                <lightning-input
+                    class="quantity-input"
+                    type="number"
+                    label={LABELS.MobileDashboard_basic_filter_value}
+                    value={filterQuantityValue}
+                    onchange={onFilterQuantityChange}
+                    required>
+                </lightning-input>
+                <lightning-combobox
+                    class="unit-combo"
+                    label={LABELS.MobileDashboard_basic_filter_unit}
+                    value={filterUnitValue}
+                    options={filterUnitValueOptions}
+                    onchange={onFilterUnitChange}
+                    placeholder={LABELS.MobileDashboard_settings_select_placeholder}
+                    required>
+                </lightning-combobox>
+            </template>
+        </template>
+    </div>
+</template>

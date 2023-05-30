@@ -1,0 +1,41 @@
+.main-container {
+    background-color: var(--slds-g-color-neutral-base-100, white);
+    margin-bottom: 16px;
+    border-radius: 12px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    padding: 13px 12px 0px 12px;
+    color: var(--slds-g-color-neutral-base-10, #181818);
+}
+
+.padding-non-empty-card {
+    padding-bottom: 8px;
+}
+
+.sub-container {
+    display: flex;
+    padding: 0 12px 12px 4px;
+}
+
+.sub-container-side {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.sub-container-stack {
+    flex-direction: column;
+}
+
+c-sub-filter-summary-component {
+    flex: 1;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+.border {
+    border: 1px solid #C9C9C9;
+}

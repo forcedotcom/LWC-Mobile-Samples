@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>Nombre de parámetro de panel móvil</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Nombre de parámetro de panel móvil</label>
+    </standardFields>
+    <gender>Masculine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <value>Parámetro de panel</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Parámetros de paneles</value>
+    </caseValues>
+</CustomObjectTranslation>

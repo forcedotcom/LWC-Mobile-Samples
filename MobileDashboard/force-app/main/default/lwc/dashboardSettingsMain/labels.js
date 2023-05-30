@@ -1,0 +1,31 @@
+import MobileDashboard_settings_header from '@salesforce/label/c.MobileDashboard_settings_header';
+import MobileDashboard_settings_title from '@salesforce/label/c.MobileDashboard_settings_title';
+import MobileDashboard_settings_description from '@salesforce/label/c.MobileDashboard_settings_description';
+import MobileDashboard_settings_add_card_button from '@salesforce/label/c.MobileDashboard_settings_add_card_button';
+import MobileDashboard_settings_cancel_button from '@salesforce/label/c.MobileDashboard_settings_cancel_button';
+import MobileDashboard_settings_delete_card_warning_title from '@salesforce/label/c.MobileDashboard_settings_delete_card_warning_title';
+import MobileDashboard_settings_new_card_modal_title from '@salesforce/label/c.MobileDashboard_settings_new_card_modal_title';
+import MobileDashboard_settings_delete_card_warning_body from '@salesforce/label/c.MobileDashboard_settings_delete_card_warning_body';
+import MobileDashboard_settings_edit_card_modal_title from '@salesforce/label/c.MobileDashboard_settings_edit_card_modal_title';
+import MobileDashboard_settings_error_add_card from '@salesforce/label/c.MobileDashboard_settings_error_add_card';
+import MobileDashboard_settings_error_save_card from '@salesforce/label/c.MobileDashboard_settings_error_save_card';
+import MobileDashboard_settings_error_delete_card from '@salesforce/label/c.MobileDashboard_settings_error_delete_card';
+import MobileDashboard_settings_error_duplicate_card from '@salesforce/label/c.MobileDashboard_settings_error_duplicate_card';
+
+const customLabels = {
+  MobileDashboard_settings_header,
+  MobileDashboard_settings_title,
+  MobileDashboard_settings_description,
+  MobileDashboard_settings_add_card_button,
+  MobileDashboard_settings_cancel_button,
+  MobileDashboard_settings_delete_card_warning_title,
+  MobileDashboard_settings_new_card_modal_title,
+  MobileDashboard_settings_delete_card_warning_body,
+  MobileDashboard_settings_edit_card_modal_title,
+  MobileDashboard_settings_error_add_card,
+  MobileDashboard_settings_error_save_card,
+  MobileDashboard_settings_error_delete_card,
+  MobileDashboard_settings_error_duplicate_card,
+};
+
+export default customLabels;

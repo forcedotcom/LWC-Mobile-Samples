@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <name>MobileDashboard_settings_header</name>
+        <label>Field Service</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_title</name>
+        <label>Dasbor Ponsel</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_description</name>
+        <label>Konfigurasikan kartu dasbor Anda. Untuk kinerja yang lebih baik, batasi dasbor hingga lima kartu.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_add_card_button</name>
+        <label>Tambahkan Kartu</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_edit_button</name>
+        <label>Edit</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_more_options</name>
+        <label>Opsi lainnya</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_up</name>
+        <label>Geser ke atas</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_dn</name>
+        <label>Geser ke bawah</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_today</name>
+        <label>hari ini</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_next</name>
+        <label>berikutnya</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_last</name>
+        <label>terakhir</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_days</name>
+        <label>hari</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_weeks</name>
+        <label>minggu</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_months</name>
+        <label>bulan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_and</name>
+        <label>dan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_or</name>
+        <label>atau</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_new_card_modal_title</name>
+        <label>Kartu Dasbor Baru</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_edit_card_modal_title</name>
+        <label>Edit Kartu Dasbor</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_tab_name</name>
+        <label>Detail</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_name_field</name>
+        <label>Nama</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_field</name>
+        <label>Logika Filter</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
+        <label>Setelah memilih objek, tentukan catatan mana yang termasuk dalam kartu.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_and</name>
+        <label>Semua Kondisi Terpenuhi (AND)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_or</name>
+        <label>Kondisi Apa Pun Terpenuhi (OR)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_custom</name>
+        <label>Kondisi Ubahsuai Terpenuhi</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_and_between_logic</name>
+        <label>AND</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_or_between_logic</name>
+        <label>OR</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_remove_condition_button</name>
+        <label>Hapus logika</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_add_condition_button</name>
+        <label>Tambahkan Logika</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_custom_logic_field</name>
+        <label>Logika Ubahsuai</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Berikan logika persyaratan. Gunakan angka untuk merujuk ke setiap kondisi. Gunakan AND atau OR untuk mengidentifikasi kombinasi kondisi. Tambahkan tanda kurung untuk mengelompokkan bagian-bagian dari string. Misalnya, 1 AND (2 OR 3) mengevaluasi apakah kondisi pertama benar, dan kondisi kedua atau ketiga benar.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_name</name>
+        <label>Desain</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_title</name>
+        <label>Tata Letak Kartu</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_title</name>
+        <label>Berdampingan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Menghemat ruang vertikal. Direkomendasikan untuk nama bidang isian yang pendek.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
+        <label>Ditumpuk</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Menggunakan lebih banyak ruang vertikal. Direkomendasikan untuk nama bidang isian yang panjang.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
+        <label>Data Kartu</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_add_data_button</name>
+        <label>Tambahkan Data</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_label_field</name>
+        <label>Label</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_icon_field</name>
+        <label>Ikon</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field</name>
+        <label>Warna</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field_infobubble</name>
+        <label>Untuk visibilitas yang ternaik, pilih warna-warna dengan kontras yang tinggi.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_options</name>
+        <label>Opsi</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_field</name>
+        <label>Bidang Isian</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator</name>
+        <label>Operator</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_equals</name>
+        <label>sama</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_not_equal</name>
+        <label>tidak sama dengan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_than</name>
+        <label>kurang dari</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_than</name>
+        <label>lebih besar dari</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_or_equal</name>
+        <label>kurang dari atau sama dengan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_or_equal</name>
+        <label>lebih besar atau sama dengan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_contains</name>
+        <label>berisi</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_operator</name>
+        <label>Jenis Data</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_today</name>
+        <label>Hari ini</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_next</name>
+        <label>Berikutnya..</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_last</name>
+        <label>Terakhir</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_on</name>
+        <label>Pada</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_before</name>
+        <label>Sebelum..</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_after</name>
+        <label>Setelah..</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_value</name>
+        <label>Nilai</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_unit</name>
+        <label>Unit</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_status</name>
+        <label>Status</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_info</name>
+        <label>Info</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_success</name>
+        <label>Berhasil</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_warning</name>
+        <label>Peringatan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_error</name>
+        <label>Kesalahan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_new</name>
+        <label>Baru</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_in_progress</name>
+        <label>Sedang Berlangsung</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_cannot_complete</name>
+        <label>Tidak Dapat Menyelesaikan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_sentiment</name>
+        <label>Sentimen</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_positive</name>
+        <label>Positif</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_neutral</name>
+        <label>Netral</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_negative</name>
+        <label>Negatif</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_record_types</name>
+        <label>Jenis Catatan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_case</name>
+        <label>Kasus</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_lead</name>
+        <label>Prospek</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_opportunity</name>
+        <label>Peluang</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_quote</name>
+        <label>Penawaran</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_other</name>
+        <label>Lainnya</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_approval</name>
+        <label>Persetujuan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_clock</name>
+        <label>Jam</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_event</name>
+        <label>Peristiwa</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_favorite</name>
+        <label>Favorit</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_like</name>
+        <label>Suka</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_dislike</name>
+        <label>Tidak Suka</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_location</name>
+        <label>Lokasi</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_priority</name>
+        <label>Prioritas</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_user</name>
+        <label>Pengguna</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_people</name>
+        <label>Masyarakat</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_title</name>
+        <label>Hapus kartu dasbor?</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_body</name>
+        <label>Tindakan ini akan mengeluarkan kartu dari dasbor.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_title</name>
+        <label>Hapus data kartu?</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
+        <label>Tindakan ini akan mengeluarkan data kartu dari kartu dasbor.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_add_card</name>
+        <label>Kami tidak dapat menambahkan kartu. Coba lagi nanti.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_save_card</name>
+        <label>Kami tidak dapat menyimpan perubahan yang Anda buat. Coba lagi nanti.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_delete_card</name>
+        <label>Kami tidak dapat menghapus kartu. Coba lagi nanti.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_duplicate_card</name>
+        <label>Kami tidak dapat menduplikasi kartu. Coba lagi nanti.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_object_field</name>
+        <label>Objek</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_filter_title</name>
+        <label>Filter</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title</name>
+        <label>Pratinjau</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title_infobubble</name>
+        <label>Tampilan pratinjau dapat sedikit berbeda dari tampilan perangkat seluler yang sesungguhnya.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_duplicate_button</name>
+        <label>Duplikat</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_button</name>
+        <label>Hapus</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_save_button</name>
+        <label>Simpan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_cancel_button</name>
+        <label>Batalkan</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_select_placeholder</name>
+        <label>Pilih...</label>
+    </customLabels>
+</Translations>

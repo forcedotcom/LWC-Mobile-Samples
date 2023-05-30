@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>Nom du paramètre du tableau de bord mobile</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Nom du paramètre du tableau de bord mobile</label>
+    </standardFields>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
+    <caseValues>
+        <plural>false</plural>
+        <value>Paramètre du tableau de bord mobile</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Paramètres du tableau de bord mobile</value>
+    </caseValues>
+</CustomObjectTranslation>

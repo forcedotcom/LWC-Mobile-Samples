@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <name>MobileDashboard_settings_header</name>
+        <label>Field Service</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_title</name>
+        <label>Πίνακας εργαλείων κινητών συσκευών</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_description</name>
+        <label>Διαμορφώστε τις κάρτες του πίνακα εργαλείων σας. Για καλύτερη απόδοση, περιορίστε τον πίνακα εργαλείων σε πέντε κάρτες.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_add_card_button</name>
+        <label>Προσθήκη κάρτας</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_edit_button</name>
+        <label>Επεξεργασία</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_more_options</name>
+        <label>Περισσότερες επιλογές</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_up</name>
+        <label>Μετακίνηση πάνω</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_dn</name>
+        <label>Μετακίνηση κάτω</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_today</name>
+        <label>σήμερα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_next</name>
+        <label>επόμενο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_last</name>
+        <label>τελευταίο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_days</name>
+        <label>ημέρες</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_weeks</name>
+        <label>εβδομάδες</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_months</name>
+        <label>μήνες</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_and</name>
+        <label>και</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_or</name>
+        <label>ή</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_new_card_modal_title</name>
+        <label>Νέα κάρτα πίνακα εργαλείων</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_edit_card_modal_title</name>
+        <label>Επεξεργασία κάρτας πίνακα εργαλείων</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_tab_name</name>
+        <label>Λεπτομέρειες</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_name_field</name>
+        <label>Όνομα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_field</name>
+        <label>Λογική φίλτρου</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
+        <label>Αφού επιλέξετε αντικείμενο, ορίστε τις εγγραφές που θα περιλαμβάνονται στην κάρτα.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_and</name>
+        <label>Ικανοποιούνται όλες οι συνθήκες (AND)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_or</name>
+        <label>Ικανοποιείται οποιαδήποτε συνθήκη (OR)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_custom</name>
+        <label>Πληρούται η προσαρμοσμένη συνθήκη</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_and_between_logic</name>
+        <label>AND</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_or_between_logic</name>
+        <label>OR</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_remove_condition_button</name>
+        <label>Διαγραφή λογικής</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_add_condition_button</name>
+        <label>Προσθήκη λογικής</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_custom_logic_field</name>
+        <label>Προσαρμοσμένη λογική</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Καταχωρήστε τη λογική της συνθήκης. Χρησιμοποιήστε αριθμούς για να αναφερθείτε σε κάθε συνθήκη. Χρησιμοποιήστε AND ή OR για να προσδιορίσετε το συνδυασμό συνθηκών. Προσθέστε παρενθέσεις για να ομαδοποιήσετε τα μέρη της συμβολοσειράς μαζί. Για παράδειγμα, η λογική 1 AND (2 OR 3) αξιολογεί εάν η πρώτη συνθήκη είναι αληθής και αν είτε η δεύτερη είτε η τρίτη συνθήκη είναι αληθής.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_name</name>
+        <label>Σχεδιασμός</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_title</name>
+        <label>Διάταξη κάρτας</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_title</name>
+        <label>Σε παράθεση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Εξοικονομεί κατακόρυφο χώρο. Προτείνεται για μικρού μήκους ονόματα πεδίων.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
+        <label>Σωρευμένο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Χρησιμοποιεί περισσότερο κατακόρυφο χώρο. Προτείνεται για μεγάλου μήκους ονόματα πεδίων.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
+        <label>Δεδομένα κάρτας</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_add_data_button</name>
+        <label>Προσθήκη δεδομένων</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_label_field</name>
+        <label>Ετικέτα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_icon_field</name>
+        <label>Εικονίδιο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field</name>
+        <label>Χρώμα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field_infobubble</name>
+        <label>Για καλύτερη ορατότητα, επιλέξτε χρώματα υψηλής αντίθεσης.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_options</name>
+        <label>Επιλογές</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_field</name>
+        <label>Πεδίο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator</name>
+        <label>Χειριστής</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_equals</name>
+        <label>ισούται</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_not_equal</name>
+        <label>δεν ισούται με</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_than</name>
+        <label>μικρότερο από</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_than</name>
+        <label>μεγαλύτερο από</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_or_equal</name>
+        <label>μικρότερο ή ίσο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_or_equal</name>
+        <label>μεγαλύτερο ή ίσο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_contains</name>
+        <label>περιέχει</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_operator</name>
+        <label>Τύπος ημερομηνίας</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_today</name>
+        <label>Σήμερα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_next</name>
+        <label>Επόμενο...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_last</name>
+        <label>Τελευταίο...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_on</name>
+        <label>Στις...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_before</name>
+        <label>Πριν από...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_after</name>
+        <label>Μετά από...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_value</name>
+        <label>Τιμή</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_unit</name>
+        <label>Μονάδα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_status</name>
+        <label>Κατάσταση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_info</name>
+        <label>Πληροφορίες</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_success</name>
+        <label>Επιτυχής</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_warning</name>
+        <label>Προειδοποίηση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_error</name>
+        <label>Σφάλμα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_new</name>
+        <label>Νέο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_in_progress</name>
+        <label>Σε εξέλιξη</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_cannot_complete</name>
+        <label>Δεν είναι δυνατή η ολοκλήρωση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_sentiment</name>
+        <label>Αίσθημα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_positive</name>
+        <label>Θετικό</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_neutral</name>
+        <label>Ουδέτερη</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_negative</name>
+        <label>Αρνητική</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_record_types</name>
+        <label>Τύποι εγγραφών</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_case</name>
+        <label>Υπόθεση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_lead</name>
+        <label>Υποψήφιος πελάτης</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_opportunity</name>
+        <label>Ευκαιρία</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_quote</name>
+        <label>Προσφορά</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_other</name>
+        <label>Άλλο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_approval</name>
+        <label>Έγκριση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_clock</name>
+        <label>Ρολόι</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_event</name>
+        <label>Συμβάν</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_favorite</name>
+        <label>Αγαπημένο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_like</name>
+        <label>Μου αρέσει</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_dislike</name>
+        <label>Δεν μου αρέσει</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_location</name>
+        <label>Τοποθεσία</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_priority</name>
+        <label>Προτεραιότητα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_user</name>
+        <label>Χρήστης</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_people</name>
+        <label>Άτομα</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_title</name>
+        <label>Διαγραφή κάρτας πίνακα εργαλείων;</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_body</name>
+        <label>Αυτή η επιλογή καταργεί την κάρτα από τον πίνακα εργαλείων.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_title</name>
+        <label>Διαγραφή δεδομένων κάρτας;</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
+        <label>Αυτή η επιλογή καταργεί τα δεδομένα κάρτας από την κάρτα πίνακα εργαλείων.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_add_card</name>
+        <label>Δεν ήταν δυνατή η προσθήκη της κάρτας. Προσπαθήστε ξανά αργότερα.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_save_card</name>
+        <label>Δεν ήταν δυνατή η αποθήκευση των αλλαγών σας. Προσπαθήστε ξανά αργότερα.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_delete_card</name>
+        <label>Δεν ήταν δυνατή η διαγραφή της κάρτας. Προσπαθήστε ξανά αργότερα.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_duplicate_card</name>
+        <label>Δεν ήταν δυνατή η αντιγραφή της κάρτας. Προσπαθήστε ξανά αργότερα.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_object_field</name>
+        <label>Αντικείμενο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_filter_title</name>
+        <label>Φίλτρο</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title</name>
+        <label>Προεπισκόπηση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title_infobubble</name>
+        <label>Η εμφάνιση προεπισκόπησης μπορεί να διαφέρει ελαφρώς από την πραγματική εμφάνιση στην κινητή συσκευή.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_duplicate_button</name>
+        <label>Δημιουργία αντιγράφου</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_button</name>
+        <label>Διαγραφή</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_save_button</name>
+        <label>Αποθήκευση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_cancel_button</name>
+        <label>Ακύρωση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_select_placeholder</name>
+        <label>Επιλογή...</label>
+    </customLabels>
+</Translations>

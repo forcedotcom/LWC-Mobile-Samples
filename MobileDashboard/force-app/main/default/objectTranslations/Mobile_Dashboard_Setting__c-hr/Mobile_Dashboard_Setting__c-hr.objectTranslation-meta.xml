@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>Naziv postavke nadzorne ploče za mobitele</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Naziv postavke nadzorne ploče za mobitele</label>
+    </standardFields>
+    <gender>Feminine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Nominative</caseType>
+        <value>Postavka nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Nominative</caseType>
+        <value>Postavke nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Genitive</caseType>
+        <value>Postavke nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Genitive</caseType>
+        <value>Postavki nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Dative</caseType>
+        <value>Postavci nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Dative</caseType>
+        <value>Postavkama nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Accusative</caseType>
+        <value>Postavku nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Accusative</caseType>
+        <value>Postavke nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Locative</caseType>
+        <value>Postavci nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Locative</caseType>
+        <value>Postavkama nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Instrumental</caseType>
+        <value>Postavkom nadzorne ploče za mobitele</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Instrumental</caseType>
+        <value>Postavkama nadzorne ploče za mobitele</value>
+    </caseValues>
+</CustomObjectTranslation>
