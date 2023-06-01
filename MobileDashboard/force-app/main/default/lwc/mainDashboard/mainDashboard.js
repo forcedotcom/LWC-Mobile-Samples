@@ -1,9 +1,12 @@
-import { LightningElement, wire } from 'lwc';
-import { gql, graphql } from 'lightning/uiGraphQLApi';
+import { LightningElement, wire, api } from 'lwc';
+import { gql, graphql, refreshGraphQL } from 'lightning/uiGraphQLApi';
 
 export default class MainDashboard extends LightningElement {
   dashboardSettings = [];
   GET_DASHBOARD_SETTINGS_QRY = '';
+
+  queryResult;
+  refreshed = false;
 
   connectedCallback() {
     this.GET_DASHBOARD_SETTINGS_QRY = gql`
@@ -14,8 +17,15 @@ export default class MainDashboard extends LightningElement {
   @wire(graphql, {
     query: '$GET_DASHBOARD_SETTINGS_QRY',
   })
-  GetAllDashboardSettings({ data, errors }) {
+  GetAllDashboardSettings(result) {
+    this.queryResult = result;
+    const { data, errors } = result;
     if (data) {
+      if (!this.refreshed) {
+        this.refreshGraphQL();
+        this.refreshed = true;
+        return;
+      }
       const allSettings = data?.uiapi?.query['Mobile_Dashboard_Setting__c']?.edges;
       if (allSettings) this.populateDashboardSettings(allSettings);
     }
@@ -69,5 +79,9 @@ export default class MainDashboard extends LightningElement {
           }
         }
       }`;
+  }
+
+  @api async refreshGraphQL() {
+    return refreshGraphQL(this.queryResult);
   }
 }

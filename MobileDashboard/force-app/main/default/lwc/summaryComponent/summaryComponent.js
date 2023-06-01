@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
-import { gql, graphql } from 'lightning/uiGraphQLApi';
+import { gql, graphql, refreshGraphQL } from 'lightning/uiGraphQLApi';
 import { DQM } from './BuildGraphQL';
 
 export default class SummaryComponent extends LightningElement {
@@ -9,6 +9,9 @@ export default class SummaryComponent extends LightningElement {
   recordsCount = 0;
   subQueriesData = [];
   fullQuery = '';
+
+  queryResult;
+  refreshed = false;
 
   renderedCallback() {
     if (this.isDemoMode) {
@@ -27,12 +30,19 @@ export default class SummaryComponent extends LightningElement {
   @wire(graphql, {
     query: '$fullQuery',
   })
-  GetDbResults({ data, error }) {
+  GetDbResults(result) {
+    this.queryResult = result;
+    const { data, errors } = result;
     if (data) {
+      if (!this.refreshed) {
+        this.refreshGraphQL();
+        this.refreshed = true;
+        return;
+      }
       this.setRecordsAndSubQueries(data);
     }
-    if (error) {
-      console.log(error);
+    if (errors) {
+      console.log(errors);
     }
   }
 
@@ -98,5 +108,9 @@ export default class SummaryComponent extends LightningElement {
 
   get nonEmptyCardTitleClass() {
     return this.isNonEmptyCard ? 'padding-non-empty-card' : '';
+  }
+
+  @api async refreshGraphQL() {
+    return refreshGraphQL(this.queryResult);
   }
 }
