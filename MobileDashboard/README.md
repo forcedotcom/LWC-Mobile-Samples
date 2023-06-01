@@ -8,7 +8,7 @@ Let your mobile workers easily see an overview of their data. For example, show 
 	3. Under Permission Set Assignments, click **Edit Assignments**.
 	4. Enable **Field Service Mobile Dashboard Permissions**.
 	5. Repeat these steps for all the relevant mobile users.
-3. To install the package, click https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000hBQxIAM.
+3. To install the package, click https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000hBwWIAU.
 4. From the Developer Console, run the script to get preconfigured cards for your dashboard: `DashboardPostInstall.onInstall();`
 5. From the App Launcher, find and select **Mobile Dashboard Settings**.
 6. Review the details of the cards and change them as needed. 
