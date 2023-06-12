@@ -1,32 +1,32 @@
-import { createElement } from "lwc";
-import MobileWorkFlowPage from "c/mobileWorkFlowPage";
+import { createElement } from 'lwc';
+import MobileWorkFlowPage from 'c/mobileWorkFlowPage';
 
 jest.mock(
-  "@salesforce/apex/FollowUpAppointmentController.saveFieldSettings",
+  '@salesforce/apex/FollowUpAppointmentController.saveFieldSettings',
   () => {
     return {
       default: jest.fn(() => ({
-        data: "success",
-        Asset: "Asset",
-        ServiceAppointment: "Service Appointment"
-      }))
+        data: 'success',
+        Asset: 'Asset',
+        ServiceAppointment: 'Service Appointment',
+      })),
     };
   },
   { virtual: true }
 );
 
 jest.mock(
-  "./labels",
+  './labels',
   () => {
     return {
-      MobileDashboard_card_filter_titleTime: "test"
+      MobileDashboard_card_filter_titleTime: 'test',
     };
   },
   { virtual: true }
 );
 
 let element;
-describe("c-mobile-work-flow-page", () => {
+describe('c-mobile-work-flow-page', () => {
   afterEach(() => {
     // The jsdom instance is shared across test cases in a single file so reset the DOM
     while (document.body.firstChild) {
@@ -35,8 +35,8 @@ describe("c-mobile-work-flow-page", () => {
   });
 
   beforeEach(() => {
-    element = createElement("c-mobile-work-flow-page", {
-      is: MobileWorkFlowPage
+    element = createElement('c-mobile-work-flow-page', {
+      is: MobileWorkFlowPage,
     });
 
     element.showDeleteDialogBox = true;
@@ -52,42 +52,34 @@ describe("c-mobile-work-flow-page", () => {
     document.body.appendChild(element);
   });
 
-  it("should show correct info", () => {
-    const mainInfoText = element.shadowRoot.querySelector(".mainInfoText");
-    expect(mainInfoText.textContent).toBe(
-      "c.FollowUpAppointments_MobileWorkFlow_Info_text"
-    );
+  it('should show correct info', () => {
+    const mainInfoText = element.shadowRoot.querySelector('.mainInfoText');
+    expect(mainInfoText.textContent).toBe('c.FollowUpAppointments_MobileWorkFlow_Info_text');
   });
 
-  it("Call handle add screen event", async () => {
-    console.log("Element is : " + element.shadowRoot);
-    const action = element.shadowRoot.querySelector(
-      '[data-id="addscreenevent"]'
-    );
-    console.log("Action is : " + action);
-    const spy = jest.spyOn(element, "handleAddScreenEvent");
+  it('Call handle add screen event', async () => {
+    console.log('Element is : ' + element.shadowRoot);
+    const action = element.shadowRoot.querySelector('[data-id="addscreenevent"]');
+    console.log('Action is : ' + action);
+    const spy = jest.spyOn(element, 'handleAddScreenEvent');
     console.log(spy);
-    action.dispatchEvent(new CustomEvent("click"));
+    action.dispatchEvent(new CustomEvent('click'));
 
     return Promise.resolve().then(() => {
       expect(spy).toBeCalledTimes(0);
     });
   });
 
-  it("Handle save step details", async () => {
-    console.log("Element is : " + element.shadowRoot);
-    let action = element.shadowRoot.querySelector(
-      '[data-id="saveDetailsDialog"]'
-    );
-    console.log("Action is : " + action);
+  it('Handle save step details', async () => {
+    console.log('Element is : ' + element.shadowRoot);
+    let action = element.shadowRoot.querySelector('[data-id="saveDetailsDialog"]');
+    console.log('Action is : ' + action);
 
     action.click();
 
     return Promise.resolve().then(() => {
-      const mainInfoText = element.shadowRoot.querySelector(".mainInfoText");
-      expect(mainInfoText.textContent).toBe(
-        "c.FollowUpAppointments_MobileWorkFlow_Info_text"
-      );
+      const mainInfoText = element.shadowRoot.querySelector('.mainInfoText');
+      expect(mainInfoText.textContent).toBe('c.FollowUpAppointments_MobileWorkFlow_Info_text');
     });
 
     // return Promise.resolve()
@@ -99,25 +91,23 @@ describe("c-mobile-work-flow-page", () => {
     // });
   });
 
-  it("Handle close modal", async () => {
-    console.log("Element is : " + element.shadowRoot);
+  it('Handle close modal', async () => {
+    console.log('Element is : ' + element.shadowRoot);
     const action = element.shadowRoot.querySelector('[data-id="closeDialog"]');
-    console.log("Action is : " + action);
-    const spy = jest.spyOn(element, "closeModal");
+    console.log('Action is : ' + action);
+    const spy = jest.spyOn(element, 'closeModal');
     console.log(spy);
-    action.dispatchEvent(new CustomEvent("click"));
+    action.dispatchEvent(new CustomEvent('click'));
 
     return Promise.resolve().then(() => {
       expect(spy).toBeCalledTimes(0);
     });
   });
 
-  it("Test step title value", () => {
-    element.currentScreenTitle = "screenTitle";
-    const mainInfoText = element.shadowRoot.querySelector(
-      '[data-id="stepTitleId"]'
-    );
-    console.log("Value of the mainInfoText " + mainInfoText.value);
+  it('Test step title value', () => {
+    element.currentScreenTitle = 'screenTitle';
+    const mainInfoText = element.shadowRoot.querySelector('[data-id="stepTitleId"]');
+    console.log('Value of the mainInfoText ' + mainInfoText.value);
     expect(mainInfoText.value).toBe(mainInfoText.value);
   });
 });

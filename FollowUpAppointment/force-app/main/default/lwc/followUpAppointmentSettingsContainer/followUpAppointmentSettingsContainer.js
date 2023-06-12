@@ -1,20 +1,20 @@
 /* eslint-disable @lwc/lwc/no-api-reassignments */
 /* eslint-disable no-unused-expressions */
-import { LightningElement, track, api } from "lwc";
-import getSchedulingPolicyList from "@salesforce/apex/FollowUpAppointmentController.getSchedulingPolicyList";
-import getOperatingHoursList from "@salesforce/apex/FollowUpAppointmentController.getOperatingHoursList";
-import saveSettings from "@salesforce/apex/FollowUpAppointmentController.saveSettings";
-import getConfigurationData from "@salesforce/apex/FollowUpAppointmentController.getConfigurationData";
-import checkPermSetAssignedToUser from "@salesforce/apex/FollowUpAppointmentController.checkPermSetAssignedToUser";
+import { LightningElement, track, api } from 'lwc';
+import getSchedulingPolicyList from '@salesforce/apex/FollowUpAppointmentController.getSchedulingPolicyList';
+import getOperatingHoursList from '@salesforce/apex/FollowUpAppointmentController.getOperatingHoursList';
+import saveSettings from '@salesforce/apex/FollowUpAppointmentController.saveSettings';
+import getConfigurationData from '@salesforce/apex/FollowUpAppointmentController.getConfigurationData';
+import checkPermSetAssignedToUser from '@salesforce/apex/FollowUpAppointmentController.checkPermSetAssignedToUser';
 
-import customLabels from "./labels";
+import customLabels from './labels';
 
 export default class followUpAppointmentSettingsContainer extends LightningElement {
   @track objectList = [];
   LABELS = customLabels;
   @track operatingHourList = [];
   @track slotDisplayOptions = [];
-  @api technicianAssigmentSelected = "";
+  @api technicianAssigmentSelected = '';
   showDialogBox = false;
   @track showWOSAoption = false;
   @track showWOLISAoption = false;
@@ -22,8 +22,7 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
   @api hasUnsavedChanges = false;
 
   arrival_window = this.LABELS.FollowUpAppointments_arriwal_window_title;
-  exact_appointment_time =
-    this.LABELS.FollowUpAppointments_exact_appointment_time_title;
+  exact_appointment_time = this.LABELS.FollowUpAppointments_exact_appointment_time_title;
 
   @api schedulingPolicySelected;
   @api operatingHoursSelected;
@@ -48,7 +47,7 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
   }
 
   callAPEX() {
-    console.log("Apex method called ");
+    console.log('Apex method called ');
 
     /**
      * GET scheduling Policy
@@ -61,16 +60,13 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
           throw new Error(data.error);
         } else {
           for (let i = 0; i < data.length; i++) {
-            this.objectList = [
-              ...this.objectList,
-              { value: data[i], label: data[i] }
-            ];
+            this.objectList = [...this.objectList, { value: data[i], label: data[i] }];
           }
           this.dataLoaded = true;
         }
       })
       .catch((error) => {
-        console.error("Error while getting scheduling policy : " + error);
+        console.error('Error while getting scheduling policy : ' + error);
       });
 
     this.operatingHourList = [];
@@ -82,24 +78,24 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
           for (let i = 0; i < data.length; i++) {
             this.operatingHourList = [
               ...this.operatingHourList,
-              { value: data[i], label: data[i] }
+              { value: data[i], label: data[i] },
             ];
           }
           this.dataLoaded = true;
         }
       })
       .catch((error) => {
-        console.log("Error while getting scheduling policy : " + error);
+        console.log('Error while getting scheduling policy : ' + error);
       });
 
     this.slotDisplayOptions = [];
     this.slotDisplayOptions = [
       ...this.slotDisplayOptions,
-      { value: this.arrival_window, label: this.arrival_window }
+      { value: this.arrival_window, label: this.arrival_window },
     ];
     this.slotDisplayOptions = [
       ...this.slotDisplayOptions,
-      { value: this.exact_appointment_time, label: this.exact_appointment_time }
+      { value: this.exact_appointment_time, label: this.exact_appointment_time },
     ];
 
     /**
@@ -109,14 +105,14 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
     checkPermSetAssignedToUser()
       .then((data) => {
         if (data.error) {
-          console.error("Error while assigning permission set " + data.error);
+          console.error('Error while assigning permission set ' + data.error);
         } else {
           // if permission is assigned , get the configuration data.
           this.loadConfigurationDetails();
         }
       })
       .catch((error) => {
-        console.log("Error while retrieving settings object - ", error);
+        console.log('Error while retrieving settings object - ', error);
       });
   }
 
@@ -125,53 +121,42 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
     getConfigurationData()
       .then((settings) => {
         if (settings.error) {
-          console.error(
-            "Error while retrieving settings object " + settings.error
-          );
+          console.error('Error while retrieving settings object ' + settings.error);
           this.validateSaveButton();
         } else if (settings.null) {
           // No record found
           this.disableSaveButton = true;
-          console.error(
-            "Got settings object successfully, No record found in SDB"
-          );
+          console.error('Got settings object successfully, No record found in SDB');
         } else {
-          console.log("Got settings object successfully");
+          console.log('Got settings object successfully');
 
-          this.operatingHoursSelected = this.savedOH =
-            settings.operatingHoursName;
-          this.schedulingPolicySelected = this.savedSP =
-            settings.schedulingPolicyName;
+          this.operatingHoursSelected = this.savedOH = settings.operatingHoursName;
+          this.schedulingPolicySelected = this.savedSP = settings.schedulingPolicyName;
           this.schedulingHorizonUnits = this.savedSchedulingHorizonUnits =
             settings.schedulingHorizonValue;
-          console.log(
-            "Show exact arrival time is : " + settings.showExactArrivalTime
-          );
+          console.log('Show exact arrival time is : ' + settings.showExactArrivalTime);
 
-          if (settings.showExactArrivalTime === "true") {
+          if (settings.showExactArrivalTime === 'true') {
             this.appointmentSlotOptionSelected = this.exact_appointment_time;
           } else {
             this.appointmentSlotOptionSelected = this.arrival_window;
           }
-          this.savedAppointmentSlotSelected =
-            this.appointmentSlotOptionSelected;
+          this.savedAppointmentSlotSelected = this.appointmentSlotOptionSelected;
 
           // assignment permission
           this.technicianAssigmentSelected = this.savedTechnicianAssignment =
             settings.Technician_Assigment__c;
 
-          const myArray = settings.objectsToCreate.split(",");
+          const myArray = settings.objectsToCreate.split(',');
           this.objectCreationAllowed = this.savedObjectCreation = myArray[0];
-          console.log("1st array object is : " + this.objectCreationAllowed);
-          myArray[0] === "workOrder"
-            ? (this.showWOSAoption = true)
-            : (this.showWOSAoption = false);
-          myArray[0] === "workOrderLineItem"
+          console.log('1st array object is : ' + this.objectCreationAllowed);
+          myArray[0] === 'workOrder' ? (this.showWOSAoption = true) : (this.showWOSAoption = false);
+          myArray[0] === 'workOrderLineItem'
             ? (this.showWOLISAoption = true)
             : (this.showWOLISAoption = false);
 
           if (myArray.length > 1 && myArray[1].length > 0) {
-            myArray[0] === "workOrder"
+            myArray[0] === 'workOrder'
               ? (this.isSAWOselected = true)
               : (this.isSAWOLIselected = true);
           }
@@ -180,26 +165,24 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
         }
       })
       .catch((error) => {
-        console.log("Error while retrieving settings object - ", error);
+        console.log('Error while retrieving settings object - ', error);
       });
   }
 
   get assignmentPermissionOptions() {
     return [
       {
-        label:
-          this.LABELS
-            .FollowUpAppointments_MobileWorkerAsignTo_themselves_or_anyWorker,
-        value: "1"
+        label: this.LABELS.FollowUpAppointments_MobileWorkerAsignTo_themselves_or_anyWorker,
+        value: '1',
       },
       {
         label: this.LABELS.FollowUpAppointments_MobileWorkerAsignTo_any_worker,
-        value: "2"
+        value: '2',
       },
       {
         label: this.LABELS.FollowUpAppointments_MobileWorkerAsignTo_themselves,
-        value: "3"
-      }
+        value: '3',
+      },
     ];
   }
 
@@ -207,8 +190,8 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
     return [
       {
         label: this.LABELS.FollowUpAppointments_objectName_WorkOrder,
-        value: "WorkOrder"
-      }
+        value: 'WorkOrder',
+      },
     ];
   }
 
@@ -216,8 +199,8 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
     return [
       {
         label: this.LABELS.FollowUpAppointments_objectName_ServiceAppointment,
-        value: "ServiceAppointment"
-      }
+        value: 'ServiceAppointment',
+      },
     ];
   }
 
@@ -225,8 +208,8 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
     return [
       {
         label: this.LABELS.FollowUpAppointments_objectName_WorkOrderLineItem,
-        value: "WorkOrderLineItem"
-      }
+        value: 'WorkOrderLineItem',
+      },
     ];
   }
 
@@ -251,10 +234,10 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
   //     }
   // }
 
-  objectCreationAllowed = "";
+  objectCreationAllowed = '';
   onMobileUserObjectSelected(event) {
     const option = event.target.value;
-    console.log("OnMobile user object selected : " + option);
+    console.log('OnMobile user object selected : ' + option);
     this.objectCreationAllowed = option;
     this.savedObjectCreation !== this.objectCreationAllowed
       ? (this.hasUnsavedChanges = true)
@@ -272,7 +255,7 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
   }
 
   @api handleSaveEvent() {
-    console.log("Save event executed");
+    console.log('Save event executed');
 
     let arr = [];
     arr.push(this.schedulingPolicySelected); // 0
@@ -285,18 +268,17 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
 
     arr.push(this.schedulingHorizonUnits); // 3
 
-    let objectAllowedToBeCreated = "";
+    let objectAllowedToBeCreated = '';
 
-    this.objectCreationAllowed === "ServiceAppointment"
-      ? (objectAllowedToBeCreated =
-          objectAllowedToBeCreated + "ServiceAppointment")
+    this.objectCreationAllowed === 'ServiceAppointment'
+      ? (objectAllowedToBeCreated = objectAllowedToBeCreated + 'ServiceAppointment')
       : objectAllowedToBeCreated;
 
-    if (this.objectCreationAllowed === "WorkOrder") {
-      objectAllowedToBeCreated = objectAllowedToBeCreated + "WorkOrder";
+    if (this.objectCreationAllowed === 'WorkOrder') {
+      objectAllowedToBeCreated = objectAllowedToBeCreated + 'WorkOrder';
     }
-    if (this.objectCreationAllowed === "WorkOrderLineItem") {
-      objectAllowedToBeCreated = objectAllowedToBeCreated + "WorkOrderLineItem";
+    if (this.objectCreationAllowed === 'WorkOrderLineItem') {
+      objectAllowedToBeCreated = objectAllowedToBeCreated + 'WorkOrderLineItem';
     }
 
     arr.push(objectAllowedToBeCreated); // 4
@@ -309,10 +291,10 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
     saveSettings({ inputArr: arr })
       .then((data) => {
         if (data.error) {
-          console.error("Got error while saving the data : " + data);
+          console.error('Got error while saving the data : ' + data);
           throw new Error(data.error);
         } else {
-          console.log("saved successfully");
+          console.log('saved successfully');
           this.showToastMessages(
             this.LABELS.FollowUpAppointments_settingPage_save_message,
             this.successVariant
@@ -324,11 +306,9 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
         }
       })
       .catch((error) => {
-        console.log("Error while getting scheduling policy : " + error);
+        console.log('Error while getting scheduling policy : ' + error);
         this.showToastMessages(
-          this.LABELS.FollowUpAppointments_settingPage_error_message +
-            " : " +
-            error.message,
+          this.LABELS.FollowUpAppointments_settingPage_error_message + ' : ' + error.message,
           this.errorVariant
         );
       });
@@ -352,7 +332,7 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
     this.reloadChildComponent
       ? (this.reloadChildComponent = false)
       : (this.reloadChildComponent = true);
-    console.log("Lightning tab value changed");
+    console.log('Lightning tab value changed');
   }
 
   handleSchedulingPolicyChange(event) {
@@ -381,15 +361,15 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
 
   onSchedulingHorizonValueChange(event) {
     this.schedulingHorizonUnits = event.detail.value;
-    let nameCmp = this.template.querySelector(".horizonInputField");
+    let nameCmp = this.template.querySelector('.horizonInputField');
 
     // check if the entered value is numeric
     let regexPattern = /^-?[0-9]+$/;
     let result = regexPattern.test(this.schedulingHorizonUnits);
     if (event.detail.value && result) {
-      nameCmp.setCustomValidity("");
+      nameCmp.setCustomValidity('');
     } else {
-      nameCmp.setCustomValidity("Enter a number.");
+      nameCmp.setCustomValidity('Enter a number.');
     }
     this.savedSchedulingHorizonUnits !== this.schedulingHorizonUnits
       ? (this.hasUnsavedChanges = true)
@@ -397,13 +377,13 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
     this.validateSaveButton();
   }
 
-  @api successVariant = "success";
-  @api errorVariant = "error";
-  @api warningVariant = "warning";
+  @api successVariant = 'success';
+  @api errorVariant = 'error';
+  @api warningVariant = 'warning';
 
   showToastMessages(message, variant) {
     this.template
-      .querySelector("c-follow-up-appointment-custom-toast-notifications")
+      .querySelector('c-follow-up-appointment-custom-toast-notifications')
       .showToast(variant, message);
   }
 
@@ -423,8 +403,7 @@ export default class followUpAppointmentSettingsContainer extends LightningEleme
       if (
         this.schedulingPolicySelected === this.savedSP &&
         this.operatingHoursSelected === this.savedOH &&
-        this.appointmentSlotOptionSelected ===
-          this.savedAppointmentSlotSelected &&
+        this.appointmentSlotOptionSelected === this.savedAppointmentSlotSelected &&
         this.objectCreationAllowed === this.savedObjectCreation &&
         this.technicianAssigmentSelected === this.savedTechnicianAssignment &&
         this.schedulingHorizonUnits === this.savedSchedulingHorizonUnits

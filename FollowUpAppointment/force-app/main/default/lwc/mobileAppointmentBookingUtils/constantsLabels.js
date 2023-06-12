@@ -19,35 +19,27 @@ import FollowUpAppointments_WeekDayLong_Friday from '@salesforce/label/c.FollowU
 import FollowUpAppointments_WeekDayLong_Saturday from '@salesforce/label/c.FollowUpAppointments_WeekDayLong_Saturday';
 import FollowUpAppointments_WeekDayLong_Sunday from '@salesforce/label/c.FollowUpAppointments_WeekDayLong_Sunday';
 
-
 const customLabels = {
+  FollowUpAppointments_MonthName_January,
+  FollowUpAppointments_MonthName_February,
+  FollowUpAppointments_MonthName_March,
+  FollowUpAppointments_MonthName_April,
+  FollowUpAppointments_MonthName_May,
+  FollowUpAppointments_MonthName_June,
+  FollowUpAppointments_MonthName_July,
+  FollowUpAppointments_MonthName_August,
+  FollowUpAppointments_MonthName_September,
+  FollowUpAppointments_MonthName_October,
+  FollowUpAppointments_MonthName_November,
+  FollowUpAppointments_MonthName_December,
 
-
-    FollowUpAppointments_MonthName_January,
-    FollowUpAppointments_MonthName_February,
-    FollowUpAppointments_MonthName_March,
-    FollowUpAppointments_MonthName_April,
-    FollowUpAppointments_MonthName_May,
-    FollowUpAppointments_MonthName_June,
-    FollowUpAppointments_MonthName_July,
-    FollowUpAppointments_MonthName_August,
-    FollowUpAppointments_MonthName_September,
-    FollowUpAppointments_MonthName_October,
-    FollowUpAppointments_MonthName_November,
-    FollowUpAppointments_MonthName_December,
-
-    FollowUpAppointments_WeekDayLong_Monday,
-    FollowUpAppointments_WeekDayLong_Tuesday,
-    FollowUpAppointments_WeekDayLong_Wednesday,
-    FollowUpAppointments_WeekDayLong_Thursday,
-    FollowUpAppointments_WeekDayLong_Friday,
-    FollowUpAppointments_WeekDayLong_Saturday,
-    FollowUpAppointments_WeekDayLong_Sunday
-
-
-
-
-    
-}
+  FollowUpAppointments_WeekDayLong_Monday,
+  FollowUpAppointments_WeekDayLong_Tuesday,
+  FollowUpAppointments_WeekDayLong_Wednesday,
+  FollowUpAppointments_WeekDayLong_Thursday,
+  FollowUpAppointments_WeekDayLong_Friday,
+  FollowUpAppointments_WeekDayLong_Saturday,
+  FollowUpAppointments_WeekDayLong_Sunday,
+};
 
 export default customLabels;

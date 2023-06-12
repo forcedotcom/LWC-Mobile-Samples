@@ -7,13 +7,13 @@ import FollowUpAppointments_SlotsPageTitle from '@salesforce/label/c.FollowUpApp
 import FollowUpAppointments_NoSetupError from '@salesforce/label/c.FollowUpAppointments_NoSetupError';
 
 const customLabels = {
-    FollowUpAppointments_StepTitle1,
-    FollowUpAppointments_StepTitle2,
-    FollowUpAppointments_NextButtonText,
-    FollowUpAppointments_EndPageApprovalText1,
-    FollowUpAppointments_EndPageApprovalText2,
-    FollowUpAppointments_SlotsPageTitle,
-    FollowUpAppointments_NoSetupError
-}
+  FollowUpAppointments_StepTitle1,
+  FollowUpAppointments_StepTitle2,
+  FollowUpAppointments_NextButtonText,
+  FollowUpAppointments_EndPageApprovalText1,
+  FollowUpAppointments_EndPageApprovalText2,
+  FollowUpAppointments_SlotsPageTitle,
+  FollowUpAppointments_NoSetupError,
+};
 
 export default customLabels;

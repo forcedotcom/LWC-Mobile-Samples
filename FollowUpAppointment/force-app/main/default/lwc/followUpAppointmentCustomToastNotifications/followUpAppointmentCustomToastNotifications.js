@@ -1,6 +1,6 @@
 /* eslint-disable @lwc/lwc/no-api-reassignments */
 /* eslint-disable @lwc/lwc/no-async-operation */
-import { LightningElement, track, api } from "lwc";
+import { LightningElement, track, api } from 'lwc';
 
 export default class FollowUpAppointmentCustomToastNotifications extends LightningElement {
   @track toastList = [];
@@ -14,8 +14,8 @@ export default class FollowUpAppointmentCustomToastNotifications extends Lightni
       headerMessage: type,
       message: message,
       id: this.toastId,
-      iconName: "utility:" + type,
-      headerClass: "slds-notify slds-notify_toast slds-theme_" + type
+      iconName: 'utility:' + type,
+      headerClass: 'slds-notify slds-notify_toast slds-theme_' + type,
     };
 
     this.toastId = this.toastId + 1;
