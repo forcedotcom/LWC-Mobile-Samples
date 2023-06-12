@@ -17,7 +17,7 @@ Let your mobile workers create and schedule follow-up appointments for customers
 	1. From Setup, in the Quick Find box, enter `Custom Code`, and then select **Apex Classes**.
 	2. For FollowUpAppointmentController, click **Security**.
 	3. Add the relevant profiles to the Enabled Profiles list.
-4. To install the package, click <add URL>.
+4. To install the package, click https://login.salesforce.com/packaging/installPackage.apexp?p0=04tB0000000hCNEIA2.
 5. From the App Launcher, find and select **Follow-Up Appointment Settings**.
 6. Configure the LWC.
 	1. In the Settings tab, determine which appointment slots the mobile worker sees and determine who the work can be assigned to and what kind of work they can create.
