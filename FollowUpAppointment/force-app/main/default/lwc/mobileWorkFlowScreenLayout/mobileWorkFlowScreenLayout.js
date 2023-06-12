@@ -1,6 +1,6 @@
 /* eslint-disable @lwc/lwc/no-api-reassignments */
-import { LightningElement, api } from "lwc";
-import customLabels from "./labels";
+import { LightningElement, api } from 'lwc';
+import customLabels from './labels';
 
 export default class MobileWorkFlowScreenLayout extends LightningElement {
   @api currentScreen;
@@ -20,7 +20,7 @@ export default class MobileWorkFlowScreenLayout extends LightningElement {
     return this.currentScreen;
   }
   set screenno(value) {
-    console.log("screen no value is : " + value);
+    console.log('screen no value is : ' + value);
     if (value) {
       this.currentScreen = value;
     }
@@ -73,41 +73,41 @@ export default class MobileWorkFlowScreenLayout extends LightningElement {
 
   // send the event to parent class for edit button
   @api handleClildEditButtonEvent() {
-    let ev = new CustomEvent("editevent", { detail: this.currentScreen });
+    let ev = new CustomEvent('editevent', { detail: this.currentScreen });
     this.dispatchEvent(ev);
   }
 
   @api handleDropDownActionSelected(event) {
-    console.log("Drop down list selected : " + event.detail.value);
+    console.log('Drop down list selected : ' + event.detail.value);
     let selectedValue = event.detail.value;
     if (selectedValue === this.const_duplicate) {
       // handle duplication of screen
 
-      console.log("Duplicate screen called : " + this.currentScreen);
-      let ev = new CustomEvent("duplicateevent", {
-        detail: this.currentScreen
+      console.log('Duplicate screen called : ' + this.currentScreen);
+      let ev = new CustomEvent('duplicateevent', {
+        detail: this.currentScreen,
       });
       this.dispatchEvent(ev);
     } else {
       // Handle delete of screen
-      console.log("Delete screen called : " + this.currentScreen);
-      let ev = new CustomEvent("deleteevent", { detail: this.currentScreen });
+      console.log('Delete screen called : ' + this.currentScreen);
+      let ev = new CustomEvent('deleteevent', { detail: this.currentScreen });
       this.dispatchEvent(ev);
     }
   }
 
   @api handleLeftButtonEventClick() {
-    console.log("Left button clicked for screen : " + this.currentScreen);
-    let ev = new CustomEvent("leftbuttoneevent", {
-      detail: this.currentScreen
+    console.log('Left button clicked for screen : ' + this.currentScreen);
+    let ev = new CustomEvent('leftbuttoneevent', {
+      detail: this.currentScreen,
     });
     this.dispatchEvent(ev);
   }
 
   @api handleRightButtonEventClick() {
-    console.log("Right button clicked for screen : " + this.currentScreen);
-    let ev = new CustomEvent("rightbuttoneevent", {
-      detail: this.currentScreen
+    console.log('Right button clicked for screen : ' + this.currentScreen);
+    let ev = new CustomEvent('rightbuttoneevent', {
+      detail: this.currentScreen,
     });
     this.dispatchEvent(ev);
   }

@@ -1,20 +1,21 @@
 import { LightningElement, api } from 'lwc';
 
 export default class Modal extends LightningElement {
-    @api showModal;
+  @api showModal;
 
-    @api get modalIsOpen(){
-        return this.showModal === 1;
-    }
+  @api get modalIsOpen() {
+    return this.showModal === 1;
+  }
 
-    closeModal(event){
-        event.preventDefault();
+  closeModal(event) {
+    event.preventDefault();
 
-        console.log("dispatching close modal::: " + this.showModal);
-        this.dispatchEvent(new CustomEvent('closemodal', {
-            composed: true,
-            bubbles: true
-        }));
-
-    }
+    console.log('dispatching close modal::: ' + this.showModal);
+    this.dispatchEvent(
+      new CustomEvent('closemodal', {
+        composed: true,
+        bubbles: true,
+      })
+    );
+  }
 }

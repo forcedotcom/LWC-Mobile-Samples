@@ -1,5 +1,4 @@
-export default
-`
+export default `
 .slds-notify_toast, .slds-notify--toast{
     min-width: 0;
 }

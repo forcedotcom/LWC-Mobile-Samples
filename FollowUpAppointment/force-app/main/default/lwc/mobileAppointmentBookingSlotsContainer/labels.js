@@ -25,40 +25,34 @@ import FollowUpAppointments_recommended_appointments from '@salesforce/label/c.F
 import FollowUpAppointments_empty_state_select_any_available_worker from '@salesforce/label/c.FollowUpAppointments_empty_state_select_any_available_worker';
 import FollowUpAppointments_empty_state_change_the_dates from '@salesforce/label/c.FollowUpAppointments_empty_state_change_the_dates';
 
-
 const customLabels = {
-    FollowUpAppointments_no_available_appointments_msg,
-    FollowUpAppointments_today_text,
+  FollowUpAppointments_no_available_appointments_msg,
+  FollowUpAppointments_today_text,
 
-    FollowUpAppointments_MonthName_January,
-    FollowUpAppointments_MonthName_February,
-    FollowUpAppointments_MonthName_March,
-    FollowUpAppointments_MonthName_April,
-    FollowUpAppointments_MonthName_May,
-    FollowUpAppointments_MonthName_June,
-    FollowUpAppointments_MonthName_July,
-    FollowUpAppointments_MonthName_August,
-    FollowUpAppointments_MonthName_September,
-    FollowUpAppointments_MonthName_October,
-    FollowUpAppointments_MonthName_November,
-    FollowUpAppointments_MonthName_December,
+  FollowUpAppointments_MonthName_January,
+  FollowUpAppointments_MonthName_February,
+  FollowUpAppointments_MonthName_March,
+  FollowUpAppointments_MonthName_April,
+  FollowUpAppointments_MonthName_May,
+  FollowUpAppointments_MonthName_June,
+  FollowUpAppointments_MonthName_July,
+  FollowUpAppointments_MonthName_August,
+  FollowUpAppointments_MonthName_September,
+  FollowUpAppointments_MonthName_October,
+  FollowUpAppointments_MonthName_November,
+  FollowUpAppointments_MonthName_December,
 
-    FollowUpAppointments_WeekDayLong_Monday,
-    FollowUpAppointments_WeekDayLong_Tuesday,
-    FollowUpAppointments_WeekDayLong_Wednesday,
-    FollowUpAppointments_WeekDayLong_Thursday,
-    FollowUpAppointments_WeekDayLong_Friday,
-    FollowUpAppointments_WeekDayLong_Saturday,
-    FollowUpAppointments_WeekDayLong_Sunday,
-    FollowUpAppointments_all_available_appointments,
-    FollowUpAppointments_recommended_appointments,
-    FollowUpAppointments_empty_state_select_any_available_worker,
-    FollowUpAppointments_empty_state_change_the_dates
-
-
-
-
-    
-}
+  FollowUpAppointments_WeekDayLong_Monday,
+  FollowUpAppointments_WeekDayLong_Tuesday,
+  FollowUpAppointments_WeekDayLong_Wednesday,
+  FollowUpAppointments_WeekDayLong_Thursday,
+  FollowUpAppointments_WeekDayLong_Friday,
+  FollowUpAppointments_WeekDayLong_Saturday,
+  FollowUpAppointments_WeekDayLong_Sunday,
+  FollowUpAppointments_all_available_appointments,
+  FollowUpAppointments_recommended_appointments,
+  FollowUpAppointments_empty_state_select_any_available_worker,
+  FollowUpAppointments_empty_state_change_the_dates,
+};
 
 export default customLabels;
