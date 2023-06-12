@@ -1,13 +1,14 @@
+/* eslint-disable @lwc/lwc/no-api-reassignments */
 /* eslint-disable @lwc/lwc/no-async-operation */
 import { LightningElement, track, api } from "lwc";
 
 export default class FollowUpAppointmentCustomToastNotifications extends LightningElement {
   @track toastList = [];
-  @track toastId = 0;
+  @api toastId = 0;
   @api timeout = 3000;
   @api sticky = false;
-  @api
-  showToast(type, message) {
+
+  @api showToast(type, message) {
     let toast = {
       type: type,
       headerMessage: type,
@@ -16,6 +17,7 @@ export default class FollowUpAppointmentCustomToastNotifications extends Lightni
       iconName: "utility:" + type,
       headerClass: "slds-notify slds-notify_toast slds-theme_" + type
     };
+
     this.toastId = this.toastId + 1;
     this.toastList.push(toast);
 
@@ -25,6 +27,7 @@ export default class FollowUpAppointmentCustomToastNotifications extends Lightni
       }, this.timeout);
     }
   }
+
   @api closeModal() {
     let index = this.toastId - 1;
     if (index !== -1) {

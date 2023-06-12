@@ -1,6 +1,16 @@
 import { createElement } from "lwc";
 import MobileWorkFlowLayout from "c/mobileWorkFlowScreenLayout";
 
+jest.mock(
+  "./labels",
+  () => {
+    return {
+      MobileWorkFlowLayoutLabels: "test"
+    };
+  },
+  { virtual: true }
+);
+
 let element;
 describe("c-mobile-work-flow-screen-layout", () => {
   afterEach(() => {
@@ -84,5 +94,54 @@ describe("c-mobile-work-flow-screen-layout", () => {
     return Promise.resolve().then(() => {
       expect(element.handleClildEditButtonEvent).toBeCalledTimes(0);
     });
+  });
+
+  it("Getter and setter disableleftbutton", () => {
+    const spy = jest.spyOn(element, "disableleftbutton", "set");
+    element.disableleftbutton = false;
+    expect(spy).toHaveBeenCalled();
+    expect(element.disableleftbutton).toBe(false);
+  });
+
+  it("Getter and setter disablerightbutton", () => {
+    const spy = jest.spyOn(element, "disablerightbutton", "set");
+    element.disablerightbutton = false;
+    expect(spy).toHaveBeenCalled();
+    expect(element.disablerightbutton).toBe(false);
+  });
+
+  it("Getter and setter for screenno", () => {
+    const spy = jest.spyOn(element, "screenno", "set");
+    element.screenno = 1;
+    expect(element.screenno).toBe(1);
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it("Getter and setter for screentitle", () => {
+    const spy = jest.spyOn(element, "screentitle", "set");
+    element.screentitle = "titletest";
+    expect(element.screentitle).toBe("titletest");
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it("Getter and setter for screensubtitle", () => {
+    const spy = jest.spyOn(element, "screensubtitle", "set");
+    element.screensubtitle = "title1";
+    expect(element.screensubtitle).toBe("title1");
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it("Getter and setter for selectedfieldlist", () => {
+    const spy = jest.spyOn(element, "selectedfieldlist", "set");
+    element.selectedfieldlist = "title2";
+    expect(element.selectedfieldlist).toBe("title2");
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it("Getter and setter for disableduplicatebutton", () => {
+    const spy = jest.spyOn(element, "disableduplicatebutton", "set");
+    element.disableduplicatebutton = false;
+    expect(element.disableduplicatebutton).toBe(false);
+    expect(spy).toHaveBeenCalled();
   });
 });

@@ -1,7 +1,12 @@
 <template>
   <div class="slds-is-absolute" style="margin-left: 35%">
     <div class="slds-notify_container slds-is-relative">
-      <template for:each={toastList} for:item="toast" for:index="index">
+      <template
+        for:each={toastList}
+        for:item="toast"
+        for:index="index"
+        class="tempclass"
+      >
         <div key={toast.id}>
           <div class={toast.headerClass} role="status">
             <span class="slds-assistive-text">{toast.headerMessage}</span>

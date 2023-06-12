@@ -370,6 +370,8 @@ export default class AaRebookingCalendar extends LightningElement {
                                 for (let week = 0; week < this.noOfMonths[month].weeks.length; week++) {
                                     for (let day = 0; day < this.noOfMonths[month].weeks[week].length; day++) {
                                         this.noOfMonths[month].weeks[week][day].selected = false;
+                                        // this line is causing isse when using ===. Hence reverting the lint change.
+                                        // eslint-disable-next-line eqeqeq
                                         if (this.noOfMonths[month].weeks[week][day].value == event.currentTarget.dataset.id) {
                                             if(this.noOfMonths[month].weeks[week][day].isValidDate) {
                                                 isValidDate = true;

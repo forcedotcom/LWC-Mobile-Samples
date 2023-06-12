@@ -38,10 +38,11 @@ export default class followUpAppointmentMain extends LightningElement {
     @track fieldsToRecordFormPage2 = [];
     @track fieldsToRecordFormPage3 = [];
     hideNoSetupError = true;
-    hideCustomPage1 = false;
+    hideCustomPage1 = true;
     hideCustomPage2 = true;
     hideCustomPage3 = true;
-    hideSlotsPage = true;
+    hideCustomPage4 = true;
+    pagesArray = [];
     hideEndPage = true;
     hideHeader = false;
     hideNextButton = false;
@@ -138,7 +139,7 @@ export default class followUpAppointmentMain extends LightningElement {
                 } else {
                     for (let index = 1; index < 4; index++) {
                         if (this.settings['fieldsToShowPage'+index] !== 'null') {
-                            this.maxStepNumber = index+1;
+                            this.pagesArray.push(index);
                             this.settings['fieldsToShowPage'+index].split(';').forEach(field => {
                                 if (field.split(',')[0] !== '') {
                                     this.listOfFields.push(field);
@@ -160,6 +161,9 @@ export default class followUpAppointmentMain extends LightningElement {
                             })
                         }
                     }
+                    this.pagesArray.push(4);
+                    this.maxStepNumber = this.pagesArray.length;
+                    this['hideCustomPage'+this.pagesArray[this.currentStepNumber-1]] = false;
                 }
             }
 
@@ -211,7 +215,7 @@ export default class followUpAppointmentMain extends LightningElement {
         try {
             this.template.querySelector('c-mobile-appointment-booking-landing').scheduleSAMethod(newRecordId);
         } catch (error) {
-            console.log( "Error while scheduling SA : " +"  "+ error.message);
+            console.log( "Error while scheduling SA : "+ error.message);
         } finally {
             this.allowScrolling();
         }
@@ -233,23 +237,36 @@ export default class followUpAppointmentMain extends LightningElement {
 
 
     handleButtonClick(event) {
+        let index = this.currentStepNumber - 1;
         switch (event.target.name) {
             case 'nextButton':
+                this['hideCustomPage'+this.pagesArray[index]] = true;
+                this['hideCustomPage'+this.pagesArray[index+1]] = false;
                 this.currentStepNumber = this.currentStepNumber+1;
                 break;
             case 'backButton':
+                this['hideCustomPage'+this.pagesArray[index]] = true;
+                this['hideCustomPage'+this.pagesArray[index-1]] = false;
                 this.currentStepNumber = this.currentStepNumber-1;
                 break;
             default : {
                 break;
             }
         }
-        for (let index = 1; index < this.maxStepNumber; index++) {
-            index !== this.currentStepNumber ? this['hideCustomPage'+index] = true : this['hideCustomPage'+index] = false;
+        switch (this.currentStepNumber) {
+            case 1:
+                this.hideNextButton = false;
+                this.hideBackButton = true;
+                break;
+            case this.maxStepNumber:
+                this.hideNextButton = true;
+                this.hideBackButton = false;
+                break;
+            default:
+                this.hideNextButton = false;
+                this.hideBackButton = false;
+                break;
         }
-        (this.hideCustomPage1 && this.hideCustomPage2 && this.hideCustomPage3) ? this.hideSlotsPage = false : this.hideSlotsPage = true;
-        this.hideNextButton = !this.hideSlotsPage;
-        this.hideBackButton = !this.hideCustomPage1;
     }
 
     handleSelectedSlot(event) {
@@ -262,7 +279,7 @@ export default class followUpAppointmentMain extends LightningElement {
         this.hideCustomPage1 = true;
         this.hideCustomPage2 = true;
         this.hideCustomPage3 = true;
-        this.hideSlotsPage = true;
+        this.hideCustomPage4 = true;
         this.hideEndPage = false;
         this.hideHeader = true;
         this.hideNextButton = true;

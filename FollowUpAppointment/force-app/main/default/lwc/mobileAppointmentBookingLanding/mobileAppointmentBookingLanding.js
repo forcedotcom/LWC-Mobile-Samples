@@ -366,6 +366,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
             let schedulingHorizonValueToNumber = parseInt(this.schedulingHorizonValue, 10);    // Lint fixes : added 10 as redix param;
             horizonDate = new Date(tempDate.setDate(tempDate.getDate() + schedulingHorizonValueToNumber));
 			console.log("-- Horizon value max date : "+horizonDate);
+            this.maxValidCalendarDate = new Date(horizonDate);
         }
         getWorkTypeOffset({workTypeName: SAdata.WorkTypeName})
         .then((data) => {

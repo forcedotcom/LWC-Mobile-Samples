@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Salesforce App",
   "scripts": {
-        "lint": "npm run lint:lwc && npm run lint:aura",
+    "lint": "npm run lint:lwc && npm run lint:aura",
     "lint:aura": "eslint **/aura/**",
     "lint:lwc": "eslint **/lwc/**",
     "test": "npm run test:unit",
@@ -24,7 +24,7 @@
     "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
-    "prettier": "^2.0.5",
+    "prettier": "2.8.8",
     "prettier-plugin-apex": "^1.6.0"
   },
   "lint-staged": {

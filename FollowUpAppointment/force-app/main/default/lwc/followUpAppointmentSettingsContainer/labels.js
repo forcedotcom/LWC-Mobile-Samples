@@ -1,67 +1,67 @@
-import FollowUpAppointments_SchedulingPolicyTitle from '@salesforce/label/c.FollowUpAppointments_SchedulingPolicyTitle';
-import FollowUpAppointments_field_service_title from '@salesforce/label/c.FollowUpAppointments_field_service_title';
-import FollowUpAppointments_OperatingHoursTitle from '@salesforce/label/c.FollowUpAppointments_OperatingHoursTitle';
-import FollowUpAppointments_ShowAppointmentSlotsTitle from '@salesforce/label/c.FollowUpAppointments_ShowAppointmentSlotsTitle';
-import FollowUpAppointments_SchedulingHorizonUnitsTitle from '@salesforce/label/c.FollowUpAppointments_SchedulingHorizonUnitsTitle';
-import FollowUpAppointments_DaysTitle from '@salesforce/label/c.FollowUpAppointments_DaysTitle';
-import FollowUpAppointments_Permissions from '@salesforce/label/c.FollowUpAppointments_Permissions';
-import FollowUpAppointments_AssignmentPermission from '@salesforce/label/c.FollowUpAppointments_AssignmentPermission';
-import FollowUpAppointments_MobileWorkerAsignTo_themselves_or_anyWorker from '@salesforce/label/c.FollowUpAppointments_MobileWorkerAsignTo_themselves_or_anyWorker';
-import FollowUpAppointments_MobileWorkerAsignTo_themselves from '@salesforce/label/c.FollowUpAppointments_MobileWorkerAsignTo_themselves';
-import FollowUpAppointments_MobileWorkerAsignTo_any_worker from '@salesforce/label/c.FollowUpAppointments_MobileWorkerAsignTo_any_worker';
-import FollowUpAppointments_Allow_tech_to_create_object_title from '@salesforce/label/c.FollowUpAppointments_Allow_tech_to_create_object_title';
-import FollowUpAppointments_objectName_ServiceAppointment from '@salesforce/label/c.FollowUpAppointments_objectName_ServiceAppointment';
-import FollowUpAppointments_objectName_WorkOrder from '@salesforce/label/c.FollowUpAppointments_objectName_WorkOrder';
-import FollowUpAppointments_objectName_WorkOrderLineItem from '@salesforce/label/c.FollowUpAppointments_objectName_WorkOrderLineItem';
+import FollowUpAppointments_SchedulingPolicyTitle from "@salesforce/label/c.FollowUpAppointments_SchedulingPolicyTitle";
+import FollowUpAppointments_field_service_title from "@salesforce/label/c.FollowUpAppointments_field_service_title";
+import FollowUpAppointments_OperatingHoursTitle from "@salesforce/label/c.FollowUpAppointments_OperatingHoursTitle";
+import FollowUpAppointments_ShowAppointmentSlotsTitle from "@salesforce/label/c.FollowUpAppointments_ShowAppointmentSlotsTitle";
+import FollowUpAppointments_SchedulingHorizonUnitsTitle from "@salesforce/label/c.FollowUpAppointments_SchedulingHorizonUnitsTitle";
+import FollowUpAppointments_DaysTitle from "@salesforce/label/c.FollowUpAppointments_DaysTitle";
+import FollowUpAppointments_Permissions from "@salesforce/label/c.FollowUpAppointments_Permissions";
+import FollowUpAppointments_AssignmentPermission from "@salesforce/label/c.FollowUpAppointments_AssignmentPermission";
+import FollowUpAppointments_MobileWorkerAsignTo_themselves_or_anyWorker from "@salesforce/label/c.FollowUpAppointments_MobileWorkerAsignTo_themselves_or_anyWorker";
+import FollowUpAppointments_MobileWorkerAsignTo_themselves from "@salesforce/label/c.FollowUpAppointments_MobileWorkerAsignTo_themselves";
+import FollowUpAppointments_MobileWorkerAsignTo_any_worker from "@salesforce/label/c.FollowUpAppointments_MobileWorkerAsignTo_any_worker";
+import FollowUpAppointments_Allow_tech_to_create_object_title from "@salesforce/label/c.FollowUpAppointments_Allow_tech_to_create_object_title";
+import FollowUpAppointments_objectName_ServiceAppointment from "@salesforce/label/c.FollowUpAppointments_objectName_ServiceAppointment";
+import FollowUpAppointments_objectName_WorkOrder from "@salesforce/label/c.FollowUpAppointments_objectName_WorkOrder";
+import FollowUpAppointments_objectName_WorkOrderLineItem from "@salesforce/label/c.FollowUpAppointments_objectName_WorkOrderLineItem";
 
-import FollowUpAppointments_arriwal_window_title from '@salesforce/label/c.FollowUpAppointments_arriwal_window_title';
-import FollowUpAppointments_exact_appointment_time_title from '@salesforce/label/c.FollowUpAppointments_exact_appointment_time_title';
+import FollowUpAppointments_arriwal_window_title from "@salesforce/label/c.FollowUpAppointments_arriwal_window_title";
+import FollowUpAppointments_exact_appointment_time_title from "@salesforce/label/c.FollowUpAppointments_exact_appointment_time_title";
 
-import FollowUpAppointments_setting_sub_title from '@salesforce/label/c.FollowUpAppointments_setting_sub_title';
-import FollowUpAppointments_setting_description_text from '@salesforce/label/c.FollowUpAppointments_setting_description_text';
+import FollowUpAppointments_setting_sub_title from "@salesforce/label/c.FollowUpAppointments_setting_sub_title";
+import FollowUpAppointments_setting_description_text from "@salesforce/label/c.FollowUpAppointments_setting_description_text";
 
-import FollowUpAppointments_placeHolder_select_an_option from '@salesforce/label/c.FollowUpAppointments_placeHolder_select_an_option';
-import FollowUpAppointments_placeHolder_enter_number from '@salesforce/label/c.FollowUpAppointments_placeHolder_enter_number';
+import FollowUpAppointments_placeHolder_select_an_option from "@salesforce/label/c.FollowUpAppointments_placeHolder_select_an_option";
+import FollowUpAppointments_placeHolder_enter_number from "@salesforce/label/c.FollowUpAppointments_placeHolder_enter_number";
 
-import FollowUpAppointments_settingPage_save_message from '@salesforce/label/c.FollowUpAppointments_settingPage_save_message';
-import FollowUpAppointments_settingPage_error_message from '@salesforce/label/c.FollowUpAppointments_settingPage_error_message';
+import FollowUpAppointments_settingPage_save_message from "@salesforce/label/c.FollowUpAppointments_settingPage_save_message";
+import FollowUpAppointments_settingPage_error_message from "@salesforce/label/c.FollowUpAppointments_settingPage_error_message";
 
-import FollowUpAppointments_setting_page_title from '@salesforce/label/c.FollowUpAppointments_setting_page_title';
-import FollowUpAppointments_Permissions_subtext from '@salesforce/label/c.FollowUpAppointments_Permissions_subtext';
+import FollowUpAppointments_setting_page_title from "@salesforce/label/c.FollowUpAppointments_setting_page_title";
+import FollowUpAppointments_Permissions_subtext from "@salesforce/label/c.FollowUpAppointments_Permissions_subtext";
 
-import FollowUpAppointments_setting_page_save_button_label from '@salesforce/label/c.FollowUpAppointments_setting_page_save_button_label';
-import FollowUpAppointments_setting_page_cancel_button_label from '@salesforce/label/c.FollowUpAppointments_setting_page_cancel_button_label';
-import FollowUpAppointments_settingPage_warning_message from '@salesforce/label/c.FollowUpAppointments_settingPage_warning_message';
+import FollowUpAppointments_setting_page_save_button_label from "@salesforce/label/c.FollowUpAppointments_setting_page_save_button_label";
+import FollowUpAppointments_setting_page_cancel_button_label from "@salesforce/label/c.FollowUpAppointments_setting_page_cancel_button_label";
+import FollowUpAppointments_settingPage_warning_message from "@salesforce/label/c.FollowUpAppointments_settingPage_warning_message";
 
 const customLabels = {
-    FollowUpAppointments_field_service_title,
-    FollowUpAppointments_SchedulingPolicyTitle,
-    FollowUpAppointments_setting_sub_title,
-    FollowUpAppointments_setting_description_text,
-    FollowUpAppointments_OperatingHoursTitle,
-    FollowUpAppointments_ShowAppointmentSlotsTitle,
-    FollowUpAppointments_SchedulingHorizonUnitsTitle,
-    FollowUpAppointments_DaysTitle,
-    FollowUpAppointments_Permissions,
-    FollowUpAppointments_AssignmentPermission,
-    FollowUpAppointments_MobileWorkerAsignTo_themselves_or_anyWorker,
-    FollowUpAppointments_MobileWorkerAsignTo_themselves,
-    FollowUpAppointments_MobileWorkerAsignTo_any_worker,
-    FollowUpAppointments_Allow_tech_to_create_object_title,
-    FollowUpAppointments_objectName_ServiceAppointment,
-    FollowUpAppointments_objectName_WorkOrder,
-    FollowUpAppointments_objectName_WorkOrderLineItem,
-    FollowUpAppointments_arriwal_window_title,
-    FollowUpAppointments_exact_appointment_time_title,
-    FollowUpAppointments_placeHolder_select_an_option,
-    FollowUpAppointments_placeHolder_enter_number,
-    FollowUpAppointments_settingPage_error_message,
-    FollowUpAppointments_settingPage_save_message,
-    FollowUpAppointments_setting_page_title,
-    FollowUpAppointments_Permissions_subtext,
-    FollowUpAppointments_setting_page_save_button_label,
-    FollowUpAppointments_setting_page_cancel_button_label,
-    FollowUpAppointments_settingPage_warning_message
-}
+  FollowUpAppointments_field_service_title,
+  FollowUpAppointments_SchedulingPolicyTitle,
+  FollowUpAppointments_setting_sub_title,
+  FollowUpAppointments_setting_description_text,
+  FollowUpAppointments_OperatingHoursTitle,
+  FollowUpAppointments_ShowAppointmentSlotsTitle,
+  FollowUpAppointments_SchedulingHorizonUnitsTitle,
+  FollowUpAppointments_DaysTitle,
+  FollowUpAppointments_Permissions,
+  FollowUpAppointments_AssignmentPermission,
+  FollowUpAppointments_MobileWorkerAsignTo_themselves_or_anyWorker,
+  FollowUpAppointments_MobileWorkerAsignTo_themselves,
+  FollowUpAppointments_MobileWorkerAsignTo_any_worker,
+  FollowUpAppointments_Allow_tech_to_create_object_title,
+  FollowUpAppointments_objectName_ServiceAppointment,
+  FollowUpAppointments_objectName_WorkOrder,
+  FollowUpAppointments_objectName_WorkOrderLineItem,
+  FollowUpAppointments_arriwal_window_title,
+  FollowUpAppointments_exact_appointment_time_title,
+  FollowUpAppointments_placeHolder_select_an_option,
+  FollowUpAppointments_placeHolder_enter_number,
+  FollowUpAppointments_settingPage_error_message,
+  FollowUpAppointments_settingPage_save_message,
+  FollowUpAppointments_setting_page_title,
+  FollowUpAppointments_Permissions_subtext,
+  FollowUpAppointments_setting_page_save_button_label,
+  FollowUpAppointments_setting_page_cancel_button_label,
+  FollowUpAppointments_settingPage_warning_message
+};
 
 export default customLabels;
