@@ -1,0 +1,1159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- *********************  Utility Contants ************************  -->
+     <!-- ********   MONTHS NAMES ********** -->
+     <labels>
+        <fullName>FollowUpAppointments_MonthName_January</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>January</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_February</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>February</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_March</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>March</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_April</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>April</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_May</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>May</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_June</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>June</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_July</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>July</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_August</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>August</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_September</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>September</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_October</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>October</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_November</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>November</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_MonthName_December</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Month name</shortDescription>
+        <value>December</value>
+    </labels>
+    <!-- ********   MONTH NAME  END ********** -->
+
+
+
+
+    <!-- ********   WEEKDAY NAMES ********** -->
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayShort_Mon</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>MON</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayShort_Tue</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>TUE</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayShort_Wed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>WED</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayShort_Thu</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>THU</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayShort_Fri</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>FRI</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayShort_Saturday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>SAT</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayShort_Sunday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Short</shortDescription>
+        <value>SUN</value>
+    </labels>
+
+
+
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayLong_Monday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Monday</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayLong_Tuesday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Tuesday</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayLong_Wednesday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Wednesday</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayLong_Thursday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Thursday</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayLong_Friday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Friday</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayLong_Saturday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Saturday</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_WeekDayLong_Sunday</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>WeekDay name - Long</shortDescription>
+        <value>Sunday</value>
+    </labels>
+    <!-- ********   WEEKDAY NAMES ENDS ********** -->
+
+    
+    <labels>
+        <fullName>Schedule_Appointment_page_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Schedule Appointment landing page title</shortDescription>
+         <value>Schedule Appoinyment</value>
+    </labels>
+    <labels>
+        <fullName>Schedule_Appointment_current_appointment_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Schedule Appoinyment compact info title</shortDescription>
+         <value>Appointment Details</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_new_appointment_msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>New Appointment - title</shortDescription>
+        <value>Schedule appointment?</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_accept_new_appointment_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Accept new Appointment - button text</shortDescription>
+        <value>Schedule</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_toastMessage_appointment_schedule</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast message when appointment gets scheduled</shortDescription>
+        <value>Appointment was scheduled.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_same_appointment_selected_warning</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Schedule appointment - Same slot selected warning</shortDescription>
+        <value>Slot already booked. Please select another slot.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_toastMessage_schedule_appointment_fail_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast message schedule appointment fails to get update</shortDescription>
+        <value>We couldn’t schedule the appointment. Try again later.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_confirmation_failure_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>confirmation page failure message when booking fails</shortDescription>
+        <value>It’s not you, it’s us. Please start over.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_no_available_appointments_msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>No available appointment - title</shortDescription>
+        <value>No available appointments</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_today_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Show today text followed by date in time slot header</shortDescription>
+        <value>Today</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_your_appt_was_canceled_msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Cancel appointment - toast message</shortDescription>
+        <value>Appointment was canceled.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_toastMessage_cancel_appointment_fail_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast message cancel appointment fails to get update</shortDescription>
+        <value>We couldn’t cancel the appointment. Try again later.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_toastMessage_appointment_confirmed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast message when appointment gets confirmed</shortDescription>
+        <value>Appointment was confirmed.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_toastMessage_confirm_appointment_fail_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast message confirm appointment fails to get update</shortDescription>
+        <value>We couldn’t confirm the appointment. Try again later.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_selected_appointment_msg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>New Appointment - title</shortDescription>
+        <value>SELECTED APPOINTMENT</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_next_button_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>button text</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_select_an_available_appointment_time</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Schedule appointment message</shortDescription>
+        <value>Select an available appointment time</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_select_new_date_to_schedule</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Schedule appointment message</shortDescription>
+        <value>Schedule your appointment</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_confirmation_service_requested</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>confirmation page section title</shortDescription>
+        <value>SERVICE TYPE</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_assigned_to_you</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Assigned to You ({userName})</shortDescription>
+        <value>Assigned to You ({0})</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_assigned_to_any_available_worker</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Assigned to any available worker</shortDescription>
+        <value>Assigned to any available worker</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_all_available_appointments</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Title for all available slots</shortDescription>
+        <value>All Available Appointments</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_recommended_appointments</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Title for recommended slots</shortDescription>
+        <value>Recommended Appointments</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_cant_select_Mobile_Worker_excluded</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Title for assign to mobile worker radio resource is excluded</shortDescription>
+        <value>You can’t select a mobile worker for this appointment. Ask your admin for help.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_Mobile_Worker_radio_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Title for assign to mobile worker radio</shortDescription>
+        <value>Mobile Worker</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_Mobile_Worker_radio_assignToMe_lable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Label mobile worker radio assign to me option with tech name</shortDescription>
+        <value>You</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_Mobile_Worker_radio_assignToAnyAvailable_lable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Label mobile worker radio assign to any available technitian</shortDescription>
+        <value>Any available worker</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_Select_a_Date</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Title for full page calendar</shortDescription>
+        <value>Select a Date</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_OK</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Label for show results button on full page calendar</shortDescription>
+        <value>OK</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_empty_state_select_any_available_worker</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>If no appointments available and the MW can select any available worker</shortDescription>
+        <value>Change the worker or date and try again. If you still can’t find any appointments, contact your admin for help.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_empty_state_change_the_dates</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>If no appointments available and the MW can't select any available worker</shortDescription>
+        <value>Change the date and try again. If you can’t find any appointments, contact your admin for help.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_view_more_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Label for view more appointments button</shortDescription>
+        <value>View More</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_bottom_sheet_success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Schedule Appointment Bottom sheet success</shortDescription>
+        <value>The appointment was scheduled.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_bottom_sheet_failure_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Title for Schedule Appointment Bottom sheet failure</shortDescription>
+        <value>We couldn’t schedule the appointment.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_bottom_sheet_failure_body</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Content Schedule Appointment Bottom sheet failure</shortDescription>
+        <value>Select a different time slot, or try again later.</value>
+    </labels>
+
+    <!-- Labels for followupAppointmentMain lwc START -->
+
+    <labels>
+        <fullName>FollowUpAppointments_NoSetupError</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Feature is not set up correctly</shortDescription>
+        <value>We couldn’t launch this action. Ask your admin for help.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_StepTitle1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Title For The Step Number</shortDescription>
+        <value>Step</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_StepTitle2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Title For The Step Number</shortDescription>
+        <value>of</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_NextButtonText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Text for next button</shortDescription>
+        <value>Next</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_EndPageApprovalText1</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>End page approveal text</shortDescription>
+        <value>You’re done!</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_EndPageApprovalText2</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>End page approveal text</shortDescription>
+        <value>You can close this window and carry on with your day.</value>
+    </labels>
+    <labels>
+        <fullName>FollowUpAppointments_SlotsPageTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Slots page title text</shortDescription>
+        <value>Appointment Date &amp; Time</value>
+    </labels>
+
+    <!-- Labels for followupAppointmentMain lwc END -->
+
+
+    <!-- Labels for Settings Page  STARTS -->
+
+    <labels>
+        <fullName>FollowUpAppointments_field_service_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Setting page title</shortDescription>
+        <value>Field Service</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_setting_page_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Setting page title</shortDescription>
+        <value>Follow-Up Appointment</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_setting_sub_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Setting page sub title</shortDescription>
+        <value>Scheduling</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_setting_description_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Setting page description</shortDescription>
+        <value>Configure which appointment slots the mobile worker sees.</value>
+    </labels>
+
+
+    <labels>
+        <fullName>FollowUpAppointments_SchedulingPolicyTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Scheduling Policy Title</shortDescription>
+        <value>Scheduling Policy</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_OperatingHoursTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Operating Hours Title</shortDescription>
+        <value>Operating Hours</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_ShowAppointmentSlotsTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Show Appointment Slots As Title</shortDescription>
+        <value>Appointment Slot Type</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_SchedulingHorizonUnitsTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Number of scheduling horizon units</shortDescription>
+        <value>Number of Days Shown</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_DaysTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Days units</shortDescription>
+        <value>Days</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_Permissions</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Heading text for permission section</shortDescription>
+        <value>Permissions</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_Permissions_subtext</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Heading text for permission section</shortDescription>
+        <value>Configure mobile worker permissions.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_AssignmentPermission</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Heading text for Assignment Permission section</shortDescription>
+        <value>Let mobile workers assign work to</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_MobileWorkerAsignTo_themselves_or_anyWorker</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>radio group option 1</shortDescription>
+        <value>Themselves and other workers</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_MobileWorkerAsignTo_themselves</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>radio group option 2</shortDescription>
+        <value>Only themselves</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_MobileWorkerAsignTo_any_worker</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>radio group option 3</shortDescription>
+        <value>Only other workers</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_Allow_tech_to_create_object_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Allow tech to create object - title</shortDescription>
+        <value>Let mobile workers create</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_setting_page_save_button_label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Button Label</shortDescription>
+        <value>Save</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_setting_page_cancel_button_label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Button Label</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    
+    <labels>
+        <fullName>FollowUpAppointments_objectName_ServiceAppointment</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Object name service appointment</shortDescription>
+        <value>Service appointments</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_objectName_WorkOrder</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Object name Work Order</shortDescription>
+        <value>Work orders</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_objectName_WorkOrderLineItem</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Object name Work Order Line Item</shortDescription>
+        <value>Work order line items</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_arriwal_window_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Combobox list item - Arrival Window</shortDescription>
+        <value>Arrival Window</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_exact_appointment_time_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Combobox list item - Arriwal Window</shortDescription>
+        <value>Exact Appointment Time</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_placeHolder_select_an_option</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Place holder - Select an Option</shortDescription>
+        <value>Select...</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_placeHolder_enter_number</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Place holder - Enter a number...</shortDescription>
+        <value>Enter a number...</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_preview_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Title</shortDescription>
+        <value>Preview</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_edit_button_label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Button label</shortDescription>
+        <value>Edit</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_add_step_button_label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Button label</shortDescription>
+        <value>Add Step</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_edit_step_text_label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Text label</shortDescription>
+        <value>Edit Step</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_new_step_text_label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Text label</shortDescription>
+        <value>New Step</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_step_name_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Screen title text</shortDescription>
+        <value>Name</value>
+    </labels>
+
+    <!-- help text labels  -->
+
+    <labels>
+        <fullName>FollowUpAppointments_settings_operatingHours_helpText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Help text</shortDescription>
+        <value>Configure which appointment slots the mobile worker sees.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_settings_operatingHours_helpText</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Help text</shortDescription>
+        <value>Configure which appointment slots the mobile worker sees.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_Object_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>combobox value</shortDescription>
+        <value>Object</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_placeholder_step_name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>step name place holder</shortDescription>
+        <value>Enter title here</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_placeholder_search_fields</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>place holder text for search fields</shortDescription>
+        <value>Search fields..</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_select_fields</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>dual list title</shortDescription>
+        <value>Select Fields</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_button_save</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>button title</shortDescription>
+        <value>Save</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_button_cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>button title</shortDescription>
+        <value>Cancel</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_duallist_available_fields</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>button title</shortDescription>
+        <value>Available Fields</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_duallist_selected_fields</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>button title</shortDescription>
+        <value>Available Fields</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_duplicate_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Drop down option</shortDescription>
+        <value>Duplicate</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_delete_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Drop down option</shortDescription>
+        <value>Delete</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_preview_appointmentDateTime_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Preview screen titles</shortDescription>
+        <value>Appointment Selection</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_preview_appointmentDetails_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Preview screen titles</shortDescription>
+        <value>Appointment Details</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_preview_mobileWorker_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Preview screen titles</shortDescription>
+        <value>Mobile Worker</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_preview_step_not_editable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Preview screen warning message</shortDescription>
+        <value>You can’t edit this step</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_preview_step_help_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>info bubble text in preview screen</shortDescription>
+        <value>Configure the scheduling settings and the permissions in the Settings tab.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_tabTitle_MobileWorkFlow</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Page tab title</shortDescription>
+        <value>Mobile Workflow</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_tabTitle_Settings</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Page tab title</shortDescription>
+        <value>Settings</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_settingPage_save_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast Message</shortDescription>
+        <value>Your changes were saved.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_settingPage_warning_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast Message</shortDescription>
+        <value>You have unsaved changes.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_settingPage_error_message</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast message</shortDescription>
+        <value>We couldn’t save your changes. Try again later.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_settingPage_error_duplicate_screen</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast message</shortDescription>
+        <value>We couldn’t duplicate the step. Try again later.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_settingPage_error_delete_screen</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Toast message</shortDescription>
+        <value>We couldn’t delete the step. Try again later.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_MobileWorkFlow_Info_text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Info text</shortDescription>
+        <value>Configure up to 4 steps. Reorder steps using the arrows.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_delete_step_heading</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>delete the step heading</shortDescription>
+        <value>Delete this step?</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_delete_step_body</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>delete the step heading</shortDescription>
+        <value>This removes the step from the workflow.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_delete_cancel_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>delete the step button title</shortDescription>
+        <value>Cancel</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_delete_button_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>delete the step button title</shortDescription>
+        <value>Delete</value>
+    </labels>
+
+
+
+    <labels>
+        <fullName>FollowUpAppointments_MobileWorkFlow_info_help_url</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Info text</shortDescription>
+        <value>Learn more in Help.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_settings_duplicateScreenToastMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Replace the {0} with step name that will be duplicated</shortDescription>
+        <value>Step {0} was duplicated.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_settings_deleteScreenToastMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Replace the {0} with step name that will be duplicated</shortDescription>
+        <value>Step {0} was deleted.</value>
+    </labels>
+
+    <labels>
+        <fullName>FollowUpAppointments_settings_createScreenToastMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Replace the {0} with step name that will be duplicated</shortDescription>
+        <value>Step {0} was created.</value>
+    </labels>
+    
+    <labels>
+        <fullName>FollowUpAppointments_workflow_addStepFailureMessage</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>FollowUpAppointments</categories>
+        <shortDescription>Failure toast message while adding step</shortDescription>
+        <value>We couldn’t add the step. Try again later.</value>
+    </labels>
+</CustomLabels>
