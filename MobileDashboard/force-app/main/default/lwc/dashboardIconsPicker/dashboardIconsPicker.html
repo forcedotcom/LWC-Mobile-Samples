@@ -1,0 +1,19 @@
+<template>
+  <label class="slds-form-element__label">{ LABELS.MobileDashboard_sub_filter_icon_field }</label>
+  <div class="lgc-bg">
+    <lightning-button-menu label={menuLabel}>
+        <template for:each={iconGroups} for:item="iconGroup">
+          <p key={iconGroup.label} class="group-name">{ iconGroup.label }</p>
+          <template for:each={iconGroup.icons} for:item="icon">
+            <lightning-menu-item
+              key={icon.label}
+              label={icon.label}
+              value={icon.name}
+              prefix-icon-name={icon.name}
+              onclick={handleIconClick}>
+            </lightning-menu-item>
+          </template>
+        </template>
+    </lightning-button-menu>
+  </div>
+</template>

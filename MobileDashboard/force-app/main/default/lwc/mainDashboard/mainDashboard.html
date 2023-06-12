@@ -1,0 +1,11 @@
+<template>
+    <div class="main-container">
+        <template for:each={dashboardSettings} for:item="dashboardSetting" for:index="index">
+            <c-summary-component
+                key={dashboardSetting.node.Id}
+                settings={dashboardSetting}
+                demo-mode="false">
+            </c-summary-component>
+        </template>
+    </div>
+</template>

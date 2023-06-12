@@ -1,0 +1,16 @@
+.props-list {
+    display: flex;
+    flex-direction: row;
+}
+
+lightning-combobox, .quantity-input {
+    margin-right: 8px;
+}
+
+.field-combo, .value-input {
+    flex: 2;
+}
+
+.operator-combo {
+    flex: 1;
+}

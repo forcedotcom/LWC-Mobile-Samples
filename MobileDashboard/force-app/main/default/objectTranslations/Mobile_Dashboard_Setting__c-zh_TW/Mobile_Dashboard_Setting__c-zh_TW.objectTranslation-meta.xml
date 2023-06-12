@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>行動顯示面板設定名稱</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>行動顯示面板設定名稱</label>
+    </standardFields>
+    <caseValues>
+        <plural>false</plural>
+        <value>行動顯示面板設定</value>
+    </caseValues>
+</CustomObjectTranslation>

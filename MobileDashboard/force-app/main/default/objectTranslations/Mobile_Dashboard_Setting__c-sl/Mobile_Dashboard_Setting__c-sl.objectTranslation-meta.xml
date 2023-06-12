@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>Ime nastavitve nadzorne plošče za mobilne naprave</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Ime nastavitve nadzorne plošče za mobilne naprave</label>
+    </standardFields>
+    <gender>Feminine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Nominative</caseType>
+        <value>Nastavitev nadzorne plošče za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Genitive</caseType>
+        <value>Nastavitve nadzorne plošče za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Dative</caseType>
+        <value>Nastavitvi nadzorne plošče za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Accusative</caseType>
+        <value>Nastavitev nadzorne plošče za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Locative</caseType>
+        <value>Nastavitvi nadzorne plošče za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Instrumental</caseType>
+        <value>Nastavitvijo nadzorne plošče za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Nominative</caseType>
+        <value>Nastavitve nadzornih plošč za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Genitive</caseType>
+        <value>Nastavitev nadzornih plošč za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Dative</caseType>
+        <value>Nastavitvam nadzornih plošč za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Accusative</caseType>
+        <value>Nastavitve nadzornih plošč za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Locative</caseType>
+        <value>Nastavitvah nadzornih plošč za mobilne naprave</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Instrumental</caseType>
+        <value>Nastavitvami nadzornih plošč za mobilne naprave</value>
+    </caseValues>
+</CustomObjectTranslation>

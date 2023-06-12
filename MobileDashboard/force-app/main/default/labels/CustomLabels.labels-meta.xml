@@ -1,0 +1,881 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="https://soap.sforce.com/2006/04/metadata">
+    
+    <!-- Settings Page -->
+    <labels>
+        <fullName>MobileDashboard_settings_header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Main settings page header</shortDescription>
+        <value>Field Service</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Main settings page title</shortDescription>
+        <value>Mobile Dashboard</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Main settings page description</shortDescription>
+        <value>Configure your dashboard cards. For better performance, limit the dashboard to five cards.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_add_card_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Main settings page add card button text</shortDescription>
+        <value>Add Card</value>
+    </labels>
+
+    <!-- Settings Page - Card -->
+    <labels>
+        <fullName>MobileDashboard_settings_card_edit_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card edit button text</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_arrow_more_options</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card accessibility text for arrow next to edit button</shortDescription>
+        <value>More options</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_arrow_move_up</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card accessibility text for up arrow</shortDescription>
+        <value>Move up</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_arrow_move_dn</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card accessibility text for down arrow</shortDescription>
+        <value>Move down</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_display_operator_today</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card list of filters - the word "today"</shortDescription>
+        <value>today</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_display_operator_next</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card list of filters - the word "next"</shortDescription>
+        <value>next</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_display_operator_last</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card list of filters - the word "last"</shortDescription>
+        <value>last</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_display_unit_days</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card list of filters - the word "days"</shortDescription>
+        <value>days</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_display_unit_weeks</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card list of filters - the word "weeks"</shortDescription>
+        <value>weeks</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_display_unit_months</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card list of filters - the word "months"</shortDescription>
+        <value>months</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_display_logic_and</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card list of filters - the word "and"</shortDescription>
+        <value>and</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_card_display_logic_or</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card list of filters - the word "or"</shortDescription>
+        <value>or</value>
+    </labels>
+
+    <!-- Settings Page - Modal -->
+    <labels>
+        <fullName>MobileDashboard_settings_new_card_modal_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal title - new card</shortDescription>
+        <value>New Dashboard Card</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_edit_card_modal_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal title - edit existing card</shortDescription>
+        <value>Edit Dashboard Card</value>
+    </labels>
+
+    <!-- Settings Page - Modal - Details tab -->
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_tab_name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab name</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_name_field</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - name field</shortDescription>
+        <value>Name</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_filter_logic_field</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - filter logic field</shortDescription>
+        <value>Filter Logic</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_filter_field_infobubble</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - filter field infobubble</shortDescription>
+        <value>After selecting an object, define which records are included in the card.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_filter_logic_and</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - condition logic AND</shortDescription>
+        <value>All Conditions Are Met (AND)</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_filter_logic_or</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - condition logic OR</shortDescription>
+        <value>Any Condition Is Met (OR)</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_filter_logic_custom</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - condition logic CUSTOM</shortDescription>
+        <value>Custom Condition Is Met</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_and_between_logic</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - the word "AND" between the main filters</shortDescription>
+        <value>AND</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_or_between_logic</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - the word "OR" between the main filters</shortDescription>
+        <value>OR</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_remove_condition_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - accessibility text for delete</shortDescription>
+        <value>Delete logic</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_add_condition_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - add logic button text</shortDescription>
+        <value>Add Logic</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_custom_logic_field</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - custom logic field (if selected custom logic)</shortDescription>
+        <value>Custom Logic</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_details_custom_logic_field_infobubble</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - details tab - custom logic field infobubble</shortDescription>
+        <value>Provide the condition logic. Use numbers to refer to each condition. Use AND or OR to identify the combination of conditions. Add parentheses to group parts of the string together. For example, 1 AND (2 OR 3) evaluates whether the first condition is true, and either the second or third condition is true.</value>
+    </labels>
+
+    <!-- Settings Page - Modal - Design tab -->
+    <labels>
+        <fullName>MobileDashboard_card_modal_design_tab_name</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - design tab name</shortDescription>
+        <value>Design</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_design_tab_layout_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - design tab - layout radio button title</shortDescription>
+        <value>Card Layout</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_design_tab_layout_side_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - design tab - side by side radio button title</shortDescription>
+        <value>Side-by-side</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_design_tab_layout_side_description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - design tab - side by side radio button description</shortDescription>
+        <value>Saves vertical space. Recommended for short field names.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_design_tab_layout_stack_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - design tab - stacked radio button title</shortDescription>
+        <value>Stacked</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_design_tab_layout_stack_description</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - design tab - stacked radio button description</shortDescription>
+        <value>Uses more vertical space. Recommended for long field names.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_design_tab_card_data_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - design tab - card data title</shortDescription>
+        <value>Card Data</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_modal_design_tab_add_data_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Card modal - design tab - add data button text</shortDescription>
+        <value>Add Data</value>
+    </labels>
+
+    <!-- Settings Page - Sub filters -->
+    <labels>
+        <fullName>MobileDashboard_sub_filter_label_field</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Sub filter (grey box) - label field</shortDescription>
+        <value>Label</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_sub_filter_icon_field</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Sub filter (grey box) - icon field</shortDescription>
+        <value>Icon</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_sub_filter_color_field</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Sub filter (grey box) - color field</shortDescription>
+        <value>Color</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_sub_filter_color_field_infobubble</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Sub filter (grey box) - color field infobubble</shortDescription>
+        <value>For best visibility, choose high-contrast colors.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_sub_filter_options</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Sub filter (grey box) - accessibility text for menu arrow</shortDescription>
+        <value>Options</value>
+    </labels>
+
+    <!-- Settings Page - Basic filter -->
+    <labels>
+        <fullName>MobileDashboard_basic_filter_field</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - field field</shortDescription>
+        <value>Field</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_operator</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - operator field</shortDescription>
+        <value>Operator</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_operator_equals</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - operator option - equals</shortDescription>
+        <value>equals</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_operator_not_equal</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - operator option - not equal</shortDescription>
+        <value>not equal to</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_operator_less_than</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - operator option - less than</shortDescription>
+        <value>less than</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_operator_greater_than</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - operator option - greater than</shortDescription>
+        <value>greater than</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_operator_less_or_equal</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - operator option - less or equal</shortDescription>
+        <value>less or equals</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_operator_greater_or_equal</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - operator option - greater or equal</shortDescription>
+        <value>greater or equals</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_operator_contains</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - operator option - contains</shortDescription>
+        <value>contains</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_date_operator</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - date operator field</shortDescription>
+        <value>Date Type</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_date_type_today</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - date type operator today</shortDescription>
+        <value>Today</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_date_type_next</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - date type operator next</shortDescription>
+        <value>Next...</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_date_type_last</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - date type operator last</shortDescription>
+        <value>Last...</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_date_type_on</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - date type operator on</shortDescription>
+        <value>On...</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_date_type_before</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>NBasic filter - date type operator before</shortDescription>
+        <value>Before...</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_date_type_after</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - date type operator after</shortDescription>
+        <value>After...</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_value</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - value field</shortDescription>
+        <value>Value</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_basic_filter_unit</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Basic filter - unit field</shortDescription>
+        <value>Unit</value>
+    </labels>
+
+    <!-- Settings Page - Icons List -->
+    <labels>
+        <fullName>MobileDashboard_icons_list_subtitle_status</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - sub title - Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_info</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Info</shortDescription>
+        <value>Info</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Success</shortDescription>
+        <value>Success</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_warning</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Warning</shortDescription>
+        <value>Warning</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_error</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Error</shortDescription>
+        <value>Error</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_new</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon New</shortDescription>
+        <value>New</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_in_progress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon In Progress</shortDescription>
+        <value>In Progress</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_cannot_complete</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Cannot Complete</shortDescription>
+        <value>Cannot Complete</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_subtitle_sentiment</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - sub title - Sentiment</shortDescription>
+        <value>Sentiment</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_positive</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Positive</shortDescription>
+        <value>Positive</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_neutral</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Neutral</shortDescription>
+        <value>Neutral</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_negative</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Negative</shortDescription>
+        <value>Negative</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_subtitle_record_types</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - sub title - Record Types</shortDescription>
+        <value>Record Types</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_case</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Case</shortDescription>
+        <value>Case</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_lead</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Lead</shortDescription>
+        <value>Lead</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_opportunity</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Opportunity</shortDescription>
+        <value>Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_quote</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Quote</shortDescription>
+        <value>Quote</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_subtitle_other</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - sub title - Other</shortDescription>
+        <value>Other</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_approval</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Approval</shortDescription>
+        <value>Approval</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_clock</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Clock</shortDescription>
+        <value>Clock</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_event</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Event</shortDescription>
+        <value>Event</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_favorite</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Favorite</shortDescription>
+        <value>Favorite</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_like</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Like</shortDescription>
+        <value>Like</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_dislike</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Dislike</shortDescription>
+        <value>Dislike</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_location</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Location</shortDescription>
+        <value>Location</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_priority</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon Priority</shortDescription>
+        <value>Priority</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_user</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon User</shortDescription>
+        <value>User</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_icons_list_people</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Icons list - name for icon People</shortDescription>
+        <value>People</value>
+    </labels>
+
+    <!-- Settings Page - Messages -->
+    <labels>
+        <fullName>MobileDashboard_settings_delete_card_warning_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Warning message - delete card warning title</shortDescription>
+        <value>Delete dashboard card?</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_delete_card_warning_body</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Warning message - delete card warning body</shortDescription>
+        <value>This removes the card from the dashboard.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_delete_sub_filter_warning_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Warning message - delete sub filter warning title</shortDescription>
+        <value>Delete card data?</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_delete_sub_filter_warning_body</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Warning message - delete sub filter warning body</shortDescription>
+        <value>This removes the card data from the dashboard card.</value>
+    </labels>
+
+    <!-- Settings Page - Error popups -->
+    <labels>
+        <fullName>MobileDashboard_settings_error_add_card</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Error popup - adding a card failed</shortDescription>
+        <value>We couldn't add the card. Try again later.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_error_save_card</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Error popup - editing a card failed</shortDescription>
+        <value>We couldn't save your changes. Try again later.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_error_delete_card</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Error popup - deleting a card failed</shortDescription>
+        <value>We couldn't delete the card. Try again later.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_error_duplicate_card</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Error popup - duplicate a card failed</shortDescription>
+        <value>We couldn't duplicate the card. Try again later.</value>
+    </labels>
+
+    <!-- Re-usable -->
+    <labels>
+        <fullName>MobileDashboard_card_object_field</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Object field</shortDescription>
+        <value>Object</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_card_filter_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Filter title</shortDescription>
+        <value>Filter</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_preview_title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Preview title</shortDescription>
+        <value>Preview</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_preview_title_infobubble</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Preview title infobubble</shortDescription>
+        <value>Preview display can differ slightly from actual mobile device display.</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_duplicate_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Duplicate button text</shortDescription>
+        <value>Duplicate</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_delete_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Delete button text</shortDescription>
+        <value>Delete</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_save_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Save button text</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_cancel_button</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Cancel button text</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>MobileDashboard_settings_select_placeholder</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <categories>MobileDashboard</categories>
+        <shortDescription>Select comboboxes placeholder</shortDescription>
+        <value>Select...</value>
+    </labels>
+</CustomLabels>

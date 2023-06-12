@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <name>MobileDashboard_settings_header</name>
+        <label>Field Service</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_title</name>
+        <label>Pulpit dla urządzeń przenośnych</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_description</name>
+        <label>Konfiguruj swoje karty pulpitów. Dla lepszej wydajności ogranicz pulpit do pięciu kart.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_add_card_button</name>
+        <label>Dodaj kartę</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_edit_button</name>
+        <label>Edytuj</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_more_options</name>
+        <label>Więcej opcji</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_up</name>
+        <label>Przenieś w górę</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_dn</name>
+        <label>Przenieś w dół</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_today</name>
+        <label>dziś</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_next</name>
+        <label>następne</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_last</name>
+        <label>ostatnie</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_days</name>
+        <label>dni</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_weeks</name>
+        <label>tygodnie</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_months</name>
+        <label>miesiące</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_and</name>
+        <label>oraz</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_or</name>
+        <label>lub</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_new_card_modal_title</name>
+        <label>Nowa karta pulpitu</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_edit_card_modal_title</name>
+        <label>Edytuj kartę pulpitu</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_tab_name</name>
+        <label>Szczegóły</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_name_field</name>
+        <label>Nazwa</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_field</name>
+        <label>Logika filtra</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
+        <label>Po wybraniu obiektu zdefiniuj, które rekordy znajdą się na karcie.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_and</name>
+        <label>Spełnione są wszystkie warunki (ORAZ)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_or</name>
+        <label>Spełniony jest dowolny warunek (LUB)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_custom</name>
+        <label>Spełniony jest niestandardowy warunek</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_and_between_logic</name>
+        <label>ORAZ</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_or_between_logic</name>
+        <label>LUB</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_remove_condition_button</name>
+        <label>Usuń logikę</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_add_condition_button</name>
+        <label>Dodaj logikę</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_custom_logic_field</name>
+        <label>Logika niestandardowa</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Podaj logikę warunku. Użyj liczb, by opisywać każdy warunek. Użyj ORAZ lub LUB, by podać kombinację warunków. Dodaj nawiasy, by pogrupować części łańcuchów znaków. Na przykład: 1 ORAZ (2 LUB 3) sprawdza, czy pierwszy warunek jest prawdziwy i czy prawdziwy jest drugi lub trzeci warunek.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_name</name>
+        <label>Projekt</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_title</name>
+        <label>Układ kart</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_title</name>
+        <label>Obok siebie</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Zapisuje przestrzeń poziomą. Zalecane dla krótkich nazw pól.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
+        <label>Stos</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Używa więcej przestrzeni pionowej. Zalecane dla długich nazw pól.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
+        <label>Dane karty</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_add_data_button</name>
+        <label>Dodaj dane</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_label_field</name>
+        <label>Etykieta</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_icon_field</name>
+        <label>Ikona</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field</name>
+        <label>Kolor</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field_infobubble</name>
+        <label>Dla najlepszej widoczności wybierz kolory bardzo kontrastowe.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_options</name>
+        <label>Opcje</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_field</name>
+        <label>Pole</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator</name>
+        <label>Operator</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_equals</name>
+        <label>wynosi</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_not_equal</name>
+        <label>nie jest równy</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_than</name>
+        <label>mniej niż</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_than</name>
+        <label>więcej niż</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_or_equal</name>
+        <label>mniejszy lub równy</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_or_equal</name>
+        <label>większy lub równy</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_contains</name>
+        <label>zawiera</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_operator</name>
+        <label>Typ danych</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_today</name>
+        <label>Dziś</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_next</name>
+        <label>Dalej...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_last</name>
+        <label>Ostatni...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_on</name>
+        <label>Dn...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_before</name>
+        <label>Przed...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_after</name>
+        <label>Po...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_value</name>
+        <label>Wartość</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_unit</name>
+        <label>Jednostka</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_status</name>
+        <label>Status</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_info</name>
+        <label>Informacje</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_success</name>
+        <label>Powodzenie</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_warning</name>
+        <label>Ostrzeżenie</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_error</name>
+        <label>Błąd</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_new</name>
+        <label>Nowy</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_in_progress</name>
+        <label>W trakcie trwania</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_cannot_complete</name>
+        <label>Nie można zakończyć</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_sentiment</name>
+        <label>Sentyment</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_positive</name>
+        <label>Dodatni</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_neutral</name>
+        <label>Neutralny</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_negative</name>
+        <label>Ujemny</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_record_types</name>
+        <label>Typy rekordów</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_case</name>
+        <label>Sprawa</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_lead</name>
+        <label>Potencjalny klient</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_opportunity</name>
+        <label>Okazja biznesowa</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_quote</name>
+        <label>Oferta</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_other</name>
+        <label>Inne</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_approval</name>
+        <label>Zatwierdzenie</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_clock</name>
+        <label>Zegar</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_event</name>
+        <label>Zdarzenie</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_favorite</name>
+        <label>Ulubione</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_like</name>
+        <label>Lubię</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_dislike</name>
+        <label>Nie lubię</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_location</name>
+        <label>Lokalizacja</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_priority</name>
+        <label>Priorytet</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_user</name>
+        <label>Użytkownik</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_people</name>
+        <label>Osoby</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_title</name>
+        <label>Usunąć kartę pulpitu?</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_body</name>
+        <label>Spowoduje to usunięcie karty z pulpitu.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_title</name>
+        <label>Usunąć dane karty?</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
+        <label>Spowoduje to usunięcie danych karty z karty pulpitu.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_add_card</name>
+        <label>Nie udało nam się dodać karty. Spróbuj ponownie później.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_save_card</name>
+        <label>Nie udało nam się zapisać Twoich zmian. Spróbuj ponownie później.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_delete_card</name>
+        <label>Nie mogliśmy usunąć karty. Spróbuj ponownie później.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_duplicate_card</name>
+        <label>Nie udało nam się duplikować karty. Spróbuj ponownie później.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_object_field</name>
+        <label>Obiekt</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_filter_title</name>
+        <label>Filtr</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title</name>
+        <label>Podgląd</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title_infobubble</name>
+        <label>Ekran podglądu może się nieco różnić od rzeczywistego wyświetlacza na urządzeniu przenośnym.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_duplicate_button</name>
+        <label>Duplikuj</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_button</name>
+        <label>Usuń</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_save_button</name>
+        <label>Zapisz</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_cancel_button</name>
+        <label>Anuluj</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_select_placeholder</name>
+        <label>Wybierz...</label>
+    </customLabels>
+</Translations>

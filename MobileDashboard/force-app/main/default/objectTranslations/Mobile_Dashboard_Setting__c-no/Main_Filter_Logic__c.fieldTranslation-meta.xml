@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Main_Filter_Logic__c</name>
+    <label>Hovedfilterlogikk</label>
+    <picklistValues>
+        <masterLabel>AND</masterLabel>
+        <translation>AND</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OR</masterLabel>
+        <translation>OR</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOM</masterLabel>
+        <translation>TILPASSET</translation>
+    </picklistValues>
+</CustomFieldTranslation>
