@@ -36,4 +36,4 @@ If you choose to let mobile workers create the service appointment, only a servi
 	1. For Action Type, select **Lightning Web Components**.
 	2. For Lightning Web Component, select **c:followUpAppointmentMain**.
 9. Add the quick action to the required layout.
-10. From the Field Service mobile app, open the LWC to verify that everything works as expected on a mobile device.
+10. Log in to the Field Service mobile app as a mobile user and open the LWC to verify that everything works as expected on a mobile device.
