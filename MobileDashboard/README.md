@@ -14,6 +14,7 @@ Let your mobile workers easily see an overview of their data. For example, show 
 6. Review the details of the cards and change them as needed. 
 	- The preview cards show a dummy result of 1 record for each query.
 	- When the result of a query includes more than 2000 records, the dashboard shows 2000+ instead of the exact number.
+ 	- If the tabs get stuck when adding or editing a card, see [Enable Lightning Web Security in an Org](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.security_lwsec_enable).
 7. Make sure the queried fields are visible. Otherwise, the query doesn’t return any results.
 	1. From the object management settings for the object whose fields you want to make visible, go to **Fields & Relationships**.
 	2. For the required fields, click **Set Field-Level Security** and make the field-level security visible for all profiles.
