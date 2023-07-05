@@ -1,6 +1,8 @@
 # Set Up the Mobile Dashboard Lightning Web Component (LWC)
 Let your mobile workers easily see an overview of their data. For example, show a dashboard that lets workers know where they stand with the company’s KPIs. That way, they always know what they need to work on.
 
+**Note:** Mobile Dashboard LWC is an open-source component and is not supported by Salesforce Support.
+
 1. Enable access to LWCs. See [Define a Permission Set for Your Org](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/quickstart_lwc_action_org_setup.htm#quickstart_lwc_action_org_setup_create_permset).
 2. Enable the permission set.
 	1. From Setup, in the Quick Find box, enter `Users`, and then select **Users**.
