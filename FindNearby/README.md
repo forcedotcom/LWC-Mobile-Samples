@@ -2,6 +2,8 @@
 # Set Up the Find Nearby Lightning Web Component (LWC)
 Help your mobile workers figure out what records are close by. For example, mobile workers can search for service appointments to see where to go next. Or, they can search for a part they need to complete the task.
 
+**Note:** Find Nearby LWC is an open-source component and is not supported by Salesforce Support.
+
 ## Before You Begin
 We recommend taking the [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components) Trailhead to learn how to:
 * Set up your Salesforce DX environment
