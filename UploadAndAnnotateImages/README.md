@@ -2,7 +2,7 @@
 
 Let your mobile workers add images to their work orders or service appointments. The mobile workers can then crop or draw on the image to emphasize certain areas. For example, the mobile worker can add an image of a part that must be fixed and draw an arrow to emphasize the broken area. You can set the size of the images in your configuration.
 
-**Note**: Upload and Annotate Images LWC is an open-source product and is not supported by Salesforce Support.
+**Note**: Upload and Annotate Images LWC is an open-source component and is not supported by Salesforce Support.
 
 ## Before You Begin
 
