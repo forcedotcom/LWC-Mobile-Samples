@@ -184,9 +184,15 @@ public with sharing class DashboardSettingsService {
 
     private static boolean isAuthorized() {
         try {
-            return [SELECT Id FROM Profile WHERE Name = 'System Administrator'].Id == System.UserInfo.getProfileId();
+            List<Profile> adminProfiles = [SELECT Id FROM Profile WHERE PermissionsContentAdministrator = true];
+            for (Profile p : adminProfiles) {
+                if (p.Id == System.UserInfo.getProfileId()) {
+                    return true;
+                }
+            }
+            return false;
         } catch (Exception e) {
-            throw new HandledException(e.getMessage() );
+            throw new HandledException(e.getMessage());
         }
     }
 }
