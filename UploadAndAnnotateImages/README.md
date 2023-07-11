@@ -37,11 +37,6 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
       7. `preserveTransparency`: Determines whether the transparency info of the input image (if any) should be preserved or not. Defaults to `true`. If the input image is a GIF/PNG and this flag is set to true the output image is a PNG. For all other cases, the output is a JPEG.
       8. `backgroundColor`: Defines a CSS color as described [here](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value). Defaults to white. When `preserveTransparency` is set to `false`, the output image's background is set to this color before the input image is resized and drawn on top.
 3. Authorize your org and deploy the code to your org. See [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components).
-4. Grant access to the LWC's users.
-   1. From Setup, in the Quick Find box, enter `Users`, and then select **Profiles**.
-   2. Open the required profile.
-   3. Under Enabled Apex Class Access, click **Edit** and add ImageCaptureController.
-   4. Give the users access to the records you want them to see.
-5. Connect the LWC to a quick action on any object that's supported by a [ContentDocumentLink](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contentdocumentlink.htm#:~:text=Account%2C%20Accreditation%2C%20ActivationTarget,WorkType%2C%20WorkTypeGroup%2C%20WorkTypeGroupMember) object. See [Create Quick Actions for the Field Service Mobile App](https://help.salesforce.com/s/articleView?id=sf.mfs_quick_actions.htm&type=5).
+4. Connect the LWC to a quick action on any object that's supported by a [ContentDocumentLink](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_contentdocumentlink.htm#:~:text=Account%2C%20Accreditation%2C%20ActivationTarget,WorkType%2C%20WorkTypeGroup%2C%20WorkTypeGroupMember) object. See [Create Quick Actions for the Field Service Mobile App](https://help.salesforce.com/s/articleView?id=sf.mfs_quick_actions.htm&type=5).
    1. For Action Type, select **Lightning Web Components**.
    2. For Lightning Web Component, select **c:imageCapture**.
