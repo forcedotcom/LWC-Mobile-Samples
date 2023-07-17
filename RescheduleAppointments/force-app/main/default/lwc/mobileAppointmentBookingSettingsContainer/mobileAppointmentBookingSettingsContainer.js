@@ -15,8 +15,8 @@ export default class MobileAppointmentBookingSettingsContainer extends Lightning
   recommendedScore = 80;
   _serviceAppointmentId;
 
-  @api operatingHours = "Gold Appointments Calendar";
-  @api schedulingPolicy = "forAA";
+  @api operatingHours = "Israel OH";
+  @api schedulingPolicy = "rescheduleLWC";
 
   @api schedulingHorizonUnit = "Months";
   @api schedulingHorizonValue = "3";
@@ -44,6 +44,7 @@ export default class MobileAppointmentBookingSettingsContainer extends Lightning
 
   connectedCallback() {
     const myStyle = document.createElement("style");
+    // eslint-disable-next-line @lwc/lwc/no-inner-html
     myStyle.innerHTML = overrideCSS;
     document.head.appendChild(myStyle);
   }

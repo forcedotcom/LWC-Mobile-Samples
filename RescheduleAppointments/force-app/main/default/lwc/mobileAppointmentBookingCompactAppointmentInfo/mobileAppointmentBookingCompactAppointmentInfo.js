@@ -6,8 +6,6 @@ export default class MobileAppointmentBookingCompactAppointmentInfo extends Ligh
   LABELS = customLabels;
   serviceAppointmentObjectFieldsList;
   _serviceAppointmentObject;
-
-  @api assignToName;
   workTypeName = "";
   appointmentNumber = "";
   endDate;

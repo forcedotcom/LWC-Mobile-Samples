@@ -1,4 +1,6 @@
-import { LightningElement, api, track } from "lwc";
+/* eslint-disable @lwc/lwc/no-dupe-class-members */
+/* eslint-disable @lwc/lwc/no-api-reassignments */
+import { LightningElement, api, track, wire } from "lwc";
 import getServiceAppointment from "@salesforce/apex/AppointmentController.getServiceAppointment";
 import getSlotsByAssignmentMethod from "@salesforce/apex/AppointmentController.getSlotsByAssignmentMethod";
 import getSchedulingPolicyId from "@salesforce/apex/AppointmentController.getSchedulingPolicyId";
@@ -10,9 +12,20 @@ import cloneWorkOrder from "@salesforce/apex/AppointmentController.cloneWorkOrde
 import deleteClonedAppointmentData from "@salesforce/apex/AppointmentController.deleteClonedAppointmentData";
 import isUserExcludedResource from "@salesforce/apex/AppointmentController.isUserExcludedResource";
 import convertTimeToOtherTimeZone from "@salesforce/apex/AppointmentController.convertTimeToOtherTimeZone";
+import assignCurrentUserAsRequiredResource from "@salesforce/apex/AppointmentController.assignCurrentUserAsRequiredResource";
 import customLabels from "./labels";
 import { convertDateUTCtoLocal } from "c/mobileAppointmentBookingUtils";
 import getUserName from "@salesforce/apex/AppointmentController.getUserName";
+import { getRecord, notifyRecordUpdateAvailable } from "lightning/uiRecordApi";
+import ARRIVAL_WINDOW_START_FIELD from "@salesforce/schema/ServiceAppointment.ArrivalWindowStartTime";
+import ARRIVAL_WINDOW_END_FIELD from "@salesforce/schema/ServiceAppointment.ArrivalWindowEndTime";
+import PARENT_RECORD_FIELD from "@salesforce/schema/ServiceAppointment.ParentRecordId";
+
+const fields = [
+  ARRIVAL_WINDOW_START_FIELD,
+  ARRIVAL_WINDOW_END_FIELD,
+  PARENT_RECORD_FIELD
+];
 
 const assignmentMethod = {
   ASSIGN_TO_ME: "assignToMe",
@@ -56,7 +69,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   ServiceResourceName;
   serviceAppointmentObject;
   @api timeSlotObject;
-  @track selectedDate;
   @track isSlots = true;
   @track showCalenderInFullScreen = false;
   headlineDate;
@@ -256,7 +268,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   renderedCallback() {
-    if (this._previousServiceAppointmentId != this.serviceAppointmentId) {
+    if (this._previousServiceAppointmentId !== this.serviceAppointmentId) {
       console.log(
         "getting new Service appointment:" +
           this.serviceAppointmentId +
@@ -267,6 +279,10 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
       this.prepareInitialDataAndAssignmentData();
     }
   }
+
+  // Wire a record
+  @wire(getRecord, { recordId: "$serviceAppointmentId", fields: fields })
+  record;
 
   calcAssignmentMethod() {
     if (this.enableAssignToMe && this.enableAssignToEveryAvailable) {
@@ -362,6 +378,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
   createSAObject(data) {
     let appointmentFields = {};
+    // eslint-disable-next-line no-unused-expressions
     data.fields &&
       Object.keys(data.fields).forEach((appointmentField) => {
         appointmentFields[appointmentField] = {
@@ -373,10 +390,6 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
     console.log("createSAObject::: " + JSON.stringify(appointmentFields));
     return appointmentFields;
-  }
-
-  onCustomEventCalled(event) {
-    console.log("customEvent handled from lp");
   }
 
   checkServiceAppointmentStatus(currentSAStatus) {
@@ -421,11 +434,13 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   calculateMaxValidHorizonDate() {
+    var currentDate;
+    var targetDate;
     if (this.schedulingHorizonValue && this.selectedHorizonUnit) {
-      var currentDate = new Date();
-      var targetDate;
+      currentDate = new Date();
       let schedulingHorizonValueToNumber = parseInt(
-        this.schedulingHorizonValue
+        this.schedulingHorizonValue,
+        10
       );
       switch (this.selectedHorizonUnit) {
         case this.SCHEDULING_UNIT_WEEK:
@@ -454,10 +469,9 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
       if (this.serviceAppointmentDueDate < targetDate)
         return this.serviceAppointmentDueDate;
-      else return targetDate;
-    } else {
-      return this.serviceAppointmentDueDate;
+      return targetDate;
     }
+    return this.serviceAppointmentDueDate;
   }
 
   getDateWithoutTime(date) {
@@ -477,25 +491,27 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   getFirstDayOfWeek(date, index) {
+    var newDate;
     var start = index >= 0 ? index : 0;
     var d = new Date(date);
     var day = d.getDay();
     var diff = d.getDate() - day + (start > day ? start - 7 : start);
     d.setDate(diff);
     console.log("First day of week is : " + d.getDate());
-    var newDate = new Date(
+    newDate = new Date(
       d.setDate(d.getDate() - this.noOfDaysBeforeAfterWeek)
     ).setHours(0, 0, 0, 0);
     return newDate;
   }
 
   getLastDayOfWeek(date, index) {
+    var newDate;
     var start = index >= 0 ? index : 0;
     var d = new Date(date);
     var day = d.getDay();
     var diff = d.getDate() - day + (start > day ? start - 1 : 6 + start);
     d.setDate(diff);
-    var newDate = new Date(
+    newDate = new Date(
       d.setDate(d.getDate() + this.noOfDaysBeforeAfterWeek)
     ).setHours(0, 0, 0, 0);
     return newDate;
@@ -504,14 +520,14 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   isInArray(value) {
     let currentDateArray = [];
 
-    if (this.currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+    if (this.currentAssignmentMethod === assignmentMethod.ASSIGN_TO_ME) {
       currentDateArray = this.dateArrayForQueryCurrentMobileWorkwerSlots;
     } else {
       currentDateArray = this.dateArrayForQueryAllMobilesWorkerSlots;
     }
 
-    for (var i = 0; i < currentDateArray.length; i++) {
-      if (value.getTime() == currentDateArray[i].getTime()) {
+    for (let i = 0; i < currentDateArray.length; i++) {
+      if (value.getTime() === currentDateArray[i].getTime()) {
         return true;
       }
     }
@@ -536,9 +552,10 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   getLastSlotFromTheArray(slotArray) {
+    var timeSlot;
     var lastdate;
     if (slotArray.length > 0) {
-      var timeSlot = slotArray[slotArray.length - 1].split("#");
+      timeSlot = slotArray[slotArray.length - 1].split("#");
       lastdate = this.getDateWithoutTime(
         Date.parse(timeSlot[0].replace(/-/g, "/"))
       );
@@ -549,18 +566,20 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
   addDatesToCashArray(start, end) {
     var currentDate = start;
+    var addingDate;
+    var tempDate;
     let currentDateArray = [];
 
-    if (this.currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+    if (this.currentAssignmentMethod === assignmentMethod.ASSIGN_TO_ME) {
       currentDateArray = this.dateArrayForQueryCurrentMobileWorkwerSlots;
     } else {
       currentDateArray = this.dateArrayForQueryAllMobilesWorkerSlots;
     }
 
     while (currentDate <= end) {
-      var addingDate = new Date(currentDate);
+      addingDate = new Date(currentDate);
       currentDateArray.push(addingDate);
-      var tempDate = currentDate.setDate(currentDate.getDate() + 1);
+      tempDate = currentDate.setDate(currentDate.getDate() + 1);
       currentDate = new Date(tempDate);
     }
 
@@ -568,7 +587,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   removeDatesFromCashArray() {
-    if (this.currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+    if (this.currentAssignmentMethod === assignmentMethod.ASSIGN_TO_ME) {
       this.dateArrayForQueryCurrentMobileWorkwerSlots = [];
     } else {
       this.dateArrayForQueryAllMobilesWorkerSlots = [];
@@ -576,13 +595,15 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   showAlertWithError(errorMessage) {
+    // eslint-disable-next-line no-alert
     alert(errorMessage);
   }
 
   handleGetSlotQueryForSelectedDate(event) {
+    var firstDateOfWeek;
     event.stopPropagation();
     event.preventDefault();
-    var firstDateOfWeek = this.getFirstDayOfWeek(event.detail.selectedDate);
+    firstDateOfWeek = this.getFirstDayOfWeek(event.detail.selectedDate);
     if (this.dataLoaded) {
       this.lockScrolling();
       console.log("handleGetSlotQueryForSelectedDate", firstDateOfWeek);
@@ -591,14 +612,17 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   handleGetSlotQueryForSelectedDateRange(selectedDate) {
+    var firstDateOfWeek;
+    var lastDateOfWeek;
+    var loopdate;
     this.lockScrolling();
     console.log("handleGetSlotQueryForSelectedDateRange", selectedDate);
-    var firstDateOfWeek = selectedDate;
+    firstDateOfWeek = selectedDate;
     if (firstDateOfWeek <= new Date()) {
       firstDateOfWeek = new Date();
     }
     console.log("handleGetSlotQueryForSelectedDateRange", selectedDate);
-    var lastDateOfWeek = this.getLastDayOfWeek(firstDateOfWeek, 0);
+    lastDateOfWeek = this.getLastDayOfWeek(firstDateOfWeek, 0);
     if (lastDateOfWeek > this.maxValidCalendarDate) {
       lastDateOfWeek = this.maxValidCalendarDate;
     }
@@ -609,7 +633,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         lastDateOfWeek
     );
 
-    var loopdate = new Date(firstDateOfWeek);
+    loopdate = new Date(firstDateOfWeek);
     loopdate = new Date(this.getDateWithoutTime(loopdate));
 
     console.log("Date in the Array is : " + loopdate);
@@ -660,58 +684,84 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
               this.sleep(3000).then(() => {
                 var lcaletime =
                   Intl.DateTimeFormat().resolvedOptions().timeZone;
-                console.log("getSlots method called");
-                getSlotsByAssignmentMethod({
-                  serviceAppointmentId: saData.dummyServiceAppointmentId,
-                  operatingHoursId: this.operatingHoursId,
-                  schedulingPolicyId: this.schedulingPolicyId,
-                  arrivalWindowFlag: this.showExactArrivalTime,
-                  userId: this.userId,
-                  currentAssignmentMethod: this.currentAssignmentMethod,
-                  cleanupRequired: this.isCleanupRequired,
-                  localetimezone: lcaletime
+                assignCurrentUserAsRequiredResource({
+                  serviceAppointmentId: this.dummySAid,
+                  currentAssignmentMethod: this.currentAssignmentMethod
                 })
-                  .then((data) => {
-                    console.log(
-                      "getSlotsByAssignmentMethod allowScrolling::::"
-                    );
-                    this.allowScrolling();
-                    console.log("Time zone of the sa is : " + data.timeZone);
-                    this.timeZoneOfDummySA = data.timeZone;
-
-                    if (data.error) {
-                      console.log("Error in getting slots : " + data.error);
-                      this.showAlertWithError(
-                        this.LABELS
-                          .Reschedule_Appointment_confirmation_failure_message
-                      );
-                      this.timeSlotDateWise = [];
-                      this.deleteDummySa(saData.dummyServiceAppointmentId);
+                  .then((dataAfterResourceAssignment) => {
+                    if (dataAfterResourceAssignment.error) {
+                      this.deleteDummySa(this.dummySAid);
                     } else {
-                      this.timeSlotWiseTemp = data.timeSlotList;
-                      this.timeSlotDateWise = this.timeSlotWiseTemp;
+                      getSlotsByAssignmentMethod({
+                        serviceAppointmentId: this.dummySAid,
+                        operatingHoursId: this.operatingHoursId,
+                        schedulingPolicyId: this.schedulingPolicyId,
+                        arrivalWindowFlag: this.showExactArrivalTime,
+                        localetimezone: lcaletime
+                      })
+                        .then((data) => {
+                          console.log(
+                            "getSlotsByAssignmentMethod allowScrolling::::"
+                          );
+                          this.allowScrolling();
+                          console.log(
+                            "Time zone of the sa is : " + data.timeZone
+                          );
+                          this.timeZoneOfDummySA = data.timeZone;
 
-                      var tempDate = loopdate.setDate(
-                        loopdate.getDate() + this.maxDaysToGetAppointmentSlots
-                      );
-                      loopdate = new Date(tempDate);
-                      console.log(
-                        "New Loop date is : " +
-                          loopdate +
-                          "   and last day of week is : " +
-                          lastDateOfWeek
-                      );
-                      if (loopdate <= lastDateOfWeek) {
-                        this.handleGetSlotQueryForSelectedDateRange(loopdate);
-                      } else {
-                        this.deleteDummySa(saData.dummyServiceAppointmentId);
-                      }
+                          if (data.error) {
+                            console.log(
+                              "Error in getting slots : " + data.error
+                            );
+                            this.showAlertWithError(
+                              this.LABELS
+                                .Reschedule_Appointment_confirmation_failure_message
+                            );
+                            this.timeSlotDateWise = [];
+                            this.deleteDummySa(
+                              saData.dummyServiceAppointmentId
+                            );
+                          } else {
+                            this.timeSlotWiseTemp = data.timeSlotList;
+                            this.timeSlotDateWise = this.timeSlotWiseTemp;
+
+                            let tempDate = loopdate.setDate(
+                              loopdate.getDate() +
+                                this.maxDaysToGetAppointmentSlots
+                            );
+                            loopdate = new Date(tempDate);
+                            console.log(
+                              "New Loop date is : " +
+                                loopdate +
+                                "   and last day of week is : " +
+                                lastDateOfWeek
+                            );
+                            if (loopdate <= lastDateOfWeek) {
+                              this.handleGetSlotQueryForSelectedDateRange(
+                                loopdate
+                              );
+                            } else {
+                              this.deleteDummySa(
+                                saData.dummyServiceAppointmentId
+                              );
+                            }
+                          }
+                        })
+                        .catch((error) => {
+                          this.deleteDummySa(saData.dummyServiceAppointmentId);
+                          console.log(
+                            "Error while executing FSL API :",
+                            +error
+                          );
+                          this.timeSlotDateWise = [];
+                        });
                     }
                   })
                   .catch((error) => {
-                    this.deleteDummySa(saData.dummyServiceAppointmentId);
-                    console.log("Error while executing FSL API :", +error);
-                    this.timeSlotDateWise = [];
+                    console.log(
+                      "Error While assigning current user as required resource: " +
+                        error
+                    );
                   });
               });
             } else if (saData.error) {
@@ -722,7 +772,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
           })
           .catch((error) => {
             // delete SA/WO incase transaction fails
-            this.deleteDummySa(saData.dummyServiceAppointmentId);
+            this.deleteDummySa(this.dummyServiceAppointmentId);
             console.log("Errror while creating dummy SA  :", +error);
             this.timeSlotDateWise = [];
             this.allowScrolling();
@@ -731,7 +781,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         // IF THE DATE IS BEFORE ARRIVAL WINDOW START DATE
         console.log("Loop date is less than minimum valid date");
 
-        var tempDate = loopdate.setDate(
+        let tempDate = loopdate.setDate(
           loopdate.getDate() + this.maxDaysToGetAppointmentSlots
         );
         loopdate = new Date(tempDate);
@@ -743,7 +793,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
       }
     } else {
       // If the date are already cache, take the slot from it and run the query for next date;
-      var tempDate = loopdate.setDate(
+      let tempDate = loopdate.setDate(
         loopdate.getDate() + this.maxDaysToGetAppointmentSlots
       );
       loopdate = new Date(tempDate);
@@ -758,6 +808,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   sleep(ms) {
+    // eslint-disable-next-line @lwc/lwc/no-async-operation
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
@@ -824,39 +875,66 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
                 .handleSchedulingResponse(false);
             } else {
               // If the transaction Success, run the FSL schedule service
-              scheduleSA({
+              assignCurrentUserAsRequiredResource({
                 serviceAppointmentId: this.serviceAppointmentId,
-                schedulingPolicyId: this.schedulingPolicyId,
-                userId: this.userId,
                 currentAssignmentMethod: this.currentAssignmentMethod
               })
-                .then((data) => {
-                  if (data.error) {
-                    console.log(
-                      "Error while executing FSL API : " +
-                        "  " +
-                        JSON.stringify(data.error)
-                    );
-                    this.template
-                      .querySelector(
-                        "c-mobile-appointment-booking-scheduling-container"
-                      )
-                      .handleSchedulingResponse(false);
+                .then((requiresResourceAssignmentResults) => {
+                  if (requiresResourceAssignmentResults.error) {
+                    console.log("error");
                   } else {
-                    console.log(
-                      "Service appointment Scheduled : " + JSON.stringify(data)
-                    );
-                    this.isAppointmentConfirmed = true;
-                    // Update Data After successfull booking
-                    this.updateCompactInfoAfterReschedule(
-                      selectedSlotStart,
-                      selectedSlotEnd
-                    );
-                    this.template
-                      .querySelector(
-                        "c-mobile-appointment-booking-scheduling-container"
-                      )
-                      .handleSchedulingResponse(true);
+                    scheduleSA({
+                      serviceAppointmentId: this.serviceAppointmentId,
+                      schedulingPolicyId: this.schedulingPolicyId,
+                      userId: this.userId
+                    })
+                      .then((scheduleData) => {
+                        if (scheduleData.error) {
+                          console.log(
+                            "Error while executing FSL API : " +
+                              "  " +
+                              JSON.stringify(scheduleData.error)
+                          );
+                          this.template
+                            .querySelector(
+                              "c-mobile-appointment-booking-scheduling-container"
+                            )
+                            .handleSchedulingResponse(false);
+                        } else {
+                          console.log(
+                            "Service appointment Scheduled : " +
+                              JSON.stringify(scheduleData)
+                          );
+                          this.isAppointmentConfirmed = true;
+                          // Update Data After successfull booking
+                          this.updateCompactInfoAfterReschedule(
+                            selectedSlotStart,
+                            selectedSlotEnd
+                          );
+                          this.template
+                            .querySelector(
+                              "c-mobile-appointment-booking-scheduling-container"
+                            )
+                            .handleSchedulingResponse(true);
+
+                          notifyRecordUpdateAvailable([
+                            { recordId: this.serviceAppointmentId }
+                          ]);
+                        }
+                      })
+                      .catch((error) => {
+                        this.revertSA();
+                        console.log(
+                          "Error while executing FSL API : " +
+                            "  " +
+                            JSON.stringify(error)
+                        );
+                        this.template
+                          .querySelector(
+                            "c-mobile-appointment-booking-scheduling-container"
+                          )
+                          .handleSchedulingResponse(false);
+                      });
                   }
                 })
                 .catch((error) => {
@@ -907,15 +985,15 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   onWeekChangeEvent(event) {
     this.selectedDate = event.detail.date;
     console.log("On week change called");
-    const returnValue = this.template
+    this.template
       .querySelector("c-mobile-appointment-booking-slots-container")
       .onWeekUpdated(this.selectedDate);
     this.runApexQueryToChangeEarlistStartDate(this.selectedDate);
   }
 
   onSlotSelection(event) {
-    e.stopPropagation();
-    e.preventDefault();
+    event.stopPropagation();
+    event.preventDefault();
     this.selectedSlotStart = event.detail.startDate;
     this.selectedSlotEnd = event.detail.endDate;
     this.setNewAppointmentSelectedText(
@@ -925,7 +1003,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
   }
 
   onCustomEventCalled(event) {
-    e.preventDefault();
+    event.preventDefault();
     switch (event.detail.name) {
       case "trigergetslotapi": {
         this.runApexQueryToChangeEarlistStartDate(event.detail.value);
@@ -940,22 +1018,27 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
         break;
       }
       default: {
+        break;
       }
     }
   }
 
   getHeadlineDate() {
     const dateOptions = { weekday: "long", month: "long", day: "numeric" };
-    if (this.ArrivalWindowStartTime == "null" || this.showExactArrivalTime) {
-      var startDate = convertDateUTCtoLocal(this.SchedStartTime);
-      var endDate = convertDateUTCtoLocal(this.SchedEndTime);
+    var startDate;
+    var endDate;
+    var dateLong;
+    var time;
+    if (this.ArrivalWindowStartTime === "null" || this.showExactArrivalTime) {
+      startDate = convertDateUTCtoLocal(this.SchedStartTime);
+      endDate = convertDateUTCtoLocal(this.SchedEndTime);
     } else {
-      var startDate = this.ArrivalWindowStartTime;
-      var endDate = convertDateUTCtoLocal(this.ArrivalWindowEndTime);
+      startDate = this.ArrivalWindowStartTime;
+      endDate = convertDateUTCtoLocal(this.ArrivalWindowEndTime);
     }
     if (startDate && endDate) {
-      var dateLong = startDate.toLocaleDateString(undefined, dateOptions);
-      var time =
+      dateLong = startDate.toLocaleDateString(undefined, dateOptions);
+      time =
         this.getFormattedTimeFromDate(startDate) +
         " - " +
         this.getFormattedTimeFromDate(endDate);
@@ -1147,7 +1230,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
 
   setAssigNameByAssignMethod() {
     if (this._currentAssignmentMethod) {
-      if (this._currentAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+      if (this._currentAssignmentMethod === assignmentMethod.ASSIGN_TO_ME) {
         this.assignToName =
           this.LABELS.Reschedule_Appointment_assigned_to_you.replace(
             "{0}",
