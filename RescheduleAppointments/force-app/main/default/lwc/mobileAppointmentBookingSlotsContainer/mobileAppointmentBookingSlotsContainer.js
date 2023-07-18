@@ -1,5 +1,5 @@
-import ContactMobile from "@salesforce/schema/Case.ContactMobile";
-import { LightningElement, api, track } from "lwc";
+/* eslint-disable @lwc/lwc/no-api-reassignments */
+import { LightningElement, api } from "lwc";
 import customLabels from "./labels";
 
 const assignmentMethod = {
@@ -20,7 +20,6 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   _selectedDate;
   _showExactArrivalTime;
   @api maxValidCalendarDate;
-  pageTitle;
   timeSlotTitle;
   nonAvailableDateArray = [];
   _noOfDaysBeforeAfterWeek = 2;
@@ -170,29 +169,29 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   }
 
   formatTimeSlots(timeSlotArray) {
-    var formattedSlotArr = [];
+    let formattedSlotArr = [];
     console.log("---------- Time slots ----------");
-    var currentDate = new Date();
+    let currentDate = new Date();
     for (let i = 0; i < timeSlotArray.length; i++) {
-      var array = [];
-      array["dateTime"] = timeSlotArray[i];
+      let array = [];
+      array.dateTime = timeSlotArray[i];
       console.log("Time slot : " + timeSlotArray[i]);
-      var timeSlot = timeSlotArray[i].split("#");
-      var timeSlotDate = new Date(timeSlot[1].replace(/-/g, "/"));
-      array["grade"] = timeSlot[2];
+      let timeSlot = timeSlotArray[i].split("#");
+      let timeSlotDate = new Date(timeSlot[1].replace(/-/g, "/"));
+      array.grade = timeSlot[2];
       if (timeSlotDate > currentDate) {
         if (this.showExactArrivalTime) {
           // SHOW ONLY ARRIVAL TIME INSTEAD OF WINDOW
-          array["time"] = this.getTimeFromDate(timeSlot[0]);
+          array.time = this.getTimeFromDate(timeSlot[0]);
         } else {
           // SHOW ARRIVAL WINDOW IF FALSE
-          array["time"] =
+          array.time =
             this.getTimeFromDate(timeSlot[0]) +
             "-" +
             this.getTimeFromDate(timeSlot[1]);
         }
-        array["date"] = this.getDateWithoutTime(Date.parse(timeSlotDate));
-        array["dateInMiliSec"] = this.getDateWithoutTime(
+        array.date = this.getDateWithoutTime(Date.parse(timeSlotDate));
+        array.dateInMiliSec = this.getDateWithoutTime(
           Date.parse(timeSlotDate)
         ).getTime();
         formattedSlotArr.push(array);
@@ -219,27 +218,27 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
       let arr = [];
       let date = tempArrayMain[j];
       // Check if the date is within MaxValid Date
-      var maxDate = Date.parse(this.maxValidCalendarDate);
+      let maxDate = Date.parse(this.maxValidCalendarDate);
       if (date <= maxDate) {
         // get the date of the first slot from today
         if (this.firstSlotDate == null) {
           this.firstSlotDate = new Date(date);
         }
-        arr["date"] = datesArray[j];
-        arr["title"] = this.formatTitle(date);
+        arr.date = datesArray[j];
+        arr.title = this.formatTitle(date);
         let tempArray = [];
         for (let k = 0; k < timeSlotArray.length; k++) {
           let timeDateArray = [];
           if (date === timeSlotArray[k].dateInMiliSec) {
-            timeDateArray["label"] = timeSlotArray[k].time;
-            timeDateArray["fullValue"] = timeSlotArray[k].dateTime;
-            timeDateArray["grade"] = timeSlotArray[k].grade;
-            timeDateArray["isRecomended"] =
+            timeDateArray.label = timeSlotArray[k].time;
+            timeDateArray.fullValue = timeSlotArray[k].dateTime;
+            timeDateArray.grade = timeSlotArray[k].grade;
+            timeDateArray.isRecomended =
               timeSlotArray[k].grade > this.recommendedScore ? true : false;
             tempArray.push(timeDateArray);
           }
         }
-        arr["timeArray"] = tempArray;
+        arr.timeArray = tempArray;
         timeSlotNewArray.push(arr);
       }
     }
@@ -256,13 +255,13 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
       this.MONTHNAME[date.getMonth()] +
       " " +
       date.getDate();
-    if (date.setHours(0, 0, 0, 0) == new Date().setHours(0, 0, 0, 0)) {
+    if (date.setHours(0, 0, 0, 0) === new Date().setHours(0, 0, 0, 0)) {
       title = title + " , " + this.LABELS.Reschedule_Appointment_today_text;
     }
     return title;
   }
 
-  handleDateSelectEvent(date) {
+  handleDateSelectEvent() {
     this.timeSlotArrayByDate = [];
   }
 
@@ -290,10 +289,9 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     var newSortedArray = [];
 
     for (let i = 0; i < dateWiseSlotArray.length; i++) {
-      var date = new Date(dateWiseSlotArray[i].date);
+      let date = new Date(dateWiseSlotArray[i].date);
       if (this.lastDayOfTheWeek >= date && this.firstDayOfTheWeek <= date) {
         newSortedArray.push(dateWiseSlotArray[i]);
-      } else {
       }
     }
 
@@ -302,28 +300,28 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
 
   addNonAvailableSlotsToList(newSortedArray) {
     this.nonAvailableDateArray = [];
-    var loopDate = new Date(this.firstDayOfTheWeek);
-    var currDate = this.getDateWithoutTime(Date.parse(new Date()));
+    let loopDate = new Date(this.firstDayOfTheWeek);
+    let currDate = this.getDateWithoutTime(Date.parse(new Date()));
 
     while (loopDate <= this.lastDayOfTheWeek) {
-      var newDate = new Date(loopDate);
-      var isIntheList = this.isInArray(newSortedArray, newDate);
+      let newDate = new Date(loopDate);
+      let isIntheList = this.isInArray(newSortedArray, newDate);
 
       if (!isIntheList) {
         let arr = [];
-        arr["date"] = newDate;
-        arr["title"] = this.formatTitle(newDate);
-        arr["noSlots"] = true;
+        arr.date = newDate;
+        arr.title = this.formatTitle(newDate);
+        arr.noSlots = true;
         // hide the dates till first slot
         if (!(this.firstSlotDate == null) && newDate < this.firstSlotDate) {
-          arr["hideFromView"] = true;
+          arr.hideFromView = true;
         }
         if (loopDate >= currDate) {
           newSortedArray.push(arr);
         }
         this.nonAvailableDateArray.push(newDate);
       }
-      var newDate = loopDate.setDate(loopDate.getDate() + 1);
+      newDate = loopDate.setDate(loopDate.getDate() + 1);
       loopDate = new Date(newDate);
     }
 
@@ -340,9 +338,9 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   }
 
   isInArray(array, value) {
-    for (var i = 0; i < array.length; i++) {
-      var dateT = new Date(array[i].date).setHours(0, 0, 0, 0);
-      if (value.getTime() == new Date(dateT).getTime()) {
+    for (let i = 0; i < array.length; i++) {
+      let dateT = new Date(array[i].date).setHours(0, 0, 0, 0);
+      if (value.getTime() === new Date(dateT).getTime()) {
         return true;
       }
     }
@@ -354,10 +352,10 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     if (this.formattedTimeSlotArrayTemp.length > 0) {
       // APPROACH 2 : CHECK FOR EACH DATE IF ADDED IN THE CACHE ARRAY
       for (let i = 0; i < this.formattedTimeSlotArrayTemp.length; i++) {
-        var date = new Date(this.formattedTimeSlotArrayTemp[i].date);
+        let date = new Date(this.formattedTimeSlotArrayTemp[i].date);
         console.log("After Selected Date in loop is : " + date);
         console.log("After Selected date : " + selectedDate);
-        if (selectedDate.getTime() == date.getTime()) {
+        if (selectedDate.getTime() === date.getTime()) {
           isDateAdded = true;
           console.log("After Selected date is true: " + selectedDate);
           break;
@@ -401,12 +399,12 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   }
 
   handleTimeSlotClickEvent(event) {
-    var selectedSlot = event.target.title;
-    var startEndTimeArray = selectedSlot.split("#");
+    let selectedSlot = event.target.title;
+    let startEndTimeArray = selectedSlot.split("#");
     console.log("Selected slot is : " + selectedSlot);
     if (startEndTimeArray.length > 1) {
-      var startTime = this.getDateFromString(startEndTimeArray[0]);
-      var endTime = this.getDateFromString(startEndTimeArray[1]);
+      let startTime = this.getDateFromString(startEndTimeArray[0]);
+      let endTime = this.getDateFromString(startEndTimeArray[1]);
       const customEvent = new CustomEvent("slotselection", {
         detail: { startDate: startTime, endDate: endTime }
       });
@@ -417,19 +415,18 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   getDateFromString(date) {
     if (date && date !== "null") {
       return new Date(date.replace(/ /g, "T"));
-    } else {
-      return "";
     }
+    return "";
   }
 
   convertAMPMto24(time) {
-    var hours = Number(time.match(/^(\d+)/)[1]);
-    var minutes = Number(time.match(/:(\d+)/)[1]);
-    var AMPM = time.match(/\s(.*)$/)[1];
-    if (AMPM == "PM" && hours < 12) hours = hours + 12;
-    if (AMPM == "AM" && hours == 12) hours = hours - 12;
-    var sHours = hours.toString();
-    var sMinutes = minutes.toString();
+    let hours = Number(time.match(/^(\d+)/)[1]);
+    let minutes = Number(time.match(/:(\d+)/)[1]);
+    let AMPM = time.match(/\s(.*)$/)[1];
+    if (AMPM === "PM" && hours < 12) hours = hours + 12;
+    if (AMPM === "AM" && hours === 12) hours = hours - 12;
+    let sHours = hours.toString();
+    let sMinutes = minutes.toString();
     if (hours < 10) sHours = "0" + sHours;
     if (minutes < 10) sMinutes = "0" + sMinutes;
     return sHours + ":" + sMinutes;
@@ -440,47 +437,45 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
   }
 
   getFirstDayOfWeek(date, index) {
-    var start = index >= 0 ? index : 0;
-    var d = new Date(date);
-    var day = d.getDay();
-    var diff = d.getDate() - day + (start > day ? start - 7 : start);
+    let start = index >= 0 ? index : 0;
+    let d = new Date(date);
+    let day = d.getDay();
+    let diff = d.getDate() - day + (start > day ? start - 7 : start);
     d.setDate(diff);
     console.log("First day of week is : " + d.getDate());
-    var newDate = new Date(
+    let newDate = new Date(
       d.setDate(d.getDate() - this.showNoOfDaysBeforeAfterWeek)
     ).setHours(0, 0, 0, 0);
     return newDate;
   }
 
   getLastDayOfWeek(date, index) {
-    var start = index >= 0 ? index : 0;
-    var d = new Date(date);
-    var day = d.getDay();
-    var diff = d.getDate() - day + (start > day ? start - 1 : 6 + start);
+    let start = index >= 0 ? index : 0;
+    let d = new Date(date);
+    let day = d.getDay();
+    let diff = d.getDate() - day + (start > day ? start - 1 : 6 + start);
     d.setDate(diff);
-    var newDate = new Date(
+    let newDate = new Date(
       d.setDate(d.getDate() + this.showNoOfDaysBeforeAfterWeek)
     ).setHours(0, 0, 0, 0);
     return newDate;
   }
 
   parentPosition;
-  @api onPositionUpdated(te) {}
+  @api onPositionUpdated() {}
 
   previousElement;
   executeScroll(selectedDate) {
-    var temp = '"' + selectedDate + '"';
-    var dataId = "[data-id=" + temp + "]";
+    let temp = '"' + selectedDate + '"';
+    let dataId = "[data-id=" + temp + "]";
     console.log("Data is is : " + dataId);
-    var elementToShow = this.template.querySelector(dataId);
+    let elementToShow = this.template.querySelector(dataId);
     if (elementToShow) {
       try {
         if (this.previousElement) {
           this.previousElement.classList.remove("headerBold");
           this.previousElement.classList.add("header");
         }
-        var elementToShowLocation = elementToShow.getBoundingClientRect(); //gets the current user view
-        var offset = elementToShowLocation.top - 145; //gets the difference between user view and element view minus the calendar height
         if (!this.isWeekUpdated) {
           elementToShow.scrollIntoView({
             behavior: "smooth",
@@ -501,7 +496,7 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
     this.formattedRecommendedSlotsArray = [];
     this.displayNoSlotsMsg = true;
 
-    if (updatedAssignmentMethod == assignmentMethod.ASSIGN_TO_ME) {
+    if (updatedAssignmentMethod === assignmentMethod.ASSIGN_TO_ME) {
       this.slotsData.currentAssignmentMethodRef = "slotsForCurrentMobileWorker";
     } else {
       this.slotsData.currentAssignmentMethodRef = "slotsForAllMobileWorkers";
@@ -519,16 +514,16 @@ export default class MobileAppointmentBookingSlotsContainer extends LightningEle
       if (itDate.timeArray) {
         let updatedSlot = {};
         let updatedTimeArray = [];
-        updatedSlot.date = itDate["date"];
-        updatedSlot.title = itDate["title"];
+        updatedSlot.date = itDate.date;
+        updatedSlot.title = itDate.title;
 
-        itDate["timeArray"].forEach((slot) => {
-          if (slot["isRecomended"] == true) {
+        itDate.timeArray.forEach((slot) => {
+          if (slot.isRecomended === true) {
             updatedTimeArray.push({
-              label: slot["label"],
-              fullValue: slot["fullValue"],
-              grade: slot["grade"],
-              isRecomended: slot["isRecomended"]
+              label: slot.label,
+              fullValue: slot.fullValue,
+              grade: slot.grade,
+              isRecomended: slot.isRecomended
             });
           }
         });
