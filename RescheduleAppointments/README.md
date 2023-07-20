@@ -68,7 +68,3 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
     1. For Action Type, select __Lightning Web Components__.
     2. For Lightning Web Component, select 
         __c:MobileAppointmentBookingSettingsContainer.__
-
-__See Also__
-
-Known Issue:  [Reschedule Appointments LWC requires refreshing the Field Service mobile app](https://trailblazer.salesforce.com/issues_view?id=a1p4V000002d8lmQAA)
