@@ -68,3 +68,4 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
     1. For Action Type, select __Lightning Web Components__.
     2. For Lightning Web Component, select 
         __c:MobileAppointmentBookingSettingsContainer.__
+        
