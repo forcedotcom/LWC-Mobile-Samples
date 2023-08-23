@@ -28,6 +28,8 @@ describe('c-basic-filter', () => {
     element.objectValue = 'Account';
     element.index = 0;
     element.fieldsOptions = [
+      { label: 'My Email', value: 'myEmail', type: 'EMAIL' },
+      { label: 'My Reference', value: 'myReference', type: 'REFERENCE' },
       { label: 'My Date', value: 'myDate', type: 'DATE' },
       { label: 'My Boolean', value: 'myBoolean', type: 'BOOLEAN' },
       { label: 'My Picklist', value: 'myPicklist', type: 'PICKLIST' },
@@ -46,6 +48,8 @@ describe('c-basic-filter', () => {
     valueField = element.shadowRoot.querySelector('.value-input');
     quantityField = element.shadowRoot.querySelector('.quantity-input');
     unitCombo = element.shadowRoot.querySelector('.unit-combo');
+
+    jest.useFakeTimers();
   });
 
   afterEach(() => {
@@ -57,6 +61,7 @@ describe('c-basic-filter', () => {
   it('sets operators list correctly when selecting a date field', async () => {
     fieldsCombo.value = 'myDate';
     fieldsCombo.dispatchEvent(new Event('change'));
+    jest.runAllTimers();
     return Promise.resolve().then(() => {
       operatorCombo = element.shadowRoot.querySelector('.operator-combo');
       expect(operatorCombo.label).toBe('c.MobileDashboard_basic_filter_date_operator');
@@ -87,6 +92,7 @@ describe('c-basic-filter', () => {
 
     fieldsCombo.value = 'myBoolean';
     fieldsCombo.dispatchEvent(new Event('change'));
+    jest.runAllTimers();
     return Promise.resolve().then(async () => {
       operatorCombo = element.shadowRoot.querySelector('.operator-combo');
       expect(operatorCombo).toBeNull();
@@ -98,6 +104,7 @@ describe('c-basic-filter', () => {
 
     fieldsCombo.value = 'myPicklist';
     fieldsCombo.dispatchEvent(new Event('change'));
+    jest.runAllTimers();
     return Promise.resolve().then(async () => {
       operatorCombo = element.shadowRoot.querySelector('.operator-combo');
       expect(operatorCombo).toBeNull();
@@ -117,6 +124,29 @@ describe('c-basic-filter', () => {
         valueField = element.shadowRoot.querySelector('.value-input');
         expect(valueField).toBeNull();
       });
+    });
+  });
+
+  it('sets value input type as the field type', async () => {
+    expect(valueField).not.toBeNull();
+
+    fieldsCombo.value = 'myEmail';
+    fieldsCombo.dispatchEvent(new Event('change'));
+    jest.runAllTimers();
+    return Promise.resolve().then(() => {
+      valueField = element.shadowRoot.querySelector('.value-input');
+      expect(valueField.type).toBe('EMAIL');
+    });
+  });
+
+  it('sets value input type as text when selecting a non-supported field type', async () => {
+    expect(valueField).not.toBeNull();
+
+    fieldsCombo.value = 'myReference';
+    fieldsCombo.dispatchEvent(new Event('change'));
+    return Promise.resolve().then(() => {
+      valueField = element.shadowRoot.querySelector('.value-input');
+      expect(valueField.type).toBe('text');
     });
   });
 
