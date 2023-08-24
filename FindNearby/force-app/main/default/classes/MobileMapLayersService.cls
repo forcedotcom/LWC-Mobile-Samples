@@ -1,24 +1,6 @@
 public with sharing class MobileMapLayersService {
 
     @AuraEnabled(cacheable=false)
-    public static List<Decimal> getAssignedResourceLocation() {
-        try {
-            List<Decimal> location = new List<Decimal>();
-            Id userId = System.UserInfo.getUserId();
-            if (userId != null) {
-                List<ServiceResource> resource = [Select LastKnownLatitude, LastKnownLongitude from ServiceResource where RelatedRecordId = :userId LIMIT 1];
-                if (resource.size() > 0) {
-                    location.add(resource[0].LastKnownLatitude);
-                    location.add(resource[0].LastKnownLongitude);
-                }
-            }
-            return location;
-        } catch (Exception e) {
-            throw new HandledException(e.getMessage());
-        }
-    }
-
-    @AuraEnabled(cacheable=false)
     public static List<Map<String, String>> retrieveAllObjFields(String value) {
         SObjectType objType = Schema.getGlobalDescribe().get(value);
         Map<String, Schema.SObjectField> fields = objType.getDescribe().fields.getMap();

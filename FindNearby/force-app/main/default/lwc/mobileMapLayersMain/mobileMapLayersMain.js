@@ -3,7 +3,6 @@ import { gql, graphql } from 'lightning/uiGraphQLApi';
 import { NavigationMixin } from 'lightning/navigation';
 import retrieveAllObjFields from '@salesforce/apex/MobileMapLayersService.retrieveAllObjFields';
 import retrieveObjInfo from '@salesforce/apex/MobileMapLayersService.retrieveObjInfo';
-import getAssignedResourceLocation from '@salesforce/apex/MobileMapLayersService.getAssignedResourceLocation';
 import executeFilterQuery from '@salesforce/apex/MobileMapLayersService.executeFilterQuery';
 import Id from '@salesforce/user/Id';
 import { config } from './config';
@@ -14,6 +13,7 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
   CONFIG = config;
   userId = Id;
   resourceLocation = { lat: '0.0', lng: '0.0' };
+  isResourceLocationSet = false;
   allMarkers = [];
   filteredMarkers = [];
   currentMarker;
@@ -34,7 +34,6 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
 
   connectedCallback() {
     if (!['km', 'mi'].includes(this.CONFIG.distanceUnit)) this.CONFIG.distanceUnit = 'km';
-    this.addLocations();
 
     const myStyle = document.createElement('style');
     myStyle.innerHTML = overrideCSS;
@@ -53,21 +52,55 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
     }
   }
 
+  // Get resource lcation (triggers the whole process)
+
+  @wire(graphql, {
+    query: gql`
+      query resourceLocation($userId: ID) {
+        uiapi {
+          query {
+            ServiceResource(where: { RelatedRecordId: { eq: $userId } }) {
+              edges {
+                node {
+                  Id
+                  LastKnownLatitude {
+                    value
+                  }
+                  LastKnownLongitude {
+                    value
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `,
+    variables: '$userIdVariable',
+  })
+  GetAssignedResourceLocation({ data, errors }) {
+    if (data?.uiapi && !this.isResourceLocationSet) {
+      const location = data.uiapi.query.ServiceResource.edges[0].node;
+      const lat = location?.LastKnownLatitude?.value;
+      const lng = location?.LastKnownLongitude?.value;
+
+      if (lat && lng) {
+        this.resourceLocation = { lat, lng };
+      }
+
+      this.template.querySelector('c-mobile-map')?.setResourceMarker(this.resourceLocation);
+      this.isResourceLocationSet = true;
+
+      this.addLocations();
+    } else if (errors) {
+      this.handleError(errors);
+    }
+  }
+
   // Add objects
 
   async addLocations() {
     try {
-      // add resource
-      const resourceLocation = await getAssignedResourceLocation();
-      if (resourceLocation?.length && resourceLocation[0] && resourceLocation[1]) {
-        this.resourceLocation = {
-          lat: resourceLocation[0],
-          lng: resourceLocation[1],
-        };
-      }
-      this.template.querySelector('c-mobile-map').setResourceMarker(this.resourceLocation);
-
-      // add other locations
       let fields;
       let objInfo;
       let objQueries = [];
@@ -148,13 +181,13 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
   @wire(graphql, {
     query: '$fullQuery',
   })
-  GetObjectLocationsResults({ data, error }) {
+  GetObjectLocationsResults({ data, errors }) {
     if (data) {
       let objData;
       let records;
       let fieldsList;
       this.CONFIG.mapObjects.forEach((obj) => {
-        objData = data.uiapi?.query[obj.value].edges ?? [];
+        objData = data.uiapi?.query[obj.value]?.edges ?? [];
         records = [];
         for (let record of objData) {
           fieldsList = Object.values(record.node).map((v) => v?.value ?? v);
@@ -171,8 +204,8 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
         this.addAllObjectsLocations(obj.value, records);
       });
     }
-    if (error) {
-      this.handleError(error);
+    if (errors) {
+      this.handleError(errors);
     }
   }
 
@@ -293,6 +326,12 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
   };
 
   // Getters & Helpers
+
+  get userIdVariable() {
+    return {
+      userId: this.userId,
+    };
+  }
 
   get currentObject() {
     return this.currentObjectFilter;

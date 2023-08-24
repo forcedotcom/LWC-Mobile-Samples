@@ -15,17 +15,6 @@ public with sharing class MobileMapLayersServiceTest {
     }
 
     @isTest
-    static void getAssignedResourceLocationTest() {
-        try {
-            List<Decimal> location = MobileMapLayersService.getAssignedResourceLocation();
-            Assert.areEqual(10, location[0]);
-            Assert.areEqual(10, location[0]);
-        } catch (Exception e) {
-            Assert.fail('An exception was thrown: ' + e.getMessage());
-        }
-    }
-
-    @isTest
     static void retrieveAllObjFieldsTest() {
         try {
             SObjectType accountType = Schema.getGlobalDescribe().get('Account');
