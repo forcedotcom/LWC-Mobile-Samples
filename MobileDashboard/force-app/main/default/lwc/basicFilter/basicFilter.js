@@ -16,6 +16,23 @@ export default class BasicFilter extends LightningElement {
 
   picklistOptions;
 
+  SUPPORTED_INPUT_TYPES = [
+    'checkbox',
+    'checkbox-button',
+    'date',
+    'datetime',
+    'time',
+    'email',
+    'file',
+    'password',
+    'search',
+    'tel',
+    'url',
+    'number',
+    'text',
+    'toggle',
+  ];
+
   connectedCallback() {
     this.refreshPicklistOptions(this.field);
   }
@@ -205,6 +222,13 @@ export default class BasicFilter extends LightningElement {
 
   get showValueField() {
     return this.operator !== 'today';
+  }
+
+  get valueFieldType() {
+    if (this.SUPPORTED_INPUT_TYPES.includes(this.filterFieldType?.toLowerCase())) {
+      return this.filterFieldType;
+    }
+    return 'text';
   }
 
   get fieldInputLabel() {
