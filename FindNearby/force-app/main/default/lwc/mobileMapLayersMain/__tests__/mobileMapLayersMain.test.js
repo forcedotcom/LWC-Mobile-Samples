@@ -1,32 +1,10 @@
 import { createElement } from 'lwc';
 import MobileMapLayersMain from 'c/mobileMapLayersMain';
 import { graphql } from 'lightning/uiGraphQLApi';
-
-jest.mock(
-  '@salesforce/apex/MobileMapLayersService.retrieveAllObjFields',
-  () => {
-    return {
-      default: jest.fn(() => [{ value: 'field1', label: 'field 1', type: 'STRING' }]),
-    };
-  },
-  { virtual: true }
-);
-
-jest.mock(
-  '@salesforce/apex/MobileMapLayersService.retrieveObjInfo',
-  () => {
-    return {
-      default: jest.fn(() => ({
-        label: 'Work Order',
-        plural: 'Work Orders',
-        iconUrl: '',
-      })),
-    };
-  },
-  { virtual: true }
-);
+import { getObjectInfos } from 'lightning/uiObjectInfoApi';
 
 let element;
+const getObjectInfosResponse = require('./data/getObjectInfosResponse.json');
 
 describe('c-mobile-map-layers-main', () => {
   beforeEach(() => {
@@ -57,6 +35,8 @@ describe('c-mobile-map-layers-main', () => {
         },
       },
     });
+
+    getObjectInfos.emit(getObjectInfosResponse);
   });
 
   afterEach(() => {

@@ -1,8 +1,7 @@
 import { LightningElement, wire } from 'lwc';
 import { gql, graphql } from 'lightning/uiGraphQLApi';
+import { getObjectInfos } from 'lightning/uiObjectInfoApi';
 import { NavigationMixin } from 'lightning/navigation';
-import retrieveAllObjFields from '@salesforce/apex/MobileMapLayersService.retrieveAllObjFields';
-import retrieveObjInfo from '@salesforce/apex/MobileMapLayersService.retrieveObjInfo';
 import executeFilterQuery from '@salesforce/apex/MobileMapLayersService.executeFilterQuery';
 import Id from '@salesforce/user/Id';
 import { config } from './config';
@@ -32,6 +31,9 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
   fullQuery;
   init = false;
 
+  queriedObjects;
+  objQueries = [];
+
   connectedCallback() {
     if (!['km', 'mi'].includes(this.CONFIG.distanceUnit)) this.CONFIG.distanceUnit = 'km';
 
@@ -44,10 +46,7 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
     if (!this.init) {
       this.init = true;
       window.visualViewport?.addEventListener('resize', (e) => {
-        if (window.visualViewport.height === window.innerHeight)
-          this.template.querySelector(
-            '.main-container'
-          ).style.top = `${window.visualViewport.pageTop.toString()}px`;
+        if (window.visualViewport.height === window.innerHeight) window.scrollTo(0, 0);
       });
     }
   }
@@ -99,39 +98,60 @@ export default class MobileMapLayersMain extends NavigationMixin(LightningElemen
 
   // Add objects
 
-  async addLocations() {
+  addLocations() {
     try {
-      let fields;
-      let objInfo;
-      let objQueries = [];
+      this.queriedObjects = this.CONFIG.mapObjects.map((o) => o.value);
+    } catch (error) {
+      this.handleError(error);
+    }
+  }
+
+  @wire(getObjectInfos, { objectApiNames: '$queriedObjects' })
+  async getObjectInfos({ data, error }) {
+    if (data) {
+      const allObjResults = data.results;
+
       this.CONFIG.mapObjects.forEach(async (o, ind) => {
-        fields = await retrieveAllObjFields(o);
+        const objResult = allObjResults.find((r) => r.result?.apiName === o.value)?.result;
+
+        const fields = Object.entries(objResult.fields).map(([_, value]) => ({
+          value: value.apiName,
+          label: value.label,
+          type: value.dataType,
+        }));
+
         o.fields = fields;
         o.firstDetailFieldLabel = o.fields?.find(
-          (f) => f.value === o.firstDetailField.toLowerCase()
+          (f) => f.value.toLowerCase() === o.firstDetailField.toLowerCase()
         )?.label;
         o.secondDetailFieldLabel = o.fields?.find(
-          (f) => f.value === o.secondDetailField.toLowerCase()
+          (f) => f.value.toLowerCase() === o.secondDetailField.toLowerCase()
         )?.label;
         o.thirdDetailFieldLabel = o.fields?.find(
-          (f) => f.value === o.thirdDetailField.toLowerCase()
+          (f) => f.value.toLowerCase() === o.thirdDetailField.toLowerCase()
         )?.label;
 
-        objInfo = await retrieveObjInfo(o);
-        o.label = objInfo?.label;
-        o.plural = objInfo?.plural;
-        o.iconUrl = objInfo?.iconUrl;
-        o.color = objInfo?.color ?? '#4bc076';
-        objQueries.push(this.buildQueryForObject(o));
-        if (ind === this.CONFIG.mapObjects.length - 1) {
-          this.CONFIG.mapObjects = [...this.CONFIG.mapObjects];
+        // add object properties
+        o.label = objResult.label;
+        o.plural = objResult.labelPlural;
+        o.iconUrl = objResult.themeInfo.iconUrl;
+        o.color = `#${objResult.themeInfo.color ?? '4bc076'}`;
+        o.infoReceived = true;
+
+        this.objQueries.push(this.buildQueryForObject(o));
+
+        // the first object is the default one shown
+        if (ind === 0) {
+          this.setCurrentObjectFilter(o);
         }
-        if (ind === 0) this.setCurrentObjectFilter(o); // the first object is the default one shown
-        if (objQueries.length === this.CONFIG.mapObjects.length) {
-          this.fullQuery = this.buildFullQuery(objQueries);
+
+        // if all objects' info received
+        if (this.CONFIG.mapObjects.every((obj) => obj.infoReceived)) {
+          this.CONFIG.mapObjects = [...this.CONFIG.mapObjects];
+          this.fullQuery = this.buildFullQuery(this.objQueries);
         }
       });
-    } catch (error) {
+    } else if (error) {
       this.handleError(error);
     }
   }

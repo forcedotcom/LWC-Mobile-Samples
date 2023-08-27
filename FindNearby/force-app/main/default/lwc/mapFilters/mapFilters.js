@@ -60,16 +60,16 @@ export default class MapFilters extends LightningElement {
   }
 
   get inputType() {
-    if (this.selectedFieldFilter?.type === 'DATETIME') return 'DATE';
+    if (this.selectedFieldFilter?.type === 'DateTime') return 'Date';
     return this.selectedFieldFilter?.type;
   }
 
   get isFieldTypeBoolean() {
-    return this.selectedFieldFilter.type === 'BOOLEAN';
+    return this.selectedFieldFilter.type === 'Boolean';
   }
 
   get isFieldTypePicklist() {
-    return this.selectedFieldFilter.type === 'PICKLIST';
+    return this.selectedFieldFilter.type === 'Picklist';
   }
 
   get isFieldTypeRegular() {
