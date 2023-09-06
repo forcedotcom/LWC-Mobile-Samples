@@ -54,3 +54,11 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
 5. Connect the LWC to a global action. See Add Global Actions to the Field Service Mobile App.  
     1. For Action Type, select **Lightning Web Components**.  
     2. For Lightning Web Component, select **c:mobileMapLayersMain**.
+6. To see the map on a mobile device, add  the map URL to the org’s trusted URLs. For more information, see [lightning-map](https://developer.salesforce.com/docs/component-library/bundle/lightning-map/documentation).
+    1. From Setup, in the Quick Find box, enter `Security` and select  **Trusted URLs**.
+    2. Click **New Trusted URL**.
+    3. Enter an API Name.
+    4. For URL, enter `maps.a.forceusercontent.com`.
+    5. Select **frame-src (iframe content)**.
+    6. Save your changes.
+  
