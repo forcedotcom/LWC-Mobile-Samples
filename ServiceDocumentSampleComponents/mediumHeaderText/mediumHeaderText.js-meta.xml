@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__ServiceDocument</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__ServiceDocument">
+            <supportedFormFactors>
+                <supportedFormFactor type="Large" />
+            </supportedFormFactors>
+            <property name="text" type="string" default="A medium header" />
+            <property name="colorhex" type="string" default="1B3971" />
+            <property name="topPadding" type="string" default="0" />
+            <property name="rightPadding" type="string" default="0" />
+            <property name="leftPadding" type="string" default="0" />
+            <property name="bottomPadding" type="string" default="0" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
