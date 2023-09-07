@@ -35,9 +35,9 @@ describe('c-map-filters', () => {
         secondDetailField: 'Status',
         thirdDetailField: 'DurationInMinutes',
         fields: [
-          { value: 'a', label: 'A', type: 'STRING' },
-          { value: 'b', label: 'B', type: 'BOOLEAN' },
-          { value: 'c', label: 'C', type: 'DATETIME' },
+          { value: 'a', label: 'A', type: 'String' },
+          { value: 'b', label: 'B', type: 'Boolean' },
+          { value: 'c', label: 'C', type: 'DateTime' },
         ],
       },
       {
@@ -201,7 +201,7 @@ describe('c-map-filters', () => {
 
       it('shows correct input component when field selected', async () => {
         expect(inputField).not.toBeNull();
-        expect(inputField.type).toBe('STRING');
+        expect(inputField.type).toBe('String');
       });
 
       it('enables show results button on input change', async () => {
@@ -278,7 +278,7 @@ describe('c-map-filters', () => {
 
       it('shows correct input component when field selected', async () => {
         expect(inputField).not.toBeNull();
-        expect(inputField.type).toBe('DATE');
+        expect(inputField.type).toBe('Date');
       });
     });
   });

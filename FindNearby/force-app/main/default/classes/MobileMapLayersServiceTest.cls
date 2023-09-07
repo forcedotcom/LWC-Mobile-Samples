@@ -15,41 +15,6 @@ public with sharing class MobileMapLayersServiceTest {
     }
 
     @isTest
-    static void getAssignedResourceLocationTest() {
-        try {
-            List<Decimal> location = MobileMapLayersService.getAssignedResourceLocation();
-            Assert.areEqual(10, location[0]);
-            Assert.areEqual(10, location[0]);
-        } catch (Exception e) {
-            Assert.fail('An exception was thrown: ' + e.getMessage());
-        }
-    }
-
-    @isTest
-    static void retrieveAllObjFieldsTest() {
-        try {
-            SObjectType accountType = Schema.getGlobalDescribe().get('Account');
-            Map<String, Schema.SObjectField> fields = accountType.getDescribe().fields.getMap();
-
-            List<Map<String, String>> result = MobileMapLayersService.retrieveAllObjFields('Account');
-            Assert.areEqual(fields.size(), result.size());
-        } catch (Exception e) {
-            Assert.fail('An exception was thrown: ' + e.getMessage());
-        }
-    }
-
-    @isTest
-    static void retrieveObjInfoTest() {
-        try {
-            Map<String, String> result = MobileMapLayersService.retrieveObjInfo('Account');
-            Assert.areEqual(result.get('label'), 'Account');
-            Assert.areEqual(result.get('plural'), 'Accounts');
-        } catch (Exception e) {
-            Assert.fail('An exception was thrown: ' + e.getMessage());
-        }
-    }
-
-    @isTest
     static void executeFilterQueryTest() {
         try {
             Map<String, String> currentFieldFilter = new Map<String, String>();

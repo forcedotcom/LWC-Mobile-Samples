@@ -1,0 +1,174 @@
+{
+    "results": [
+        {
+            "statusCode": 200,
+            "result": {
+                "apiName": "ServiceAppointment",
+                "associateEntityType": null,
+                "associateParentEntity": null,
+                "childRelationships": [
+                    {
+                        "childObjectApiName": "ActivityHistory",
+                        "fieldName": "WhatId",
+                        "junctionIdListNames": [],
+                        "junctionReferenceTo": [],
+                        "relationshipName": "ActivityHistories"
+                    }
+                ],
+                "createable": true,
+                "custom": false,
+                "defaultRecordTypeId": "012000000000000AAA",
+                "deletable": true,
+                "dependentFields": {},
+                "feedEnabled": false,
+                "fields": {
+                    "AccountId": {
+                        "apiName": "AccountId",
+                        "calculated": false,
+                        "compound": false,
+                        "compoundComponentName": null,
+                        "compoundFieldName": null,
+                        "controllerName": null,
+                        "controllingFields": [],
+                        "createable": false,
+                        "custom": false,
+                        "dataType": "Reference",
+                        "extraTypeInfo": null,
+                        "filterable": true,
+                        "filteredLookupInfo": null,
+                        "highScaleNumber": false,
+                        "htmlFormatted": false,
+                        "inlineHelpText": null,
+                        "label": "Account ID",
+                        "length": 18,
+                        "nameField": false,
+                        "polymorphicForeignKey": false,
+                        "precision": 0,
+                        "reference": true,
+                        "referenceTargetField": null,
+                        "referenceToInfos": [
+                            {
+                                "apiName": "Account",
+                                "nameFields": ["Name"]
+                            }
+                        ],
+                        "relationshipName": "Account",
+                        "required": false,
+                        "scale": 0,
+                        "searchPrefilterable": true,
+                        "sortable": true,
+                        "unique": false,
+                        "updateable": false
+                    }
+                },
+                "keyPrefix": "08p",
+                "label": "Service Appointment",
+                "labelPlural": "Service Appointments",
+                "layoutable": true,
+                "mruEnabled": true,
+                "nameFields": ["AppointmentNumber"],
+                "queryable": true,
+                "recordTypeInfos": {
+                    "012000000000000AAA": {
+                        "available": true,
+                        "defaultRecordTypeMapping": true,
+                        "master": true,
+                        "name": "Master",
+                        "recordTypeId": "012000000000000AAA"
+                    }
+                },
+                "searchable": true,
+                "themeInfo": {
+                    "color": "5867E8",
+                    "iconUrl": "https://inbalorg-dev-ed.develop.my.salesforce.com/img/icon/t4v35/standard/service_appointment_120.png"
+                },
+                "updateable": true
+            }
+        },
+        {
+            "statusCode": 200,
+            "result": {
+                "apiName": "ServiceResource",
+                "associateEntityType": null,
+                "associateParentEntity": null,
+                "childRelationships": [
+                    {
+                        "childObjectApiName": "ActivityHistory",
+                        "fieldName": "WhatId",
+                        "junctionIdListNames": [],
+                        "junctionReferenceTo": [],
+                        "relationshipName": "ActivityHistories"
+                    }
+                ],
+                "createable": true,
+                "custom": false,
+                "defaultRecordTypeId": "012000000000000AAA",
+                "deletable": false,
+                "dependentFields": {},
+                "feedEnabled": false,
+                "fields": {
+                    "AccountId": {
+                        "apiName": "AccountId",
+                        "calculated": false,
+                        "compound": false,
+                        "compoundComponentName": null,
+                        "compoundFieldName": null,
+                        "controllerName": null,
+                        "controllingFields": [],
+                        "createable": true,
+                        "custom": false,
+                        "dataType": "Reference",
+                        "extraTypeInfo": null,
+                        "filterable": true,
+                        "filteredLookupInfo": null,
+                        "highScaleNumber": false,
+                        "htmlFormatted": false,
+                        "inlineHelpText": null,
+                        "label": "Account ID",
+                        "length": 18,
+                        "nameField": false,
+                        "polymorphicForeignKey": false,
+                        "precision": 0,
+                        "reference": true,
+                        "referenceTargetField": null,
+                        "referenceToInfos": [
+                            {
+                                "apiName": "Account",
+                                "nameFields": ["Name"]
+                            }
+                        ],
+                        "relationshipName": "Account",
+                        "required": false,
+                        "scale": 0,
+                        "searchPrefilterable": true,
+                        "sortable": true,
+                        "unique": false,
+                        "updateable": true
+                    }
+                },
+                "keyPrefix": "0Hn",
+                "label": "Service Resource",
+                "labelPlural": "Service Resources",
+                "layoutable": true,
+                "mruEnabled": true,
+                "nameFields": ["Name"],
+                "queryable": true,
+                "recordTypeInfos": {
+                    "012000000000000AAA": {
+                        "available": true,
+                        "defaultRecordTypeMapping": true,
+                        "master": true,
+                        "name": "Master",
+                        "recordTypeId": "012000000000000AAA"
+                    }
+                },
+                "searchable": true,
+                "themeInfo": {
+                    "color": "5867E8",
+                    "iconUrl": "https://inbalorg-dev-ed.develop.my.salesforce.com/img/icon/t4v35/standard/service_resource_120.png"
+                },
+                "updateable": true
+            }
+        }
+    ]
+}

@@ -46,8 +46,8 @@ export default class MobileMaps extends LightningElement {
   @api setResourceMarker({ lat, lng }) {
     this.resourceMarker = {
       location: {
-        Latitude: lat.substring(0, 10),
-        Longitude: lng.substring(0, 10),
+        Latitude: lat,
+        Longitude: lng,
       },
       mapIcon: this.getResourceMarkerSVG(),
     };

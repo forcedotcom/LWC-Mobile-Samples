@@ -1,41 +1,44 @@
 import { createElement } from 'lwc';
 import MobileMapLayersMain from 'c/mobileMapLayersMain';
+import { graphql } from 'lightning/uiGraphQLApi';
+import { getObjectInfos } from 'lightning/uiObjectInfoApi';
 
-jest.mock(
-  '@salesforce/apex/MobileMapLayersService.getAssignedResourceLocation',
-  () => {
-    return {
-      default: jest.fn(() => ['10', '10']),
-    };
-  },
-  { virtual: true }
-);
-
-jest.mock(
-  '@salesforce/apex/MobileMapLayersService.retrieveAllObjFields',
-  () => {
-    return {
-      default: jest.fn(() => [{ value: 'field1', label: 'field 1', type: 'STRING' }]),
-    };
-  },
-  { virtual: true }
-);
-
-jest.mock(
-  '@salesforce/apex/MobileMapLayersService.retrieveObjInfo',
-  () => {
-    return {
-      default: jest.fn(() => ({
-        label: 'Work Order',
-        plural: 'Work Orders',
-        iconUrl: '',
-      })),
-    };
-  },
-  { virtual: true }
-);
+let element;
+const getObjectInfosResponse = require('./data/getObjectInfosResponse.json');
 
 describe('c-mobile-map-layers-main', () => {
+  beforeEach(() => {
+    element = createElement('c-mobile-map-layers-main', {
+      is: MobileMapLayersMain,
+    });
+
+    document.body.appendChild(element);
+
+    graphql.emit({
+      uiapi: {
+        query: {
+          ServiceResource: {
+            edges: [
+              {
+                node: {
+                  Id: '0HnB00000002TLwKAM',
+                  LastKnownLatitude: {
+                    value: 32.4,
+                  },
+                  LastKnownLongitude: {
+                    value: 34.9,
+                  },
+                },
+              },
+            ],
+          },
+        },
+      },
+    });
+
+    getObjectInfos.emit(getObjectInfosResponse);
+  });
+
   afterEach(() => {
     while (document.body.firstChild) {
       document.body.removeChild(document.body.firstChild);
@@ -43,27 +46,6 @@ describe('c-mobile-map-layers-main', () => {
   });
 
   it('should contain all 3 components', () => {
-    const element = createElement('c-mobile-map-layers-main', {
-      is: MobileMapLayersMain,
-    });
-
-    document.body.appendChild(element);
-
-    const mapFilters = element.shadowRoot.querySelector('c-map-filters');
-    expect(mapFilters).not.toBeNull();
-    const mobileMap = element.shadowRoot.querySelector('c-mobile-map');
-    expect(mobileMap).not.toBeNull();
-    const locationsList = element.shadowRoot.querySelector('c-locations-list');
-    expect(locationsList).not.toBeNull();
-  });
-
-  it('should call filter query when field filter is active', () => {
-    const element = createElement('c-mobile-map-layers-main', {
-      is: MobileMapLayersMain,
-    });
-
-    document.body.appendChild(element);
-
     const mapFilters = element.shadowRoot.querySelector('c-map-filters');
     expect(mapFilters).not.toBeNull();
     const mobileMap = element.shadowRoot.querySelector('c-mobile-map');
