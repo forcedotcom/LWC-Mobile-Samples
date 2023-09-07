@@ -1,0 +1,29 @@
+<template>
+  <div class="slds-box slds-var-m-top_medium">
+    <h3 class="slds-text-heading_medium slds-var-m-bottom_small">
+      {workPlanRecord.Name.value}
+    </h3>
+    <p class="slds-var-p-bottom_small">{workPlanRecord.Description.value}</p>
+
+    <h4 class="slds-text-heading_small slds-var-p-bottom_medium">Work Steps</h4>
+    <table
+      class="slds-border_right slds-border_left slds-table slds-table_bordered slds-table_col-bordered"
+    >
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Status</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <template for:each={_workStepRecords} for:item="workStepRecord">
+          <c-demo-work-step-presentation
+            key={workStepRecord.node.Id}
+            work-step-record={workStepRecord}
+          ></c-demo-work-step-presentation>
+        </template>
+      </tbody>
+    </table>
+  </div>
+</template>
