@@ -1,5 +1,5 @@
-import { LightningElement, api, wire, track } from 'lwc';
-import { gql, graphql } from 'lightning/uiGraphQLApi';
+import { LightningElement, api, wire, track } from "lwc";
+import { gql, graphql } from "lightning/uiGraphQLApi";
 
 export default class DemoWorkPlan extends LightningElement {
   @api workPlanId;
@@ -27,8 +27,8 @@ export default class DemoWorkPlan extends LightningElement {
   }
 
   @wire(graphql, {
-    query: '$workStepQuery',
-    variables: '$workStepVariables',
+    query: "$workStepQuery",
+    variables: "$workStepVariables"
   })
   handleWorkStepGql(val) {
     if (val && val.errors && val.errors.length > 0) {
@@ -80,7 +80,7 @@ export default class DemoWorkPlan extends LightningElement {
   }
   get workStepVariables() {
     return {
-      parentId: this.workPlanId,
+      parentId: this.workPlanId
     };
   }
 }
