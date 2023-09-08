@@ -9,6 +9,7 @@
         <targetConfig targets="lightning__ServiceDocument">
             <supportedFormFactors>
                 <supportedFormFactor type="Large" />
+                <supportedFormFactor type="Small" />
             </supportedFormFactors>
             <property name="text" type="string" default="A medium header" />
             <property name="colorhex" type="string" default="1B3971" />

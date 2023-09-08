@@ -48,8 +48,7 @@ export default class DemoWorkPlan extends LightningElement {
       query workstep($parentId: ID = "") {
         uiapi {
           query {
-            WorkStep(where: { WorkPlanId: { eq: $parentId } })
-              {
+            WorkStep(where: { WorkPlanId: { eq: $parentId } }) {
               edges {
                 node {
                   Id
