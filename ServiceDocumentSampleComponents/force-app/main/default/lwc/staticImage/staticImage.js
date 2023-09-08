@@ -1,5 +1,5 @@
-import { LightningElement, api } from "lwc";
-import SALESFORCE_LOGO from "@salesforce/contentAssetUrl/salesforce";
+import { LightningElement, api } from 'lwc';
+import SALESFORCE_LOGO from '@salesforce/contentAssetUrl/salesforce';
 export default class DemoSalesforceLogo extends LightningElement {
   @api width;
   @api height;
