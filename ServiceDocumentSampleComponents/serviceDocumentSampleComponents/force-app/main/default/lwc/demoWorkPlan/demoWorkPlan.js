@@ -49,7 +49,7 @@ export default class DemoWorkPlan extends LightningElement {
         uiapi {
           query {
             WorkStep(where: { WorkPlanId: { eq: $parentId } })
-              @category(name: "recordQuery") {
+              {
               edges {
                 node {
                   Id
@@ -57,17 +57,17 @@ export default class DemoWorkPlan extends LightningElement {
                     value
                     displayValue
                   }
-                  Status @category(name: "PicklistValue") {
+                  Status {
                     value
                     displayValue
                     label
                   }
-                  Name @category(name: "StringValue") {
+                  Name {
                     value
                     displayValue
                     label
                   }
-                  Description @category(name: "LongTextAreaValue") {
+                  Description {
                     value
                     displayValue
                   }
