@@ -26,7 +26,8 @@ Note: Follow-Up Appointment LWC is an open-source component and is not supported
 	1. In the Settings tab, determine which appointment slots the mobile worker sees and determine who the work can be assigned to and what kind of work they can create.
 	If you choose to let mobile workers create the service appointment, only a service appointment is created. If you choose to let mobile workers create work orders or work order line items, a service appointment is created automatically. A service appointment is created regardless of the Auto-Create Service Appointment setting for the work type.
 
-	*Tip:* To control whether the service appointment can be assigned only to the mobile worker in the app, make sure that your scheduling policy includes the **Field Service - Required Resources work rule**.
+		*Tip:* To control whether the service appointment can be assigned only to the mobile worker in the app, make sure that your scheduling policy includes the **Field Service - Required Resources work rule**.
+
 	2. In the Mobile Workflow tab, configure up to four steps. 
 		- To add the address, use the fields that compose the address, such as City and Street.
 		- Lookup fields appear as read-only fields for the mobile user.
