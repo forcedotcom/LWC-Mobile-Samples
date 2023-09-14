@@ -34,12 +34,11 @@ export default class SummaryComponent extends LightningElement {
     this.queryResult = result;
     const { data, errors } = result;
     if (data) {
-      if (!this.refreshed) {
-        this.refreshGraphQL();
-        this.refreshed = true;
-        return;
-      }
       this.setRecordsAndSubQueries(data);
+      if (!this.refreshed) {
+        this.refreshed = true;
+        this.refreshGraphQL();
+      }
     }
     if (errors) {
       console.log(errors);
