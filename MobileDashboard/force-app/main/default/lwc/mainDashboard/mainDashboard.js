@@ -21,13 +21,12 @@ export default class MainDashboard extends LightningElement {
     this.queryResult = result;
     const { data, errors } = result;
     if (data) {
-      if (!this.refreshed) {
-        this.refreshGraphQL();
-        this.refreshed = true;
-        return;
-      }
       const allSettings = data?.uiapi?.query['Mobile_Dashboard_Setting__c']?.edges;
       if (allSettings) this.populateDashboardSettings(allSettings);
+      if (!this.refreshed) {
+        this.refreshed = true;
+        this.refreshGraphQL();
+      }
     }
     if (errors) {
       console.log(JSON.stringify(errors));
