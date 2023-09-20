@@ -3,8 +3,10 @@ Let your mobile workers create and schedule follow-up appointments for customers
 
 Note: Follow-Up Appointment LWC is an open-source component and is not supported by Salesforce Support.
 
-1. Enable access to LWCs. See [Define a Permission Set for Your Org](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/quickstart_lwc_action_org_setup.htm#quickstart_lwc_action_org_setup_create_permset).
-2. Enable the permission sets.
+1. 4. To install the package, click 
+   https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1Q0000012BwaQAE.
+2. Enable access to LWCs. See [Define a Permission Set for Your Org](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/quickstart_lwc_action_org_setup.htm#quickstart_lwc_action_org_setup_create_permset).
+3. Enable the permission sets.
 	1. From Setup, in the Quick Find box, enter Users, and then select **Users**.
 	2. Select the required user.
 	3. Under Permission Set Assignments, click **Edit Assignments**.
@@ -15,12 +17,10 @@ Note: Follow-Up Appointment LWC is an open-source component and is not supported
 		- Field Service Resource License
 		- Field Service Resource Permissions
 		- Field Service Follow-Up Appointment Permissions
-3. Grant access to Apex classes.
+4. Grant access to Apex classes.
 	1. From Setup, in the Quick Find box, enter `Custom Code`, and then select **Apex Classes**.
 	2. For FollowUpAppointmentController, click **Security**.
 	3. Add the relevant profiles to the Enabled Profiles list.
-4. To install the package, click 
-   https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1Q0000012BwaQAE.
 5. From the App Launcher, find and select **Follow-Up Appointment Settings**.
 6. Configure the LWC.
 	1. In the Settings tab, determine which appointment slots the mobile worker sees and determine who the work can be assigned to and what kind of work they can create.
