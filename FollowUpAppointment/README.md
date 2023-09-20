@@ -3,7 +3,7 @@ Let your mobile workers create and schedule follow-up appointments for customers
 
 Note: Follow-Up Appointment LWC is an open-source component and is not supported by Salesforce Support.
 
-1. 4. To install the package, click 
+1. To install the package, click 
    https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1Q0000012BwaQAE.
 2. Enable access to LWCs. See [Define a Permission Set for Your Org](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/quickstart_lwc_action_org_setup.htm#quickstart_lwc_action_org_setup_create_permset).
 3. Enable the permission sets.
