@@ -21,9 +21,6 @@ trigger ServiceDocumentCreation on DocumentRecipient (after insert) {
     final Integer DEFAULT_NUM_SIGNATURES = 3;
 
 
-    // 1SROG00000000nd4AA
-    // 938ccb5b-f67f-41ce-9633-2015e05be5cb__1689808689385
-
     for (DocumentRecipient dr : Trigger.new) {
         ID documentId = dr.DocumentId;
         if (documentId.getSobjectType() == Schema.ServiceReport.SObjectType) {
