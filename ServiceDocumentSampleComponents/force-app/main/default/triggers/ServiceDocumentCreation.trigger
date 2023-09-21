@@ -33,7 +33,7 @@ trigger ServiceDocumentCreation on DocumentRecipient (after insert) {
             ID baseRecordId = serviceReports.get(0).ParentId;
             System.debug('Base record Id: ' + baseRecordId);
 
-            //currently collected signatures
+            //currently already collected signatures
             List<DocumentRecipient> collectedSignaturesRelatedDRs = [SELECT Id FROM DocumentRecipient WHERE DocumentId = :documentId];
             System.debug('Number of collected signatures related DocumentRecipients: ' + collectedSignaturesRelatedDRs.size());
 
