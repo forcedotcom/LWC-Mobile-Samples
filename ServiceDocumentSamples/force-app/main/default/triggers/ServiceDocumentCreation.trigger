@@ -56,7 +56,8 @@ trigger ServiceDocumentCreation on DocumentRecipient (after insert) {
 
 
             // Work Order Templates
-            // can be conbined with the number of signatures, but not able to distinguish between entities
+            // The if-else branches can be combined by the number of signatures to reduce the number of branches, 
+            // but, in that case, it will not be able to add debug information for each different entity
             if (WO_TEMPLATES_WITH_1_SIGNATURES.contains(templateId)) {
                 System.debug('Work Order Template block');
                 //only when all the signatures have been collected, then fire the trigger

@@ -14,7 +14,7 @@ public with sharing class FireCreateServiceDocumentInvocableAction {
 
     /**
      * recordId: recordId to generate service document for. WO/WOLI/SA id
-     * templateId: Service document template to generate document for. Starts with '0M0'
+     * templateId: The ID of Service document template to generate document for. The ID starts with '0M0'
      * locale: (Optional) Locale to generate the document in. Example valid formats: 'ru', 'ru_PL'
      * title: (Optional) Used to name the document saved
      */
