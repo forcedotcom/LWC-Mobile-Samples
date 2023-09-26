@@ -13,19 +13,19 @@ public with sharing class FireCreateServiceDocumentInvocableAction {
     private static final String ACCEPT_HEADER = 'Accept';
 
     /**
-     * RecordId: RecordId to generate service document for. WO/WOLI/SA id
-     * TemplateId: Service document template to generate document for. Starts with '0M0'
-     * Locale: (Optional) Locale to generate the document in. Example valid formats: 'ru', 'ru_PL'
-     * Title: (Optional) Used to name the document saved
+     * recordId: recordId to generate service document for. WO/WOLI/SA id
+     * templateId: Service document template to generate document for. Starts with '0M0'
+     * locale: (Optional) Locale to generate the document in. Example valid formats: 'ru', 'ru_PL'
+     * title: (Optional) Used to name the document saved
      */
     @future (callout=true)
     public static void TriggerCreateServiceDocumentInvocableAction(String recordId, String templateId, String locale, String title) {
 
-        System.debug('Attempting to queue Create Service Document');
-        System.debug('RecordId: ' + recordId);
-        System.debug('TemplateId: ' + templateId);
-        System.debug('Locale: ' + locale);
-        System.debug('Title: ' + title);
+        // System.debug('Attempting to queue Create Service Document');
+        // System.debug('RecordId: ' + recordId);
+        // System.debug('TemplateId: ' + templateId);
+        // System.debug('Locale: ' + locale);
+        // System.debug('Title: ' + title);
 
         String sessionId = UserInfo.getSessionId();
 
