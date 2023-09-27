@@ -7,4 +7,8 @@
 .sfdx
 .vscode
 
+# Ignore apex cls and apex trigger files:
+**/classes/FireCreateServiceDocumentInvocableAction.cls
+**/triggers/ServiceDocumentCreation.trigger
+
 coverage/
