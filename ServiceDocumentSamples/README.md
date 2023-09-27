@@ -1,6 +1,6 @@
 # Service Document Samples
 
-This project contains samples including components and triggers can be used on the service document template. Through Salesforce DX project, these sample components and triggers can be pushed to your org and used on service document templates.
+This project contains sample codes for LWC components and Apex triggers which can be used on the service document template. Through Salesforce DX project, these sample components and triggers can be pushed to your org and used on service document templates.
 
 ## Salesforce DX Project: Next Steps
 
