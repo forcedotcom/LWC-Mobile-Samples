@@ -17,12 +17,14 @@ export default class MobileAppointmentBookingRescheduleAppointment extends Light
   @api appointmentNumber;
   @api assignToName;
 
-  handleConfirmBtnClose() {
+  handleConfirmBtnClose(event) {
+    event.stopPropagation();
     const customEvent = new CustomEvent("rescheduleclosewindow");
     this.dispatchEvent(customEvent);
   }
 
-  handleConfirm() {
+  handleConfirm(event) {
+    event.stopPropagation();
     this.showSpinner = true;
 
     const customEvent = new CustomEvent("rescheduleconfirmed");
