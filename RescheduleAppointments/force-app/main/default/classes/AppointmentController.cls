@@ -545,12 +545,13 @@ public without sharing class AppointmentController {
         );
 
         if (String.isNotEmpty(newWOId)) {
-          ServiceAppointment sa = [
+          ServiceAppointment sa;
+          ServiceAppointment saList = [
             SELECT Id
             FROM ServiceAppointment
             WHERE ParentRecordId = :newWOId
-          ][0];
-          if (sa == null) {
+          ];
+          if (saList == null || saList.size() == 0) {
             sa = new ServiceAppointment();
             sa.ParentRecordId = newWOId;
             sa.DueDate = dueDate;
