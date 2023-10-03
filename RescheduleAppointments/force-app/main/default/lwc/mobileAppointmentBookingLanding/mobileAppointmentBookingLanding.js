@@ -754,6 +754,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
                             +error
                           );
                           this.timeSlotDateWise = [];
+                          this.allowScrolling();
                         });
                     }
                   })
@@ -762,6 +763,7 @@ export default class MobileAppointmentBookingLanding extends LightningElement {
                       "Error While assigning current user as required resource: " +
                         error
                     );
+                    this.allowScrolling();
                   });
               });
             } else if (saData.error) {
