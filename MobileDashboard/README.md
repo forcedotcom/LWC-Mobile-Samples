@@ -10,7 +10,19 @@ Let your mobile workers easily see an overview of their data. For example, show 
 	3. Under Permission Set Assignments, click **Edit Assignments**.
 	4. Enable **Field Service Mobile Dashboard Permissions**.
 	5. Repeat these steps for all the relevant mobile users.
-3. To install the package, click https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1Q0000012EomQAE.
+3. To install the package, click https://login.salesforce.com/packaging/installPackage.apexp?p0=04t1Q0000012EomQAE. If you choose to deploy the code instead of installing the package, make sure to complete these steps:
+	1. Before deploying the code, enable using different languages.
+		- From Setup, in the Quick Find box, enter `Translation Workbench`, and then select **Translation Language Settings**.
+		- Click **Enable**.
+		- Deploy the code.
+	2. Make the tab visible.
+		- From Setup, in the Quick Find box, enter `Users`, and then select **Profiles**. 
+		- Edit the System Administrator profile.
+		- Under Tab Settings, set the Mobile Dashboard Settings tab to **Default On**.
+	3. Make the fields visible.
+		- Form Setup, open the Object Manager.
+		- Search for and select **Mobile Dashboard Setting**.
+		- From Fields & Relationships, for each field, click **Set Field-Level Security and select Visible**.
 4. From the Developer Console, run the script to get preconfigured cards for your dashboard: `DashboardPostInstall.onInstall();`
 5. From the App Launcher, find and select **Mobile Dashboard Settings**.
 6. Review the details of the cards and change them as needed. 
