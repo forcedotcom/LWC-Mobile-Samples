@@ -22,7 +22,7 @@ Let your mobile workers easily see an overview of their data. For example, show 
 	3. Make the fields visible.
 		- Form Setup, open the Object Manager.
 		- Search for and select **Mobile Dashboard Setting**.
-		- From Fields & Relationships, for each field, click **Set Field-Level Security and select Visible**.
+		- From Fields & Relationships, for each field, click **Set Field-Level Security** and select **Visible**.
 4. From the Developer Console, run the script to get preconfigured cards for your dashboard: `DashboardPostInstall.onInstall();`
 5. From the App Launcher, find and select **Mobile Dashboard Settings**.
 6. Review the details of the cards and change them as needed. 
