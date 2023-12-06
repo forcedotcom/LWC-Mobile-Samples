@@ -25,7 +25,7 @@
         "husky": "^4.2.1",
         "lint-staged": "^10.0.7",
         "prettier": "2.8.8",
-        "prettier-plugin-apex": "^1.6.0"
+        "prettier-plugin-apex": "^1.13.0"
     },
     "lint-staged": {
         "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
