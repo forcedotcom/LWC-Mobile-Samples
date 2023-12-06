@@ -1,0 +1,78 @@
+<template>
+  <!-- DL SVG -->
+  <div class="slds-text-align_center slds-var-m-around_small">
+    <svg
+      x="0px"
+      y="0px"
+      viewBox="0 0 191 120"
+      enable-background="new 0 0 191 120"
+      width="300"
+      height="188"
+    >
+      <path
+        fill="#E6E6E6"
+        d="M15,0h161c8.3,0,15,6.7,15,15v90c0,8.3-6.7,15-15,15H15c-8.3,0-15-6.7-15-15V15C0,6.7,6.7,0,15,0z"
+      />
+      <path
+        fill="#C6D0D6"
+        d="M177.8,0H13.2C5.9,0,0,5.9,0,13.2V25h191V13.2C191,5.9,185.1,0,177.8,0z"
+      />
+      <rect fill="#E6E6E6" x="16" y="7" width="156" height="13" />
+      <g fill="#BBBBBB">
+        <rect x="74" y="31" width="30" height="6" />
+        <rect x="74" y="41" width="61" height="6" />
+        <rect x="74" y="51" width="43" height="6" />
+        <rect x="74" y="61" width="64" height="6" />
+        <rect x="74" y="71" width="60" height="6" />
+        <rect x="74" y="81" width="29" height="6" />
+        <rect x="74" y="91" width="30" height="6" />
+        <rect x="74" y="101" width="76" height="6" />
+      </g>
+      <g fill="#CBD2D8">
+        <path
+          d="M142,39v50h43V39H142z M164.4,79.6c-8.6,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6S180,55.4,180,64S173,79.6,164.4,79.6z"
+        />
+        <circle cx="164.5" cy="63.9" r="12" />
+        <rect x="10" y="31" width="56" height="77" />
+      </g>
+      <g fill="#909090">
+        <ellipse cx="38" cy="50.6" rx="14.5" ry="14.4" />
+        <path
+          d="M44.5,72H31.6C23,72,16,78.7,16,87.1V108h44V87.1C60.1,78.7,53.1,72,44.5,72z"
+        />
+      </g>
+    </svg>
+  </div>
+
+  <!-- Instructions -->
+  <div class="slds-var-m-around_small">
+    <p>
+      Tap the scan button to lauch the barcode scanner and scan the barcode on a
+      driver's license.
+    </p>
+    <br />
+    <p>
+      <strong>Note:</strong> The license data should be encoded as per the AAMVA
+      specification and stored in a PDF417 barcode in order for the parser to be
+      able to parse it.
+    </p>
+  </div>
+
+  <!-- Scan Button -->
+  <div class="slds-var-m-around_small">
+    <lightning-button
+      variant="brand"
+      label="Scan"
+      title="Scan"
+      onclick={scanBarcode}
+    ></lightning-button>
+  </div>
+
+  <!-- After a barcode is scanned and its payload is parsed, the result will be displayed here -->
+  <template if:true={aamvaResult}>
+    <pre>{aamvaResult}</pre>
+  </template>
+  <template if:true={error}>
+    <pre>{error}</pre>
+  </template>
+</template>
