@@ -292,7 +292,7 @@ export class AAMVAParser {
    * Given an input (in either MMDDYYYY or YYYYMMDD format) it returns a Date object representing the input string.
    *
    * @param {string} input - The input date as a string
-   * @param {boolean} isCanadianFormat - Indicates if the input represent a Canadian-formatted date (i.e YYYMMDD)
+   * @param {boolean} isCanadianFormat - Indicates if the input represent a Canadian-formatted date (i.e YYYYMMDD)
    * @returns {Date} A date object representing the input string.
    */
   static parseDate(input, isCanadianFormat) {
