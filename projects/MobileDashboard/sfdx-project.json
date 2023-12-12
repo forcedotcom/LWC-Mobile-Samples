@@ -12,7 +12,7 @@
   "name": "Mobile Dashboard for Field Service Mobile",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com/",
-  "sourceApiVersion": "55.0",
+  "sourceApiVersion": "59.0",
   "packageAliases": {
     "Mobile Dashboard for Field Service Mobile": "0HoB00000008PtKKAU",
     "Mobile Dashboard for Field Service Mobile@1.0.0-2": "04tB0000000h4nQIAQ",

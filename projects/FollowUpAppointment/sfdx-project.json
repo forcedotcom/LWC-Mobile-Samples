@@ -17,7 +17,7 @@
   "name": "Follow-Up Appointment for Field Service Mobile",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "55.0",
+  "sourceApiVersion": "59.0",
   "packageAliases": {
     "Follow-Up Appointment for Field Service Mobile": "0HoB00000008PtFKAU",
     "FSL": "04t3y000001drQt",
