@@ -1,5 +1,5 @@
 import { createElement } from "lwc";
-import MobileAppointmentBookingResourceAssignment from "c/MobileAppointmentBookingResourceAssignment";
+import MobileAppointmentBookingResourceAssignment from "c/mobileAppointmentBookingResourceAssignment";
 
 describe("c-mobile-appointment-booking-resource-assignment", () => {
   afterEach(() => {
