@@ -1,0 +1,39 @@
+<template>
+  <div class="find-nearby-main-container">
+    <div class="filters-container">
+      <c-map-filters
+        map-objects={CONFIG.mapObjects}
+        current-object-filter={currentObjectFilter}
+        current-field-filter={currentFieldFilter}
+        set-current-object-filter={setCurrentObjectFilter}
+        set-current-field-filter={setCurrentFieldFilter}
+        handle-error={handleError}
+      >
+      </c-map-filters>
+    </div>
+    <div class="map-container page">
+      <c-mobile-map
+        filtered-markers={filteredMarkers}
+        current-marker={currentMarker}
+        current-marker-ind={currentMarkerInd}
+        set-current-marker={setCurrentMarker}
+        redirect-to-marker-details={redirectToMarkerDetails}
+        route-to-marker-location={routeToMarkerLocation}
+        handle-error={handleError}
+      >
+      </c-mobile-map>
+    </div>
+    <div class="locations-list-container page">
+      <c-locations-list
+        filtered-markers={filteredMarkers}
+        current-object={currentObject}
+        set-current-marker={setCurrentMarker}
+        redirect-to-marker-details={redirectToMarkerDetails}
+        route-to-marker-location={routeToMarkerLocation}
+        is-ios={isIos}
+        handle-error={handleError}
+      >
+      </c-locations-list>
+    </div>
+  </div>
+</template>

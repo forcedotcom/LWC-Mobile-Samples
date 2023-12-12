@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <name>MobileDashboard_settings_header</name>
+        <label>Field Service</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_title</name>
+        <label>Bảng Điều Khiển Di Động</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_description</name>
+        <label
+    >Định cấu hình các thẻ trong bảng điều khiển. Để có hiệu năng tốt hơn, hãy giới hạn bảng điều khiển trong 5 thẻ.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_add_card_button</name>
+        <label>Thêm Thẻ</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_edit_button</name>
+        <label>Sửa</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_more_options</name>
+        <label>Tùy chọn khác</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_up</name>
+        <label>Di chuyển lên</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_arrow_move_dn</name>
+        <label>Di chuyển xuống</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_today</name>
+        <label>hôm nay</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_next</name>
+        <label>tiếp theo</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_operator_last</name>
+        <label>lần cuối</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_days</name>
+        <label>các ngày</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_weeks</name>
+        <label>tuần</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_unit_months</name>
+        <label>tháng</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_and</name>
+        <label>và</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_card_display_logic_or</name>
+        <label>hoặc</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_new_card_modal_title</name>
+        <label>Thẻ Bảng Điều Khiển Mới</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_edit_card_modal_title</name>
+        <label>Chỉnh Sửa Thẻ Bảng Điều Khiển</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_tab_name</name>
+        <label>Chi tiết</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_name_field</name>
+        <label>Tên</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_field</name>
+        <label>Logic Của Bộ Lọc</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
+        <label
+    >Sau khi chọn một đối tượng, hãy xác định bản ghi nào được bao gồm trong thẻ.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_and</name>
+        <label>Đáp Ứng Tất Cả Điều Kiện (AND)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_or</name>
+        <label>Đáp Ứng Điều Kiện Bất Kỳ (OR)</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_filter_logic_custom</name>
+        <label>Đáp Ứng Điều Kiện Tùy Chỉnh</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_and_between_logic</name>
+        <label>AND</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_or_between_logic</name>
+        <label>OR</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_remove_condition_button</name>
+        <label>Xóa logic</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_add_condition_button</name>
+        <label>Thêm Logic</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_details_custom_logic_field</name>
+        <label>Logic Tùy Chỉnh</label>
+    </customLabels>
+    <customLabels>
+        <name
+    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label
+    >Cung cấp logic điều kiện. Sử dụng các số để đề cập đến mỗi điều kiện. Sử dụng AND hoặc OR để xác định tổ hợp các điều kiện. Thêm dấu ngoặc để nhóm các phần của chuỗi với nhau. Ví dụ: 1 AND (2 OR 3) sẽ đánh giá điều kiện đầu tiên có đúng hay không và điều kiện thứ hai hoặc thứ ba có đúng hay không.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_name</name>
+        <label>Thiết Kế</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_title</name>
+        <label>Bố Cục Thẻ</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_title</name>
+        <label>Cạnh nhau</label>
+    </customLabels>
+    <customLabels>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label
+    >Tiết kiệm không gian theo chiều dọc. Khuyên dùng cho tên trường ngắn.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
+        <label>Xếp chồng</label>
+    </customLabels>
+    <customLabels>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label
+    >Sử dụng nhiều không gian hơn theo chiều dọc. Khuyên dùng cho tên trường dài.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
+        <label>Dữ Liệu Thẻ</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_add_data_button</name>
+        <label>Thêm Dữ Liệu</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_label_field</name>
+        <label>Nhãn</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_icon_field</name>
+        <label>Biểu Tượng</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field</name>
+        <label>Màu</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_color_field_infobubble</name>
+        <label
+    >Để có khả năng hiển thị tốt nhất, hãy chọn màu sắc có độ tương phản cao.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_sub_filter_options</name>
+        <label>Tùy chọn</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_field</name>
+        <label>Trường</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator</name>
+        <label>Toán Tử</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_equals</name>
+        <label>bằng</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_not_equal</name>
+        <label>khác</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_than</name>
+        <label>nhỏ hơn</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_than</name>
+        <label>lớn hơn</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_less_or_equal</name>
+        <label>nhỏ hơn hoặc bằng</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_greater_or_equal</name>
+        <label>lớn hơn hoặc bằng</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_operator_contains</name>
+        <label>có chứa</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_operator</name>
+        <label>Loại Ngày</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_today</name>
+        <label>Hôm nay</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_next</name>
+        <label>... Tiếp theo</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_last</name>
+        <label>... Trước</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_on</name>
+        <label>Vào...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_before</name>
+        <label>Trước...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_date_type_after</name>
+        <label>Sau...</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_value</name>
+        <label>Giá Trị</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_basic_filter_unit</name>
+        <label>Đơn Vị</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_status</name>
+        <label>Trạng thái</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_info</name>
+        <label>Thông tin</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_success</name>
+        <label>Thành Công</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_warning</name>
+        <label>Cảnh Báo</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_error</name>
+        <label>Lỗi</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_new</name>
+        <label>Mới</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_in_progress</name>
+        <label>Đang Tiến Hành</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_cannot_complete</name>
+        <label>Không Thể Hoàn Thành</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_sentiment</name>
+        <label>Thái Độ</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_positive</name>
+        <label>Tích Cực</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_neutral</name>
+        <label>Trung Lập</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_negative</name>
+        <label>Tiêu Cực</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_record_types</name>
+        <label>Loại Bản Ghi</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_case</name>
+        <label>Trường Hợp</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_lead</name>
+        <label>Khách Hàng Tiềm Năng</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_opportunity</name>
+        <label>Cơ Hội</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_quote</name>
+        <label>Báo Giá</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_subtitle_other</name>
+        <label>Khác</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_approval</name>
+        <label>Phê Duyệt</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_clock</name>
+        <label>Đồng Hồ</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_event</name>
+        <label>Sự Kiện</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_favorite</name>
+        <label>Mục Ưa Thích</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_like</name>
+        <label>Thích</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_dislike</name>
+        <label>Không Thích</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_location</name>
+        <label>Vị Trí</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_priority</name>
+        <label>Mức Ưu Tiên</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_user</name>
+        <label>Người dùng</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_icons_list_people</name>
+        <label>Mọi Người</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_title</name>
+        <label>Xóa thẻ bảng điều khiển?</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_card_warning_body</name>
+        <label>Thao tác này sẽ xóa thẻ khỏi bảng điều khiển.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_title</name>
+        <label>Xóa dữ liệu thẻ?</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
+        <label>Thao tác này sẽ xóa dữ liệu thẻ khỏi thẻ bảng điều khiển.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_add_card</name>
+        <label>Chúng tôi không thể thêm thẻ. Hãy thử lại sau.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_save_card</name>
+        <label
+    >Chúng tôi không thể lưu thay đổi của bạn. Hãy thử lại sau.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_delete_card</name>
+        <label>Chúng tôi không thể xóa thẻ. Hãy thử lại sau.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_error_duplicate_card</name>
+        <label>Chúng tôi không thể nhân đôi thẻ. Hãy thử lại sau.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_object_field</name>
+        <label>Đối Tượng</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_filter_title</name>
+        <label>Bộ Lọc</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title</name>
+        <label>Xem Trước</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_preview_title_infobubble</name>
+        <label
+    >Giao diện xem trước có thể khác đôi chút so với giao diện thực tế trên thiết bị di động.</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_duplicate_button</name>
+        <label>Nhân Đôi</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_delete_button</name>
+        <label>Xóa</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_save_button</name>
+        <label>Lưu</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_cancel_button</name>
+        <label>Hủy</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_settings_select_placeholder</name>
+        <label>Chọn...</label>
+    </customLabels>
+</Translations>

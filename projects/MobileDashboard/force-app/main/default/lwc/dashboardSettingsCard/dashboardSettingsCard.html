@@ -1,0 +1,84 @@
+<template>
+  <div class="card-details">
+    <lightning-card>
+      <div class="slds-page-header details-header">
+        <div class="title">
+          <div class="number">
+            <p>{number}</p>
+          </div>
+          {card.title}
+        </div>
+        <div style="display: flex">
+          <lightning-button-group>
+            <lightning-button-icon
+              icon-name="utility:arrowup"
+              variant="border-filled"
+              onclick={handleUpClick}
+              disabled={isFirst}
+              alternative-text={LABELS.MobileDashboard_settings_card_arrow_move_up}
+            >
+              <label></label>
+            </lightning-button-icon>
+            <lightning-button-icon
+              icon-name="utility:arrowdown"
+              variant="border-filled"
+              onclick={handleDownClick}
+              disabled={isLast}
+              alternative-text={LABELS.MobileDashboard_settings_card_arrow_move_dn}
+            >
+              <label></label>
+            </lightning-button-icon>
+          </lightning-button-group>
+          <lightning-button-group>
+            <lightning-button
+              label={LABELS.MobileDashboard_settings_card_edit_button}
+              onclick={handleEditClick}
+            ></lightning-button>
+            <lightning-button-menu
+              alternative-text={LABELS.MobileDashboard_settings_card_arrow_more_options}
+            >
+              <lightning-menu-item
+                label={LABELS.MobileDashboard_settings_duplicate_button}
+                onclick={handleDuplicateCardClick}
+              ></lightning-menu-item>
+              <lightning-menu-item
+                label={LABELS.MobileDashboard_settings_delete_button}
+                onclick={handleDeleteCardClick}
+              ></lightning-menu-item>
+            </lightning-button-menu>
+          </lightning-button-group>
+        </div>
+      </div>
+      <div class="details-body">
+        <div class="details">
+          <div class="details-section">
+            <h3>{LABELS.MobileDashboard_card_object_field}</h3>
+            <p>{card.object.label}</p>
+          </div>
+          <div class="details-section">
+            <h3>{LABELS.MobileDashboard_card_filter_title}</h3>
+            <template for:each={mainFiltersDisplay} for:item="filter">
+              <p key={filter.key}>{filter.displayText}</p>
+            </template>
+            <template if:true={isCustomLogic}>
+              <br />
+              {card.filter.customLogic}
+            </template>
+          </div>
+        </div>
+        <div class="preview">
+          <div class="details-section">
+            <h3>
+              {LABELS.MobileDashboard_preview_title}
+              <lightning-helptext
+                content={LABELS.MobileDashboard_preview_title_infobubble}
+              ></lightning-helptext>
+            </h3>
+            <c-summary-component settings={previewSettings} demo-mode="true">
+            </c-summary-component>
+          </div>
+        </div>
+      </div>
+    </lightning-card>
+  </div>
+</template>

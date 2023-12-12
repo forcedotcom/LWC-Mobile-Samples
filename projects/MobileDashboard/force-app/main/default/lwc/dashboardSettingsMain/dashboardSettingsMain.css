@@ -1,0 +1,38 @@
+.dashboard-settings-page-main-container {
+  max-width: 1300px;
+}
+
+c-dashboard-toast-message {
+  position: fixed;
+  left: 35%;
+  z-index: 5;
+}
+
+.header-icon {
+  margin-right: 12px;
+}
+
+lightning-card {
+  width: 100%;
+}
+
+.main-card {
+  padding: 24px;
+}
+
+.settings-description {
+  margin-bottom: 16px;
+}
+
+.settings-description p {
+  font-size: 13px;
+  line-height: 20px;
+  color: #444444;
+}
+
+.settings-description h1 {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  color: #181818;
+}

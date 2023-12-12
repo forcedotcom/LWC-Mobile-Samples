@@ -1,0 +1,228 @@
+<template>
+  <div class="buttons-container">
+    <button
+      class="button filter-button active-button"
+      onclick={handleTopFiltersObjClick}
+    >
+      <label></label>
+      <div class="button-text">
+        <div class="button-text-title">Type</div>
+        <div class="button-text-main">{ filteredObjectText }</div>
+      </div>
+      <div>
+        <lightning-icon
+          class="icon"
+          size="x-small"
+          icon-name="utility:chevrondown"
+        ></lightning-icon>
+      </div>
+    </button>
+    <button class={filterFieldButtonClass} onclick={handleTopFiltersFieldClick}>
+      <div class="button-text">
+        <div class="button-text-title">Filter By</div>
+        <div class="button-text-main">{ filteredFieldText }</div>
+      </div>
+      <div>
+        <lightning-icon
+          class="icon"
+          size="x-small"
+          icon-name="utility:chevrondown"
+        ></lightning-icon>
+      </div>
+    </button>
+  </div>
+
+  <!-- object filter bottom sheet -->
+  <div class="bottom-sheet object-filter-bottom-sheet">
+    <!-- header -->
+    <div class="header">
+      <div class="grabber">
+        <svg
+          width="375"
+          height="8"
+          viewBox="0 0 375 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="375" height="8" fill="white" />
+          <rect x="171.5" y="4" width="32" height="4" rx="2" fill="#BEBEC0" />
+        </svg>
+      </div>
+      <div class="sheet-title-and-buttons">
+        <button class="back"></button>
+        <div class="filters-sheet-title">Select an Option</div>
+        <button class="x" onclick={handleCloseObjFiltersClick}>
+          <lightning-icon
+            alternative-text="Close"
+            icon-name="utility:close"
+            size="x-small"
+            class="x-icon"
+          ></lightning-icon>
+        </button>
+      </div>
+      <lightning-menu-divider></lightning-menu-divider>
+    </div>
+
+    <!-- content -->
+    <div class="sheet-content">
+      <lightning-radio-group
+        options={objRadioOptions}
+        value={currentObjectFilter.value}
+        onchange={onObjRadioChange}
+        type="radio"
+      >
+      </lightning-radio-group>
+    </div>
+  </div>
+
+  <!-- field filter bottom sheet -->
+  <div class="bottom-sheet field-filter-bottom-sheet">
+    <!-- header -->
+    <div class="header">
+      <div class="grabber">
+        <svg
+          width="375"
+          height="8"
+          viewBox="0 0 375 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="375" height="8" fill="white" />
+          <rect x="171.5" y="4" width="32" height="4" rx="2" fill="#BEBEC0" />
+        </svg>
+      </div>
+      <div class="sheet-title-and-buttons">
+        <button class="back"></button>
+        <div class="filters-sheet-title">
+          Filter { currentObjectFilter.plural } By
+        </div>
+        <button class="x" onclick={handleCloseFieldFiltersClick}>
+          <lightning-icon
+            alternative-text="Close"
+            icon-name="utility:close"
+            size="x-small"
+            class="x-icon"
+          ></lightning-icon>
+        </button>
+      </div>
+      <lightning-menu-divider></lightning-menu-divider>
+    </div>
+
+    <!-- content -->
+    <div class="sheet-content">
+      <div class="field-combo-container">
+        <lightning-combobox
+          label="Filter By"
+          options={fieldRadioOptions}
+          value={selectedFieldFilter.value}
+        >
+        </lightning-combobox>
+        <div class="field-combo-cover" onclick={handleFieldComboClick}></div>
+      </div>
+      <template if:true={selectedFieldFilter.value}>
+        <div class="field-input-container">
+          <template if:true={isFieldTypeRegular}>
+            <lightning-input
+              type={inputType}
+              label={selectedFieldFilter.label}
+              value={selectedFieldFilter.input}
+              onchange={onFieldInputChange}
+              required
+            >
+            </lightning-input>
+          </template>
+          <template if:true={isFieldTypeBoolean}>
+            <div class="boolean-input-frame">
+              <lightning-input
+                type="toggle"
+                label={selectedFieldFilter.label}
+                checked={selectedFieldFilter.input}
+                onchange={onFieldInputChange}
+                message-toggle-active=""
+                message-toggle-inactive=""
+              >
+              </lightning-input>
+            </div>
+          </template>
+          <template if:true={isFieldTypePicklist}>
+            <label class="slds-form-element__label"
+              >{selectedFieldFilter.label}</label
+            >
+            <select
+              class="slds-input slds-combobox__input"
+              onchange={onFieldInputChange}
+            >
+              <template for:each={filterValueOptions} for:item="option">
+                <option class="slds-dropdown" key={option.value}>
+                  {option.label}
+                </option>
+              </template>
+            </select>
+          </template>
+        </div>
+      </template>
+    </div>
+
+    <!-- footer -->
+    <lightning-menu-divider></lightning-menu-divider>
+    <div class="sheet-footer">
+      <button
+        onclick={handleShowResultsClick}
+        disabled={showResultsDisabled}
+        class="button filters-sheet-show-results"
+      >
+        Show Results
+      </button>
+      <button
+        onclick={handleClearClick}
+        disabled={clearDisabled}
+        class="button filters-sheet-clear"
+      >
+        Clear Filter
+      </button>
+    </div>
+  </div>
+
+  <!-- fields list bottom sheet -->
+  <div class="bottom-sheet fields-list-bottom-sheet">
+    <!-- header -->
+    <div class="header">
+      <div class="grabber">
+        <svg
+          width="375"
+          height="8"
+          viewBox="0 0 375 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="375" height="8" fill="white" />
+          <rect x="171.5" y="4" width="32" height="4" rx="2" fill="#BEBEC0" />
+        </svg>
+      </div>
+      <div class="sheet-title-and-buttons">
+        <button class="back"></button>
+        <div class="filters-sheet-title">Filter By</div>
+        <button class="x" onclick={handleCloseFieldsListClick}>
+          <lightning-icon
+            alternative-text="Close"
+            icon-name="utility:close"
+            size="x-small"
+            class="x-icon"
+          ></lightning-icon>
+        </button>
+      </div>
+      <lightning-menu-divider></lightning-menu-divider>
+    </div>
+
+    <!-- content -->
+    <div class="sheet-content">
+      <lightning-radio-group
+        options={fieldRadioOptions}
+        value={currentFieldFilter.field.value}
+        onchange={onFieldRadioChange}
+        type="radio"
+      >
+      </lightning-radio-group>
+    </div>
+  </div>
+</template>

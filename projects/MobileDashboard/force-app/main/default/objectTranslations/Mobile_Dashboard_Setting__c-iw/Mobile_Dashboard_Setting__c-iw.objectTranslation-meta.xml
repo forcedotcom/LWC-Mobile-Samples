@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>שם הגדרת לוח מחוונים בנייד</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>שם הגדרת לוח מחוונים בנייד</label>
+    </standardFields>
+    <gender>Feminine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <article>None</article>
+        <value>הגדרת לוח מחוונים בנייד</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <article>None</article>
+        <value>הגדרות לוח מחוונים בנייד</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <article>Definite</article>
+        <value>הגדרת לוח המחוונים בנייד</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <article>Definite</article>
+        <value>הגדרות לוח המחוונים בנייד</value>
+    </caseValues>
+</CustomObjectTranslation>

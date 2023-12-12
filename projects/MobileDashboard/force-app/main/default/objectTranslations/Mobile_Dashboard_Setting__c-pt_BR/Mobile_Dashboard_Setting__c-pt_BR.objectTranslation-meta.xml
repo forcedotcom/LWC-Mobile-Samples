@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>Nome da configuração do painel do celular</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Nome da configuração do painel do celular</label>
+    </standardFields>
+    <gender>Feminine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <value>Configuração do painel do celular</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Configurações do painel do celular</value>
+    </caseValues>
+</CustomObjectTranslation>

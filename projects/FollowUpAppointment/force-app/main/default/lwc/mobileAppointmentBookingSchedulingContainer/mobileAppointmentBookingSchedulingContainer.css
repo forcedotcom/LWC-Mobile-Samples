@@ -1,0 +1,9 @@
+.calendarView {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 66px;
+  background-color: white;
+  z-index: 10;
+  padding: 0 16px;
+  box-shadow: 0px 4px 0px #e5e5e5;
+}

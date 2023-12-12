@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>Nama Pengaturan Dasbor Ponsel</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Nama Pengaturan Dasbor Ponsel</label>
+    </standardFields>
+    <caseValues>
+        <plural>false</plural>
+        <value>Pengaturan Dasbor Ponsel</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Pengaturan Dasbor Ponsel</value>
+    </caseValues>
+</CustomObjectTranslation>

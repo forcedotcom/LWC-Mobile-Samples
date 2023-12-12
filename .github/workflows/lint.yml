@@ -1,0 +1,17 @@
+name: eslint
+run-name: Installs project and runs eslint checks
+on: [ push, pull_request ]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 18 ]
+    name: ESLint on Ubuntu with Node ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - run: yarn install
+      - run: yarn lint

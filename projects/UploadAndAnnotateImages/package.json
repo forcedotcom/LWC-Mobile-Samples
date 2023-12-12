@@ -1,0 +1,30 @@
+{
+  "name": "upload-and-annotate-images",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Upload and Annotate Images",
+  "scripts": {
+    "lint": "eslint **/lwc/**",
+    "test": "npm run test:unit",
+    "test:unit": "sfdx-lwc-jest",
+    "test:unit:watch": "sfdx-lwc-jest --watch",
+    "test:unit:debug": "sfdx-lwc-jest --debug",
+    "test:unit:coverage": "sfdx-lwc-jest --coverage",
+    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,json,md,page,trigger,xml,yaml,yml}\"",
+    "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,json,md,page,trigger,xml,yaml,yml}\""
+  },
+  "devDependencies": {
+    "@lwc/eslint-plugin-lwc": "^1.7.0",
+    "@prettier/plugin-xml": "^3.2.2",
+    "@salesforce/eslint-config-lwc": "^3.5.2",
+    "@salesforce/eslint-plugin-aura": "^2.1.0",
+    "@salesforce/eslint-plugin-lightning": "^1.0.0",
+    "@salesforce/sfdx-lwc-jest": "^3.1.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jest": "^27.6.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-apex": "^2.0.1",
+    "jest-canvas-mock": "^2.5.2"
+  }
+}

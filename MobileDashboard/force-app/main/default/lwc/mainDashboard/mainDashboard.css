@@ -1,8 +1,0 @@
-.main-container {
-    background-color: var(--slds-g-color-neutral-base-90, #E5E5E5);
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    width: 100vw;
-}

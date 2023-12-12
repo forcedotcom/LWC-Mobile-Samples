@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Main_Filter_Logic__c</name>
+    <label>Logika glavnega filtra</label>
+    <picklistValues>
+        <masterLabel>AND</masterLabel>
+        <translation>IN</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OR</masterLabel>
+        <translation>ALI</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOM</masterLabel>
+        <translation>PO MERI</translation>
+    </picklistValues>
+</CustomFieldTranslation>

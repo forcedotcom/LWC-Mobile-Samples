@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label>Mobile Dashboard Settings</label>
-    <lwcComponent>dashboardSettingsMain</lwcComponent>
-    <motif>Custom67: Gears</motif>
-    <fullName>Mobile_Dashboard_Settings</fullName>
-</CustomTab>

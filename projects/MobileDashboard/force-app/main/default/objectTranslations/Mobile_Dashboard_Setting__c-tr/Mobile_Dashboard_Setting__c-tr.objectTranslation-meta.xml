@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>Mobil Panel Ayar Adı</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Mobil Panel Ayar Adı</label>
+    </standardFields>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Nominative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarı</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Nominative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarım</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Nominative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarınız</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Nominative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarları</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Nominative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarlarım</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Nominative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarlarınız</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Genitive</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarının</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Genitive</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarımın</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Genitive</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarınızın</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Genitive</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarlarının</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Genitive</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarlarımın</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Genitive</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarlarınızın</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Dative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarına</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Dative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarıma</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Dative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarınıza</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Dative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarlarına</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Dative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarlarıma</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Dative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarlarınıza</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Accusative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarını</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Accusative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarımı</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Accusative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarınızı</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Accusative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarlarını</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Accusative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarlarımı</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Accusative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarlarınızı</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Locative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarında</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Locative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarımda</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Locative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarınızda</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Locative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarlarında</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Locative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarlarımda</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Locative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarlarınızda</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Ablative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarından</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Ablative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarımdan</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Ablative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarınızdan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Ablative</caseType>
+        <possessive>None</possessive>
+        <value>Mobil Panel Ayarlarından</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Ablative</caseType>
+        <possessive>First</possessive>
+        <value>Mobil Panel Ayarlarımdan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Ablative</caseType>
+        <possessive>Second</possessive>
+        <value>Mobil Panel Ayarlarınızdan</value>
+    </caseValues>
+</CustomObjectTranslation>

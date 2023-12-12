@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Layout__c</name>
+    <label>Lay-out</label>
+    <picklistValues>
+        <masterLabel>SIDE</masterLabel>
+        <translation>SIDE (naast elkaar)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STACK</masterLabel>
+        <translation>STACK (gestapeld)</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel
+  >Название параметра мобильной панели мониторинга</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Название параметра мобильной панели мониторинга</label>
+    </standardFields>
+    <gender>Masculine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Nominative</caseType>
+        <value>Параметр мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Nominative</caseType>
+        <value>Параметры мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Accusative</caseType>
+        <value>Параметр мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Accusative</caseType>
+        <value>Параметры мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Dative</caseType>
+        <value>Параметру мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Dative</caseType>
+        <value>Параметрам мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Genitive</caseType>
+        <value>Параметра мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Genitive</caseType>
+        <value>Параметров мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Instrumental</caseType>
+        <value>Параметром мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Instrumental</caseType>
+        <value>Параметрами мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Prepositional</caseType>
+        <value>Параметре мобильной панели мониторинга</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Prepositional</caseType>
+        <value>Параметрах мобильной панели мониторинга</value>
+    </caseValues>
+</CustomObjectTranslation>

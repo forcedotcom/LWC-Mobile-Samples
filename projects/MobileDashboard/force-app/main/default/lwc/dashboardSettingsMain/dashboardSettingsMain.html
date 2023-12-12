@@ -1,0 +1,77 @@
+<template>
+  <template if:true={loading}>
+    <lightning-spinner
+      alternative-text="Loading"
+      size="medium"
+      class="spinnerClass"
+    ></lightning-spinner>
+  </template>
+  <c-dashboard-toast-message></c-dashboard-toast-message>
+  <div class="dashboard-settings-page-main-container">
+    <div class="slds-page-header">
+      <div class="slds-page-header__row">
+        <div class="slds-page-header__col-title">
+          <div class="slds-media slds-media_center">
+            <lightning-icon
+              class="header-icon"
+              size="medium"
+              icon-name="standard:dashboard"
+            ></lightning-icon>
+            <div class="slds-media__body">
+              <p class="slds-page-header__name-meta">
+                {LABELS.MobileDashboard_settings_header}
+              </p>
+              <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                  <h1>
+                    <span
+                      class="slds-page-header__title slds-truncate"
+                      title="Mobile Dashboard"
+                      >{LABELS.MobileDashboard_settings_title}</span
+                    >
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slds-var-m-top_medium">
+      <lightning-card>
+        <div class="main-card">
+          <div class="settings-description">
+            <p>{LABELS.MobileDashboard_settings_description}</p>
+          </div>
+
+          <template
+            if:true={dashboardCards.length}
+            for:each={dashboardCards}
+            for:item="dashboardCard"
+            for:index="index"
+          >
+            <c-dashboard-settings-card
+              key={dashboardCard.key}
+              index={index}
+              card={dashboardCard}
+              handle-edit-card-click={handleEditCardClick}
+              move-card-up={moveCardUp}
+              move-card-down={moveCardDown}
+              duplicate-card={duplicateCard}
+              delete-card={deleteCard}
+              cards-length={dashboardCards.length}
+            >
+            </c-dashboard-settings-card>
+          </template>
+
+          <c-dashboard-add-button
+            label={LABELS.MobileDashboard_settings_add_card_button}
+            handle-add-click={handleAddCardClick}
+          >
+          </c-dashboard-add-button>
+        </div>
+      </lightning-card>
+    </div>
+  </div>
+</template>

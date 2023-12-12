@@ -9,22 +9,24 @@
     },
     "license": "CC0",
     "scripts": {
-        "format": "prettier --check '**/*.{js,ts,json}'",
-        "format:fix": "prettier --write '**/*.{js,ts,json}'",
-        "prepare": "husky install"
+        "lint": "lerna run lint",
+        "lint:fix": "lerna run lint:fix",
+        "test": "lerna run test",
+        "prettier": "lerna run prettier",
+        "prettier:verify": "lerna run prettier:verify",
+        "prepare": "husky install",
+        "precommit": "yarn lint && yarn prettier:verify && yarn test"
     },
     "devDependencies": {
-        "husky": "^8.0.2",
-        "lint-staged": "^13.1.0",
-        "prettier": "^2.8.2"
+        "husky": "^8.0.3",
+        "lerna": "^8.0.0"
     },
     "dependencies": {},
     "engines": {
-        "node": ">=16.13.0"
+        "node": ">=18"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "yarn lint-staged"
-        }
-    }
+    "workspaces": [
+        "projects/*",
+        "projects/LocalPreview/HelloWorld"
+    ]
 }
