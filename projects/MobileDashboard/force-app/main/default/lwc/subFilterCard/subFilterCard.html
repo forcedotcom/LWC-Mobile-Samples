@@ -1,0 +1,92 @@
+<template>
+  <div class="sub-filter-container">
+    <div class="drag-divider"></div>
+    <lightning-card draggable={canBeDragged}>
+      <div class="sub-filter">
+        <div class="grabber" onmousedown={allowDrag} onmouseup={disableDrag}>
+          <svg
+            width="10"
+            height="21"
+            viewBox="0 0 10 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M2.2309 0.346192C3.24627 0.346192 4.07703 1.17695 4.07703 2.19231C4.07703 3.20768 3.24627 4.03844 2.2309 4.03844C1.21552 4.03844 0.384766 3.20768 0.384766 2.19231C0.384766 1.17695 1.21552 0.346192 2.2309 0.346192ZM7.76936 0.346191C8.78473 0.346191 9.61549 1.17695 9.61549 2.19231C9.61549 3.20768 8.78473 4.03844 7.76936 4.03844C6.75399 4.03844 5.92323 3.20768 5.92323 2.19231C5.92323 1.17695 6.75399 0.346191 7.76936 0.346191ZM2.2309 5.8847C3.24627 5.8847 4.07703 6.71546 4.07703 7.73082C4.07703 8.74619 3.24627 9.57695 2.2309 9.57695C1.21553 9.57695 0.384766 8.74619 0.384766 7.73082C0.384766 6.71546 1.21553 5.8847 2.2309 5.8847ZM7.76936 5.8847C8.78473 5.8847 9.61549 6.71546 9.61549 7.73082C9.61549 8.74619 8.78473 9.57695 7.76936 9.57695C6.75399 9.57695 5.92323 8.74619 5.92323 7.73082C5.92323 6.71546 6.75399 5.8847 7.76936 5.8847ZM2.2309 11.4231C3.24627 11.4231 4.07703 12.2539 4.07703 13.2693C4.07703 14.2846 3.24627 15.1154 2.2309 15.1154C1.21553 15.1154 0.384766 14.2846 0.384766 13.2693C0.384766 12.2539 1.21553 11.4231 2.2309 11.4231ZM7.76936 11.4231C8.78473 11.4231 9.61549 12.2539 9.61549 13.2693C9.61549 14.2846 8.78473 15.1154 7.76936 15.1154C6.75399 15.1154 5.92323 14.2846 5.92323 13.2693C5.92323 12.2539 6.75399 11.4231 7.76936 11.4231ZM2.2309 16.9617C3.24627 16.9617 4.07703 17.7924 4.07703 18.8078C4.07703 19.8231 3.24627 20.6539 2.2309 20.6539C1.21553 20.6539 0.384766 19.8231 0.384766 18.8078C0.384766 17.7924 1.21553 16.9617 2.2309 16.9617ZM7.76936 16.9617C8.78473 16.9617 9.61549 17.7924 9.61549 18.8078C9.61549 19.8231 8.78473 20.6539 7.76936 20.6539C6.75399 20.6539 5.92323 19.8231 5.92323 18.8078C5.92323 17.7924 6.75399 16.9617 7.76936 16.9617Z"
+              fill="#747474"
+            />
+          </svg>
+        </div>
+        <div class="props-container">
+          <div class="row">
+            <lightning-input
+              class="label-input"
+              type="text"
+              label={LABELS.MobileDashboard_sub_filter_label_field}
+              value={tempFilter.label}
+              onchange={onLabelChange}
+              required
+            ></lightning-input>
+            <c-basic-filter
+              object-value={objectValue}
+              index={index}
+              field={tempFilter.field}
+              operator={tempFilter.operator}
+              value={tempFilter.value}
+              quantity={tempFilter.quantity}
+              unit={tempFilter.unit}
+              fields-options={fieldsOptions}
+              update-sub-filter={updateSubFilter}
+            >
+            </c-basic-filter>
+          </div>
+          <div class="row">
+            <c-dashboard-icons-picker selected-icon={icon} set-icon={setIcon}>
+            </c-dashboard-icons-picker>
+            <lightning-input
+              type="color"
+              label={LABELS.MobileDashboard_sub_filter_color_field}
+              field-level-help={LABELS.MobileDashboard_sub_filter_color_field_infobubble}
+              value={colorPickerValue}
+              onchange={onColorChange}
+            >
+            </lightning-input>
+          </div>
+        </div>
+        <div class="preview" style="max-width: 200px">
+          <label class="slds-form-element__label">
+            { LABELS.MobileDashboard_preview_title }
+            <lightning-helptext
+              content={LABELS.MobileDashboard_preview_title_infobubble}
+            ></lightning-helptext>
+          </label>
+          <c-sub-filter-summary-component
+            counter="1"
+            color={colorPickerValue}
+            label={label}
+            icon={icon}
+            layout={layout}
+          >
+          </c-sub-filter-summary-component>
+        </div>
+        <div class="menu">
+          <lightning-button-menu
+            alternative-text={LABELS.MobileDashboard_sub_filter_options}
+            menu-alignment="right"
+          >
+            <lightning-menu-item
+              label={LABELS.MobileDashboard_settings_duplicate_button}
+              onclick={handleDuplicateFilterClick}
+            ></lightning-menu-item>
+            <lightning-menu-item
+              label={LABELS.MobileDashboard_settings_delete_button}
+              onclick={handleDeleteFilterClick}
+            ></lightning-menu-item>
+          </lightning-button-menu>
+        </div>
+      </div>
+    </lightning-card>
+  </div>
+</template>

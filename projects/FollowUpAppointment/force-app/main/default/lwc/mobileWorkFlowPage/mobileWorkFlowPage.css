@@ -1,0 +1,117 @@
+.mainDiv {
+  height: 500px;
+  width: 300px;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.layoutItem {
+  height: 500px;
+  width: 300px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+
+.mainInfoText {
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.fieldText {
+  margin-top: 10px;
+}
+
+.newAppointmentTitleLayout {
+}
+
+.deleteIcon {
+  padding-top: 12px;
+  margin-left: 15px;
+  width: 10px;
+  height: 10px;
+}
+
+.permissionText {
+  padding-top: 15px;
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+
+.screenTitleLayout {
+  height: 54px;
+  background-color: #f3f3f3;
+}
+
+.screenTitle1 {
+  padding-top: 5px;
+  margin-left: 15px;
+}
+
+.screenTitle2 {
+  padding-top: 1px;
+  margin-left: 15px;
+}
+
+.screenFooterDivElement {
+  margin-top: 340px;
+  height: 50px;
+}
+
+.inputFieldTitle {
+  width: 100%;
+}
+
+.layoutMainPage {
+  width: 100%;
+}
+
+.layoutItem1 {
+  width: 45%;
+}
+
+.editIcon {
+  margin-top: 15px;
+  margin-right: 20px;
+  background-color: #f3f3f3;
+  height: 30px;
+  padding-top: 4px;
+}
+
+.editButton {
+  margin-top: 15px;
+  margin-right: 0px;
+}
+
+.leftrightDivLayout {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.footerLayout {
+  height: 48px;
+  padding-right: 60px;
+  margin-top: 50px;
+}
+
+.addStepBtn {
+  margin-top: 15px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+.saveButton {
+  margin-top: 10px;
+}
+
+.comboBox {
+  margin-right: 15px;
+}
+
+.fieldTitle {
+  margin-top: 15px;
+}
+
+.searchInputField {
+  width: 42%;
+  margin-top: 5px;
+}

@@ -1,0 +1,21 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "package": "Mobile Dashboard for Field Service Mobile",
+      "versionName": "Summer '24",
+      "versionNumber": "244.0.0.NEXT",
+      "default": true,
+      "versionDescription": ""
+    }
+  ],
+  "name": "Mobile Dashboard for Field Service Mobile",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com/",
+  "sourceApiVersion": "59.0",
+  "packageAliases": {
+    "Mobile Dashboard for Field Service Mobile": "0HoB00000008PtKKAU",
+    "Mobile Dashboard for Field Service Mobile@1.0.0-2": "04tB0000000h4nQIAQ",
+    "Mobile Dashboard for Field Service Mobile@1.1.0-1": "04tB0000000h4wAIAQ"
+  }
+}

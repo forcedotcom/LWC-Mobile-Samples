@@ -1,0 +1,19 @@
+.modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.message {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.error-icon {
+  margin-right: 8px;
+  --lwc-colorTextIconDefault: #ba0517;
+}

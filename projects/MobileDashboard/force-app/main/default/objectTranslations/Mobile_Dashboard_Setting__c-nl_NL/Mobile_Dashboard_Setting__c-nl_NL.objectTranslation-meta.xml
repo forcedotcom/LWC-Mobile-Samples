@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>Naam van instelling voor mobiel dashboard</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Naam van instelling voor mobiel dashboard</label>
+    </standardFields>
+    <gender>Feminine</gender>
+    <caseValues>
+        <plural>false</plural>
+        <value>Instelling van mobiel dashboard</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Instellingen van mobiel dashboard</value>
+    </caseValues>
+</CustomObjectTranslation>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Main_Filter_Logic__c</name>
+    <label>Главен логаритъм за филтриране</label>
+    <picklistValues>
+        <masterLabel>AND</masterLabel>
+        <translation>И</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OR</masterLabel>
+        <translation>ИЛИ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CUSTOM</masterLabel>
+        <translation>ПО ИЗБОР</translation>
+    </picklistValues>
+</CustomFieldTranslation>

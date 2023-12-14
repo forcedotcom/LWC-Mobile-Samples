@@ -1,0 +1,34 @@
+{
+  "orgName": "Demo company",
+  "namespace": "",
+  "template": "trialforce",
+  "features": [
+    "EnableSetPasswordInApi",
+    "FieldService:10",
+    "FieldServiceAppointmentAssistantUser:10",
+    "EnableSetPasswordInApi",
+    "Communities"
+  ],
+
+  "settings": {
+    "communitiesSettings": {
+      "enableNetworksEnabled": true,
+      "enableCommunityWorkspaces": true
+    },
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "fieldServiceSettings": {
+      "fieldServiceOrgPref": true,
+      "optimizationServiceAccess": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    },
+    "languageSettings": {
+      "enableTranslationWorkbench": true,
+      "enableEndUserLanguages": true,
+      "enablePlatformLanguages": true
+    }
+  }
+}

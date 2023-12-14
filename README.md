@@ -1,87 +1,26 @@
-# Samples for Previewing Lightning Web Components on Mobile
-Welcome to the Mobile Preview samples repo. Here, you can find sample projects and apps that let you preview Lightning web components several ways:
-- In your desktop browser
-- In the mobile browser of an iOS or Android virtual device
-- In a native app running on an iOS or Android virtual device
+# Sample Lightning Web Components Projects for Mobile
+Welcome to the Mobile samples repo. You can browse the samples under the [projects](./projects) folder.
 
-**IMPORTANT!** Before running this sample Lightning Web Component project, you must configure it to use a scratch org. If you're not familiar with this concept, we recommend completing the following trails. These trails demonstrate how to set up your development environment and configure a Lightning Web Component project with a Salesforce scratch org:
+## Contribution Guidelines
 
-- [Quick Start: Lightning Web Components](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components?trail_id=build-lightning-web-components)
-- [Set Up Your Lightning Web Components Developer Tools](https://trailhead.salesforce.com/content/learn/projects/set-up-your-lightning-web-components-developer-tools?trail_id=build-lightning-web-components)
+### Contributing
 
-## What's Included
+1. Familiarize yourself with the codebase.
+1. Create your standalone SFDX project and add all of your code to it.
+1. Fork this repository.
+1. Copy your SFDX project into `projects` folder in your fork.
+1. Modify your project and align it with the requirements of this monorepo (follow the example of any of the existing projects):
+    1. Update the `name` and `description` in your `package.json` to something meaningful.
+    1. Ensure that your `dependencies` and `devDependencies` are not too old. They should be same as other projects in this repo or newer.
+    1. `DO NOT` include a `package-lock.json` file. We use Yarn in this repo. After copying over your project, delete its `package-lock.json` and `node_modules` and then run `yarn install` at the root of the repo. This will update the existing `yarn.lock` file in the repo and generate a new `node_modules` for your project.
+    1. Ensure that running `yarn precommit` at the root of the repo passes all of the checks and address any failures.
+1. Ensure that you've set up GPG signing to sign your commits.
+1. Once ready, send us a pull request. We'll review your code, suggest any changes needed, and merge it in when ready.
 
-Samples in this repo include Lightning Web Component projects and native mobile apps. The native apps are configured to recognize and display a component running on a local server. 
+### Branches
 
-### Lightning Web Component Projects
+- We work directly in `main`. This means that every PR that goes in `main` should be self contained and complete. For feature work that is done via multiple PRs, please create a feature branch in your fork first and once all of the work is done then create a PR to `main` for review.
 
-These samples define Lightning web components and demonstrate configurations for previewing them. 
-<details>
-    <summary>
-        <b>HelloWorld</b> 
-    </summary>
-This sample Lightning Web Component project demonstrates how to preview locally. It contains a basic Lightning web component, along with <code>mobile-apps.json</code> - a configuration file that defines how to preview this component in native mobile apps. 
+### Pull Requests
 
-This file points to <code>configure_android_test_app.ts</code> and <code>configure_ios_test_app.ts</code> files. Together, these files demonstrate how you can 
-   
-   - Configure your apps to show up in the VSCode preview dialog boxes.
-   - Define the optional <code>get_app_bundle</code> parameter. You can implement it to compile the app or perform any other setup steps.
-
-For more information on <code>mobile-apps.json</code>, see 
-
-- “Configuring a Native Mobile App to Host Previews” in [Preview Your Components from the Command Line](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.mobile_extensions_cli_commands)
-- [Preview in Custom Mobile Apps](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.mobile_extensions_integrate_custom_app)
-
-</details>
-
-### Native Mobile Apps
-These samples let you preview Lightning web components in standalone native apps.
-<details>
-    <summary>
-        <b>apps/ios/LwcTestApp</b>
-    </summary>
-    
-A sample app that you can use to preview a Lightning web component in a native iOS app.
-</details>
-
-<details>
-    <summary>
-        <strong>apps/android/LwcTestApp</strong>
-    </summary>
-    
-A sample app that you can use to preview a Lightning web component in a native Android app.
-</details>
-
-## Previewing the Hello World Sample
-
-After you've set up your environment, connect the `HelloWorld` sample project to your scratch org and preview your component. You can use the following instructions as a model for previewing other Lightning web components. 
-
-1. In VS Code, open the `HelloWorld` folder.
-
-
-2. Configure the `HelloWorld` project to use a scratch org. If you already have a scratch org, skip to step 3. If you don't have a scratch org:
-    1. In VS Code, press Cmd+Shift+p (macOS) or Ctrl+Shift+p (Windows).
-    2. Type in `Scratch` and select `SFDX: Create a Default Scratch Org`.
-    3. Follow the onscreen steps to create a scratch org. The recommended trails provide detailed information on these steps.
-    4. Ensure that a success message appears in the VS Code Output window.
-
-
-3. Authorize the `HelloWorld` project to use your scratch org.
-    1. In VS Code, press Cmd+Shift+p (macOS) or Ctrl+Shift+p (Windows).
-    2. Type in `Authorize` and select `SFDX: Authorize an Org`.
-    3. Follow the onscreen steps to log into your Salesforce Org with your credentials. The recommended trails provide detailed information on these steps.
-    4. Ensure that a success message appears in the VS Code Output window.
-
-
-4. Now that your `HelloWorld` project is connected to your scratch org, preview it locally.
-    1. In VS Code, navigate to `force-app > main > default > lwc`.
-    2. Right-click `helloWorld` and select `SFDX: Preview Component Locally`.
-    3. Select whether you'd like to preview it in your desktop browser or on an iOS or Android device. 
-    4. If you chose iOS/Android, either
-    - - Select an available virtual device from the presented list (if one appears), or 
-    - - Choose to create a virtual device.
-    5. Indicate whether you'd like to preview the component on your mobile browser or in the provided native LWC Test App.
-
-Your virtual device launches, and your component preview appears.
-
-For full documentation, see [Preview Lightning Web Components on Mobile](https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.mobile_extensions). 
+- This repo is open to public so `DO NOT` include internal info in PRs (such as GUS work item number) and in your code. 

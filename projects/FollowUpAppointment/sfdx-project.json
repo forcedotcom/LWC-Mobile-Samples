@@ -1,0 +1,35 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "package": "Follow-Up Appointment for Field Service Mobile",
+      "versionName": "Summer' 23",
+      "versionNumber": "1.2.0.NEXT",
+      "versionDescription": "To configure the settings, from the App Launcher, find and select Follow-Up Appointment Settings. Using this package, mobile workers can create and schedule follow-up appointments for customers directly from the mobile mobile app.",
+      "default": true,
+      "dependencies": [
+        {
+          "package": "FSL"
+        }
+      ]
+    }
+  ],
+  "name": "Follow-Up Appointment for Field Service Mobile",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "59.0",
+  "packageAliases": {
+    "Follow-Up Appointment for Field Service Mobile": "0HoB00000008PtFKAU",
+    "FSL": "04t3y000001drQt",
+    "Follow-Up Appointment for Field Service Mobile@0.1.0-1": "04tB0000000h4nGIAQ",
+    "Follow-Up Appointment for Field Service Mobile@0.1.0-6": "04tB0000000h6C7IAI",
+    "Follow-Up Appointment for Field Service Mobile@1.2.0-1": "04tB0000000h6CCIAY",
+    "Follow-Up Appointment for Field Service Mobile@1.2.0-2": "04tB0000000h6GZIAY",
+    "Follow-Up Appointment for Field Service Mobile@1.2.0-3": "04tB0000000h6H8IAI",
+    "Follow-Up Appointment for Field Service Mobile@1.2.0-4": "04tB0000000h6HSIAY",
+    "Follow-Up Appointment for Field Service Mobile@1.2.0-5": "04tB0000000h6HcIAI",
+    "Follow-Up Appointment for Field Service Mobile@1.2.0-6": "04tB0000000h6HhIAI",
+    "Follow-Up Appointment for Field Service Mobile@1.2.0-8": "04tB0000000h6nBIAQ",
+    "Follow-Up Appointment for Field Service Mobile@1.2.0-14": "04tB0000000h8fpIAA"
+  }
+}

@@ -1,0 +1,106 @@
+<template>
+  <template lwc:if={displayNoSlotsMsg}>
+    <div class="empty-slots-container">
+      <lightning-icon
+        icon-name="action:info"
+        size="large"
+        variant="error"
+        class="grey-action-icon"
+      >
+      </lightning-icon>
+      <div class="empty-slos-title">
+        {LABELS.FollowUpAppointments_no_available_appointments_msg}
+      </div>
+      <template lwc:if={showMobileWorkerChoice}>
+        <div class="empty-slos-body">
+          <lightning-formatted-rich-text
+            value={LABELS.FollowUpAppointments_empty_state_select_any_available_worker}
+          ></lightning-formatted-rich-text>
+        </div>
+      </template>
+      <template lwc:else>
+        <div class="empty-slos-body">
+          {LABELS.FollowUpAppointments_empty_state_change_the_dates}
+        </div>
+      </template>
+    </div>
+  </template>
+  <template lwc:else>
+    <div class="slots-container">
+      <template lwc:if={formattedRecommendedSlotsArray.length}>
+        <div class="page-title">
+          {LABELS.FollowUpAppointments_recommended_appointments}
+        </div>
+        <div class="separator"></div>
+        <template
+          for:each={formattedRecommendedSlotsArray}
+          for:item="timeSlotArr"
+        >
+          <div
+            class="header"
+            key={timeSlotArr.title}
+            data-id={timeSlotArr.title}
+            onscroll={onScroll}
+          >
+            {timeSlotArr.title}
+          </div>
+
+          <template for:each={timeSlotArr.timeArray} for:item="timeArray">
+            <button
+              key={timeArray}
+              class="slds-button slds-button_neutral timeslotButton"
+              title={timeArray.fullValue}
+              label={timeArray.label}
+              slot="actions"
+              onclick={handleTimeSlotClickEvent}
+            >
+              {timeArray.label}
+            </button>
+          </template>
+        </template>
+      </template>
+      <div class="section"></div>
+      <div class="page-title">
+        {LABELS.FollowUpAppointments_all_available_appointments}
+      </div>
+      <div class="separator"></div>
+      <template for:each={formattedTimeSlotArray} for:item="timeSlotNewArray">
+        <template if:true={timeSlotNewArray.timeArray}>
+          <div
+            class="header"
+            key={timeSlotNewArray}
+            data-id={timeSlotNewArray.title}
+            onscroll={onScroll}
+          >
+            {timeSlotNewArray.title}
+          </div>
+
+          <template for:each={timeSlotNewArray.timeArray} for:item="timeArray">
+            <button
+              key={timeArray}
+              class="slds-button slds-button_neutral timeslotButton"
+              title={timeArray.fullValue}
+              label={timeArray.label}
+              slot="actions"
+              onclick={handleTimeSlotClickEvent}
+            >
+              {timeArray.label}
+            </button>
+          </template>
+        </template>
+      </template>
+      <!-- SPINNER -->
+      <template if:true={showDataSpinner}>
+        <div class="slds-is-relative">
+          <lightning-spinner
+            alternativetext="Loading"
+            variant="brand"
+            size="large"
+          >
+          </lightning-spinner>
+        </div>
+      </template>
+      <!-- SPINNER -->
+    </div>
+  </template>
+</template>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <nameFieldLabel>Název nastavení mobilní palubovky</nameFieldLabel>
+    <standardFields>
+        <name>Name</name>
+        <label>Název nastavení mobilní palubovky</label>
+    </standardFields>
+    <gender>Neuter</gender>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Nominative</caseType>
+        <value>Nastavení mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Nominative</caseType>
+        <value>Nastavení mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Accusative</caseType>
+        <value>Nastavení mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Accusative</caseType>
+        <value>Nastavení mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Genitive</caseType>
+        <value>Nastavení mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Genitive</caseType>
+        <value>Nastavení mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Dative</caseType>
+        <value>Nastavení mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Dative</caseType>
+        <value>Nastavením mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Instrumental</caseType>
+        <value>Nastavením mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Instrumental</caseType>
+        <value>Nastaveními mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <caseType>Locative</caseType>
+        <value>Nastavení mobilní palubovky</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <caseType>Locative</caseType>
+        <value>Nastaveních mobilní palubovky</value>
+    </caseValues>
+</CustomObjectTranslation>

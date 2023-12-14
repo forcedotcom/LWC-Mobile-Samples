@@ -1,0 +1,10 @@
+.custom-toast-container {
+  position: absolute;
+}
+
+.toast-close-icon {
+  --lwc-colorTextIconDefault: #ffffff;
+}
+.content-container {
+  padding-left: 12px;
+}
