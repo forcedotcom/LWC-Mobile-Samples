@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
         <name>MobileDashboard_settings_header</name>
@@ -6,12 +6,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_title</name>
-        <label>Painel do celular</label>
+        <label>Painel móvel</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Configure seus cartões de painel. Para um melhor desempenho, limite o painel a cinco cartões.</label>
+        <label>Configure seus cartões de painel. Para um melhor desempenho, limite o painel a cinco cartões.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Após selecionar um objeto, defina quais registros serão incluídos no cartão.</label>
+        <label>Após selecionar um objeto, defina quais registros serão incluídos no cartão.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Lógica personalizada</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Forneça a lógica da condição. Use números para se referir a cada condição. Use E ou OU para identificar a combinação de condições. Adicione parênteses para agrupar partes da string. Por exemplo, 1 E (2 OU 3) avalia se a primeira condição é verdadeira e se a segunda ou a terceira condição é verdadeira.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Forneça a lógica da condição. Use números para se referir a cada condição. Use E ou OU para identificar a combinação de condições. Adicione parênteses para agrupar partes da string. Por exemplo, 1 E (2 OU 3) avalia se a primeira condição é verdadeira e se a segunda ou a terceira condição é verdadeira.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Lado a lado</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Economiza espaço vertical. Recomendado para nomes de campo curtos.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Economiza espaço vertical. Recomendado para nomes de campo curtos.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Empilhado</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Usa mais espaço vertical. Recomendado para nomes de campo longos.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Usa mais espaço vertical. Recomendado para nomes de campo longos.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Para melhor visibilidade, escolha cores de alto contraste.</label>
+        <label>Para melhor visibilidade, escolha cores de alto contraste.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -387,23 +378,19 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
-        <label
-    >Não foi possível adicionar o cartão. Tente novamente mais tarde.</label>
+        <label>Não foi possível adicionar o cartão. Tente novamente mais tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >Não foi possível salvar suas alterações. Tente novamente mais tarde.</label>
+        <label>Não foi possível salvar suas alterações. Tente novamente mais tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label
-    >Não foi possível excluir o cartão. Tente novamente mais tarde.</label>
+        <label>Não foi possível excluir o cartão. Tente novamente mais tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label
-    >Não foi possível duplicar o cartão. Tente novamente mais tarde.</label>
+        <label>Não foi possível duplicar o cartão. Tente novamente mais tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -419,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >A exibição da visualização pode diferir ligeiramente da exibição real do dispositivo móvel.</label>
+        <label>A exibição da visualização pode diferir ligeiramente da exibição real do dispositivo móvel.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -442,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Selecionar...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Configurações do painel móvel</label>
+    </customTabs>
 </Translations>

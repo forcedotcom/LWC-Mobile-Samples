@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
         <name>MobileDashboard_settings_header</name>
@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Configure sus tarjetas de tablero. Para un mejor desempeño, limite los tableros a cinco tarjetas.</label>
+        <label>Configure sus tarjetas de tablero. Para un mejor desempeño, limite los tableros a cinco tarjetas.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Después de seleccionar un objeto, defina qué registros se incluyen en la tarjeta.</label>
+        <label>Después de seleccionar un objeto, defina qué registros se incluyen en la tarjeta.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Lógica personalizada</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Proporcione la lógica de la condición. Utilice números para hacer referencia a cada condición. Utilice Y u O para identificar la combinación de condiciones. Agregue paréntesis para agrupar partes de cadenas conjuntamente. Por ejemplo, 1 Y (2 O 3) evalúa si la primera condición es verdadera, y si la segunda o tercera condición es verdadera.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Proporcione la lógica de la condición. Utilice números para hacer referencia a cada condición. Utilice Y u O para identificar la combinación de condiciones. Agregue paréntesis para agrupar partes de cadenas conjuntamente. Por ejemplo, 1 Y (2 O 3) evalúa si la primera condición es verdadera, y si la segunda o tercera condición es verdadera.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Lado a lado</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Ahorra espacio vertical. Se recomienda para nombres de campo cortos.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Ahorra espacio vertical. Se recomienda para nombres de campo cortos.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Apilada</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Utiliza más espacio vertical. Se recomienda para nombres de campo largos.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Utiliza más espacio vertical. Se recomienda para nombres de campo largos.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Para una visibilidad óptima, seleccione colores de alto contraste.</label>
+        <label>Para una visibilidad óptima, seleccione colores de alto contraste.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -383,28 +374,23 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label
-    >Esta acción elimina los datos de tarjeta de la tarjeta del tablero.</label>
+        <label>Esta acción elimina los datos de tarjeta de la tarjeta del tablero.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
-        <label
-    >No pudimos agregar la tarjeta. Inténtelo de nuevo más tarde.</label>
+        <label>No pudimos agregar la tarjeta. Inténtelo de nuevo más tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >No pudimos guardar sus cambios. Inténtelo de nuevo más tarde.</label>
+        <label>No pudimos guardar sus cambios. Inténtelo de nuevo más tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label
-    >No pudimos eliminar la tarjeta. Inténtelo de nuevo más tarde.</label>
+        <label>No pudimos eliminar la tarjeta. Inténtelo de nuevo más tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label
-    >No pudimos duplicar la tarjeta. Inténtelo de nuevo más tarde.</label>
+        <label>No pudimos duplicar la tarjeta. Inténtelo de nuevo más tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -420,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >La visualización de la vista previa puede diferir ligeramente de la visualización del dispositivo móvil en sí.</label>
+        <label>La visualización de la vista previa puede diferir ligeramente de la visualización del dispositivo móvil en sí.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -443,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Seleccionar...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Ajustes del tablero de Mobile</label>
+    </customTabs>
 </Translations>

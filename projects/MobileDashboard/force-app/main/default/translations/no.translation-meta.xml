@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
         <name>MobileDashboard_settings_header</name>
@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Konfigurer kontrollpanelkortene. Begrens kontrollpanelet til fem kort for å sikre best mulig ytelse.</label>
+        <label>Konfigurer kontrollpanelkortene. Begrens kontrollpanelet til fem kort for å sikre best mulig ytelse.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Når du har valgt et objekt, definerer du hvilke poster som skal inkluderes i kortet.</label>
+        <label>Når du har valgt et objekt, definerer du hvilke poster som skal inkluderes i kortet.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Tilpasset logikk</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Oppgi betingelseslogikken. Bruk tall til å referere til hver betingelse. Bruk AND og OR til å identifisere kombinasjonen av betingelser. Legg til parenteser for å gruppere deler av strengen sammen. For eksempel, 1 AND (2 OR 3) evaluerer om den første betingelsen er sann og enten den andre eller den tredje betingelsen er sann.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Oppgi betingelseslogikken. Bruk tall til å referere til hver betingelse. Bruk AND og OR til å identifisere kombinasjonen av betingelser. Legg til parenteser for å gruppere deler av strengen sammen. For eksempel, 1 AND (2 OR 3) evaluerer om den første betingelsen er sann og enten den andre eller den tredje betingelsen er sann.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,8 +137,7 @@
         <label>Side-ved-side</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
         <label>Sparer plass vertikalt. Anbefales for korte feltnavn.</label>
     </customLabels>
     <customLabels>
@@ -150,8 +145,7 @@
         <label>Stablet</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
         <label>Bruker mer plass vertikalt. Anbefales for lange feltnavn.</label>
     </customLabels>
     <customLabels>
@@ -176,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Velg farger med høy kontrast for å få best mulig synlighet.</label>
+        <label>Velg farger med høy kontrast for å få best mulig synlighet.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -413,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Forhåndsvisningen kan være litt forskjellig fra den faktiske visningen på mobilskjermen.</label>
+        <label>Forhåndsvisningen kan være litt forskjellig fra den faktiske visningen på mobilskjermen.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -436,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Velg ...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Innstillinger for Mobile-kontrollpanel</label>
+    </customTabs>
 </Translations>

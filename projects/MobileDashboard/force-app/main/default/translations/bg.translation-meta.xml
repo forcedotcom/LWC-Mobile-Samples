@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
         <name>MobileDashboard_settings_header</name>
@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Конфигурирайте картите на таблото си. За по-добра производителност ограничете картите на таблото до пет.</label>
+        <label>Конфигурирайте картите на таблото си. За по-добра производителност ограничете картите на таблото до пет.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >След като изберете обект, дефинирайте кои записи да бъдат включени в картата.</label>
+        <label>След като изберете обект, дефинирайте кои записи да бъдат включени в картата.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Логаритъм по избор</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Дайте логиката на условието. Използвайте цифри за препратка към всяко условие. Използвайте И или ИЛИ за идентифициране на комбинацията от условия. Добавете скоби, за да групирате части от низа. Например „1 И (2 ИЛИ 3)“ оценява дали първото условие е вярно и дали второто или третото е вярно.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Дайте логиката на условието. Използвайте цифри за препратка към всяко условие. Използвайте И или ИЛИ за идентифициране на комбинацията от условия. Добавете скоби, за да групирате части от низа. Например „1 И (2 ИЛИ 3)“ оценява дали първото условие е вярно и дали второто или третото е вярно.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Една до друга</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Спестява място вертикално. Препоръчва се за кратки имена на полета.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Спестява място вертикално. Препоръчва се за кратки имена на полета.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Насложени</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Използва повече място вертикално. Препоръчва се за дълги имена на полета.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Използва повече място вертикално. Препоръчва се за дълги имена на полета.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -390,8 +382,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >Не успяхме да запишем промените ви. Опитайте отново по-късно.</label>
+        <label>Не успяхме да запишем промените ви. Опитайте отново по-късно.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
@@ -399,8 +390,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label
-    >Не успяхме да дублираме картата. Опитайте отново по-късно.</label>
+        <label>Не успяхме да дублираме картата. Опитайте отново по-късно.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -416,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Прегледът може малко да се различава от действителния дисплей на мобилното устройство.</label>
+        <label>Прегледът може малко да се различава от действителния дисплей на мобилното устройство.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -439,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Избор...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Настройки на мобилно табло</label>
+    </customTabs>
 </Translations>

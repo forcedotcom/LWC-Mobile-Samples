@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
         <name>MobileDashboard_settings_header</name>
@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Konfigurer dine dashboardkort. Begræns dashboards til fem kort for at opnå bedre ydeevne.</label>
+        <label>Konfigurer dine dashboardkort. Begræns dashboards til fem kort for at opnå bedre ydeevne.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Når du har valgt et objekt, skal du definere, hvilke registreringer der skal inkluderes i kortet.</label>
+        <label>Når du har valgt et objekt, skal du definere, hvilke registreringer der skal inkluderes i kortet.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Tilpas logik</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Angiv betingelseslogik. Brug tal til at referere til hver betingelse. Brug OG eller ELLER til at identificere kombinationen af betingelser. Tilføj parenteser for at gruppere dele af strengen sammen. Eksemplet 1 OG (2 ELLER 3) evaluerer, om den første betingelse er sand, og om enten den anden eller den tredje betingelse er sand.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Angiv betingelseslogik. Brug tal til at referere til hver betingelse. Brug OG eller ELLER til at identificere kombinationen af betingelser. Tilføj parenteser for at gruppere dele af strengen sammen. Eksemplet 1 OG (2 ELLER 3) evaluerer, om den første betingelse er sand, og om enten den anden eller den tredje betingelse er sand.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,8 +137,7 @@
         <label>Side om side</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
         <label>Sparer plads i højden. Anbefales til korte feltnavne.</label>
     </customLabels>
     <customLabels>
@@ -150,8 +145,7 @@
         <label>Stablet</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
         <label>Bruger mere lodret plads. Anbefales til lange feltnavne.</label>
     </customLabels>
     <customLabels>
@@ -176,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Brug farver med stor kontrast for at opnå bedst synlighed.</label>
+        <label>Brug farver med stor kontrast for at opnå bedst synlighed.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -413,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Eksempelvisning kan være lidt anderledes end den faktiske mobilenhedsvisning.</label>
+        <label>Eksempelvisning kan være lidt anderledes end den faktiske mobilenhedsvisning.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -436,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Vælg...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Indstillinger for mobildashboard</label>
+    </customTabs>
 </Translations>

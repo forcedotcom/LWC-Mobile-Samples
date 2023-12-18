@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
         <name>MobileDashboard_settings_header</name>
@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Configura le schede del tuo cruscotto digitale. Per prestazioni migliori, limita il cruscotto digitale a cinque schede.</label>
+        <label>Configura le schede del tuo cruscotto digitale. Per prestazioni migliori, limita il cruscotto digitale a cinque schede.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Dopo aver selezionato un oggetto, definisci quali record sono inclusi nella scheda.</label>
+        <label>Dopo aver selezionato un oggetto, definisci quali record sono inclusi nella scheda.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Logica personalizzata</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Fornisci la logica della condizione. Utilizza i numeri per fare riferimento a ciascuna condizione. Usa gli operatori AND oppure OR per identificare la combinazione di condizioni. Aggiungi le parentesi per raggruppare le parti della stringa. Ad esempio 1 AND (2 OR 3) determina se la prima condizione è vera e se o la seconda o la terza condizione è vera.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Fornisci la logica della condizione. Utilizza i numeri per fare riferimento a ciascuna condizione. Usa gli operatori AND oppure OR per identificare la combinazione di condizioni. Aggiungi le parentesi per raggruppare le parti della stringa. Ad esempio 1 AND (2 OR 3) determina se la prima condizione è vera e se o la seconda o la terza condizione è vera.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Affiancata</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Risparmia spazio in verticale. Consigliato per i nomi di campo corti.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Risparmia spazio in verticale. Consigliato per i nomi di campo corti.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>In pila</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Utilizza più spazio in verticale. Consigliato per i nomi di campo lunghi.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Utilizza più spazio in verticale. Consigliato per i nomi di campo lunghi.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Per la migliore visibilità, scegli colori a contrasto elevato.</label>
+        <label>Per la migliore visibilità, scegli colori a contrasto elevato.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -375,8 +366,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_card_warning_body</name>
-        <label
-    >Questa operazione rimuove la scheda dal cruscotto digitale.</label>
+        <label>Questa operazione rimuove la scheda dal cruscotto digitale.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_title</name>
@@ -384,8 +374,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label
-    >Questa operazione rimuove i dati della scheda dalla scheda del cruscotto digitale.</label>
+        <label>Questa operazione rimuove i dati della scheda dalla scheda del cruscotto digitale.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
@@ -417,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >La visualizzazione dell'anteprima può differire leggermente dalla visualizzazione effettiva sul dispositivo mobile.</label>
+        <label>La visualizzazione dell'anteprima può differire leggermente dalla visualizzazione effettiva sul dispositivo mobile.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -440,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Seleziona...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Impostazioni cruscotti digitali mobili</label>
+    </customTabs>
 </Translations>

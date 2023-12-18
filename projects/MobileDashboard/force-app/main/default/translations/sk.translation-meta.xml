@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
         <name>MobileDashboard_settings_header</name>
@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Nakonfigurujte karty na ovládacom paneli. Pre lepší výkon obmedzte ovládací panel na päť kariet.</label>
+        <label>Nakonfigurujte karty na ovládacom paneli. Pre lepší výkon obmedzte ovládací panel na päť kariet.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Po výbere objektu definujte, ktoré záznamy sú zahrnuté v karte.</label>
+        <label>Po výbere objektu definujte, ktoré záznamy sú zahrnuté v karte.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Vlastná logika</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Uveďte logiku podmienky. Na označenie každej podmienky použite čísla. Na označenie kombinácie podmienok použite AND alebo OR. Pridajte zátvorky na zoskupenie častí reťazca. Napríklad 1 AND (2 OR 3) vyhodnocuje, či je prvá podmienka splnená a druhá alebo tretia podmienka splnená.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Uveďte logiku podmienky. Na označenie každej podmienky použite čísla. Na označenie kombinácie podmienok použite AND alebo OR. Pridajte zátvorky na zoskupenie častí reťazca. Napríklad 1 AND (2 OR 3) vyhodnocuje, či je prvá podmienka splnená a druhá alebo tretia podmienka splnená.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Vedľa seba</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Šetrí vertikálny priestor. Odporúča sa pre krátke názvy polí.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Šetrí vertikálny priestor. Odporúča sa pre krátke názvy polí.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Nad sebou</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Využíva viac vertikálneho priestoru. Odporúča sa pre dlhé názvy polí.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Využíva viac vertikálneho priestoru. Odporúča sa pre dlhé názvy polí.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Ak chcete dosiahnuť čo najlepšiu viditeľnosť, vyberte si kontrastné farby.</label>
+        <label>Ak chcete dosiahnuť čo najlepšiu viditeľnosť, vyberte si kontrastné farby.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -383,8 +374,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label
-    >Týmto sa odstránia údaje karty z karty ovládacieho panela.</label>
+        <label>Týmto sa odstránia údaje karty z karty ovládacieho panela.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
@@ -416,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Zobrazenie náhľadu sa môže mierne líšiť od skutočného zobrazenia na mobilnom zariadení.</label>
+        <label>Zobrazenie náhľadu sa môže mierne líšiť od skutočného zobrazenia na mobilnom zariadení.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -439,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Vyberte...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Nastavenia mobilného ovládacieho panela</label>
+    </customTabs>
 </Translations>
