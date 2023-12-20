@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Configurez vos cartes de tableau de bord. Pour de meilleures performances, limitez le tableau de bord à cinq cartes.</label>
+        <label>Configurez vos cartes de tableau de bord. Pour de meilleures performances, limitez le tableau de bord à cinq cartes.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Après avoir sélectionné un objet, définissez les enregistrements inclus dans la carte.</label>
+        <label>Après avoir sélectionné un objet, définissez les enregistrements inclus dans la carte.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Logique personnalisée</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Saisissez une logique de condition. Utilisez des chiffres pour référencer chaque condition. Utilisez AND ou OR pour identifier la combinaison de conditions. Ajoutez des parenthèses pour regrouper les parties d'une chaîne. Par exemple, 1 AND (2 OR 3) évalue si la première condition est vraie, et si la deuxième ou la troisième condition est vraie.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Saisissez une logique de condition. Utilisez des chiffres pour référencer chaque condition. Utilisez AND ou OR pour identifier la combinaison de conditions. Ajoutez des parenthèses pour regrouper les parties d'une chaîne. Par exemple, 1 AND (2 OR 3) évalue si la première condition est vraie, et si la deuxième ou la troisième condition est vraie.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Côte à côte</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Économise l'espace vertical. Recommandé pour les noms de champ courts.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Économise l'espace vertical. Recommandé pour les noms de champ courts.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Empilé</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Utilise plus d'espace vertical. Recommandé pour les noms de champ longs.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Utilise plus d'espace vertical. Recommandé pour les noms de champ longs.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Pour une meilleure visibilité, choisissez des couleurs à contraste élevé.</label>
+        <label>Pour une meilleure visibilité, choisissez des couleurs à contraste élevé.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -387,23 +378,19 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
-        <label
-    >Nous n'avons pas pu ajouter la carte. Réessayez ultérieurement.</label>
+        <label>Nous n'avons pas pu ajouter la carte. Réessayez ultérieurement.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >Nous n'avons pas pu enregistrer vos modifications. Réessayez ultérieurement.</label>
+        <label>Nous n'avons pas pu enregistrer vos modifications. Réessayez ultérieurement.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label
-    >Nous n'avons pas pu supprimer la carte. Réessayez ultérieurement.</label>
+        <label>Nous n'avons pas pu supprimer la carte. Réessayez ultérieurement.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label
-    >Nous n'avons pas pu dupliquer la carte. Réessayez ultérieurement.</label>
+        <label>Nous n'avons pas pu dupliquer la carte. Réessayez ultérieurement.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -419,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >L'affichage de l'aperçu peut légèrement différer de l'affichage sur appareil mobile.</label>
+        <label>L'affichage de l'aperçu peut légèrement différer de l'affichage sur appareil mobile.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -442,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Sélectionnez...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Paramètres du tableau de bord mobile</label>
+    </customTabs>
 </Translations>

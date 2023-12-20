@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <nameFieldLabel
-  >Ime nastavitve nadzorne plošče za mobilne naprave</nameFieldLabel>
+    <nameFieldLabel>Ime nastavitve nadzorne plošče za mobilne naprave</nameFieldLabel>
     <standardFields>
         <name>Name</name>
         <label>Ime nastavitve nadzorne plošče za mobilne naprave</label>

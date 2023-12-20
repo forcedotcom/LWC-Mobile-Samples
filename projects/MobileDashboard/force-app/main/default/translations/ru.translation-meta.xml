@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Настройте карточки панели мониторинга. Для повышения производительности ограничьте панель мониторинга пятью карточками.</label>
+        <label>Настройте карточки панели мониторинга. Для повышения производительности ограничьте панель мониторинга пятью карточками.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >После выбора объекта определите, какие записи включены в карточку.</label>
+        <label>После выбора объекта определите, какие записи включены в карточку.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Настраиваемая логика</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Предоставьте логику условия. Используйте числа для обозначения каждого условия. Используйте значения OR или AND, чтобы определить комбинацию условий. Добавьте круглые скобки, чтобы сгруппировать части строки вместе. Например, 1 AND (2 OR 3) оценивает, является ли истинным первое условие, а также второе или третье условие.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Предоставьте логику условия. Используйте числа для обозначения каждого условия. Используйте значения OR или AND, чтобы определить комбинацию условий. Добавьте круглые скобки, чтобы сгруппировать части строки вместе. Например, 1 AND (2 OR 3) оценивает, является ли истинным первое условие, а также второе или третье условие.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Параллельная ориентация</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Сохраняет интервал по вертикали. Рекомендовано для короткий имен полей.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Сохраняет интервал по вертикали. Рекомендовано для короткий имен полей.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>В столбик</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Использует больше интервала по вертикали. Рекомендовано для длинных имен полей.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Использует больше интервала по вертикали. Рекомендовано для длинных имен полей.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -414,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Отображение предварительного просмотра может немного отличаться от фактического отображения мобильного устройства.</label>
+        <label>Отображение предварительного просмотра может немного отличаться от фактического отображения мобильного устройства.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -437,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Выберите...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Параметры мобильной панели мониторинга</label>
+    </customTabs>
 </Translations>

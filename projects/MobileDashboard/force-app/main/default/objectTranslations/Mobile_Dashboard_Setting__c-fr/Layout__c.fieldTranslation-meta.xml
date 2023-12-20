@@ -4,10 +4,10 @@
     <label>Présentation</label>
     <picklistValues>
         <masterLabel>SIDE</masterLabel>
-        <translation>CÔTÉ</translation>
+        <translation>SIDE</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>STACK</masterLabel>
-        <translation>EMPILÉ</translation>
+        <translation>STACK</translation>
     </picklistValues>
 </CustomFieldTranslation>

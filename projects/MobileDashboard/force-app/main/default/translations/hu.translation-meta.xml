@@ -6,12 +6,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_title</name>
-        <label>Mobil műszerfal</label>
+        <label>Mobil vezérlőpult</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Konfigurálja a műszerfal kártyáit. A jobb teljesítményhez legfeljebb öt kártya legyen a műszerfalon.</label>
+        <label>Konfigurálja a vezérlőpult kártyáit. A jobb teljesítményhez legfeljebb öt kártya legyen a vezérlőpulton.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -67,11 +66,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_new_card_modal_title</name>
-        <label>Új műszerfalkártya</label>
+        <label>Új vezérlőpultkártya</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_edit_card_modal_title</name>
-        <label>Műszerfalkártya szerkesztése</label>
+        <label>Vezérlőpultkártya szerkesztése</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_tab_name</name>
@@ -87,20 +86,19 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Egy objektum kiválasztása után határozza meg, mely rekordok kerüljenek a kártyára.</label>
+        <label>Egy objektum kiválasztása után határozza meg, mely rekordok kerüljenek a kártyára.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
-        <label>Minden feltétel teljesült (ÉS)</label>
+        <label>Minden feltétel teljesül (ÉS)</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_or</name>
-        <label>Bármelyik feltétel teljesült (VAGY)</label>
+        <label>Bármelyik feltétel teljesül (VAGY)</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_custom</name>
-        <label>Egyéni feltétel teljesült</label>
+        <label>Egyéni feltétel teljesül</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_and_between_logic</name>
@@ -112,21 +110,19 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_remove_condition_button</name>
-        <label>Logika törlése</label>
+        <label>Logikai operátor törlése</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_add_condition_button</name>
-        <label>Logika hozzáadása</label>
+        <label>Logikai operátor hozzáadása</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_custom_logic_field</name>
         <label>Egyéni logika</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Adja meg a feltételes logikát. Használjon számokat az egy feltételekre való hivatkozáskor. Használja az ÉS vagy a VAGY operátort a feltételkombinációk meghatározásához. A karaktersor részeit zárójelekkel csoportosíthatja. Például az 1 ÉS (2 VAGY 3) jelentése: amikor az első feltétel igaz, és a második és harmadik feltételek valamelyike igaz.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Adja meg a feltételek logikáját. Használjon számokat az egyes feltételekre való hivatkozáskor. Használja az ÉS vagy a VAGY operátort a feltételkombinációk meghatározásához. A karaktersor részeit zárójelekkel csoportosíthatja. Például az „1 ÉS (2 VAGY 3)” akkor igaz, ha az első feltétel igaz, és a második vagy a harmadik feltétel valamelyike igaz.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Egymás mellett</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Függőleges teret takarít meg. Rövid mezőnevekhez javasolt.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Függőleges teret takarít meg. Rövid mezőnevekhez javasolt.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Egymás alatt</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Több függőleges teret használ. Hosszú mezőnevekhez javasolt.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Több függőleges teret használ. Hosszú mezőnevekhez javasolt.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >A legjobb láthatóság érdekében válasszon nagy kontraszttal rendelkező színeket.</label>
+        <label>A legjobb láthatóság érdekében válasszon nagy kontraszttal rendelkező színeket.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -195,7 +186,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_equals</name>
-        <label>egyenlő ezzel:</label>
+        <label>egyenlő</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_not_equal</name>
@@ -239,15 +230,15 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_on</name>
-        <label>Ekkor:...</label>
+        <label>...időpontban</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_before</name>
-        <label>Előtte...</label>
+        <label>...előtt</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_after</name>
-        <label>Utána...</label>
+        <label>...után</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_value</name>
@@ -315,7 +306,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_lead</name>
-        <label>Vevőjelölt</label>
+        <label>Lead</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_opportunity</name>
@@ -347,11 +338,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_like</name>
-        <label>Kedvelés</label>
+        <label>Kedvel</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_dislike</name>
-        <label>Nem kedvelés</label>
+        <label>Nem kedvel</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_location</name>
@@ -371,11 +362,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_card_warning_title</name>
-        <label>Műszerfalkártya törlése?</label>
+        <label>Vezérlőpultkártya törlése?</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_card_warning_body</name>
-        <label>Ez törli a kártyát a műszerfalról.</label>
+        <label>Ez törli a kártyát a vezérlőpultról.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_title</name>
@@ -383,7 +374,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label>Ez törli a kártyaadatokat a műszerfalkártyáról.</label>
+        <label>Ez törli a kártyaadatokat a vezérlőpultkártyáról.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
@@ -399,7 +390,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label>Nem sikerült kettőzni a kártyát. Próbálja meg újból.</label>
+        <label>Nem sikerült megkettőzni a kártyát. Próbálja meg újból.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -415,12 +406,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Az előnézet megjelenése némileg eltérhet a mobileszköz tényleges képernyőjétől.</label>
+        <label>Az előnézet megjelenése némileg eltérhet a mobileszköz tényleges képernyőjétől.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
-        <label>Kettőzés</label>
+        <label>Megkettőzés</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_button</name>
@@ -438,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Kiválasztás...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Mobil vezérlőpult beállításai</label>
+    </customTabs>
 </Translations>

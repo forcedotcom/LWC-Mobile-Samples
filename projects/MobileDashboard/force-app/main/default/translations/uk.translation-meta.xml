@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Налаштуйте картки приладної дошки. З метою покращення продуктивності, не використовуйте більше п'яти карток.</label>
+        <label>Налаштуйте картки приладної дошки. З метою покращення продуктивності, не використовуйте більше п'яти карток.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Після вибору об'єкта визначте об'єкти для додавання в картку.</label>
+        <label>Після вибору об'єкта визначте об'єкти для додавання в картку.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Налаштована логіка</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Вкажіть логіку умови. Скористайтеся цифрами для посилання на кожну умову. Використайте оператори AND (І) або OR (АБО) для визначення комбінації умов. Додайте дужки для групування частин рядка. Наприклад:, 1 AND (2 OR 3) оцінює, чи перша умова істинна і чи істинна друга або третя умова.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Вкажіть логіку умови. Скористайтеся цифрами для посилання на кожну умову. Використайте оператори AND (І) або OR (АБО) для визначення комбінації умов. Додайте дужки для групування частин рядка. Наприклад:, 1 AND (2 OR 3) оцінює, чи перша умова істинна і чи істинна друга або третя умова.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Поруч</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Заощаджує вертикальний простір. Рекомендовано для коротких імен полів.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Заощаджує вертикальний простір. Рекомендовано для коротких імен полів.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Складена</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Використовує більше вертикального простору. Рекомендовано для довгих імен полів.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Використовує більше вертикального простору. Рекомендовано для довгих імен полів.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Для покращення відображення використайте контрастні кольори.</label>
+        <label>Для покращення відображення використайте контрастні кольори.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -415,12 +406,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Відображення попереднього перегляду може відрізнятися від фактичного відображення на мобільному пристрої.</label>
+        <label>Відображення попереднього перегляду може відрізнятися від фактичного відображення на мобільному пристрої.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
-        <label>Дублікат</label>
+        <label>Дублювати</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_button</name>
@@ -438,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Вибрати...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Параметри мобільної приладної дошки</label>
+    </customTabs>
 </Translations>

@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Konfigurirajte kartice nadzorne plošče. Za boljše delovanje omejite nadzorno ploščo na pet kartic.</label>
+        <label>Konfigurirajte kartice nadzorne plošče. Za boljše delovanje omejite nadzorno ploščo na pet kartic.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Po izbiri predmeta določite, kateri zapisi so vključeni na kartico.</label>
+        <label>Po izbiri predmeta določite, kateri zapisi so vključeni na kartico.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Logika po meri</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Vnesite logiko pogojev. Za sklicevanje na vsak pogoj uporabite številke. Uporabite IN ali ALI, da določite kombinacijo pogojev. Dodajte oklepaje za združevanje delov niza. 1 IN (2 ALi 3) na primer ovrednoti, ali je prvi pogoj "true" in ali je "true" drugi ali tretji pogoj.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Vnesite logiko pogojev. Za sklicevanje na vsak pogoj uporabite številke. Uporabite IN ali ALI, da določite kombinacijo pogojev. Dodajte oklepaje za združevanje delov niza. 1 IN (2 ALi 3) na primer ovrednoti, ali je prvi pogoj "true" in ali je "true" drugi ali tretji pogoj.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Vzporedno</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Prihrani navpični prostor. Priporočeno za kratka imena polj.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Prihrani navpični prostor. Priporočeno za kratka imena polj.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Naloženo</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Uporabi več navpičnega prostora. Priporočeno za dolga imena polj.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Uporabi več navpičnega prostora. Priporočeno za dolga imena polj.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -382,8 +374,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label
-    >S tem odstranite podatke kartice s kartice nadzorne plošče.</label>
+        <label>S tem odstranite podatke kartice s kartice nadzorne plošče.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
@@ -391,18 +382,15 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >Vaših sprememb ni bilo mogoče shraniti. Poskusite znova pozneje.</label>
+        <label>Vaših sprememb ni bilo mogoče shraniti. Poskusite znova pozneje.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label
-    >Kartice ni bilo mogoče izbrisati. Poskusite znova pozneje.</label>
+        <label>Kartice ni bilo mogoče izbrisati. Poskusite znova pozneje.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label
-    >Kartice ni bilo mogoče podvojiti. Poskusite znova pozneje.</label>
+        <label>Kartice ni bilo mogoče podvojiti. Poskusite znova pozneje.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -418,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Prikaz predogleda se lahko nekoliko razlikuje od dejanskega prikaza v mobilni napravi.</label>
+        <label>Prikaz predogleda se lahko nekoliko razlikuje od dejanskega prikaza v mobilni napravi.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -441,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Izberi ...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Nastavitve nadzornih plošč za mobilne naprave</label>
+    </customTabs>
 </Translations>

@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Konfiguruj swoje karty pulpitów. Dla lepszej wydajności ogranicz pulpit do pięciu kart.</label>
+        <label>Konfiguruj swoje karty pulpitów. Dla lepszej wydajności ogranicz pulpit do pięciu kart.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Po wybraniu obiektu zdefiniuj, które rekordy znajdą się na karcie.</label>
+        <label>Po wybraniu obiektu zdefiniuj, które rekordy znajdą się na karcie.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,14 +121,12 @@
         <label>Logika niestandardowa</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Podaj logikę warunku. Użyj liczb, by opisywać każdy warunek. Użyj ORAZ lub LUB, by podać kombinację warunków. Dodaj nawiasy, by pogrupować części łańcuchów znaków. Na przykład: 1 ORAZ (2 LUB 3) sprawdza, czy pierwszy warunek jest prawdziwy i czy prawdziwy jest drugi lub trzeci warunek.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Podaj logikę warunku. Użyj liczb, by opisywać każdy warunek. Użyj ORAZ lub LUB, by podać kombinację warunków. Dodaj nawiasy, by pogrupować części łańcuchów znaków. Na przykład: 1 ORAZ (2 LUB 3) sprawdza, czy pierwszy warunek jest prawdziwy i czy prawdziwy jest drugi lub trzeci warunek.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
-        <label>Projekt</label>
+        <label>Widok</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_title</name>
@@ -141,20 +137,16 @@
         <label>Obok siebie</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Zapisuje przestrzeń poziomą. Zalecane dla krótkich nazw pól.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Zapisuje przestrzeń poziomą. Zalecane dla krótkich nazw pól.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Stos</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Używa więcej przestrzeni pionowej. Zalecane dla długich nazw pól.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Używa więcej przestrzeni pionowej. Zalecane dla długich nazw pól.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Dla najlepszej widoczności wybierz kolory bardzo kontrastowe.</label>
+        <label>Dla najlepszej widoczności wybierz kolory bardzo kontrastowe.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -231,11 +222,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_next</name>
-        <label>Dalej...</label>
+        <label>Następne...</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_last</name>
-        <label>Ostatni...</label>
+        <label>Ostatnie...</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_on</name>
@@ -391,8 +382,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >Nie udało nam się zapisać Twoich zmian. Spróbuj ponownie później.</label>
+        <label>Nie udało nam się zapisać Twoich zmian. Spróbuj ponownie później.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
@@ -400,8 +390,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label
-    >Nie udało nam się duplikować karty. Spróbuj ponownie później.</label>
+        <label>Nie udało nam się duplikować karty. Spróbuj ponownie później.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -417,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Ekran podglądu może się nieco różnić od rzeczywistego wyświetlacza na urządzeniu przenośnym.</label>
+        <label>Ekran podglądu może się nieco różnić od rzeczywistego wyświetlacza na urządzeniu przenośnym.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -440,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Wybierz...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Ustawienia pulpitu dla urządzeń przenośnych</label>
+    </customTabs>
 </Translations>

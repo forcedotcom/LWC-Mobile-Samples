@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >ダッシュボードカードを設定します。高いパフォーマンスを維持するには、ダッシュボードのカードは 5 枚以下にすることをお勧めします。</label>
+        <label>ダッシュボードカードを設定します。高いパフォーマンスを維持するには、ダッシュボードのカードは 5 枚以下にすることをお勧めします。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >オブジェクトを選択したら、カードに含めるレコードを定義します。</label>
+        <label>オブジェクトを選択したら、カードに含めるレコードを定義します。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>カスタムロジック</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >条件ロジックを指定します。各条件の参照には数字を使用します。AND または OR を使用して条件の組み合わせを識別します。文字列の一部をまとめるにはカッコを追加します。たとえば、1 AND (2 OR 3) とすると、最初の条件が true かどうか、2 番目と 3 番目のいずれかの条件が true かどうかが評価されます。</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>条件ロジックを指定します。各条件の参照には数字を使用します。AND または OR を使用して条件の組み合わせを識別します。文字列の一部をまとめるにはカッコを追加します。たとえば、1 AND (2 OR 3) とすると、最初の条件が true かどうか、2 番目と 3 番目のいずれかの条件が true かどうかが評価されます。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,8 +137,7 @@
         <label>横並び</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
         <label>縦のスペースを節約します。項目名が短い場合に最適です。</label>
     </customLabels>
     <customLabels>
@@ -150,10 +145,8 @@
         <label>積み重ね</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >縦のスペースを多く使用します。項目名が長い場合に最適です。</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>縦のスペースを多く使用します。項目名が長い場合に最適です。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -197,7 +190,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_not_equal</name>
-        <label>次の文字列と一致しない</label>
+        <label>!=</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_less_than</name>
@@ -361,7 +354,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_user</name>
-        <label>ユーザ</label>
+        <label>ユーザー</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_people</name>
@@ -385,8 +378,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
-        <label
-    >カードを追加できませんでした。後でもう一度お試しください。</label>
+        <label>カードを追加できませんでした。後でもう一度お試しください。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
@@ -394,13 +386,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label
-    >カードを削除できませんでした。後でもう一度お試しください。</label>
+        <label>カードを削除できませんでした。後でもう一度お試しください。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label
-    >カードをコピーできませんでした。後でもう一度お試しください。</label>
+        <label>カードをコピーできませんでした。後でもう一度お試しください。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -416,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >プレビューでの表示は、実際のモバイルデバイスでの表示とは若干異なる場合があります。</label>
+        <label>プレビューでの表示は、実際のモバイルデバイスでの表示とは若干異なる場合があります。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -439,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>選択してください ...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>モバイルダッシュボード設定</label>
+    </customTabs>
 </Translations>

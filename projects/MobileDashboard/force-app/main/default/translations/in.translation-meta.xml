@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Konfigurasikan kartu dasbor Anda. Untuk kinerja yang lebih baik, batasi dasbor hingga lima kartu.</label>
+        <label>Konfigurasikan kartu dasbor Anda. Untuk kinerja yang lebih baik, batasi dasbor hingga lima kartu.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Setelah memilih objek, tentukan catatan mana yang termasuk dalam kartu.</label>
+        <label>Setelah memilih objek, tentukan catatan mana yang termasuk dalam kartu.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Logika Ubahsuai</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Berikan logika persyaratan. Gunakan angka untuk merujuk ke setiap kondisi. Gunakan AND atau OR untuk mengidentifikasi kombinasi kondisi. Tambahkan tanda kurung untuk mengelompokkan bagian-bagian dari string. Misalnya, 1 AND (2 OR 3) mengevaluasi apakah kondisi pertama benar, dan kondisi kedua atau ketiga benar.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Berikan logika persyaratan. Gunakan angka untuk merujuk ke setiap kondisi. Gunakan AND atau OR untuk mengidentifikasi kombinasi kondisi. Tambahkan tanda kurung untuk mengelompokkan bagian-bagian dari string. Misalnya, 1 AND (2 OR 3) mengevaluasi apakah kondisi pertama benar, dan kondisi kedua atau ketiga benar.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Berdampingan</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Menghemat ruang vertikal. Direkomendasikan untuk nama bidang isian yang pendek.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Menghemat ruang vertikal. Direkomendasikan untuk nama bidang isian yang pendek.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Ditumpuk</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Menggunakan lebih banyak ruang vertikal. Direkomendasikan untuk nama bidang isian yang panjang.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Menggunakan lebih banyak ruang vertikal. Direkomendasikan untuk nama bidang isian yang panjang.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Untuk visibilitas yang ternaik, pilih warna-warna dengan kontras yang tinggi.</label>
+        <label>Untuk visibilitas yang terbaik, pilih warna-warna dengan kontras yang tinggi.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -383,8 +374,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label
-    >Tindakan ini akan mengeluarkan data kartu dari kartu dasbor.</label>
+        <label>Tindakan ini akan mengeluarkan data kartu dari kartu dasbor.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
@@ -392,8 +382,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >Kami tidak dapat menyimpan perubahan yang Anda buat. Coba lagi nanti.</label>
+        <label>Kami tidak dapat menyimpan perubahan yang Anda buat. Coba lagi nanti.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
@@ -417,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Tampilan pratinjau dapat sedikit berbeda dari tampilan perangkat seluler yang sesungguhnya.</label>
+        <label>Tampilan pratinjau dapat sedikit berbeda dari tampilan perangkat seluler yang sesungguhnya.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -440,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Pilih...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Pengaturan Dasbor Ponsel</label>
+    </customTabs>
 </Translations>

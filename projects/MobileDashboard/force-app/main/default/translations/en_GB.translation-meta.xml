@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Configure your dashboard cards. For better performance, limit the dashboard to five cards.</label>
+        <label>Configure your dashboard cards. For better performance, limit the dashboard to five cards.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >After selecting an object, define which records are included in the card.</label>
+        <label>After selecting an object, define which records are included in the card.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Custom Logic</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Provide the condition logic. Use numbers to refer to each condition. Use AND or OR to identify the combination of conditions. Add parentheses to group parts of the string together. For example, 1 AND (2 OR 3) evaluates whether the first condition is true, and either the second or third condition is true.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Provide the condition logic. Use numbers to refer to each condition. Use AND or OR to identify the combination of conditions. Add parentheses to group parts of the string together. For example, 1 AND (2 OR 3) evaluates whether the first condition is true, and either the second or third condition is true.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,8 +137,7 @@
         <label>Side-by-side</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
         <label>Saves vertical space. Recommended for short field names.</label>
     </customLabels>
     <customLabels>
@@ -150,10 +145,8 @@
         <label>Stacked</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Uses more vertical space. Recommended for long field names.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Uses more vertical space. Recommended for long field names.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -413,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Preview display can differ slightly from actual mobile device display.</label>
+        <label>Preview display can differ slightly from actual mobile device display.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -436,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Select...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Mobile Dashboard Settings</label>
+    </customTabs>
 </Translations>

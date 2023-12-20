@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Konfigurirajte svoje kartice nadzorne ploče. Za bolju izvedbu, ograničite kartice nadzorne ploče na pet kartica.</label>
+        <label>Konfigurirajte svoje kartice nadzorne ploče. Za bolju izvedbu, ograničite kartice nadzorne ploče na pet kartica.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Nakon što odaberete objekt, definirajte koji će zapisi biti uključeni u karticu.</label>
+        <label>Nakon što odaberete objekt, definirajte koji će zapisi biti uključeni u karticu.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Prilagođena logika</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Navedite prilagođenu logiku. Dodajte brojeve koji će se referirati na svaki uvjet. Koristite I ili ILI kako biste identificirali kombinaciju uvjeta. Dodajte zagrade kako biste grupirali dijelove niza. Primjerice, 1 I (2 ILI 3) procjenjuje je li prvi uvjet točan i jesu li drugi ili treći uvjet točni.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Navedite prilagođenu logiku. Dodajte brojeve koji će se referirati na svaki uvjet. Koristite I ili ILI kako biste identificirali kombinaciju uvjeta. Dodajte zagrade kako biste grupirali dijelove niza. Primjerice, 1 I (2 ILI 3) procjenjuje je li prvi uvjet točan i jesu li drugi ili treći uvjet točni.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Jedno uz drugo</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Štedi okomiti prostor. Preporučeno za kratke nazive polja.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Štedi okomiti prostor. Preporučeno za kratke nazive polja.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Naslagano</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Koristi više okomitog prostora. Preporučeno za duge nazive polja.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Koristi više okomitog prostora. Preporučeno za duge nazive polja.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -190,11 +182,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator</name>
-        <label>Operater</label>
+        <label>Operator</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_equals</name>
-        <label>jednaki</label>
+        <label>jednako</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_not_equal</name>
@@ -390,8 +382,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >Nismo mogli spremiti vaše promjene. Pokušajte ponovno kasnije.</label>
+        <label>Nismo mogli spremiti vaše promjene. Pokušajte ponovno kasnije.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
@@ -399,8 +390,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label
-    >Nismo mogli duplicirati karticu. Pokušajte ponovno kasnije.</label>
+        <label>Nismo mogli duplicirati karticu. Pokušajte ponovno kasnije.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -416,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Prikaz pretpregleda može se malo razlikovati od stvarnog prikaza na mobilnom uređaju.</label>
+        <label>Prikaz pretpregleda može se malo razlikovati od stvarnog prikaza na mobilnom uređaju.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -439,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Odaberite...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Postavke nadzorne ploče za mobitele</label>
+    </customTabs>
 </Translations>

@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Configure os seus cartões de painel. Para obter um melhor desempenho, limite o painel a cinco cartões.</label>
+        <label>Configure os seus cartões de painel. Para obter um melhor desempenho, limite o painel a cinco cartões.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Depois de selecionar um objeto, defina que registos serão incluídos no cartão.</label>
+        <label>Depois de selecionar um objeto, defina que registos serão incluídos no cartão.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Lógica personalizada</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Forneça a lógica das condições. Utilize números para se referir a cada condição. Utilize AND ou OR para identificar a combinação de condições. Adicione parêntesis para agrupar partes da cadeia. Por exemplo, 1 AND (2 OR 3) avalia se a primeira condição é verdadeira e se a segunda ou a terceira condição é verdadeira.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Forneça a lógica das condições. Utilize números para se referir a cada condição. Utilize AND ou OR para identificar a combinação de condições. Adicione parêntesis para agrupar partes da cadeia. Por exemplo, 1 AND (2 OR 3) avalia se a primeira condição é verdadeira e se a segunda ou a terceira condição é verdadeira.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Lado a lado</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Guarda espaço vertical. Recomendado para nomes de campos curtos.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Guarda espaço vertical. Recomendado para nomes de campos curtos.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Empilhado</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Utiliza mais espaço vertical. Recomendado para nomes de campos mais longos.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Utiliza mais espaço vertical. Recomendado para nomes de campos mais longos.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Para melhor visibilidade, escolha cores de alto contraste.</label>
+        <label>Para melhor visibilidade, escolha cores de alto contraste.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -387,23 +378,19 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
-        <label
-    >Não foi possível adicionar o cartão. Tente novamente mais tarde.</label>
+        <label>Não foi possível adicionar o cartão. Tente novamente mais tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >Não foi possível guardar as suas alterações. Tente novamente mais tarde.</label>
+        <label>Não foi possível guardar as suas alterações. Tente novamente mais tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label
-    >Não foi possível eliminar o cartão. Tente novamente mais tarde.</label>
+        <label>Não foi possível eliminar o cartão. Tente novamente mais tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label
-    >Não foi possível duplicar o cartão. Tente novamente mais tarde.</label>
+        <label>Não foi possível duplicar o cartão. Tente novamente mais tarde.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -419,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >A apresentação de pré-visualização pode ser ligeiramente diferente da apresentação efetiva do dispositivo móvel.</label>
+        <label>A apresentação de pré-visualização pode ser ligeiramente diferente da apresentação efetiva do dispositivo móvel.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -442,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Selecionar...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Definições de painéis móveis</label>
+    </customTabs>
 </Translations>

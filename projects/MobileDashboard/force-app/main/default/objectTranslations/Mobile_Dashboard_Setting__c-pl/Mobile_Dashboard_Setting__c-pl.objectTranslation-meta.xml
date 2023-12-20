@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <nameFieldLabel
-  >Nazwa ustawienia pulpitu dla urządzeń przenośnych</nameFieldLabel>
+    <nameFieldLabel>Nazwa ustawienia pulpitu dla urządzeń przenośnych</nameFieldLabel>
     <standardFields>
         <name>Name</name>
         <label>Nazwa ustawienia pulpitu dla urządzeń przenośnych</label>

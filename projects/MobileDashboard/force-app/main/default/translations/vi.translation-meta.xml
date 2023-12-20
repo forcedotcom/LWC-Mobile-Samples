@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >Định cấu hình các thẻ trong bảng điều khiển. Để có hiệu năng tốt hơn, hãy giới hạn bảng điều khiển trong 5 thẻ.</label>
+        <label>Định cấu hình các thẻ trong bảng điều khiển. Để có hiệu năng tốt hơn, hãy giới hạn bảng điều khiển trong 5 thẻ.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -19,7 +18,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_edit_button</name>
-        <label>Sửa</label>
+        <label>Chỉnh Sửa</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_arrow_more_options</name>
@@ -43,11 +42,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_operator_last</name>
-        <label>lần cuối</label>
+        <label>vừa qua</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_unit_days</name>
-        <label>các ngày</label>
+        <label>ngày</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_unit_weeks</name>
@@ -59,11 +58,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_logic_and</name>
-        <label>và</label>
+        <label>and</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_logic_or</name>
-        <label>hoặc</label>
+        <label>or</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_new_card_modal_title</name>
@@ -87,8 +86,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label
-    >Sau khi chọn một đối tượng, hãy xác định bản ghi nào được bao gồm trong thẻ.</label>
+        <label>Sau khi chọn một đối tượng, hãy xác định bản ghi nào được bao gồm trong thẻ.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -123,10 +121,8 @@
         <label>Logic Tùy Chỉnh</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >Cung cấp logic điều kiện. Sử dụng các số để đề cập đến mỗi điều kiện. Sử dụng AND hoặc OR để xác định tổ hợp các điều kiện. Thêm dấu ngoặc để nhóm các phần của chuỗi với nhau. Ví dụ: 1 AND (2 OR 3) sẽ đánh giá điều kiện đầu tiên có đúng hay không và điều kiện thứ hai hoặc thứ ba có đúng hay không.</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>Cung cấp logic điều kiện. Sử dụng các số để đề cập đến mỗi điều kiện. Sử dụng AND hoặc OR để xác định tổ hợp các điều kiện. Thêm dấu ngoặc để nhóm các phần của chuỗi với nhau. Ví dụ: 1 AND (2 OR 3) sẽ đánh giá điều kiện đầu tiên có đúng hay không và điều kiện thứ hai hoặc thứ ba có đúng hay không.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -141,20 +137,16 @@
         <label>Cạnh nhau</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label
-    >Tiết kiệm không gian theo chiều dọc. Khuyên dùng cho tên trường ngắn.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label>Tiết kiệm không gian theo chiều dọc. Khuyên dùng cho tên trường ngắn.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Xếp chồng</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label
-    >Sử dụng nhiều không gian hơn theo chiều dọc. Khuyên dùng cho tên trường dài.</label>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label>Sử dụng nhiều không gian hơn theo chiều dọc. Khuyên dùng cho tên trường dài.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -178,8 +170,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label
-    >Để có khả năng hiển thị tốt nhất, hãy chọn màu sắc có độ tương phản cao.</label>
+        <label>Để có khả năng hiển thị tốt nhất, hãy chọn màu sắc có độ tương phản cao.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -227,15 +218,15 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_today</name>
-        <label>Hôm nay</label>
+        <label>Hôm Nay</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_next</name>
-        <label>... Tiếp theo</label>
+        <label>... Tiếp Theo</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_last</name>
-        <label>... Trước</label>
+        <label>... Vừa Qua</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_on</name>
@@ -259,11 +250,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_subtitle_status</name>
-        <label>Trạng thái</label>
+        <label>Trạng Thái</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_info</name>
-        <label>Thông tin</label>
+        <label>Thông Tin</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_success</name>
@@ -291,7 +282,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_subtitle_sentiment</name>
-        <label>Thái Độ</label>
+        <label>Cảm Tính</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_positive</name>
@@ -363,7 +354,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_user</name>
-        <label>Người dùng</label>
+        <label>Người Dùng</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_people</name>
@@ -371,7 +362,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_card_warning_title</name>
-        <label>Xóa thẻ bảng điều khiển?</label>
+        <label>Xóa thẻ trong bảng điều khiển?</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_card_warning_body</name>
@@ -383,7 +374,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label>Thao tác này sẽ xóa dữ liệu thẻ khỏi thẻ bảng điều khiển.</label>
+        <label>Thao tác này sẽ xóa dữ liệu thẻ khỏi thẻ trong bảng điều khiển.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
@@ -391,8 +382,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label
-    >Chúng tôi không thể lưu thay đổi của bạn. Hãy thử lại sau.</label>
+        <label>Chúng tôi không thể lưu thay đổi của bạn. Hãy thử lại sau.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
@@ -416,8 +406,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label
-    >Giao diện xem trước có thể khác đôi chút so với giao diện thực tế trên thiết bị di động.</label>
+        <label>Giao diện xem trước có thể khác đôi chút so với giao diện thực tế trên thiết bị di động.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
@@ -439,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Chọn...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Cài Đặt Bảng Điều Khiển Di Động</label>
+    </customTabs>
 </Translations>

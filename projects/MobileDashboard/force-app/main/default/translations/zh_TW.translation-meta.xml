@@ -10,8 +10,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label
-    >設定您的顯示面板卡片。如需更好的效能，請將顯示面板限制為五張卡片。</label>
+        <label>設定您的顯示面板卡片。如需更好的效能，請將顯示面板限制為五張卡片。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -122,10 +121,8 @@
         <label>自訂邏輯</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label
-    >提供條件邏輯。使用數字來表示每個條件。使用 AND 或 OR 來標識條件組合。新增括弧將字串的各個部分組合在一起。例如，1 AND (2 OR 3) 評估第一個條件是否為真，以及第二個或第三個條件是否為真。</label>
+        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label>提供條件邏輯。使用數字來表示每個條件。使用 AND 或 OR 來標識條件組合。新增括弧將字串的各個部分組合在一起。例如，1 AND (2 OR 3) 評估第一個條件是否為真，以及第二個或第三個條件是否為真。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -140,8 +137,7 @@
         <label>並排</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
         <label>節省垂直空間。建議用於短欄位名稱。</label>
     </customLabels>
     <customLabels>
@@ -149,8 +145,7 @@
         <label>堆疊</label>
     </customLabels>
     <customLabels>
-        <name
-    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
         <label>使用較多垂直空間。建議用於長欄位名稱。</label>
     </customLabels>
     <customLabels>
@@ -343,11 +338,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_like</name>
-        <label>讚</label>
+        <label>喜歡</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_dislike</name>
-        <label>收回讚</label>
+        <label>不喜歡</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_location</name>
@@ -433,4 +428,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>選取...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>行動顯示面板設定</label>
+    </customTabs>
 </Translations>

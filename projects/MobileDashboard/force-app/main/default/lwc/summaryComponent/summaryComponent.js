@@ -15,7 +15,9 @@ export default class SummaryComponent extends LightningElement {
 
   renderedCallback() {
     if (this.isDemoMode) {
-      const subCounter = this.settings.subQueriesData.length;
+      const subCounter = this.settings.subQueriesData.reduce((acc, s) => {
+        return acc + s.count;
+      }, 0);
       this.recordsCount = subCounter === 0 ? 1 : subCounter;
       this.subQueriesData = this.settings.subQueriesData;
     }
