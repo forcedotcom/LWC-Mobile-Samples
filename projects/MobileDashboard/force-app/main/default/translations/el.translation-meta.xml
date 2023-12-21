@@ -10,7 +10,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label>Διαμορφώστε τις κάρτες του πίνακα εργαλείων σας. Για καλύτερη απόδοση, περιορίστε τον πίνακα εργαλείων σε πέντε κάρτες.</label>
+        <label
+    >Διαμορφώστε τις κάρτες του πίνακα εργαλείων σας. Για καλύτερη απόδοση, περιορίστε τον πίνακα εργαλείων σε πέντε κάρτες.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -86,7 +87,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label>Αφού επιλέξετε αντικείμενο, ορίστε τις εγγραφές που θα περιλαμβάνονται στην κάρτα.</label>
+        <label
+    >Αφού επιλέξετε αντικείμενο, ορίστε τις εγγραφές που θα περιλαμβάνονται στην κάρτα.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -121,8 +123,10 @@
         <label>Προσαρμοσμένη λογική</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label>Καταχωρήστε τη λογική της συνθήκης. Χρησιμοποιήστε αριθμούς για να αναφερθείτε σε κάθε συνθήκη. Χρησιμοποιήστε AND ή OR για να προσδιορίσετε το συνδυασμό συνθηκών. Προσθέστε παρενθέσεις για να ομαδοποιήσετε τα μέρη της συμβολοσειράς μαζί. Για παράδειγμα, η λογική 1 AND (2 OR 3) αξιολογεί εάν η πρώτη συνθήκη είναι αληθής και αν είτε η δεύτερη είτε η τρίτη συνθήκη είναι αληθής.</label>
+        <name
+    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label
+    >Καταχωρήστε τη λογική της συνθήκης. Χρησιμοποιήστε αριθμούς για να αναφερθείτε σε κάθε συνθήκη. Χρησιμοποιήστε AND ή OR για να προσδιορίσετε το συνδυασμό συνθηκών. Προσθέστε παρενθέσεις για να ομαδοποιήσετε τα μέρη της συμβολοσειράς μαζί. Για παράδειγμα, η λογική 1 AND (2 OR 3) αξιολογεί εάν η πρώτη συνθήκη είναι αληθής και αν είτε η δεύτερη είτε η τρίτη συνθήκη είναι αληθής.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -137,16 +141,20 @@
         <label>Σε παράθεση</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label>Εξοικονομεί κατακόρυφο χώρο. Προτείνεται για μικρού μήκους ονόματα πεδίων.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label
+    >Εξοικονομεί κατακόρυφο χώρο. Προτείνεται για μικρού μήκους ονόματα πεδίων.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Σωρευμένο</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label>Χρησιμοποιεί περισσότερο κατακόρυφο χώρο. Προτείνεται για μεγάλου μήκους ονόματα πεδίων.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label
+    >Χρησιμοποιεί περισσότερο κατακόρυφο χώρο. Προτείνεται για μεγάλου μήκους ονόματα πεδίων.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -170,7 +178,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label>Για καλύτερη ορατότητα, επιλέξτε χρώματα υψηλής αντίθεσης.</label>
+        <label
+    >Για καλύτερη ορατότητα, επιλέξτε χρώματα υψηλής αντίθεσης.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -366,7 +375,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_card_warning_body</name>
-        <label>Αυτή η επιλογή καταργεί την κάρτα από τον πίνακα εργαλείων.</label>
+        <label
+    >Αυτή η επιλογή καταργεί την κάρτα από τον πίνακα εργαλείων.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_title</name>
@@ -374,23 +384,28 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label>Αυτή η επιλογή καταργεί τα δεδομένα κάρτας από την κάρτα πίνακα εργαλείων.</label>
+        <label
+    >Αυτή η επιλογή καταργεί τα δεδομένα κάρτας από την κάρτα πίνακα εργαλείων.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
-        <label>Δεν ήταν δυνατή η προσθήκη της κάρτας. Προσπαθήστε ξανά αργότερα.</label>
+        <label
+    >Δεν ήταν δυνατή η προσθήκη της κάρτας. Προσπαθήστε ξανά αργότερα.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label>Δεν ήταν δυνατή η αποθήκευση των αλλαγών σας. Προσπαθήστε ξανά αργότερα.</label>
+        <label
+    >Δεν ήταν δυνατή η αποθήκευση των αλλαγών σας. Προσπαθήστε ξανά αργότερα.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label>Δεν ήταν δυνατή η διαγραφή της κάρτας. Προσπαθήστε ξανά αργότερα.</label>
+        <label
+    >Δεν ήταν δυνατή η διαγραφή της κάρτας. Προσπαθήστε ξανά αργότερα.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label>Δεν ήταν δυνατή η αντιγραφή της κάρτας. Προσπαθήστε ξανά αργότερα.</label>
+        <label
+    >Δεν ήταν δυνατή η αντιγραφή της κάρτας. Προσπαθήστε ξανά αργότερα.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -406,7 +421,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label>Η εμφάνιση προεπισκόπησης μπορεί να διαφέρει ελαφρώς από την πραγματική εμφάνιση στην κινητή συσκευή.</label>
+        <label
+    >Η εμφάνιση προεπισκόπησης μπορεί να διαφέρει ελαφρώς από την πραγματική εμφάνιση στην κινητή συσκευή.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>

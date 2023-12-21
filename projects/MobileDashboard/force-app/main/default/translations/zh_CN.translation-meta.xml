@@ -10,7 +10,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label>配置仪表板卡片。为体验更卓越的性能，将仪表板卡片的数量限制为 5 张。</label>
+        <label
+    >配置仪表板卡片。为体验更卓越的性能，将仪表板卡片的数量限制为 5 张。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -121,8 +122,10 @@
         <label>自定义逻辑</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label>提供条件逻辑。使用数字，表示每个条件。使用 AND 或 OR，标识条件组合。添加括号，集中分组字符串的各个部分。例如，1 AND (2 OR 3) 会评估第一个条件是否为真，第二个或第三个条件是否为真。</label>
+        <name
+    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label
+    >提供条件逻辑。使用数字，表示每个条件。使用 AND 或 OR，标识条件组合。添加括号，集中分组字符串的各个部分。例如，1 AND (2 OR 3) 会评估第一个条件是否为真，第二个或第三个条件是否为真。</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -137,7 +140,8 @@
         <label>并排</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
         <label>节省垂直空间。推荐短字段名称使用。</label>
     </customLabels>
     <customLabels>
@@ -145,7 +149,8 @@
         <label>已堆叠</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
         <label>利用更多垂直空间。推荐长字段名称使用。</label>
     </customLabels>
     <customLabels>

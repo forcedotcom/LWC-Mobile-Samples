@@ -10,7 +10,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label>Configurați-vă cardurile pentru tabloul de bord. Pentru o mai bună performanță, creați o limită de cinci carduri pentru tabloul de bord.</label>
+        <label
+    >Configurați-vă cardurile pentru tabloul de bord. Pentru o mai bună performanță, creați o limită de cinci carduri pentru tabloul de bord.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -86,7 +87,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label>După selectarea unui obiect, definiți înregistrările care sunt incluse în card.</label>
+        <label
+    >După selectarea unui obiect, definiți înregistrările care sunt incluse în card.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -121,8 +123,10 @@
         <label>Logică personalizată</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label>Indicați logica condiției. Utilizați numere pentru a vă referi la fiecare condiție. Folosiți ȘI ori SAU pentru a identifica respectiva combinație de condiții. Adăugare paranteze pentru a comasa părți din șir. De exemplu, 1 ȘI (2 SAU 3) evaluează dacă prima condiție este adevărată și dacă fie condiția a doua, fie a treia este adevărată.</label>
+        <name
+    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label
+    >Indicați logica condiției. Utilizați numere pentru a vă referi la fiecare condiție. Folosiți ȘI ori SAU pentru a identifica respectiva combinație de condiții. Adăugare paranteze pentru a comasa părți din șir. De exemplu, 1 ȘI (2 SAU 3) evaluează dacă prima condiție este adevărată și dacă fie condiția a doua, fie a treia este adevărată.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -137,16 +141,20 @@
         <label>Secvențial</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label>Oferă economii de spațiu pe verticală. Recomandat pentru nume de câmp scurte.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label
+    >Oferă economii de spațiu pe verticală. Recomandat pentru nume de câmp scurte.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Suprapus</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label>Consumă mai mult spațiu pe verticală. Recomandat pentru nume de câmp lungi.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label
+    >Consumă mai mult spațiu pe verticală. Recomandat pentru nume de câmp lungi.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -170,7 +178,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label>Pentru o vizibilitate optimă, alegeți culori puternic contrastante.</label>
+        <label
+    >Pentru o vizibilitate optimă, alegeți culori puternic contrastante.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -374,23 +383,28 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label>Astfel, se elimină datele cardului din cardul tabloului de bord.</label>
+        <label
+    >Astfel, se elimină datele cardului din cardul tabloului de bord.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
-        <label>Adăugarea cardului nu a reușit. Încercați din nou mai târziu.</label>
+        <label
+    >Adăugarea cardului nu a reușit. Încercați din nou mai târziu.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label>Salvarea modificărilor nu a reușit. Încercați din nou mai târziu.</label>
+        <label
+    >Salvarea modificărilor nu a reușit. Încercați din nou mai târziu.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label>Ștergerea cardului nu a reușit. Încercați din nou mai târziu.</label>
+        <label
+    >Ștergerea cardului nu a reușit. Încercați din nou mai târziu.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label>Duplicarea cardului nu a reușit. Încercați din nou mai târziu.</label>
+        <label
+    >Duplicarea cardului nu a reușit. Încercați din nou mai târziu.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -406,7 +420,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label>Afișarea previzualizării poate avea mici diferențe față de afișarea propriu-zisă pe dispozitivele mobile.</label>
+        <label
+    >Afișarea previzualizării poate avea mici diferențe față de afișarea propriu-zisă pe dispozitivele mobile.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>

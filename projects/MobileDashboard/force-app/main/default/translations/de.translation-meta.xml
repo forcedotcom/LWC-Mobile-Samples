@@ -10,7 +10,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label>Konfigurieren Sie Ihre Dashboard-Karten. Begrenzen Sie das Dashboard für eine bessere Leistung auf fünf Karten.</label>
+        <label
+    >Konfigurieren Sie Ihre Dashboard-Karten. Begrenzen Sie das Dashboard für eine bessere Leistung auf fünf Karten.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -86,7 +87,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label>Nachdem Sie ein Objekt ausgewählt haben, definieren Sie, welche Datensätze auf der Karte enthalten sein sollen.</label>
+        <label
+    >Nachdem Sie ein Objekt ausgewählt haben, definieren Sie, welche Datensätze auf der Karte enthalten sein sollen.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -121,8 +123,10 @@
         <label>Benutzerdefinierte Logik</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label>Geben Sie die Bedingungslogik an. Verweisen Sie mit Zahlen auf die einzelnen Bedingungen. Verwenden Sie UND oder ODER, um die Kombination der Bedingungen zu identifizieren. Fügen Sie Klammern hinzu, um Teile der Zeichenfolge miteinander zu gruppieren. Mit 1 UND (2 ODER 3) wird beispielsweise ausgewertet, ob die erste Bedingung wahr ist und ob die zweite oder dritte Bedingung wahr ist.</label>
+        <name
+    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label
+    >Geben Sie die Bedingungslogik an. Verweisen Sie mit Zahlen auf die einzelnen Bedingungen. Verwenden Sie UND oder ODER, um die Kombination der Bedingungen zu identifizieren. Fügen Sie Klammern hinzu, um Teile der Zeichenfolge miteinander zu gruppieren. Mit 1 UND (2 ODER 3) wird beispielsweise ausgewertet, ob die erste Bedingung wahr ist und ob die zweite oder dritte Bedingung wahr ist.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -137,16 +141,20 @@
         <label>Nebeneinander</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label>Spart Platz in der Vertikale. Wird für kurze Feldnamen empfohlen.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label
+    >Spart Platz in der Vertikale. Wird für kurze Feldnamen empfohlen.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Gestapelt</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label>Benötigt mehr Platz in der Vertikale. Wird für lange Feldnamen empfohlen.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label
+    >Benötigt mehr Platz in der Vertikale. Wird für lange Feldnamen empfohlen.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -170,7 +178,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label>Verwenden Sie für die beste Sichtbarkeit kontrastreiche Farben.</label>
+        <label
+    >Verwenden Sie für die beste Sichtbarkeit kontrastreiche Farben.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -374,23 +383,28 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label>Dadurch werden die Kartendaten auf der Dashboard-Karte gelöscht.</label>
+        <label
+    >Dadurch werden die Kartendaten auf der Dashboard-Karte gelöscht.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
-        <label>Die Karte konnte nicht hinzugefügt werden. Versuchen Sie es später erneut.</label>
+        <label
+    >Die Karte konnte nicht hinzugefügt werden. Versuchen Sie es später erneut.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label>Ihre Änderungen konnten nicht gespeichert werden. Versuchen Sie es später erneut.</label>
+        <label
+    >Ihre Änderungen konnten nicht gespeichert werden. Versuchen Sie es später erneut.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label>Die Karte konnte nicht gelöscht werden. Versuchen Sie es später erneut.</label>
+        <label
+    >Die Karte konnte nicht gelöscht werden. Versuchen Sie es später erneut.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label>Die Karte konnte nicht dupliziert werden. Versuchen Sie es später erneut.</label>
+        <label
+    >Die Karte konnte nicht dupliziert werden. Versuchen Sie es später erneut.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -406,7 +420,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label>Die Vorschauanzeige kann leicht von der tatsächlichen Anzeige auf dem Mobilgerät abweichen.</label>
+        <label
+    >Die Vorschauanzeige kann leicht von der tatsächlichen Anzeige auf dem Mobilgerät abweichen.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>

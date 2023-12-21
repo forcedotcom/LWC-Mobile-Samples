@@ -10,7 +10,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label>Konfigurálja a vezérlőpult kártyáit. A jobb teljesítményhez legfeljebb öt kártya legyen a vezérlőpulton.</label>
+        <label
+    >Konfigurálja a vezérlőpult kártyáit. A jobb teljesítményhez legfeljebb öt kártya legyen a vezérlőpulton.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -86,7 +87,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label>Egy objektum kiválasztása után határozza meg, mely rekordok kerüljenek a kártyára.</label>
+        <label
+    >Egy objektum kiválasztása után határozza meg, mely rekordok kerüljenek a kártyára.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -121,8 +123,10 @@
         <label>Egyéni logika</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label>Adja meg a feltételek logikáját. Használjon számokat az egyes feltételekre való hivatkozáskor. Használja az ÉS vagy a VAGY operátort a feltételkombinációk meghatározásához. A karaktersor részeit zárójelekkel csoportosíthatja. Például az „1 ÉS (2 VAGY 3)” akkor igaz, ha az első feltétel igaz, és a második vagy a harmadik feltétel valamelyike igaz.</label>
+        <name
+    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label
+    >Adja meg a feltételek logikáját. Használjon számokat az egyes feltételekre való hivatkozáskor. Használja az ÉS vagy a VAGY operátort a feltételkombinációk meghatározásához. A karaktersor részeit zárójelekkel csoportosíthatja. Például az „1 ÉS (2 VAGY 3)” akkor igaz, ha az első feltétel igaz, és a második vagy a harmadik feltétel valamelyike igaz.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -137,16 +141,20 @@
         <label>Egymás mellett</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label>Függőleges teret takarít meg. Rövid mezőnevekhez javasolt.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label
+    >Függőleges teret takarít meg. Rövid mezőnevekhez javasolt.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Egymás alatt</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label>Több függőleges teret használ. Hosszú mezőnevekhez javasolt.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label
+    >Több függőleges teret használ. Hosszú mezőnevekhez javasolt.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -170,7 +178,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label>A legjobb láthatóság érdekében válasszon nagy kontraszttal rendelkező színeket.</label>
+        <label
+    >A legjobb láthatóság érdekében válasszon nagy kontraszttal rendelkező színeket.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -406,7 +415,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label>Az előnézet megjelenése némileg eltérhet a mobileszköz tényleges képernyőjétől.</label>
+        <label
+    >Az előnézet megjelenése némileg eltérhet a mobileszköz tényleges képernyőjétől.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>

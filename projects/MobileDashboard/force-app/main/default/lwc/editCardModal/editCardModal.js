@@ -247,48 +247,55 @@ export default class EditCardModal extends LightningModal {
         {
           index: 0,
           count: 1,
-          label: this.LABELS.MobileDashboard_card_modal_design_tab_example_cannot_complete,
-          icon: 'utility:error',
-          color: '#B72020',
+          label:
+            this.LABELS
+              .MobileDashboard_card_modal_design_tab_example_cannot_complete,
+          icon: "utility:error",
+          color: "#B72020"
         },
         {
           index: 1,
           count: 2,
-          label: this.LABELS.MobileDashboard_card_modal_design_tab_example_canceled,
-          icon: 'utility:warning',
-          color: '#8C4B02',
+          label:
+            this.LABELS.MobileDashboard_card_modal_design_tab_example_canceled,
+          icon: "utility:warning",
+          color: "#8C4B02"
         },
         {
           index: 2,
           count: 5,
-          label: this.LABELS.MobileDashboard_card_modal_design_tab_example_completed,
-          icon: 'utility:success',
-          color: '#2E844A',
+          label:
+            this.LABELS.MobileDashboard_card_modal_design_tab_example_completed,
+          icon: "utility:success",
+          color: "#2E844A"
         },
         {
           index: 3,
           count: 6,
-          label: this.LABELS.MobileDashboard_card_modal_design_tab_example_scheduled,
-          icon: 'utility:clock',
-          color: '#747474',
+          label:
+            this.LABELS.MobileDashboard_card_modal_design_tab_example_scheduled,
+          icon: "utility:clock",
+          color: "#747474"
         },
         {
           index: 4,
           count: 4,
-          label: this.LABELS.MobileDashboard_card_modal_design_tab_example_in_progress,
-          icon: 'utility:event',
-          color: '#747474',
-        },
-      ],
+          label:
+            this.LABELS
+              .MobileDashboard_card_modal_design_tab_example_in_progress,
+          icon: "utility:event",
+          color: "#747474"
+        }
+      ]
     };
   }
 
   get sideExampleSettings() {
-    return { ...this.exampleSettings, Layout__c: 'SIDE' };
+    return { ...this.exampleSettings, Layout__c: "SIDE" };
   }
 
   get stackExampleSettings() {
-    return { ...this.exampleSettings, Layout__c: 'STACK' };
+    return { ...this.exampleSettings, Layout__c: "STACK" };
   }
 
   detectSubFilterDrag = async () => {

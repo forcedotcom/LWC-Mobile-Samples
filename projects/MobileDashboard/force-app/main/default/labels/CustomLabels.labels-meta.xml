@@ -358,47 +358,58 @@
         <language>en_US</language>
         <protected>true</protected>
         <categories>MobileDashboard</categories>
-        <shortDescription>Card modal - design tab - example cards - My Service Appointments</shortDescription>
+        <shortDescription
+    >Card modal - design tab - example cards - My Service Appointments</shortDescription>
         <value>My Service Appointments</value>
     </labels>
     <labels>
-        <fullName>MobileDashboard_card_modal_design_tab_example_cannot_complete</fullName>
+        <fullName
+    >MobileDashboard_card_modal_design_tab_example_cannot_complete</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <categories>MobileDashboard</categories>
-        <shortDescription>Card modal - design tab - example cards - Cannot Complete</shortDescription>
+        <shortDescription
+    >Card modal - design tab - example cards - Cannot Complete</shortDescription>
         <value>Cannot Complete</value>
     </labels>
     <labels>
-        <fullName>MobileDashboard_card_modal_design_tab_example_canceled</fullName>
+        <fullName
+    >MobileDashboard_card_modal_design_tab_example_canceled</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <categories>MobileDashboard</categories>
-        <shortDescription>Card modal - design tab - example cards - Canceled</shortDescription>
+        <shortDescription
+    >Card modal - design tab - example cards - Canceled</shortDescription>
         <value>Canceled</value>
     </labels>
     <labels>
-        <fullName>MobileDashboard_card_modal_design_tab_example_completed</fullName>
+        <fullName
+    >MobileDashboard_card_modal_design_tab_example_completed</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <categories>MobileDashboard</categories>
-        <shortDescription>Card modal - design tab - example cards - Completed</shortDescription>
+        <shortDescription
+    >Card modal - design tab - example cards - Completed</shortDescription>
         <value>Completed</value>
     </labels>
     <labels>
-        <fullName>MobileDashboard_card_modal_design_tab_example_scheduled</fullName>
+        <fullName
+    >MobileDashboard_card_modal_design_tab_example_scheduled</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <categories>MobileDashboard</categories>
-        <shortDescription>Card modal - design tab - example cards - Scheduled</shortDescription>
+        <shortDescription
+    >Card modal - design tab - example cards - Scheduled</shortDescription>
         <value>Scheduled</value>
     </labels>
     <labels>
-        <fullName>MobileDashboard_card_modal_design_tab_example_in_progress</fullName>
+        <fullName
+    >MobileDashboard_card_modal_design_tab_example_in_progress</fullName>
         <language>en_US</language>
         <protected>true</protected>
         <categories>MobileDashboard</categories>
-        <shortDescription>Card modal - design tab - example cards - In Progress</shortDescription>
+        <shortDescription
+    >Card modal - design tab - example cards - In Progress</shortDescription>
         <value>In Progress</value>
     </labels> 
     <labels>

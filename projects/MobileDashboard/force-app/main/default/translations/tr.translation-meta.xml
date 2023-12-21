@@ -10,7 +10,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label>Panel kartlarınızı yapılandırın. Daha iyi performans için paneli beş kart ile sınırlayın.</label>
+        <label
+    >Panel kartlarınızı yapılandırın. Daha iyi performans için paneli beş kart ile sınırlayın.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -86,7 +87,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label>Bir nesne seçtikten sonra hangi kayıtların karta dahil edileceğini tanımlayın.</label>
+        <label
+    >Bir nesne seçtikten sonra hangi kayıtların karta dahil edileceğini tanımlayın.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -121,8 +123,10 @@
         <label>Özel Mantık</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label>Koşul mantığını sağlayın. Her bir koşula atıfta bulunmak için numaraları kullanın. Koşul kombinasyonunu tanımlamak için VE veya VEYA ifadelerini kulanın. Size kısımlarını bir araya gruplamak için parantez ekleyin. Örneğin, 1 VE (2 VEYA 3), ilk koşulun doğru olup olmadığını ve ikinci veya üçüncü koşulun doğru olup olmadığını değerlendirir.</label>
+        <name
+    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label
+    >Koşul mantığını sağlayın. Her bir koşula atıfta bulunmak için numaraları kullanın. Koşul kombinasyonunu tanımlamak için VE veya VEYA ifadelerini kulanın. Size kısımlarını bir araya gruplamak için parantez ekleyin. Örneğin, 1 VE (2 VEYA 3), ilk koşulun doğru olup olmadığını ve ikinci veya üçüncü koşulun doğru olup olmadığını değerlendirir.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -137,7 +141,8 @@
         <label>Yan yana</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
         <label>Dikey alanda kaydeder. Kısa alan adları için önerilir.</label>
     </customLabels>
     <customLabels>
@@ -145,7 +150,8 @@
         <label>İstif</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
         <label>Daha dikey alan kullanır. Uzun alan adları için önerilir.</label>
     </customLabels>
     <customLabels>
@@ -382,7 +388,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label>Değişikliklerinizi kaydedemedik. Daha sonra tekrar deneyin.</label>
+        <label
+    >Değişikliklerinizi kaydedemedik. Daha sonra tekrar deneyin.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
@@ -406,7 +413,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label>Önizleme görünümü, gerçek mobil cihaz görünümünden biraz farklı olabilir.</label>
+        <label
+    >Önizleme görünümü, gerçek mobil cihaz görünümünden biraz farklı olabilir.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>

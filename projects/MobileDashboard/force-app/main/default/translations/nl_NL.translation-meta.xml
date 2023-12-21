@@ -10,7 +10,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label>Configureer uw dashboardkaarten. Voor de beste prestaties beperkt u uw dashboard tot maximaal vijf kaarten.</label>
+        <label
+    >Configureer uw dashboardkaarten. Voor de beste prestaties beperkt u uw dashboard tot maximaal vijf kaarten.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -86,7 +87,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_field_infobubble</name>
-        <label>Nadat u een object hebt geselecteerd, definieert u welke records worden opgenomen in de kaart.</label>
+        <label
+    >Nadat u een object hebt geselecteerd, definieert u welke records worden opgenomen in de kaart.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_details_filter_logic_and</name>
@@ -121,8 +123,10 @@
         <label>Aangepaste logica</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label>Geef de voorwaardelogica op. Gebruik nummers om naar elke voorwaarde te verwijzen. Gebruik AND of OR om de combinatie van voorwaarden te identificeren. Voeg haakjes toe om delen van de reeks te groeperen. Bijvoorbeeld: 1 AND (2 OR 3) evalueert of de eerste voorwaarde true (waar) is en ofwel de tweede ofwel de derde voorwaarde true (waar) is.</label>
+        <name
+    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label
+    >Geef de voorwaardelogica op. Gebruik nummers om naar elke voorwaarde te verwijzen. Gebruik AND of OR om de combinatie van voorwaarden te identificeren. Voeg haakjes toe om delen van de reeks te groeperen. Bijvoorbeeld: 1 AND (2 OR 3) evalueert of de eerste voorwaarde true (waar) is en ofwel de tweede ofwel de derde voorwaarde true (waar) is.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -137,16 +141,20 @@
         <label>Naast elkaar</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
-        <label>Bespaart verticale ruimte. Aanbevolen voor korte veldnamen.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <label
+    >Bespaart verticale ruimte. Aanbevolen voor korte veldnamen.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_stack_title</name>
         <label>Gestapeld</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label>Gebruikt meer verticale ruimte. Aanbevolen voor lange veldnamen.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label
+    >Gebruikt meer verticale ruimte. Aanbevolen voor lange veldnamen.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -170,7 +178,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label>Kies kleuren met een hoog contrast voor de beste zichtbaarheid.</label>
+        <label
+    >Kies kleuren met een hoog contrast voor de beste zichtbaarheid.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -378,19 +387,23 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
-        <label>Kaart kan niet worden toegevoegd. Probeer het later opnieuw.</label>
+        <label
+    >Kaart kan niet worden toegevoegd. Probeer het later opnieuw.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label>Uw wijzigingen kunnen niet worden opgeslagen. Probeer het later opnieuw.</label>
+        <label
+    >Uw wijzigingen kunnen niet worden opgeslagen. Probeer het later opnieuw.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
-        <label>Kaart kan niet worden verwijderd. Probeer het later opnieuw.</label>
+        <label
+    >Kaart kan niet worden verwijderd. Probeer het later opnieuw.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_duplicate_card</name>
-        <label>Kaart kan niet worden gedupliceerd. Probeer het later opnieuw.</label>
+        <label
+    >Kaart kan niet worden gedupliceerd. Probeer het later opnieuw.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_object_field</name>
@@ -406,7 +419,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label>Voorbeeldweergave kan enigszins afwijken van de werkelijke weergave op mobiele apparaten.</label>
+        <label
+    >Voorbeeldweergave kan enigszins afwijken van de werkelijke weergave op mobiele apparaten.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>

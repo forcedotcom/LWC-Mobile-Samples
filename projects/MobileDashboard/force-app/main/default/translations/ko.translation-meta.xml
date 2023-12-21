@@ -10,7 +10,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
-        <label>대시보드 카드를 구성합니다. 성능 향상을 위해 대시보드의 카드를 5개로 제한하십시오.</label>
+        <label
+    >대시보드 카드를 구성합니다. 성능 향상을 위해 대시보드의 카드를 5개로 제한하십시오.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_add_card_button</name>
@@ -121,8 +122,10 @@
         <label>사용자 정의 논리</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
-        <label>조건 논리를 제공합니다. 각 조건을 참조하는 숫자를 사용합니다. AND 또는 OR을 사용하여 조건 조합을 식별합니다. 괄호를 추가하여 문자열의 일부를 함께 그룹화합니다. 예를 들어 1 AND (2 OR 3)은 첫 번째 조건이 true인지 및 두 번째 또는 세 번째 조건이 true인지 여부를 평가합니다.</label>
+        <name
+    >MobileDashboard_card_modal_details_custom_logic_field_infobubble</name>
+        <label
+    >조건 논리를 제공합니다. 각 조건을 참조하는 숫자를 사용합니다. AND 또는 OR을 사용하여 조건 조합을 식별합니다. 괄호를 추가하여 문자열의 일부를 함께 그룹화합니다. 예를 들어 1 AND (2 OR 3)은 첫 번째 조건이 true인지 및 두 번째 또는 세 번째 조건이 true인지 여부를 평가합니다.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
@@ -137,7 +140,8 @@
         <label>나란히</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_side_description</name>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_side_description</name>
         <label>세로 간격을 저장합니다. 짧은 필드 이름에 권장됩니다.</label>
     </customLabels>
     <customLabels>
@@ -145,8 +149,10 @@
         <label>누적형</label>
     </customLabels>
     <customLabels>
-        <name>MobileDashboard_card_modal_design_tab_layout_stack_description</name>
-        <label>더 넓은 세로 간격을 사용합니다. 긴 필드 이름에 권장됩니다.</label>
+        <name
+    >MobileDashboard_card_modal_design_tab_layout_stack_description</name>
+        <label
+    >더 넓은 세로 간격을 사용합니다. 긴 필드 이름에 권장됩니다.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
@@ -382,7 +388,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_save_card</name>
-        <label>변경 사항을 저장하지 못했습니다. 나중에 다시 시도하십시오.</label>
+        <label
+    >변경 사항을 저장하지 못했습니다. 나중에 다시 시도하십시오.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_delete_card</name>
@@ -406,7 +413,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_preview_title_infobubble</name>
-        <label>미리 보기 표시는 실제 모바일 장치 표시와 약간 다를 수 있습니다.</label>
+        <label
+    >미리 보기 표시는 실제 모바일 장치 표시와 약간 다를 수 있습니다.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
