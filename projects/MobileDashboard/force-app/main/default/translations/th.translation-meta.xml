@@ -435,4 +435,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>เลือก...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>การตั้งค่า Mobile Dashboard</label>
+    </customTabs>
 </Translations>

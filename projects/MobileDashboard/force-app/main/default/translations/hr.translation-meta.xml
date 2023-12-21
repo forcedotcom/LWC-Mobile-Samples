@@ -190,11 +190,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator</name>
-        <label>Operater</label>
+        <label>Operator</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_equals</name>
-        <label>jednaki</label>
+        <label>jednako</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_not_equal</name>
@@ -439,4 +439,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Odaberite...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Postavke nadzorne ploče za mobitele</label>
+    </customTabs>
 </Translations>

@@ -67,6 +67,7 @@ c-basic-filter {
 }
 
 .preview {
+  max-width: 200px;
   margin-right: 24px;
   display: flex;
   flex-direction: column;

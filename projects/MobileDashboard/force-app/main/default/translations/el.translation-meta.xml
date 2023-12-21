@@ -231,11 +231,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_next</name>
-        <label>Επόμενο...</label>
+        <label>Επόμενες/οι...</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_last</name>
-        <label>Τελευταίο...</label>
+        <label>Τελευταίες/οι...</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_on</name>
@@ -299,11 +299,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_neutral</name>
-        <label>Ουδέτερη</label>
+        <label>Ουδέτερο</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_negative</name>
-        <label>Αρνητική</label>
+        <label>Αρνητικό</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_subtitle_record_types</name>
@@ -444,4 +444,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Επιλογή...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Ρυθμίσεις πίνακα εργαλείων για κινητές συσκευές</label>
+    </customTabs>
 </Translations>

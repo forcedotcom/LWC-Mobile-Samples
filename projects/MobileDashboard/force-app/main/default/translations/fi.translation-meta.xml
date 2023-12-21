@@ -439,4 +439,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Valitse...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Mobiilimittariston asetukset</label>
+    </customTabs>
 </Translations>

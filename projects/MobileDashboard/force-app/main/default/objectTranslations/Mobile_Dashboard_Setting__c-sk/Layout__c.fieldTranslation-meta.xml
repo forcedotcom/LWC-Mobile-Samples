@@ -4,10 +4,10 @@
     <label>Rozloženie</label>
     <picklistValues>
         <masterLabel>SIDE</masterLabel>
-        <translation>VEDĽA SEBA</translation>
+        <translation>SIDE</translation>
     </picklistValues>
     <picklistValues>
         <masterLabel>STACK</masterLabel>
-        <translation>NAD SEBOU</translation>
+        <translation>STACK</translation>
     </picklistValues>
 </CustomFieldTranslation>

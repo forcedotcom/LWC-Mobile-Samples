@@ -442,4 +442,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Selecionar...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Definições de painéis móveis</label>
+    </customTabs>
 </Translations>

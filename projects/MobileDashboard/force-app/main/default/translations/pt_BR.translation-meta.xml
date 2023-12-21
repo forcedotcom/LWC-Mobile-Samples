@@ -6,7 +6,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_title</name>
-        <label>Painel do celular</label>
+        <label>Painel móvel</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_description</name>
@@ -442,4 +442,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Selecionar...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Configurações do painel móvel</label>
+    </customTabs>
 </Translations>

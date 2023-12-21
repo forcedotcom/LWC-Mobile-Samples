@@ -436,4 +436,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Seçin...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Mobil Panel Ayarları</label>
+    </customTabs>
 </Translations>

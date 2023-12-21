@@ -441,4 +441,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Izberi ...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Nastavitve nadzornih plošč za mobilne naprave</label>
+    </customTabs>
 </Translations>

@@ -3,8 +3,6 @@ import { api } from "lwc";
 import LightningModal from "lightning/modal";
 import AlertMessage from "c/alertMessage";
 import getAllFields from "@salesforce/apex/DashboardSettingsService.getAllFields";
-import SIDE_EXAMPLE_SVG from "@salesforce/resourceUrl/side_example";
-import STACK_EXAMPLE_SVG from "@salesforce/resourceUrl/stack_example";
 import customLabels from "./labels";
 
 export default class EditCardModal extends LightningModal {
@@ -31,9 +29,6 @@ export default class EditCardModal extends LightningModal {
     icon: "",
     color: "#747474"
   };
-
-  side_svg_url = `${SIDE_EXAMPLE_SVG}#side_example`;
-  stack_svg_url = `${STACK_EXAMPLE_SVG}#stack_example`;
 
   connectedCallback() {
     this.tempCard = { ...this.card };
@@ -243,6 +238,64 @@ export default class EditCardModal extends LightningModal {
 
   get disableAddCondition() {
     return !this.tempCard.object?.value || !this.tempCard.filter.conditionLogic;
+  }
+
+  get exampleSettings() {
+    return {
+      Title__c: this.LABELS.MobileDashboard_card_modal_design_tab_example_my_sa,
+      subQueriesData: [
+        {
+          index: 0,
+          count: 1,
+          label:
+            this.LABELS
+              .MobileDashboard_card_modal_design_tab_example_cannot_complete,
+          icon: "utility:error",
+          color: "#B72020"
+        },
+        {
+          index: 1,
+          count: 2,
+          label:
+            this.LABELS.MobileDashboard_card_modal_design_tab_example_canceled,
+          icon: "utility:warning",
+          color: "#8C4B02"
+        },
+        {
+          index: 2,
+          count: 5,
+          label:
+            this.LABELS.MobileDashboard_card_modal_design_tab_example_completed,
+          icon: "utility:success",
+          color: "#2E844A"
+        },
+        {
+          index: 3,
+          count: 6,
+          label:
+            this.LABELS.MobileDashboard_card_modal_design_tab_example_scheduled,
+          icon: "utility:clock",
+          color: "#747474"
+        },
+        {
+          index: 4,
+          count: 4,
+          label:
+            this.LABELS
+              .MobileDashboard_card_modal_design_tab_example_in_progress,
+          icon: "utility:event",
+          color: "#747474"
+        }
+      ]
+    };
+  }
+
+  get sideExampleSettings() {
+    return { ...this.exampleSettings, Layout__c: "SIDE" };
+  }
+
+  get stackExampleSettings() {
+    return { ...this.exampleSettings, Layout__c: "STACK" };
   }
 
   detectSubFilterDrag = async () => {

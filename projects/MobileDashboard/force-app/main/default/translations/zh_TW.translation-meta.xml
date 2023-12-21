@@ -343,11 +343,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_like</name>
-        <label>讚</label>
+        <label>喜歡</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_dislike</name>
-        <label>收回讚</label>
+        <label>不喜歡</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_location</name>
@@ -433,4 +433,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>選取...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>行動顯示面板設定</label>
+    </customTabs>
 </Translations>

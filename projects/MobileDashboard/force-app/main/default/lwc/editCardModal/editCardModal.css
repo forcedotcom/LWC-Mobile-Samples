@@ -34,6 +34,10 @@
   margin-right: 60px;
 }
 
+.layout-radio c-summary-component {
+  max-width: 350px;
+}
+
 .sub-filters-container {
   display: flex;
   flex-direction: column;

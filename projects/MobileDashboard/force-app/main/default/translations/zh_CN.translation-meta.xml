@@ -433,4 +433,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>选择...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>移动仪表板设置</label>
+    </customTabs>
 </Translations>

@@ -197,7 +197,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_not_equal</name>
-        <label>次の文字列と一致しない</label>
+        <label>!=</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_less_than</name>
@@ -361,7 +361,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_user</name>
-        <label>ユーザ</label>
+        <label>ユーザー</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_people</name>
@@ -439,4 +439,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>選択してください ...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>モバイルダッシュボード設定</label>
+    </customTabs>
 </Translations>

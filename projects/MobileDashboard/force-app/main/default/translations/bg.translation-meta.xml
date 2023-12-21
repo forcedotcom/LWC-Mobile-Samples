@@ -439,4 +439,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Избор...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Настройки на мобилно табло</label>
+    </customTabs>
 </Translations>

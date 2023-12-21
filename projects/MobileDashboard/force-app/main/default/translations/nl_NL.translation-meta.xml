@@ -335,7 +335,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_clock</name>
-        <label>Klokken</label>
+        <label>Klok</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_event</name>
@@ -442,4 +442,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Selecteren...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Instellingen voor mobiel dashboard</label>
+    </customTabs>
 </Translations>

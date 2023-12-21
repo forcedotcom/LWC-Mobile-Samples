@@ -19,7 +19,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_edit_button</name>
-        <label>Sửa</label>
+        <label>Chỉnh Sửa</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_arrow_more_options</name>
@@ -43,11 +43,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_operator_last</name>
-        <label>lần cuối</label>
+        <label>vừa qua</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_unit_days</name>
-        <label>các ngày</label>
+        <label>ngày</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_unit_weeks</name>
@@ -59,11 +59,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_logic_and</name>
-        <label>và</label>
+        <label>and</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_card_display_logic_or</name>
-        <label>hoặc</label>
+        <label>or</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_new_card_modal_title</name>
@@ -227,15 +227,15 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_today</name>
-        <label>Hôm nay</label>
+        <label>Hôm Nay</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_next</name>
-        <label>... Tiếp theo</label>
+        <label>... Tiếp Theo</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_last</name>
-        <label>... Trước</label>
+        <label>... Vừa Qua</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_on</name>
@@ -259,11 +259,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_subtitle_status</name>
-        <label>Trạng thái</label>
+        <label>Trạng Thái</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_info</name>
-        <label>Thông tin</label>
+        <label>Thông Tin</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_success</name>
@@ -291,7 +291,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_subtitle_sentiment</name>
-        <label>Thái Độ</label>
+        <label>Cảm Tính</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_positive</name>
@@ -363,7 +363,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_user</name>
-        <label>Người dùng</label>
+        <label>Người Dùng</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_icons_list_people</name>
@@ -371,7 +371,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_card_warning_title</name>
-        <label>Xóa thẻ bảng điều khiển?</label>
+        <label>Xóa thẻ trong bảng điều khiển?</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_card_warning_body</name>
@@ -383,7 +383,8 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_sub_filter_warning_body</name>
-        <label>Thao tác này sẽ xóa dữ liệu thẻ khỏi thẻ bảng điều khiển.</label>
+        <label
+    >Thao tác này sẽ xóa dữ liệu thẻ khỏi thẻ trong bảng điều khiển.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_error_add_card</name>
@@ -439,4 +440,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Chọn...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Cài Đặt Bảng Điều Khiển Di Động</label>
+    </customTabs>
 </Translations>

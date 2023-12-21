@@ -179,7 +179,7 @@
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
         <label
-    >Untuk visibilitas yang ternaik, pilih warna-warna dengan kontras yang tinggi.</label>
+    >Untuk visibilitas yang terbaik, pilih warna-warna dengan kontras yang tinggi.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -440,4 +440,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Pilih...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Pengaturan Dasbor Ponsel</label>
+    </customTabs>
 </Translations>

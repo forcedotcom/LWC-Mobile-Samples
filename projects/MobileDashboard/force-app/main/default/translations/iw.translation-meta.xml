@@ -434,4 +434,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>בחר...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>הגדרות לוח מחוונים בנייד</label>
+    </customTabs>
 </Translations>

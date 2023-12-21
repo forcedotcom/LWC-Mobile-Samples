@@ -176,7 +176,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_color_field_infobubble</name>
-        <label>한 눈에 파악하려면 고대비 색상을 선택합니다.</label>
+        <label>한눈에 파악하려면 고대비 색상을 선택합니다.</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_sub_filter_options</name>
@@ -436,4 +436,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>선택...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>모바일 대시보드 설정</label>
+    </customTabs>
 </Translations>

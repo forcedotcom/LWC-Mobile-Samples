@@ -439,4 +439,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Vyberte...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Nastavenia mobilného ovládacieho panela</label>
+    </customTabs>
 </Translations>

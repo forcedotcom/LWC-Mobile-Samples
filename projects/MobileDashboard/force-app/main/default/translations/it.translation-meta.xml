@@ -440,4 +440,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Seleziona...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Impostazioni cruscotti digitali mobili</label>
+    </customTabs>
 </Translations>

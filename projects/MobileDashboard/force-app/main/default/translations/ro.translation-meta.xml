@@ -195,7 +195,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_equals</name>
-        <label>este egal</label>
+        <label>este egal cu</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_operator_not_equal</name>
@@ -231,11 +231,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_next</name>
-        <label>Următorul...</label>
+        <label>Următoarele...</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_last</name>
-        <label>Ultimul...</label>
+        <label>Ultimele...</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_on</name>
@@ -443,4 +443,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Selectare...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Setări tablou de bord mobil</label>
+    </customTabs>
 </Translations>

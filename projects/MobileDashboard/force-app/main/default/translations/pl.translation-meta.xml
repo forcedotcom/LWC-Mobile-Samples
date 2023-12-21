@@ -130,7 +130,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_name</name>
-        <label>Projekt</label>
+        <label>Widok</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_card_modal_design_tab_layout_title</name>
@@ -231,11 +231,11 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_next</name>
-        <label>Dalej...</label>
+        <label>Następne...</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_last</name>
-        <label>Ostatni...</label>
+        <label>Ostatnie...</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_basic_filter_date_type_on</name>
@@ -440,4 +440,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Wybierz...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Ustawienia pulpitu dla urządzeń przenośnych</label>
+    </customTabs>
 </Translations>

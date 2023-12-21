@@ -436,4 +436,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Select...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Mobile Dashboard Settings</label>
+    </customTabs>
 </Translations>

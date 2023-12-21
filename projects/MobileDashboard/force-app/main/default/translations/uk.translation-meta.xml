@@ -420,7 +420,7 @@
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_duplicate_button</name>
-        <label>Дублікат</label>
+        <label>Дублювати</label>
     </customLabels>
     <customLabels>
         <name>MobileDashboard_settings_delete_button</name>
@@ -438,4 +438,8 @@
         <name>MobileDashboard_settings_select_placeholder</name>
         <label>Вибрати...</label>
     </customLabels>
+    <customTabs>
+        <name>Mobile_Dashboard_Settings</name>
+        <label>Параметри мобільної приладної дошки</label>
+    </customTabs>
 </Translations>
