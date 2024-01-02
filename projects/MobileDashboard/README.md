@@ -33,8 +33,14 @@ Let your mobile workers easily see an overview of their data. For example, show 
 7. Make sure the queried fields are visible. Otherwise, the query doesn’t return any results.
    1. From the object management settings for the object whose fields you want to make visible, go to **Fields & Relationships**.
    2. For the required fields, click **Set Field-Level Security** and make the field-level security visible for all profiles.
-8. Connect the LWC to a global action. See [Add Global Actions to the Field Service Mobile App](https://help.salesforce.com/s/articleView?id=sf.mfs_global_actions.htm&type=5).
-   1. For Action Type, select **Lightning Web Components**.
-   2. For Lightning Web Component, select **c:mainDashboard**.
+8. Connect the LWC to a global action.
+   1. From Setup, in the Quick Find box, enter `Global Actions`, and then select **Global Actions**.
+   2. Click **New Action**.
+   3. For Action Type, select **Lightning Web Components**.
+   4. For Lightning Web Component, select **c:mainDashboard**.
+   5. Fill in the remaining fields and save the global action.
 9. Add the global action to the required layout.
+   1. From Setup, in the Quick Find box, enter `Global Actions`, and then select **Publisher Layouts**.
+   2. Click **Edit** next to the layout that corresponds to your Field Service mobile app.
+   3. Drag the action into the Salesforce Mobile and Lightning Experience Actions section.
 10. From the Field Service mobile app, open the LWC to verify the setup.
