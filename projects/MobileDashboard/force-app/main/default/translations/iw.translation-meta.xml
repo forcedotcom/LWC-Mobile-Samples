@@ -154,6 +154,31 @@
         <label>שימוש ביותר שטח אנכי. מומלץ עבור שמות שדות ארוכים.</label>
     </customLabels>
     <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_my_sa</name>
+        <label>פגישות השירות שלי</label>
+    </customLabels>
+    <customLabels>
+        <name
+    >MobileDashboard_card_modal_design_tab_example_cannot_complete</name>
+        <label>לא ניתן להשלים</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_canceled</name>
+        <label>בוטל</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_completed</name>
+        <label>הושלם</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_scheduled</name>
+        <label>מתוזמן</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_in_progress</name>
+        <label>בביצוע</label>
+    </customLabels>
+    <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
         <label>נתוני כרטיס</label>
     </customLabels>

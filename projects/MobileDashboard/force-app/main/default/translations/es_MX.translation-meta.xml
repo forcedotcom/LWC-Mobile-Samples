@@ -157,6 +157,31 @@
     >Utiliza más espacio vertical. Se recomienda para nombres de campo largos.</label>
     </customLabels>
     <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_my_sa</name>
+        <label>Mis citas de servicio</label>
+    </customLabels>
+    <customLabels>
+        <name
+    >MobileDashboard_card_modal_design_tab_example_cannot_complete</name>
+        <label>No se puede completar</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_canceled</name>
+        <label>Cancelado</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_completed</name>
+        <label>Completado</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_scheduled</name>
+        <label>Programado</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_in_progress</name>
+        <label>En curso</label>
+    </customLabels>
+    <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
         <label>Datos de tarjeta</label>
     </customLabels>

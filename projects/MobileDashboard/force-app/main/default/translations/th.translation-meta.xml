@@ -154,6 +154,31 @@
         <label>ใช้พื้นที่ในแนวตั้งมากขึ้น แนะนำสำหรับชื่อฟิลด์ยาว ๆ</label>
     </customLabels>
     <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_my_sa</name>
+        <label>การนัดหมายบริการของฉัน</label>
+    </customLabels>
+    <customLabels>
+        <name
+    >MobileDashboard_card_modal_design_tab_example_cannot_complete</name>
+        <label>ไม่สามารถทำให้เสร็จสิ้น</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_canceled</name>
+        <label>ยกเลิกแล้ว</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_completed</name>
+        <label>เสร็จสิ้น</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_scheduled</name>
+        <label>จัดตารางเวลาแล้ว</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_in_progress</name>
+        <label>กำลังดำเนินการ</label>
+    </customLabels>
+    <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
         <label>ข้อมูลการ์ด</label>
     </customLabels>

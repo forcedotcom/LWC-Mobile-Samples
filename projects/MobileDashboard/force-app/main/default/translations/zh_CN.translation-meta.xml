@@ -154,6 +154,31 @@
         <label>利用更多垂直空间。推荐长字段名称使用。</label>
     </customLabels>
     <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_my_sa</name>
+        <label>我的服务预约</label>
+    </customLabels>
+    <customLabels>
+        <name
+    >MobileDashboard_card_modal_design_tab_example_cannot_complete</name>
+        <label>无法完成</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_canceled</name>
+        <label>已取消</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_completed</name>
+        <label>已完成</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_scheduled</name>
+        <label>已计划</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_in_progress</name>
+        <label>正在进行中</label>
+    </customLabels>
+    <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
         <label>卡片数据</label>
     </customLabels>

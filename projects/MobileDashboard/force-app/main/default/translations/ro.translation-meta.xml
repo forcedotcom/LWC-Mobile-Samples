@@ -157,6 +157,31 @@
     >Consumă mai mult spațiu pe verticală. Recomandat pentru nume de câmp lungi.</label>
     </customLabels>
     <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_my_sa</name>
+        <label>Rezervările mele de serviciu</label>
+    </customLabels>
+    <customLabels>
+        <name
+    >MobileDashboard_card_modal_design_tab_example_cannot_complete</name>
+        <label>Nu se poate finaliza</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_canceled</name>
+        <label>Anulat</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_completed</name>
+        <label>Finalizat</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_scheduled</name>
+        <label>Programat</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_in_progress</name>
+        <label>În desfășurare</label>
+    </customLabels>
+    <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
         <label>Date card</label>
     </customLabels>

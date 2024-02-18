@@ -157,6 +157,31 @@
     >Χρησιμοποιεί περισσότερο κατακόρυφο χώρο. Προτείνεται για μεγάλου μήκους ονόματα πεδίων.</label>
     </customLabels>
     <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_my_sa</name>
+        <label>Ραντεβού εξυπηρέτησης</label>
+    </customLabels>
+    <customLabels>
+        <name
+    >MobileDashboard_card_modal_design_tab_example_cannot_complete</name>
+        <label>Δεν είναι δυνατή η ολοκλήρωση</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_canceled</name>
+        <label>Ακυρώθηκε</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_completed</name>
+        <label>Ολοκληρώθηκε</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_scheduled</name>
+        <label>Προγραμματίστηκε</label>
+    </customLabels>
+    <customLabels>
+        <name>MobileDashboard_card_modal_design_tab_example_in_progress</name>
+        <label>Σε εξέλιξη</label>
+    </customLabels>
+    <customLabels>
         <name>MobileDashboard_card_modal_design_tab_card_data_title</name>
         <label>Δεδομένα κάρτας</label>
     </customLabels>
