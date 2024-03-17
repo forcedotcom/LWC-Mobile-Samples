@@ -65,6 +65,7 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
     1. From Setup, in the Quick Find box, enter `Security` and select **Trusted URLs**.
     2. Click **New Trusted URL**.
     3. Enter an API Name.
-    4. For URL, enter `maps.a.forceusercontent.com` and `maps.b.forceusercontent.com`.
+    4. For URL, enter `maps.a.forceusercontent.com`.
     5. Select **frame-src (iframe content)**.
     6. Save your changes.
+    7. Repeat these steps for the `maps.b.forceusercontent.com` URL.
