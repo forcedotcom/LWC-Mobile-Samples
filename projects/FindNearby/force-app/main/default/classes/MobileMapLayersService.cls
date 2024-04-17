@@ -53,7 +53,7 @@ public with sharing class MobileMapLayersService {
         input = '%' + input + '%';
       if (isQuotesNeeded(fieldType))
         input = '\'' + input + '\'';
-      if (fieldType == 'TIME')
+      if (fieldType == 'Time')
         input += 'Z';
       String operator = isLikeNeeded(fieldType) ? 'LIKE' : '=';
 
@@ -81,29 +81,29 @@ public with sharing class MobileMapLayersService {
 
   private static boolean isQuotesNeeded(String type) {
     List<String> types = new List<String>{
-      'DATE',
-      'TIME',
-      'DATETIME',
-      'BOOLEAN',
-      'DOUBLE',
-      'INTEGER',
-      'CURRENCY',
-      'PERCENT'
+      'Date',
+      'Time',
+      'DateTime',
+      'Boolean',
+      'Double',
+      'Integer',
+      'Currency',
+      'Percent'
     };
     return !types.contains(type);
   }
 
   private static boolean isLikeNeeded(String type) {
     List<String> types = new List<String>{
-      'DATE',
-      'TIME',
-      'DATETIME',
-      'BOOLEAN',
-      'DOUBLE',
-      'INTEGER',
-      'CURRENCY',
-      'PERCENT',
-      'REFERENCE'
+      'Date',
+      'Time',
+      'DateTime',
+      'Boolean',
+      'Double',
+      'Integer',
+      'Currency',
+      'Percent',
+      'Reference'
     };
     return !types.contains(type);
   }
@@ -114,7 +114,7 @@ public with sharing class MobileMapLayersService {
     String operator,
     String input
   ) {
-    if (fieldType != 'DATETIME')
+    if (fieldType != 'DateTime')
       return field + ' ' + operator + ' ' + input;
 
     // for dateTime fields - search whole day, user don't need to put in the exact time
@@ -141,7 +141,7 @@ public with sharing class MobileMapLayersService {
   private static String castToType(String input, String fieldType) {
     try {
       switch on fieldType {
-        when 'TIME' {
+        when 'Time' {
           Pattern MyPattern = Pattern.compile('\\d\\d:\\d\\d:\\d\\d.\\d\\d\\d');
           Matcher MyMatcher = MyPattern.matcher(input);
           if (MyMatcher.matches())
@@ -149,16 +149,16 @@ public with sharing class MobileMapLayersService {
           else
             return '';
         }
-        when 'DATE', 'DATETIME' {
+        when 'Date', 'DateTime' {
           return String.valueOf(Date.valueOf(input));
         }
-        when 'BOOLEAN' {
+        when 'Boolean' {
           return String.valueOf(Boolean.valueOf(input));
         }
-        when 'INTEGER' {
+        when 'Integer' {
           return String.valueOf(Integer.valueOf(input));
         }
-        when 'DOUBLE', 'CURRENCY', 'PERCENT' {
+        when 'Double', 'Currency', 'Percent' {
           return String.valueOf(Double.valueOf(input));
         }
         when else {
