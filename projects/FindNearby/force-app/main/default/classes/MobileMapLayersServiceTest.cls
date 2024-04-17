@@ -18,7 +18,7 @@ public with sharing class MobileMapLayersServiceTest {
   static void executeFilterQueryTest() {
     try {
       Map<String, String> currentFieldFilter = new Map<String, String>();
-      currentFieldFilter.put('type', 'STRING');
+      currentFieldFilter.put('type', 'String');
       currentFieldFilter.put('value', 'name');
       currentFieldFilter.put('input', 'Resource Name');
       List<sObject> result = MobileMapLayersService.executeFilterQuery(
@@ -36,7 +36,7 @@ public with sharing class MobileMapLayersServiceTest {
   static void executeFilterQueryInvalidInputTest() {
     try {
       Map<String, String> currentFieldFilter = new Map<String, String>();
-      currentFieldFilter.put('type', 'DOUBLE');
+      currentFieldFilter.put('type', 'Double');
       currentFieldFilter.put('value', 'lastknownlatitude');
       currentFieldFilter.put('input', 'text');
       MobileMapLayersService.executeFilterQuery(
