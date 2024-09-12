@@ -58,10 +58,17 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
    2. Open the required profile.
    3. Under Enabled Apex Class Access, click **Edit** and add MobileMapLayersService.
    4. Give the users access to the records you want them to see.
-5. Connect the LWC to a global action. See Add Global Actions to the Field Service Mobile App.
-   1. For Action Type, select **Lightning Web Components**.
-   2. For Lightning Web Component, select **c:mobileMapLayersMain**.
-6. To see the map on a mobile device, add the map URL to the org’s trusted URLs. For more information, see [lightning-map](https://developer.salesforce.com/docs/component-library/bundle/lightning-map/documentation).
+5. Connect the LWC to a global action.
+   1. From Setup, in the Quick Find box, enter `Global Actions`, and then select **Global Actions**.
+   2. Click **New Action**.
+   3. For Action Type, select **Lightning Web Components**.
+   4. For Lightning Web Component, select **c:mobileMapLayersMain**.
+   5. Fill in the remaining fields and save the global action.
+6. Add the global action to the required layout.
+   1. From Setup, in the Quick Find box, enter `Global Actions`, and then select **Publisher Layouts**.
+   2. Click **Edit** next to the layout that corresponds to your Field Service mobile app.
+   3. Drag the action into the Salesforce Mobile and Lightning Experience Actions section.
+7. To see the map on a mobile device, add the map URL to the org’s trusted URLs. For more information, see [lightning-map](https://developer.salesforce.com/docs/component-library/bundle/lightning-map/documentation).
    1. From Setup, in the Quick Find box, enter `Security` and select **Trusted URLs**.
    2. Click **New Trusted URL**.
    3. Enter an API Name.
