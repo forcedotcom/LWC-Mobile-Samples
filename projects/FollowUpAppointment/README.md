@@ -24,7 +24,6 @@ Note: Follow-Up Appointment LWC is an open-source component and is not supported
     3. Add the relevant profiles to the Enabled Profiles list.
 5.  From the App Launcher, find and select **Follow-Up Appointment Settings**.
 6.  Configure the LWC.
-
     1.  In the Settings tab, determine which appointment slots the mobile worker sees and determine who the work can be assigned to and what kind of work they can create.
         If you choose to let mobile workers create the service appointment, only a service appointment is created. If you choose to let mobile workers create work orders or work order line items, a service appointment is created automatically. A service appointment is created regardless of the Auto-Create Service Appointment setting for the work type.
 
