@@ -18,7 +18,6 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
    1. From [LWC-Mobile-Samples](https://github.com/forcedotcom/LWC-Mobile-Samples), click **Code**.
    2. Clone the code or download the zip file.
 2. Enable the permission sets:
-
    1. From Setup, in the Quick Find box, enter `Users`, and then select **Users**.
    2. Select the required user.
    3. Under Permission Set Assignments, click Edit Assignments.
@@ -32,16 +31,13 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
    Tip: Make sure that the Dispatched status is not considered a pinned status. From Field Service Settings, go to Scheduling and deselect the Dispatched status from the list of statuses that are considered as pinned, or unmovable, for scheduling.
 
 3. Configure the LWC:
-
    1. Open the `RescheduleAppointments` folder in Visual Studio Code.
    2. Under
       `force-app/main/default/lwc/mobileAppointmentBookingSettingsContainer`, open the `MobileAppointmentBookingSettingsContainer.js` file.
    3. You can modify these settings:
-
       - `enableAssignToMe` and `enableAssignToEveryAvailable` are set to true. You can change one of these settings to false if required. This is achieved by modifying the work order’s resource preferences so that existing required resources are deleted and the current mobile worker is added as the only required resource for the service appointment (the service resource related to the current user). The setting is controlled by the assignCurrentUserAsRequiredResource Apex function. If both settings are set to true, the deleteExistingRequiredResources Apex function deletes the required resource object created for assignToMe.
 
       Tip: To control if the service appointment can be assigned only to the mobile worker in the app, make sure that your scheduling policy includes the **Field Service - Required Resources** work rule.
-
       - `recommendedScore` is set to 80, meaning that service appointments with a score above 80 appear in the list of results. You can modify this grade as needed.
 
    4. Fill in the names of your `OperatingHours` and `SchedulingPolicy`.
@@ -53,7 +49,6 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
       - `maxDaysToGetAppointmentSlots`: Must match the **Maximum days to get candidates or to book an appointment** field in your Field Service Settings. To find this value, go to **Field Service Settings > Scheduling > General Logic**.
 
 4. Authorize your org and deploy the code to your org. [See Quick Start: Lightning Web Components.](https://trailhead.salesforce.com/content/learn/projects/quick-start-lightning-web-components) The files must be deployed in this order:
-
    1. Classes folder
    2. Custom labels folder
    3. From the lwc folder:
@@ -68,7 +63,6 @@ We recommend taking the [Quick Start: Lightning Web Components](https://trailhea
       9. MobileAppointmentBookingSettingsContainer
 
 5. Grant access to the LWC’s users.
-
    1. From Setup, in the Quick Find box, enter `Users`, and then select **Profiles**.
    2. Open the required profile.
    3. Under Enabled Apex Class Access, click **Edit** and add AppointmentController.

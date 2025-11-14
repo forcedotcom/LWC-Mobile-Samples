@@ -25,7 +25,8 @@
   padding: 16px;
   height: 66px;
   width: 100%;
-  background: linear-gradient(0deg, #f3f3f3, #f3f3f3),
+  background:
+    linear-gradient(0deg, #f3f3f3, #f3f3f3),
     linear-gradient(0deg, #f3f3f3, #f3f3f3);
   z-index: 100;
 }
