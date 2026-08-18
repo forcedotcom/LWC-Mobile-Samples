@@ -16,6 +16,10 @@ export default class MobileMapLayersMain extends NavigationMixin(
   resourceLocation = { lat: "0.0", lng: "0.0" };
   isResourceLocationSet = false;
   allMarkers = [];
+  // keyed by `${value}:${id}` (object API name + record id) so a record can
+  // only ever occupy one slot, preventing duplicate markers when the location
+  // graphql wire re-emits and addAllObjectsLocations() runs more than once
+  allMarkersMap = new Map();
   filteredMarkers = [];
   currentMarker;
   currentMarkerInd = 0;
@@ -246,6 +250,7 @@ export default class MobileMapLayersMain extends NavigationMixin(
       records?.forEach((rec) => {
         this.createMarker(obj, rec);
       });
+      this.refreshMarkers();
     } catch (error) {
       this.handleError(error);
     }
@@ -269,7 +274,14 @@ export default class MobileMapLayersMain extends NavigationMixin(
   }
 
   addToMarkers(marker) {
-    this.allMarkers = [...this.allMarkers, marker];
+    // keying by object api name + record id means re-adding the same record
+    // overwrites its existing entry instead of appending a duplicate
+    this.allMarkersMap.set(`${marker.value.value}:${marker.value.id}`, marker);
+  }
+
+  refreshMarkers() {
+    // rebuild the array once per batch (reassignment keeps LWC reactivity)
+    this.allMarkers = [...this.allMarkersMap.values()];
     this.updateFilteredMarkers();
   }
 
