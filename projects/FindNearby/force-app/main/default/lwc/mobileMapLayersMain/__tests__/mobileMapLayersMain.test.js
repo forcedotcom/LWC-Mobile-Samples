@@ -8,6 +8,7 @@ const getObjectInfosResponse = require("./data/getObjectInfosResponse.json");
 
 // Flush pending microtasks so the async addAllObjectsLocations() ->
 // refreshMarkers() -> updateFilteredMarkers() chain settles before assertions.
+// eslint-disable-next-line @lwc/lwc/no-async-operation
 const flushPromises = () => new Promise((resolve) => setTimeout(resolve, 0));
 
 // Builds one ServiceAppointment graphql node. Field order mirrors
